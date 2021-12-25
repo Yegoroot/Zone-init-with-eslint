@@ -1,9 +1,9 @@
 // @mui
-import { Typography, Card, Box, Stack } from '@mui/material';
+import { Typography, Card, Box, Stack } from '@mui/material'
 // @types
-import { TeamMemberProps } from '../../../@types/team';
+import { TeamMemberProps } from '../../../@types/team'
 // components
-import { Image, SocialsButton, BgOverlay } from '../../../components';
+import { Image, SocialsButton, BgOverlay } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -12,7 +12,7 @@ type Props = {
 };
 
 export default function TeamElearningMember({ member }: Props) {
-  const { name, role, photo, socialLinks } = member;
+  const { name, role, photo, socialLinks } = member
 
   return (
     <Card>
@@ -29,11 +29,10 @@ export default function TeamElearningMember({ member }: Props) {
         <BgOverlay
           sx={{
             opacity: 0,
-            transition: (theme) =>
-              theme.transitions.create('opacity', {
-                easing: theme.transitions.easing.sharp,
-                duration: theme.transitions.duration.short,
-              }),
+            transition: (theme) => theme.transitions.create('opacity', {
+              easing: theme.transitions.easing.sharp,
+              duration: theme.transitions.duration.short,
+            }),
             '&:hover': { opacity: 1 },
           }}
         >
@@ -53,7 +52,7 @@ export default function TeamElearningMember({ member }: Props) {
         <Image src={photo} alt={name} ratio="1/1" />
       </Box>
     </Card>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -74,5 +73,5 @@ function Shape() {
         <path fill="currentColor" d="M1080 32L0 0h1080v32z" />
       </svg>
     </Box>
-  );
+  )
 }

@@ -1,23 +1,23 @@
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // icons
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // @mui
-import { styled } from '@mui/material/styles';
-import Masonry from '@mui/lab/Masonry';
-import { Container, Typography, Stack, Button, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import Masonry from '@mui/lab/Masonry'
+import { Container, Typography, Stack, Button, Box } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // hooks
-import useResponsive from '../../../hooks/useResponsive';
+import useResponsive from '../../../hooks/useResponsive'
 // utils
-import { fDate } from '../../../utils/formatTime';
+import { fDate } from '../../../utils/formatTime'
 // @types
-import { BlogPostProps } from '../../../@types/blog';
+import { BlogPostProps } from '../../../@types/blog'
 // components
-import { Image, BgOverlay, Iconify, TextMaxLine } from '../../../components';
+import { Image, BgOverlay, Iconify, TextMaxLine } from '../../../components'
 //
-import BlogPostItemMobile from '../BlogPostItemMobile';
+import BlogPostItemMobile from '../BlogPostItemMobile'
 
 // ----------------------------------------------------------------------
 
@@ -26,7 +26,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 const DotStyle = styled('span')(({ theme }) => ({
   width: 4,
@@ -34,7 +34,7 @@ const DotStyle = styled('span')(({ theme }) => ({
   borderRadius: '50%',
   backgroundColor: 'currentColor',
   margin: theme.spacing(0, 1),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ type Props = {
 };
 
 export default function BlogCareerLatestPosts({ posts }: Props) {
-  const isDesktop = useResponsive('up', 'md');
+  const isDesktop = useResponsive('up', 'md')
 
   return (
     <RootStyle>
@@ -130,7 +130,7 @@ export default function BlogCareerLatestPosts({ posts }: Props) {
         </Stack>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -142,8 +142,8 @@ type PostItemProps = {
 };
 
 function PostItem({ post, order, largePost }: PostItemProps) {
-  const { slug, frontmatter } = post;
-  const { title, duration, coverImg, description, createdAt } = frontmatter;
+  const { slug, frontmatter } = post
+  const { title, duration, coverImg, description, createdAt } = frontmatter
 
   return (
     <Stack
@@ -203,5 +203,5 @@ function PostItem({ post, order, largePost }: PostItemProps) {
 
       {largePost && <BgOverlay />}
     </Stack>
-  );
+  )
 }

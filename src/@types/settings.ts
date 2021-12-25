@@ -34,7 +34,7 @@ export type SettingsContextProps = {
     secondary: string;
   }[];
   onChangeColorPresets: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onToggleMode: VoidFunction;
-  onToggleDirection: VoidFunction;
-  onResetSetting: VoidFunction;
+  onToggleMode: ()=>void;
+  onToggleDirection: ()=>void;
+  onResetSetting: ()=>void;
 };

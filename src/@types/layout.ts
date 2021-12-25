@@ -1,4 +1,4 @@
-import { SxProps } from '@mui/system';
+import { SxProps } from '@mui/system'
 
 // ----------------------------------------------------------------------
 
@@ -38,5 +38,5 @@ export type NavDesktopMenuProps = {
   lists: NavItemChildProps[];
   isOpen: boolean;
   isScrolling: boolean | undefined;
-  onClose: VoidFunction;
+  onClose: ()=>void;
 };

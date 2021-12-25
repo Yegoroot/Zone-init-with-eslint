@@ -1,12 +1,13 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // @mui
-import { SxProps } from '@mui/system';
-import { Stack, StackProps } from '@mui/material';
+import { SxProps } from '@mui/system'
+import { Stack, StackProps } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
 interface Props extends StackProps {
   icon: ReactElement;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value: any;
   endIcon?: boolean;
   sx?: SxProps;
@@ -27,5 +28,5 @@ export default function TextIconLabel({ icon, value, endIcon = false, sx, ...oth
       {value}
       {endIcon && icon}
     </Stack>
-  );
+  )
 }

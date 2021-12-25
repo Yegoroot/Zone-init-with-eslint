@@ -1,5 +1,5 @@
-import { SocialLinks } from '../socials';
-import { OfficeMapProps, CountriesProps } from '../map';
+import { SocialLinks } from '../socials'
+import { OfficeMapProps, CountriesProps } from '../map'
 
 // ----------------------------------------------------------------------
 

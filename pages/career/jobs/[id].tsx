@@ -1,24 +1,24 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // next
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Grid, Stack, Divider, Container, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Grid, Stack, Divider, Container, Typography } from '@mui/material'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config'
 // hooks
-import { useRequest, useResponsive } from '../../../src/hooks';
+import { useRequest, useResponsive } from '../../../src/hooks'
 // @types
-import { JobProps } from '../../../src/@types/career';
+import { JobProps } from '../../../src/@types/career'
 // _data
-import _mock from '../../../_data/mock';
+import _mock from '../../../_data/mock'
 // layouts
-import Layout from '../../../src/layouts';
+import Layout from '../../../src/layouts'
 // components
-import { Page, ErrorScreen, LoadingScreen, SocialsButton } from '../../../src/components';
+import { Page, ErrorScreen, LoadingScreen, SocialsButton } from '../../../src/components'
 // sections
-import { NewsletterCareer } from '../../../src/sections/newsletter';
-import { Advertisement01 } from '../../../src/sections/advertisement';
+import { NewsletterCareer } from '../../../src/sections/newsletter'
+import { Advertisement01 } from '../../../src/sections/advertisement'
 import {
   CareerJobHero,
   CareerJobInfo,
@@ -26,7 +26,7 @@ import {
   CareerJobSimilar,
   CareerJobCompanyInfo,
   CareerJobCompanySimilar,
-} from '../../../src/sections/@career';
+} from '../../../src/sections/@career'
 
 // ----------------------------------------------------------------------
 
@@ -35,31 +35,31 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function CareerJobPage() {
-  const router = useRouter();
+  const router = useRouter()
 
-  const isDesktop = useResponsive('up', 'md');
+  const isDesktop = useResponsive('up', 'md')
 
-  const { id } = router.query;
+  const { id } = router.query
 
   const { data: jobs = [] } = useRequest<JobProps[]>({
-    url: `/api/career/jobs`,
-  });
+    url: '/api/career/jobs',
+  })
 
   const { data: job, error: jobError } = useRequest<JobProps>({
     url: id ? `/api/career/jobs/${id}` : '',
-  });
+  })
 
   if (jobError) {
-    return <ErrorScreen />;
+    return <ErrorScreen />
   }
 
   if (!job) {
-    return <LoadingScreen />;
+    return <LoadingScreen />
   }
 
   return (
@@ -113,11 +113,11 @@ export default function CareerJobPage() {
         <NewsletterCareer />
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 CareerJobPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}

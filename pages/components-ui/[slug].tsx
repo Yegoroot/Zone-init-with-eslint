@@ -1,24 +1,24 @@
-import Slider from 'react-slick';
-import { MDXRemote } from 'next-mdx-remote';
-import { useState, useRef, ReactNode, ReactElement } from 'react';
-import { serialize } from 'next-mdx-remote/serialize';
+import Slider from 'react-slick'
+import { MDXRemote } from 'next-mdx-remote'
+import { useState, useRef, ReactNode, ReactElement } from 'react'
+import { serialize } from 'next-mdx-remote/serialize'
 // icons
-import batIcon from '@iconify/icons-carbon/bat';
-import playIcon from '@iconify/icons-carbon/play';
-import areaIcon from '@iconify/icons-carbon/area';
-import beeBat from '@iconify/icons-carbon/bee-bat';
-import cyclistIcon from '@iconify/icons-carbon/cyclist';
-import airport01 from '@iconify/icons-carbon/airport-01';
-import apertureIcon from '@iconify/icons-carbon/aperture';
-import batteryFull from '@iconify/icons-carbon/battery-full';
-import basketballIcon from '@iconify/icons-carbon/basketball';
-import icon3dCursorAlt from '@iconify/icons-carbon/3d-cursor-alt';
-import icon3dMprToggle from '@iconify/icons-carbon/3d-mpr-toggle';
+import batIcon from '@iconify/icons-carbon/bat'
+import playIcon from '@iconify/icons-carbon/play'
+import areaIcon from '@iconify/icons-carbon/area'
+import beeBat from '@iconify/icons-carbon/bee-bat'
+import cyclistIcon from '@iconify/icons-carbon/cyclist'
+import airport01 from '@iconify/icons-carbon/airport-01'
+import apertureIcon from '@iconify/icons-carbon/aperture'
+import batteryFull from '@iconify/icons-carbon/battery-full'
+import basketballIcon from '@iconify/icons-carbon/basketball'
+import icon3dCursorAlt from '@iconify/icons-carbon/3d-cursor-alt'
+import icon3dMprToggle from '@iconify/icons-carbon/3d-mpr-toggle'
 // next
-import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic'
 // @mui
-import { SxProps } from '@mui/system';
-import { styled, alpha } from '@mui/material/styles';
+import { SxProps } from '@mui/system'
+import { styled, alpha } from '@mui/material/styles'
 import {
   Box,
   Link,
@@ -30,21 +30,21 @@ import {
   Container,
   Typography,
   IconButtonProps,
-} from '@mui/material';
+} from '@mui/material'
 // utils
-import { getAllComponentSlugs, getComponentData } from '../../src/utils/get-mardown/components-ui';
+import { getAllComponentSlugs, getComponentData } from '../../src/utils/get-mardown/components-ui'
 // _data
-import _mock, { _offices } from '../../_data/mock';
+import _mock, { _offices } from '../../_data/mock'
 // routes
-import Routes from '../../src/routes';
+import Routes from '../../src/routes'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT, DRAWER_WIDTH } from '../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT, DRAWER_WIDTH } from '../../src/config'
 // @types
-import { ComponentProps } from './';
+import { ComponentProps } from '.'
 // layouts
-import Layout from '../../src/layouts';
+import Layout from '../../src/layouts'
 // components
-import { components as MDXComponents, RootStyle as MDXStyle } from '../../src/components/Markdown';
+import { components as MDXComponents, RootStyle as MDXStyle } from '../../src/components/Markdown'
 import {
   Page,
   Label,
@@ -66,13 +66,13 @@ import {
   PlayerWithButton,
   FabButtonAnimate,
   IconButtonAnimate,
-} from '../../src/components';
+} from '../../src/components'
 //
-const ContactMap = dynamic(() => import('../../src/components/map/ContactMap'));
+const ContactMap = dynamic(() => import('../../src/components/map/ContactMap'))
 
 // ----------------------------------------------------------------------
 
-const IMAGES = [...Array(6)].map((_, index) => _mock.image.travel(index));
+const IMAGES = [...Array(6)].map((_, index) => _mock.image.travel(index))
 
 const NAV_ITEMS = [
   {
@@ -142,7 +142,7 @@ const NAV_ITEMS = [
       { title: 'Contact', path: '/travel/contact-us', icon: <Iconify icon={beeBat} /> },
     ],
   },
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   paddingTop: HEADER_MOBILE_HEIGHT,
@@ -151,7 +151,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     paddingTop: HEADER_DESKTOP_HEIGHT,
     paddingBottom: theme.spacing(15),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -160,8 +160,8 @@ type Props = {
 };
 
 export default function ComponentUIPage({ component }: Props) {
-  const { content, frontmatter } = component;
-  const { title, link } = frontmatter;
+  const { content, frontmatter } = component
+  const { title, link } = frontmatter
 
   return (
     <Page title={`${title} - Components`}>
@@ -178,7 +178,9 @@ export default function ComponentUIPage({ component }: Props) {
                 <Typography variant="h3">{title}</Typography>
                 {link && (
                   <Typography variant="body2">
-                    Ref: <Link>{link}</Link>
+                    Ref:
+                    {' '}
+                    <Link>{link}</Link>
                   </Typography>
                 )}
               </Stack>
@@ -193,14 +195,14 @@ export default function ComponentUIPage({ component }: Props) {
         </Container>
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 ComponentUIPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}
 
 // ----------------------------------------------------------------------
 
@@ -247,7 +249,7 @@ const components = {
     />
   ),
   ContactMap: () => <ContactMap offices={_offices} />,
-};
+}
 
 // ----------------------------------------------------------------------
 
@@ -271,21 +273,21 @@ function Block({ children, sx }: BlockProps) {
     >
       {children}
     </Box>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 function PlayerButton() {
-  const [openVideo, setOpenVideo] = useState(false);
+  const [openVideo, setOpenVideo] = useState(false)
 
   const handleOpenVideo = () => {
-    setOpenVideo(true);
-  };
+    setOpenVideo(true)
+  }
 
   const handleCloseVideo = () => {
-    setOpenVideo(false);
-  };
+    setOpenVideo(false)
+  }
 
   return (
     <>
@@ -294,21 +296,21 @@ function PlayerButton() {
       </FabButtonAnimate>
       <PlayerWithButton open={openVideo} onClose={handleCloseVideo} videoPath={_mock.video} />
     </>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 function Lightbox() {
-  const [openLightbox, setOpenLightbox] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<number>(0);
+  const [openLightbox, setOpenLightbox] = useState(false)
+  const [selectedImage, setSelectedImage] = useState<number>(0)
 
   const handleOpenLightbox = (url: string) => {
-    const selectedImage = IMAGES.findIndex((index) => url === index);
+    const selectedImage = IMAGES.findIndex((index) => url === index)
 
-    setOpenLightbox(true);
-    setSelectedImage(selectedImage);
-  };
+    setOpenLightbox(true)
+    setSelectedImage(selectedImage)
+  }
 
   return (
     <>
@@ -341,21 +343,21 @@ function Lightbox() {
         onCloseRequest={() => setOpenLightbox(false)}
       />
     </>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 function Carousel() {
-  const carouselRef = useRef<Slider | null>(null);
+  const carouselRef = useRef<Slider | null>(null)
 
   const handlePrevious = () => {
-    carouselRef.current?.slickPrev();
-  };
+    carouselRef.current?.slickPrev()
+  }
 
   const handleNext = () => {
-    carouselRef.current?.slickNext();
-  };
+    carouselRef.current?.slickNext()
+  }
 
   const carouselSettings = {
     dots: true,
@@ -363,7 +365,7 @@ function Carousel() {
     slidesToShow: 4,
     slidesToScroll: 1,
     ...CarouselDots({ sx: { my: 3 } }),
-  };
+  }
 
   return (
     <Container sx={{ position: 'relative' }}>
@@ -387,7 +389,7 @@ function Carousel() {
         </Slider>
       </CarouselArrows>
     </Container>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -399,7 +401,7 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const component = getComponentData(params.slug);
+  const component = getComponentData(params.slug)
 
   return {
     props: {
@@ -408,14 +410,14 @@ export async function getStaticProps({ params }: Params) {
         content: await serialize(component.content),
       },
     },
-  };
+  }
 }
 
 export async function getStaticPaths() {
-  const files = getAllComponentSlugs();
+  const files = getAllComponentSlugs()
 
   return {
     paths: files,
     fallback: false,
-  };
+  }
 }

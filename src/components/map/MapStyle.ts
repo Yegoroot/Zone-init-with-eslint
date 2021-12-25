@@ -95,5 +95,5 @@ const FlatPaleTheme = [
     elementType: 'labels.text.fill',
     stylers: [{ lightness: '-49' }, { saturation: '-53' }, { gamma: '0.79' }],
   },
-];
-export default FlatPaleTheme;
+]
+export default FlatPaleTheme

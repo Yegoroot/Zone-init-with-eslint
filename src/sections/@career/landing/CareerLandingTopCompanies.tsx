@@ -1,16 +1,16 @@
-import { useRef } from 'react';
-import Slider from 'react-slick';
+import { useRef } from 'react'
+import Slider from 'react-slick'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { alpha, styled, useTheme } from '@mui/material/styles';
-import { Typography, Stack, Container, Box } from '@mui/material';
+import { alpha, styled, useTheme } from '@mui/material/styles'
+import { Typography, Stack, Container, Box } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // @types
-import { JobByCompanyProps } from '../../../@types/career';
+import { JobByCompanyProps } from '../../../@types/career'
 // components
-import { Image, TextMaxLine, CarouselArrows } from '../../../components';
+import { Image, TextMaxLine, CarouselArrows } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ const RootStyle = styled(Stack)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: theme.spacing(15),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -30,17 +30,17 @@ type Props = {
 };
 
 export default function CareerLandingTopCompanies({ companies }: Props) {
-  const theme = useTheme();
+  const theme = useTheme()
 
-  const carouselRef = useRef<Slider | null>(null);
+  const carouselRef = useRef<Slider | null>(null)
 
   const handlePrevious = () => {
-    carouselRef.current?.slickPrev();
-  };
+    carouselRef.current?.slickPrev()
+  }
 
   const handleNext = () => {
-    carouselRef.current?.slickNext();
-  };
+    carouselRef.current?.slickNext()
+  }
 
   const carouselSettings = {
     arrows: false,
@@ -61,7 +61,7 @@ export default function CareerLandingTopCompanies({ companies }: Props) {
         settings: { slidesToShow: 1 },
       },
     ],
-  };
+  }
 
   return (
     <RootStyle>
@@ -96,7 +96,7 @@ export default function CareerLandingTopCompanies({ companies }: Props) {
         </Box>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -116,10 +116,9 @@ function CompanyItem({ company }: CompanyItemProps) {
           cursor: 'pointer',
           textAlign: 'center',
           position: 'relative',
-          transition: (theme) =>
-            theme.transitions.create('all', {
-              duration: theme.transitions.duration.enteringScreen,
-            }),
+          transition: (theme) => theme.transitions.create('all', {
+            duration: theme.transitions.duration.enteringScreen,
+          }),
           '&:hover': {
             bgcolor: 'background.paper',
             boxShadow: (theme) => theme.customShadows.z24,
@@ -137,12 +136,14 @@ function CompanyItem({ company }: CompanyItemProps) {
           }}
         />
         <Typography variant="body3" sx={{ color: 'text.disabled', mt: 2.5, mb: 0.5 }}>
-          {company.totalJobs} jobs
+          {company.totalJobs}
+          {' '}
+          jobs
         </Typography>
         <TextMaxLine variant="subtitle2" persistent>
           {company.companyName}
         </TextMaxLine>
       </Box>
     </NextLink>
-  );
+  )
 }

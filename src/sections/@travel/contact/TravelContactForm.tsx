@@ -1,12 +1,12 @@
-import * as Yup from 'yup';
-import { useForm, Controller } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
+import * as Yup from 'yup'
+import { useForm, Controller } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 // @mui
-import { styled } from '@mui/material/styles';
-import { LoadingButton } from '@mui/lab';
-import { Grid, Stack, TextField, Container, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { LoadingButton } from '@mui/lab'
+import { Grid, Stack, TextField, Container, Typography } from '@mui/material'
 // components
-import { Image } from '../../../components';
+import { Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -15,14 +15,14 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 const FormSchema = Yup.object().shape({
   fullName: Yup.string().required('Full name is required'),
   email: Yup.string().required('Email is required').email('That is not an email'),
   subject: Yup.string().required('Subject is required'),
   message: Yup.string().required('Message is required'),
-});
+})
 
 type FormValuesProps = {
   fullName: string;
@@ -48,13 +48,13 @@ export default function TravelContactForm() {
       email: '',
       message: '',
     },
-  });
+  })
 
   const onSubmit = async (data: FormValuesProps) => {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    alert(JSON.stringify(data, null, 2));
-    reset();
-  };
+    await new Promise((resolve) => setTimeout(resolve, 500))
+    alert(JSON.stringify(data, null, 2))
+    reset()
+  }
 
   return (
     <RootStyle>
@@ -167,5 +167,5 @@ export default function TravelContactForm() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

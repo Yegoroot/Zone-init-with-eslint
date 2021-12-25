@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // @mui
 import {
   Box,
@@ -9,16 +9,16 @@ import {
   Divider,
   Typography,
   FilledInput,
-} from '@mui/material';
+} from '@mui/material'
 // utils
-import { fDate } from '../../../utils/formatTime';
+import { fDate } from '../../../utils/formatTime'
 // @types
-import { ReviewProp } from '../../../@types/review';
+import { ReviewProp } from '../../../@types/review'
 
 // ----------------------------------------------------------------------
 
-const AVATAR_SIZE = 48;
-const WIDTH = `calc(100% - ${AVATAR_SIZE + 20}px)`;
+const AVATAR_SIZE = 48
+const WIDTH = `calc(100% - ${AVATAR_SIZE + 20}px)`
 
 type IProps = Partial<ReviewProp>;
 
@@ -37,16 +37,16 @@ export default function ReviewTravelTourItem({
   hasReply,
   avatarUrl,
 }: Props) {
-  const [openReply, setOpenReply] = useState(false);
-  const [isHelpful, setIsHelpful1] = useState(false);
+  const [openReply, setOpenReply] = useState(false)
+  const [isHelpful, setIsHelpful1] = useState(false)
 
   const handleOpenReply = () => {
-    setOpenReply(!openReply);
-  };
+    setOpenReply(!openReply)
+  }
 
   const handleToggleHelpful = () => {
-    setIsHelpful1(!isHelpful);
-  };
+    setIsHelpful1(!isHelpful)
+  }
 
   return (
     <>
@@ -127,7 +127,7 @@ export default function ReviewTravelTourItem({
         }}
       />
     </>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -136,8 +136,8 @@ type ReviewActionsProps = {
   helpful: number;
   isHelpful?: boolean;
   isOpen?: boolean;
-  onToggleHelpful: VoidFunction;
-  onOpenReply: VoidFunction;
+  onToggleHelpful: ()=>void;
+  onOpenReply: ()=>void;
 };
 
 function ReviewActions({
@@ -147,24 +147,25 @@ function ReviewActions({
   onOpenReply,
   onToggleHelpful,
 }: ReviewActionsProps) {
-  const totalHelpful =
-    helpful > 0
-      ? isHelpful
-        ? `(${helpful + 1})`
-        : `(${helpful})`
-      : isHelpful
+  const totalHelpful = helpful > 0
+    ? isHelpful
       ? `(${helpful + 1})`
-      : '';
+      : `(${helpful})`
+    : isHelpful
+      ? `(${helpful + 1})`
+      : ''
 
   return (
     <Stack direction="row" alignItems="center" spacing={2} sx={{ mt: 2 }}>
       <Button size="small" color={isHelpful ? 'primary' : 'inherit'} onClick={onToggleHelpful}>
-        Helpful {totalHelpful}
+        Helpful
+        {' '}
+        {totalHelpful}
       </Button>
       <Box sx={{ width: 4, height: 4, bgcolor: 'text.disabled', borderRadius: '50%' }} />
       <Button size="small" color={isOpen ? 'primary' : 'inherit'} onClick={onOpenReply}>
         Reply
       </Button>
     </Stack>
-  );
+  )
 }

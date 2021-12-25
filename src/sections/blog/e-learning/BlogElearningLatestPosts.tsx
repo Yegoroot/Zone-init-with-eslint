@@ -1,21 +1,21 @@
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // icons
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Container, Typography, Stack, Button } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Container, Typography, Stack, Button } from '@mui/material'
 // hooks
-import useResponsive from '../../../hooks/useResponsive';
+import useResponsive from '../../../hooks/useResponsive'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // @types
-import { BlogPostProps } from '../../../@types/blog';
+import { BlogPostProps } from '../../../@types/blog'
 // components
-import { Iconify } from '../../../components';
+import { Iconify } from '../../../components'
 //
-import BlogElearningPostItem from './BlogElearningPostItem';
-import BlogPostItemMobile from '../BlogPostItemMobile';
+import BlogElearningPostItem from './BlogElearningPostItem'
+import BlogPostItemMobile from '../BlogPostItemMobile'
 
 // ----------------------------------------------------------------------
 
@@ -24,7 +24,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ type Props = {
 };
 
 export default function BlogElearningLatestPosts({ posts }: Props) {
-  const isDesktop = useResponsive('up', 'md');
+  const isDesktop = useResponsive('up', 'md')
 
   return (
     <RootStyle>
@@ -70,13 +70,11 @@ export default function BlogElearningLatestPosts({ posts }: Props) {
         >
           {posts
             .slice(0, 3)
-            .map((post) =>
-              isDesktop ? (
-                <BlogElearningPostItem key={post.slug} post={post} />
-              ) : (
-                <BlogPostItemMobile key={post.slug} post={post} path="/e-learning/blog" />
-              )
-            )}
+            .map((post) => (isDesktop ? (
+              <BlogElearningPostItem key={post.slug} post={post} />
+            ) : (
+              <BlogPostItemMobile key={post.slug} post={post} path="/e-learning/blog" />
+            )))}
         </Box>
 
         <Stack
@@ -96,5 +94,5 @@ export default function BlogElearningLatestPosts({ posts }: Props) {
         </Stack>
       </Container>
     </RootStyle>
-  );
+  )
 }

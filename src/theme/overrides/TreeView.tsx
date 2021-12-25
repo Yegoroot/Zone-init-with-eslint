@@ -1,7 +1,7 @@
 // @mui
-import { Theme } from '@mui/material/styles';
+import { Theme } from '@mui/material/styles'
 //
-import { TreeViewCollapseIcon, TreeViewExpandIcon, TreeViewEndIcon } from './CustomIcons';
+import { TreeViewCollapseIcon, TreeViewExpandIcon, TreeViewEndIcon } from './CustomIcons'
 
 // ----------------------------------------------------------------------
 
@@ -16,9 +16,10 @@ export default function TreeView(theme: Theme) {
     },
     MuiTreeItem: {
       styleOverrides: {
+        // eslint-disable-next-line react/destructuring-assignment
         label: { ...theme.typography.body2 },
         iconContainer: { width: 'auto' },
       },
     },
-  };
+  }
 }

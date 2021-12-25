@@ -1,7 +1,7 @@
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { Stack, Link, Typography, Box } from '@mui/material';
+import { Stack, Link, Typography, Box } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ const CATEGORIES = [
   { name: 'Tutorials', path: '#' },
   { name: 'Business', path: '#' },
   { name: 'Management', path: '#' },
-];
+]
 
 // ----------------------------------------------------------------------
 
@@ -25,7 +25,7 @@ export default function BlogSidebarCategories() {
         <CategoryItem key={category.name} category={category} />
       ))}
     </Stack>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -38,7 +38,7 @@ type CategoryItemProps = {
 };
 
 function CategoryItem({ category }: CategoryItemProps) {
-  const { name, path } = category;
+  const { name, path } = category
 
   return (
     <Stack key={name} direction="row" alignItems="center">
@@ -49,5 +49,5 @@ function CategoryItem({ category }: CategoryItemProps) {
         </Link>
       </NextLink>
     </Stack>
-  );
+  )
 }

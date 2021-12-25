@@ -1,11 +1,11 @@
 // @mui
-import { Pagination, Box } from '@mui/material';
+import { Pagination, Box } from '@mui/material'
 // @types
-import { JobProps } from '../../../@types/career';
+import { JobProps } from '../../../@types/career'
 // components
-import { JobItemSkeleton } from '../../../components/skeleton';
+import { JobItemSkeleton } from '../../../components/skeleton'
 //
-import CareerJobItem from './CareerJobItem';
+import CareerJobItem from './CareerJobItem'
 
 // ----------------------------------------------------------------------
 
@@ -29,9 +29,7 @@ export default function CareerJobList({ jobs, loading }: Props) {
           },
         }}
       >
-        {(loading ? [...Array(6)] : jobs).map((job, index) =>
-          job ? <CareerJobItem key={job.id} job={job} /> : <JobItemSkeleton key={index} />
-        )}
+        {(loading ? [...Array(6)] : jobs).map((job, index) => (job ? <CareerJobItem key={job.id} job={job} /> : <JobItemSkeleton key={index} />))}
       </Box>
 
       <Pagination
@@ -47,5 +45,5 @@ export default function CareerJobList({ jobs, loading }: Props) {
         }}
       />
     </>
-  );
+  )
 }

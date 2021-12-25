@@ -1,19 +1,19 @@
 // icons
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Stack, Container, Typography, Card, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Stack, Container, Typography, Card, Box } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // components
-import { Iconify, TextMaxLine, SvgIconStyle } from '../../../components';
-import { IconButtonAnimate } from '../../../components/animate';
+import { Iconify, TextMaxLine, SvgIconStyle } from '../../../components'
+import { IconButtonAnimate } from '../../../components/animate'
 
 // ----------------------------------------------------------------------
 
-const COLORS = ['primary', 'secondary', 'success', 'warning'] as const;
+const COLORS = ['primary', 'secondary', 'success', 'warning'] as const
 
 const SERVICES = [
   {
@@ -40,7 +40,7 @@ const SERVICES = [
     text: 'Nunc nonummy metus. Donec elit libero',
     path: Routes.marketing.services,
   },
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
@@ -48,7 +48,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     paddingTop: theme.spacing(15),
     paddingBottom: theme.spacing(10),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -95,7 +95,7 @@ export default function MarketingLandingServices() {
         </Box>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -111,7 +111,7 @@ type ServiceItemProps = {
 };
 
 function ServiceItem({ service, index }: ServiceItemProps) {
-  const { name, icon, text, path } = service;
+  const { name, icon, text, path } = service
 
   return (
     <Card
@@ -158,5 +158,5 @@ function ServiceItem({ service, index }: ServiceItemProps) {
         </IconButtonAnimate>
       </NextLink>
     </Card>
-  );
+  )
 }

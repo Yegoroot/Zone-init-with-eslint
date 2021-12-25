@@ -1,16 +1,16 @@
 // next
-import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic'
 // @mui
-import { Typography, Stack, Chip, Box } from '@mui/material';
+import { Typography, Stack, Chip, Box } from '@mui/material'
 // @utils
-import { getBenefitIcon } from '../../../utils/getIcon';
+import { getBenefitIcon } from '../../../utils/getIcon'
 // @types
-import { JobProps } from '../../../@types/career';
+import { JobProps } from '../../../@types/career'
 // components
-import { TextIconLabel } from '../../../components';
-import { RootStyle as MarkdownStyle } from '../../../components/Markdown';
+import { TextIconLabel } from '../../../components'
+import { RootStyle as MarkdownStyle } from '../../../components/Markdown'
 //
-const ContactMap = dynamic(() => import('../../../components/map/ContactMap'));
+const ContactMap = dynamic(() => import('../../../components/map/ContactMap'))
 
 // ----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ type Props = {
 };
 
 export default function CareerJobDetails({ job }: Props) {
-  const { skills, otherBenefits, locationMap, content } = job;
+  const { skills, otherBenefits, locationMap, content } = job
 
   return (
     <Stack spacing={5}>
@@ -34,7 +34,7 @@ export default function CareerJobDetails({ job }: Props) {
         </Typography>
         <Stack direction="row" flexWrap="wrap">
           {skills.map((skill) => (
-            <Chip key={skill} label={skill} sx={{ m: 0.5 }} onClick={() => {}} />
+            <Chip key={skill} label={skill} sx={{ m: 0.5 }} onClick={() => console.log('heeeeey')} />
           ))}
         </Stack>
       </section>
@@ -70,5 +70,5 @@ export default function CareerJobDetails({ job }: Props) {
         <ContactMap offices={locationMap} sx={{ borderRadius: 2 }} />
       </section>
     </Stack>
-  );
+  )
 }

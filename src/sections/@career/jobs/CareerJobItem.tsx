@@ -1,21 +1,21 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // icons
-import locationIcon from '@iconify/icons-carbon/location';
-import timeIcon from '@iconify/icons-carbon/time';
-import increaseLevel from '@iconify/icons-carbon/increase-level';
-import moneyIcon from '@iconify/icons-carbon/money';
-import userIcon from '@iconify/icons-carbon/user';
+import locationIcon from '@iconify/icons-carbon/location'
+import timeIcon from '@iconify/icons-carbon/time'
+import increaseLevel from '@iconify/icons-carbon/increase-level'
+import moneyIcon from '@iconify/icons-carbon/money'
+import userIcon from '@iconify/icons-carbon/user'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { Divider, Stack, Card, Typography, Grid } from '@mui/material';
+import { Divider, Stack, Card, Typography, Grid } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // utils
-import { fDate } from '../../../utils/formatTime';
-import { fCurrency } from '../../../utils/formatNumber';
+import { fDate } from '../../../utils/formatTime'
+import { fCurrency } from '../../../utils/formatNumber'
 // @types
-import { JobProps } from '../../../@types/career';
+import { JobProps } from '../../../@types/career'
 // components
 import {
   Image,
@@ -24,7 +24,7 @@ import {
   TextMaxLine,
   TextIconLabel,
   FavoriteButton,
-} from '../../../components';
+} from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -46,13 +46,13 @@ export default function CareerJobItem({ job }: Props) {
     experience,
     companyName,
     companyLogo,
-  } = job;
+  } = job
 
-  const [favorite, setFavorite] = useState(favorited);
+  const [favorite, setFavorite] = useState(favorited)
 
   const handleChangeFavorite = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFavorite(event.target.checked);
-  };
+    setFavorite(event.target.checked)
+  }
 
   return (
     <Card
@@ -98,7 +98,9 @@ export default function CareerJobItem({ job }: Props) {
         </Stack>
 
         <Typography variant="caption" sx={{ color: 'text.disabled' }}>
-          Posted day: {fDate(createdAt)}
+          Posted day:
+          {' '}
+          {fDate(createdAt)}
         </Typography>
       </Stack>
 
@@ -144,5 +146,5 @@ export default function CareerJobItem({ job }: Props) {
         </Grid>
       </Grid>
     </Card>
-  );
+  )
 }

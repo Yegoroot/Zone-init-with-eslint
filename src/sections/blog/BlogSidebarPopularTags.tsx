@@ -1,7 +1,7 @@
 // next
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 // @mui
-import { Typography, Chip, Box } from '@mui/material';
+import { Typography, Chip, Box } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -15,16 +15,16 @@ const TAGS = [
   { label: 'Business', path: '#' },
   { label: 'Community', path: '#' },
   { label: 'Tutorials', path: '#' },
-];
+]
 
 // ----------------------------------------------------------------------
 
 export default function BlogSidebarPopularTags() {
-  const router = useRouter();
+  const router = useRouter()
 
   const onClick = (href: string) => {
-    router.push(href);
-  };
+    router.push(href)
+  }
 
   return (
     <Box>
@@ -36,5 +36,5 @@ export default function BlogSidebarPopularTags() {
         <Chip key={tag.label} label={tag.label} sx={{ m: 0.5 }} onClick={() => onClick(tag.path)} />
       ))}
     </Box>
-  );
+  )
 }

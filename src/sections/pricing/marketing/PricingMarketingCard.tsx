@@ -1,11 +1,11 @@
 // icons
-import checkmarkIcon from '@iconify/icons-carbon/checkmark';
+import checkmarkIcon from '@iconify/icons-carbon/checkmark'
 // @mui
-import { Card, Stack, Button, Typography } from '@mui/material';
+import { Card, Stack, Button, Typography } from '@mui/material'
 // @types
-import { PricingMarketingProps } from '../../../@types/pricing';
+import { PricingMarketingProps } from '../../../@types/pricing'
 //
-import { Iconify, Label, TextIconLabel, Image } from '../../../components';
+import { Iconify, Label, TextIconLabel, Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -14,11 +14,11 @@ type Props = {
 };
 
 export default function PricingMarketingCard({ plan }: Props) {
-  const { license, icon, options, price, caption } = plan;
+  const { license, icon, options, price, caption } = plan
 
-  const basicLicense = license === 'Basic';
-  const starterLicense = license === 'Starter';
-  const premiumLicense = license === 'Premium';
+  const basicLicense = license === 'Basic'
+  const starterLicense = license === 'Starter'
+  const premiumLicense = license === 'Premium'
 
   return (
     <Card
@@ -64,12 +64,12 @@ export default function PricingMarketingCard({ plan }: Props) {
         {options.map((option, index) => (
           <TextIconLabel
             key={index}
-            icon={
+            icon={(
               <Iconify
                 icon={checkmarkIcon}
                 sx={{ width: 20, height: 20, mr: 2, color: 'primary.main' }}
               />
-            }
+            )}
             value={option}
           />
         ))}
@@ -79,5 +79,5 @@ export default function PricingMarketingCard({ plan }: Props) {
         Get Started
       </Button>
     </Card>
-  );
+  )
 }

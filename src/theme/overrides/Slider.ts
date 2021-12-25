@@ -1,9 +1,9 @@
-import { Theme } from '@mui/material/styles';
+import { Theme } from '@mui/material/styles'
 
 // ----------------------------------------------------------------------
 
 export default function Slider(theme: Theme) {
-  const isLight = theme.palette.mode === 'light';
+  const isLight = theme.palette.mode === 'light'
 
   return {
     MuiSlider: {
@@ -27,5 +27,5 @@ export default function Slider(theme: Theme) {
         },
       },
     },
-  };
+  }
 }

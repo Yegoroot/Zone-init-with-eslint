@@ -1,20 +1,20 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // icons
-import viewIcon from '@iconify/icons-carbon/view';
-import locationIcon from '@iconify/icons-carbon/location';
-import baggageClaim from '@iconify/icons-carbon/baggage-claim';
+import viewIcon from '@iconify/icons-carbon/view'
+import locationIcon from '@iconify/icons-carbon/location'
+import baggageClaim from '@iconify/icons-carbon/baggage-claim'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Stack, Box, Link, Button, Container } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Stack, Box, Link, Button, Container } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // utils
-import { fDate } from '../../../utils/formatTime';
-import cssStyles from '../../../utils/cssStyles';
+import { fDate } from '../../../utils/formatTime'
+import cssStyles from '../../../utils/cssStyles'
 // @types
-import { JobProps } from '../../../@types/career';
+import { JobProps } from '../../../@types/career'
 // components
-import { FavoriteButton, Breadcrumbs, TextIconLabel, Iconify } from '../../../components';
+import { FavoriteButton, Breadcrumbs, TextIconLabel, Iconify } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   paddingTop: theme.spacing(5),
   paddingBottom: theme.spacing(10),
   ...cssStyles(theme).bgImage(),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -31,13 +31,13 @@ type Props = {
 };
 
 export default function CareerJobHero({ job }: Props) {
-  const { slug, category, views, location, deadline, favorited } = job;
+  const { slug, category, views, location, deadline, favorited } = job
 
-  const [favorite, setFavorite] = useState(favorited);
+  const [favorite, setFavorite] = useState(favorited)
 
   const handleChangeFavorite = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFavorite(event.target.checked);
-  };
+    setFavorite(event.target.checked)
+  }
 
   return (
     <RootStyle>
@@ -67,11 +67,11 @@ export default function CareerJobHero({ job }: Props) {
             <Stack spacing={3} direction={{ xs: 'column', md: 'row' }} sx={{ opacity: 0.48 }}>
               <TextIconLabel
                 icon={<Iconify icon={baggageClaim} sx={{ width: 20, height: 20, mr: 1 }} />}
-                value={
+                value={(
                   <Link color="inherit" underline="always">
                     {category}
                   </Link>
-                }
+                )}
               />
               <TextIconLabel
                 icon={<Iconify icon={viewIcon} sx={{ width: 20, height: 20, mr: 1 }} />}
@@ -95,7 +95,8 @@ export default function CareerJobHero({ job }: Props) {
                 Apply Now
               </Button>
               <Typography variant="body3" sx={{ color: 'common.white' }}>
-                Expiration date:{' '}
+                Expiration date:
+                {' '}
                 <Box component="span" sx={{ color: 'primary.main' }}>
                   {fDate(deadline)}
                 </Box>
@@ -113,5 +114,5 @@ export default function CareerJobHero({ job }: Props) {
         </Stack>
       </Container>
     </RootStyle>
-  );
+  )
 }

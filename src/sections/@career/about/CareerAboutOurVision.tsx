@@ -1,8 +1,8 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Grid, Container, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Grid, Container, Typography } from '@mui/material'
 // components
-import { Image } from '../../../components';
+import { Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -34,7 +34,7 @@ export default function CareerAboutOurVision() {
             <Image
               alt="about introduce"
               src="/static/images/career/career_about_introduce.jpg"
-              ratio='3/4'
+              ratio="3/4"
               sx={{ borderRadius: 2 }}
             />
           </Grid>
@@ -51,5 +51,5 @@ export default function CareerAboutOurVision() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

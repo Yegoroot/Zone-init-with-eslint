@@ -1,15 +1,15 @@
 // icons
-import chevronRight from '@iconify/icons-carbon/chevron-right';
-import closeOutline from '@iconify/icons-carbon/close-outline';
-import checkmarkOutline from '@iconify/icons-carbon/checkmark-outline';
+import chevronRight from '@iconify/icons-carbon/chevron-right'
+import closeOutline from '@iconify/icons-carbon/close-outline'
+import checkmarkOutline from '@iconify/icons-carbon/checkmark-outline'
 // @mui
-import { Card, Link, Stack, Button, Divider, Typography } from '@mui/material';
+import { Card, Link, Stack, Button, Divider, Typography } from '@mui/material'
 // @types
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // @types
-import { PricingHomeProps } from '../../../@types/pricing';
+import { PricingHomeProps } from '../../../@types/pricing'
 // components
-import { Iconify, TextIconLabel, Image } from '../../../components';
+import { Iconify, TextIconLabel, Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -18,9 +18,9 @@ type Props = {
 };
 
 export default function PricingHomeCard({ plan }: Props) {
-  const { license, commons, options, icons, price } = plan;
+  const { license, commons, options, icons, price } = plan
 
-  const plusLicense = license === 'Plus';
+  const plusLicense = license === 'Plus'
 
   return (
     <Card
@@ -71,7 +71,7 @@ export default function PricingHomeCard({ plan }: Props) {
           {options.map((option) => (
             <TextIconLabel
               key={option.title}
-              icon={
+              icon={(
                 <Iconify
                   icon={option.disabled ? closeOutline : checkmarkOutline}
                   sx={{
@@ -82,7 +82,7 @@ export default function PricingHomeCard({ plan }: Props) {
                     ...(option.disabled && { color: 'currentColor' }),
                   }}
                 />
-              }
+              )}
               value={option.title}
               sx={{
                 ...(option.disabled && { color: 'text.disabled' }),
@@ -119,5 +119,5 @@ export default function PricingHomeCard({ plan }: Props) {
         </Stack>
       </Stack>
     </Card>
-  );
+  )
 }

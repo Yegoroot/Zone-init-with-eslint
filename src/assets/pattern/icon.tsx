@@ -1,8 +1,8 @@
-import { memo, ReactElement } from 'react';
+import { memo, ReactElement } from 'react'
 // @mui
-import { SxProps } from '@mui/system';
-import { alpha, styled } from '@mui/material/styles';
-import { Box, BoxProps } from '@mui/material';
+import { SxProps } from '@mui/system'
+import { alpha, styled } from '@mui/material/styles'
+import { Box, BoxProps } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ const RootStyle = styled(Box)(({ theme }) => ({
   padding: theme.spacing(1.5),
   // boxShadow: `0px 24px 56px rgba(0, 0, 0, 0.24)`,
   borderRadius: Number(theme.shape.borderRadius) * 2.5,
-}));
+}))
 
 const ContentStyle = styled('div')(({ theme }) => ({
   width: 56,
@@ -23,9 +23,9 @@ const ContentStyle = styled('div')(({ theme }) => ({
   justifyContent: 'center',
   clipPath: 'polygon(25% 0, 100% 0, 100% 100%, 0 100%, 0 25%)',
   // boxShadow: `0px 24px 48px rgba(0, 0, 0, 0.24), inset 0px -4px 6px rgba(0, 0, 0, 0.48)`,
-  boxShadow: `inset 0px -4px 6px rgba(0, 0, 0, 0.48)`,
+  boxShadow: 'inset 0px -4px 6px rgba(0, 0, 0, 0.48)',
   // filter: 'drop-shadow(8px 8px 10px gray)',
-}));
+}))
 
 const Shape01Style = styled('div')(() => ({
   top: -2,
@@ -45,7 +45,7 @@ const Shape01Style = styled('div')(() => ({
     position: 'absolute',
     backgroundColor: 'rgba(255,255,255,0.4)',
   },
-}));
+}))
 
 const Shape02Style = styled('div')(({ theme }) => ({
   top: 2,
@@ -57,7 +57,7 @@ const Shape02Style = styled('div')(({ theme }) => ({
   position: 'absolute',
   transform: 'rotate(45deg)',
   backgroundColor: theme.palette.common.black,
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -93,7 +93,7 @@ function Icon({ content, color, sx, ...other }: Props) {
         </ContentStyle>
       </Box>
     </RootStyle>
-  );
+  )
 }
 
-export default memo(Icon);
+export default memo(Icon)

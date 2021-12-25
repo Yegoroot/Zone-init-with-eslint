@@ -1,10 +1,10 @@
-import { m } from 'framer-motion';
-import { useState } from 'react';
+import { m } from 'framer-motion'
+import { useState } from 'react'
 // icons
-import addIcon from '@iconify/icons-carbon/add';
-import subtractIcon from '@iconify/icons-carbon/subtract';
+import addIcon from '@iconify/icons-carbon/add'
+import subtractIcon from '@iconify/icons-carbon/subtract'
 // @mui
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import {
   Box,
   Grid,
@@ -14,25 +14,25 @@ import {
   Typography,
   AccordionDetails,
   AccordionSummary,
-} from '@mui/material';
-import { Pattern01 } from '../../assets';
+} from '@mui/material'
+import { Pattern01 } from '../../assets'
 // components
-import { Iconify } from '../../components';
-import { MotionViewport, varFade } from '../../components/animate';
+import { Iconify } from '../../components'
+import { MotionViewport, varFade } from '../../components/animate'
 
 // ----------------------------------------------------------------------
 
 const CONTENTS = [
   {
-    question: `What's in the product packages?`,
-    answer: `Curabitur nisi. Phasellus blandit leo ut odio. Donec posuere vulputate arcu. Donec mi odio, faucibus at, scelerisque quis, convallis in,`,
+    question: 'What\'s in the product packages?',
+    answer: 'Curabitur nisi. Phasellus blandit leo ut odio. Donec posuere vulputate arcu. Donec mi odio, faucibus at, scelerisque quis, convallis in,',
   },
   { question: 'How can I upgrade my product plan?', answer: 'title' },
   { question: 'Are design assets (Figma, Sketch, Adobe XD) included?', answer: 'title' },
   { question: 'Does this product support TypeScript?', answer: 'title' },
   { question: 'Can I use this template in commercial projects like a SaaS?', answer: 'title' },
   { question: 'How can I request support?', answer: 'title' },
-];
+]
 
 // ----------------------------------------------------------------------
 
@@ -42,15 +42,14 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 export default function HomeFAQs() {
-  const [expanded, setExpanded] = useState<string | false>(false);
+  const [expanded, setExpanded] = useState<string | false>(false)
 
-  const handleChangeExpanded =
-    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-      setExpanded(isExpanded ? panel : false);
-    };
+  const handleChangeExpanded = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+    setExpanded(isExpanded ? panel : false)
+  }
 
   return (
     <RootStyle>
@@ -139,5 +138,5 @@ export default function HomeFAQs() {
         }}
       />
     </RootStyle>
-  );
+  )
 }

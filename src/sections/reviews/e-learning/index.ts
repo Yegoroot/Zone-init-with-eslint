@@ -1,2 +1,2 @@
-export { default as ReviewElearningToolbar } from './ReviewElearningToolbar';
-export { default as ReviewElearningCourseList } from './ReviewElearningCourseList';
+export { default as ReviewElearningToolbar } from './ReviewElearningToolbar'
+export { default as ReviewElearningCourseList } from './ReviewElearningCourseList'

@@ -41,7 +41,7 @@ export const fullName = [
   'Jace Bush',
   'Janiya Williamson',
   'Hudson Alvarez',
-];
+]
 
 export const firstName = [
   'Mossie',
@@ -84,7 +84,7 @@ export const firstName = [
   'Adeline',
   'Haley',
   'Anabelle',
-];
+]
 
 export const lastName = [
   'Carroll',
@@ -127,4 +127,4 @@ export const lastName = [
   'Leffler',
   'Gutkowski',
   'Homenick',
-];
+]

@@ -1,11 +1,11 @@
-import Slider from 'react-slick';
+import Slider from 'react-slick'
 // @mui
-import { useTheme } from '@mui/material/styles';
-import { Container } from '@mui/material';
+import { useTheme } from '@mui/material/styles'
+import { Container } from '@mui/material'
 // @types
-import { BrandProps } from '../../../@types/brand';
+import { BrandProps } from '../../../@types/brand'
 // components
-import { SvgIconStyle } from '../../../components';
+import { SvgIconStyle } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ type Props = {
 };
 
 export default function OurClientsMarketingLanding({ brands }: Props) {
-  const theme = useTheme();
+  const theme = useTheme()
 
   const carouselSettings = {
     arrows: false,
@@ -35,7 +35,7 @@ export default function OurClientsMarketingLanding({ brands }: Props) {
         settings: { slidesToShow: 2 },
       },
     ],
-  };
+  }
 
   return (
     <Container>
@@ -49,5 +49,5 @@ export default function OurClientsMarketingLanding({ brands }: Props) {
         ))}
       </Slider>
     </Container>
-  );
+  )
 }

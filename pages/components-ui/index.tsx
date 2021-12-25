@@ -1,22 +1,22 @@
-import { ReactElement } from 'react';
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { ReactElement } from 'react'
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 // icons
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Container, Typography, Stack, Box, Link, Paper } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Container, Typography, Stack, Box, Link, Paper } from '@mui/material'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../src/config'
 // utils
-import { getAllComponents } from '../../src/utils/get-mardown/components-ui';
+import { getAllComponents } from '../../src/utils/get-mardown/components-ui'
 // routes
-import Routes from '../../src/routes';
+import Routes from '../../src/routes'
 // layouts
-import Layout from '../../src/layouts';
+import Layout from '../../src/layouts'
 // components
-import { Page, Iconify, TextIconLabel } from '../../src/components';
+import { Page, Iconify, TextIconLabel } from '../../src/components'
 
 // ----------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     paddingTop: HEADER_DESKTOP_HEIGHT * 1.5,
     paddingBottom: theme.spacing(15),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -68,9 +68,11 @@ export default function ComponentsUIPage({ components }: Props) {
                 The
                 <Box component="span" sx={{ color: 'text.disabled', fontWeight: 'fontWeightBold' }}>
                   {' '}
-                  ZONE{' '}
+                  ZONE
+                  {' '}
                 </Box>
-                UI is built on components from{' '}
+                UI is built on components from
+                {' '}
                 <Link underline="always" href={Routes.muiComponents} target="_blank" rel="noopener">
                   {' '}
                   MUI
@@ -119,7 +121,7 @@ export default function ComponentsUIPage({ components }: Props) {
         </Container>
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -134,7 +136,7 @@ function BoxItem({ component }: BoxItemProps) {
       <Link color="inherit">
         <Paper variant="outlined" sx={{ px: 3, py: 4, borderRadius: 1.5 }}>
           <TextIconLabel
-            icon={
+            icon={(
               <Box
                 sx={{
                   mr: 2,
@@ -145,21 +147,21 @@ function BoxItem({ component }: BoxItemProps) {
                   bgcolor: 'primary.main',
                 }}
               />
-            }
+            )}
             value={component.frontmatter.title}
             sx={{ typography: 'h6', textTransform: 'capitalize' }}
           />
         </Paper>
       </Link>
     </NextLink>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 ComponentsUIPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}
 
 // ----------------------------------------------------------------------
 
@@ -168,5 +170,5 @@ export async function getStaticProps() {
     props: {
       components: getAllComponents(),
     },
-  };
+  }
 }

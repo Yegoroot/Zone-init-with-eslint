@@ -1,25 +1,25 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // icons
-import searchIcon from '@iconify/icons-carbon/search';
-import filterIcon from '@iconify/icons-carbon/filter';
+import searchIcon from '@iconify/icons-carbon/search'
+import filterIcon from '@iconify/icons-carbon/filter'
 // @mui
-import { Stack, Button, Drawer, Box } from '@mui/material';
-import { SelectChangeEvent } from '@mui/material/Select';
+import { Stack, Button, Drawer, Box } from '@mui/material'
+import { SelectChangeEvent } from '@mui/material/Select'
 // config
-import { DRAWER_WIDTH } from '../../../config';
+import { DRAWER_WIDTH } from '../../../config'
 // @type
-import { CountriesProps } from '../../../@types/map';
-import { JobFiltersProps } from '../../../@types/career';
+import { CountriesProps } from '../../../@types/map'
+import { JobFiltersProps } from '../../../@types/career'
 // components
-import { Iconify } from '../../../components';
+import { Iconify } from '../../../components'
 //
-import CareerJobTypeFilter from './CareerJobTypeFilter';
-import CareerJobLevelFilter from './CareerJobLevelFilter';
-import CareerJobSalaryFilter from './CareerJobSalaryFilter';
-import CareerJobKeywordFilter from './CareerJobKeywordFilter';
-import CareerJobBenefitsFilter from './CareerJobBenefitsFilter';
-import CareerJobLocationsFilter from './CareerJobLocationsFilter';
-import CareerJobCategoriesFilter from './CareerJobCategoriesFilter';
+import CareerJobTypeFilter from './CareerJobTypeFilter'
+import CareerJobLevelFilter from './CareerJobLevelFilter'
+import CareerJobSalaryFilter from './CareerJobSalaryFilter'
+import CareerJobKeywordFilter from './CareerJobKeywordFilter'
+import CareerJobBenefitsFilter from './CareerJobBenefitsFilter'
+import CareerJobLocationsFilter from './CareerJobLocationsFilter'
+import CareerJobCategoriesFilter from './CareerJobCategoriesFilter'
 
 // ----------------------------------------------------------------------
 
@@ -31,88 +31,88 @@ const defaultValues = {
   filterLevel: [],
   filterBenefits: [],
   filterSalary: [0, 20000],
-};
+}
 
 export default function CareerJobBarFilters() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false)
 
-  const [filters, setFilters] = useState<JobFiltersProps>(defaultValues);
+  const [filters, setFilters] = useState<JobFiltersProps>(defaultValues)
 
   const handleMobileOpen = () => {
-    setMobileOpen(true);
-  };
+    setMobileOpen(true)
+  }
 
   const handleMobileClose = () => {
-    setMobileOpen(false);
-  };
+    setMobileOpen(false)
+  }
 
   const handleChangeKeyword = (keyword: string | null) => {
     setFilters({
       ...filters,
       filterKeyword: keyword,
-    });
-  };
+    })
+  }
 
   const handleChangeCategory = (keyword: string | null) => {
     setFilters({
       ...filters,
       filterCategories: keyword,
-    });
-  };
+    })
+  }
 
   const handleChangeLocation = (keyword: CountriesProps | null) => {
     setFilters({
       ...filters,
       filterLocation: keyword,
-    });
-  };
+    })
+  }
 
   const handleChangeJobType = (event: SelectChangeEvent<typeof filters.filterType>) => {
     const {
       target: { value },
-    } = event;
+    } = event
     setFilters({
       ...filters,
       filterType: typeof value === 'string' ? value.split(',') : value,
-    });
-  };
+    })
+  }
 
   const handleChangeJobLevel = (event: SelectChangeEvent<typeof filters.filterLevel>) => {
     const {
       target: { value },
-    } = event;
+    } = event
     setFilters({
       ...filters,
       filterLevel: typeof value === 'string' ? value.split(',') : value,
-    });
-  };
+    })
+  }
 
   const handleChangeJobBenefits = (event: SelectChangeEvent<typeof filters.filterBenefits>) => {
     const {
       target: { value },
-    } = event;
+    } = event
     setFilters({
       ...filters,
       filterBenefits: typeof value === 'string' ? value.split(',') : value,
-    });
-  };
+    })
+  }
 
   const handleChangeSalary = (event: Event, newValue: number | number[]) => {
     setFilters({
       ...filters,
       filterSalary: newValue as number[],
-    });
-  };
+    })
+  }
 
   const onReset = () => {
-    setFilters(defaultValues);
-  };
+    setFilters(defaultValues)
+  }
 
   const onSubmit = async () => {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    alert(JSON.stringify(filters, null, 2));
-    onReset();
-  };
+    await new Promise((resolve) => setTimeout(resolve, 500))
+    alert(JSON.stringify(filters, null, 2))
+    onReset()
+  }
 
   const renderFilters = (
     <>
@@ -174,7 +174,7 @@ export default function CareerJobBarFilters() {
         Search
       </Button>
     </>
-  );
+  )
 
   return (
     <>
@@ -225,5 +225,5 @@ export default function CareerJobBarFilters() {
         {renderFilters}
       </Drawer>
     </>
-  );
+  )
 }

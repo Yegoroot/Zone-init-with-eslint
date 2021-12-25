@@ -1,14 +1,13 @@
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Link, Stack, Divider, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Link, Stack, Divider, Typography } from '@mui/material'
 // routes
-import Routes from '../../src/routes';
+import Routes from '../../src/routes'
 // components
-import { Page } from '../../src/components';
-import { Logo } from '../../src/components';
-import { AuthWithSocial, AuthCarousel, RegisterForm } from '../../src/sections/auth';
+import { Page, Logo } from '../../src/components'
+import { AuthWithSocial, AuthCarousel, RegisterForm } from '../../src/sections/auth'
 
 // ----------------------------------------------------------------------
 
@@ -18,7 +17,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     overflow: 'hidden',
     height: '100vh',
   },
-}));
+}))
 
 const ContentStyle = styled('div')(({ theme }) => ({
   width: '100%',
@@ -27,7 +26,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
     maxWidth: 480,
     padding: theme.spacing(8, 10),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -52,7 +51,7 @@ export default function RegisterCoverPage() {
               Already have an account?
               <NextLink href={Routes.loginCover}>
                 <Link variant="subtitle2" color="primary">
-                  {''} Login
+                  Login
                 </Link>
               </NextLink>
             </Typography>
@@ -69,8 +68,8 @@ export default function RegisterCoverPage() {
           <RegisterForm />
         </ContentStyle>
 
-        <AuthCarousel title={`Manage The Job \n More Effectively`} />
+        <AuthCarousel title={'Manage The Job \n More Effectively'} />
       </RootStyle>
     </Page>
-  );
+  )
 }

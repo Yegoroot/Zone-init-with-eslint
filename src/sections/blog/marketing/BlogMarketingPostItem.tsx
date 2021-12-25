@@ -1,18 +1,18 @@
-import { m } from 'framer-motion';
+import { m } from 'framer-motion'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Stack, Avatar } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Stack, Avatar } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // utils
-import { fDate } from '../../../utils/formatTime';
+import { fDate } from '../../../utils/formatTime'
 // @types
-import { BlogPostProps } from '../../../@types/blog';
+import { BlogPostProps } from '../../../@types/blog'
 // components
-import { Image, BgOverlay, TextMaxLine } from '../../../components';
-import { varHover, varTranHover } from '../../../components/animate';
+import { Image, BgOverlay, TextMaxLine } from '../../../components'
+import { varHover, varTranHover } from '../../../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ const DotStyle = styled('span')(({ theme }) => ({
   borderRadius: '50%',
   backgroundColor: 'currentColor',
   margin: theme.spacing(0, 1),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -31,8 +31,8 @@ type Props = {
 };
 
 export default function BlogMarketingPostItem({ post }: Props) {
-  const { slug, frontmatter } = post;
-  const { title, duration, coverImg, author, createdAt } = frontmatter;
+  const { slug, frontmatter } = post
+  const { title, duration, coverImg, author, createdAt } = frontmatter
 
   return (
     <Stack
@@ -82,5 +82,5 @@ export default function BlogMarketingPostItem({ post }: Props) {
 
       <BgOverlay direction="top" />
     </Stack>
-  );
+  )
 }

@@ -1,15 +1,15 @@
-import * as Yup from 'yup';
-import { useForm, Controller } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
-import { useState } from 'react';
+import * as Yup from 'yup'
+import { useForm, Controller } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
+import { useState } from 'react'
 // icons
-import viewIcon from '@iconify/icons-carbon/view';
-import viewOff from '@iconify/icons-carbon/view-off';
+import viewIcon from '@iconify/icons-carbon/view'
+import viewOff from '@iconify/icons-carbon/view-off'
 // @mui
-import { LoadingButton } from '@mui/lab';
-import { Typography, Stack, Link, TextField, IconButton, InputAdornment } from '@mui/material';
+import { LoadingButton } from '@mui/lab'
+import { Typography, Stack, Link, TextField, IconButton, InputAdornment } from '@mui/material'
 // components
-import { Iconify } from '../../components';
+import { Iconify } from '../../components'
 
 // ----------------------------------------------------------------------
 
@@ -25,7 +25,7 @@ const FormSchema = Yup.object().shape({
   confirmPassword: Yup.string()
     .required('Confirm password is required')
     .oneOf([Yup.ref('password')], "Password's not match"),
-});
+})
 
 type FormValuesProps = {
   fullName: string;
@@ -35,7 +35,7 @@ type FormValuesProps = {
 };
 
 export default function RegisterForm() {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false)
 
   const {
     reset,
@@ -51,17 +51,17 @@ export default function RegisterForm() {
       password: '',
       confirmPassword: '',
     },
-  });
+  })
 
   const handleShowPassword = () => {
-    setShowPassword(!showPassword);
-  };
+    setShowPassword(!showPassword)
+  }
 
   const onSubmit = async (data: FormValuesProps) => {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    alert(JSON.stringify(data, null, 2));
-    reset();
-  };
+    await new Promise((resolve) => setTimeout(resolve, 500))
+    alert(JSON.stringify(data, null, 2))
+    reset()
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -153,14 +153,16 @@ export default function RegisterForm() {
         <Typography variant="caption" align="center" sx={{ color: 'text.secondary', mt: 3 }}>
           I agree to
           <Link color="text.primary" href="#">
-            {''} Terms of Service {''}
+            Terms of Service
+            {' '}
+
           </Link>
           and
           <Link color="text.primary" href="#">
-            {''} Privacy Policy.
+            Privacy Policy.
           </Link>
         </Typography>
       </Stack>
     </form>
-  );
+  )
 }

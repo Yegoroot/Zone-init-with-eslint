@@ -1,6 +1,6 @@
 // @mui
-import { alpha, styled } from '@mui/material/styles';
-import { Stack, Button, Box, Typography, ButtonProps, StackProps } from '@mui/material';
+import { alpha, styled } from '@mui/material/styles'
+import { Stack, Button, Box, Typography, ButtonProps, StackProps } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ const ButtonStyle = styled((props: ButtonProps) => <Button color="inherit" {...p
       marginLeft: 0,
     },
   })
-);
+)
 
 // ----------------------------------------------------------------------
 
@@ -23,13 +23,13 @@ export default function AppStoreButton({ ...other }: StackProps) {
   return (
     <Stack direction="row" spacing={2} {...other}>
       <ButtonStyle
-        startIcon={
+        startIcon={(
           <Box
             component="img"
             src="/static/icons/app-store/ic_app_store.svg"
             sx={{ width: 28, height: 28 }}
           />
-        }
+        )}
       >
         <Stack alignItems="flex-start">
           <Typography variant="caption" sx={{ opacity: 0.72 }}>
@@ -43,13 +43,13 @@ export default function AppStoreButton({ ...other }: StackProps) {
 
       <ButtonStyle
         color="inherit"
-        startIcon={
+        startIcon={(
           <Box
             component="img"
             src="/static/icons/app-store/ic_google_play.svg"
             sx={{ width: 28, height: 28 }}
           />
-        }
+        )}
       >
         <Stack alignItems="flex-start">
           <Typography variant="caption" sx={{ opacity: 0.72 }}>
@@ -61,5 +61,5 @@ export default function AppStoreButton({ ...other }: StackProps) {
         </Stack>
       </ButtonStyle>
     </Stack>
-  );
+  )
 }

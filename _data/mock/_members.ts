@@ -1,4 +1,4 @@
-import _mock from './_mock';
+import _mock from './_mock'
 
 // ----------------------------------------------------------------------
 
@@ -13,4 +13,4 @@ export const _members = [...Array(8)].map((_, index) => ({
     linkedin: `linkedin/${_mock.name.fullName(index)}`,
     twitter: `twitter/${_mock.name.fullName(index)}`,
   },
-}));
+}))

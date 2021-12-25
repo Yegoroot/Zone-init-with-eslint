@@ -1,12 +1,12 @@
-import * as React from 'react';
+import * as React from 'react'
 // next
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 // emotion
-import createEmotionServer from '@emotion/server/create-instance';
+import createEmotionServer from '@emotion/server/create-instance'
 // utils
-import createEmotionCache from '../src/utils/createEmotionCache';
+import createEmotionCache from '../src/utils/createEmotionCache'
 // theme
-import palette from '../src/theme/palette';
+import palette from '../src/theme/palette'
 
 // ----------------------------------------------------------------------
 
@@ -48,26 +48,26 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
 
 // ----------------------------------------------------------------------
 
 MyDocument.getInitialProps = async (ctx) => {
-  const originalRenderPage = ctx.renderPage;
+  const originalRenderPage = ctx.renderPage
 
-  const cache = createEmotionCache();
-  const { extractCriticalToChunks } = createEmotionServer(cache);
+  const cache = createEmotionCache()
+  const { extractCriticalToChunks } = createEmotionServer(cache)
 
-  ctx.renderPage = () =>
-    originalRenderPage({
-      enhanceApp: (App: any) => (props) => <App emotionCache={cache} {...props} />,
-    });
+  ctx.renderPage = () => originalRenderPage({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    enhanceApp: (App: any) => (props) => <App emotionCache={cache} {...props} />,
+  })
 
-  const initialProps = await Document.getInitialProps(ctx);
+  const initialProps = await Document.getInitialProps(ctx)
 
-  const emotionStyles = extractCriticalToChunks(initialProps.html);
+  const emotionStyles = extractCriticalToChunks(initialProps.html)
   const emotionStyleTags = emotionStyles.styles.map((style) => (
     <style
       data-emotion={`${style.key} ${style.ids.join(' ')}`}
@@ -75,10 +75,10 @@ MyDocument.getInitialProps = async (ctx) => {
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: style.css }}
     />
-  ));
+  ))
 
   return {
     ...initialProps,
     styles: [...React.Children.toArray(initialProps.styles), ...emotionStyleTags],
-  };
-};
+  }
+}

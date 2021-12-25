@@ -1,11 +1,11 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 // next
-import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic'
 //
-const Header = dynamic(() => import('./header/Header'), { ssr: false });
-const HeaderSimple = dynamic(() => import('./header/HeaderSimple'), { ssr: false });
-const Footer = dynamic(() => import('./footer/Footer'), { ssr: false });
-const FooterSimple = dynamic(() => import('./footer/FooterSimple'), { ssr: false });
+const Header = dynamic(() => import('./header/Header'), { ssr: false })
+const HeaderSimple = dynamic(() => import('./header/HeaderSimple'), { ssr: false })
+const Footer = dynamic(() => import('./footer/Footer'), { ssr: false })
+const FooterSimple = dynamic(() => import('./footer/FooterSimple'), { ssr: false })
 
 // ----------------------------------------------------------------------
 
@@ -42,5 +42,5 @@ export default function Layout({
 
       {disabledFooter ? null : <>{simpleFooter ? <FooterSimple /> : <Footer />}</>}
     </>
-  );
+  )
 }

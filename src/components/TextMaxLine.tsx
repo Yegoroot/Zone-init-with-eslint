@@ -1,11 +1,10 @@
-import { forwardRef } from 'react';
-import { ReactNode } from 'react';
+import { forwardRef, ReactNode } from 'react'
 // @mui
-import { Typography, TypographyProps, LinkProps, Link } from '@mui/material';
+import { Typography, TypographyProps, LinkProps, Link } from '@mui/material'
 // utils
-import GetFontValue from '../utils/getFontValue';
+import GetFontValue from '../utils/getFontValue'
 // theme
-import { TypographyVariant } from '../theme/typography';
+import { TypographyVariant } from '../theme/typography'
 
 // ----------------------------------------------------------------------
 
@@ -20,8 +19,9 @@ interface Props extends IProps {
 }
 
 const TextMaxLine = forwardRef<HTMLAnchorElement, Props>(
+  // eslint-disable-next-line react/prop-types
   ({ asLink, variant = 'body1', line = 2, persistent = false, children, sx, ...other }, ref) => {
-    const { lineHeight } = GetFontValue(variant);
+    const { lineHeight } = GetFontValue(variant)
 
     const style = {
       overflow: 'hidden',
@@ -33,22 +33,22 @@ const TextMaxLine = forwardRef<HTMLAnchorElement, Props>(
         height: lineHeight * line,
       }),
       ...sx,
-    } as const;
+    } as const
 
     if (asLink) {
       return (
         <Link color="inherit" ref={ref} variant={variant} sx={{ ...style }} {...other}>
           {children}
         </Link>
-      );
+      )
     }
 
     return (
       <Typography ref={ref} variant={variant} sx={{ ...style }} {...other}>
         {children}
       </Typography>
-    );
+    )
   }
-);
+)
 
-export default TextMaxLine;
+export default TextMaxLine

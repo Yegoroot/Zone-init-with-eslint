@@ -1,10 +1,10 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Container, Stack, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Container, Stack, Box } from '@mui/material'
 // utils
-import { fShortenNumber } from '../../../utils/formatNumber';
+import { fShortenNumber } from '../../../utils/formatNumber'
 // components
-import { CountUpNumber, Image } from '../../../components';
+import { CountUpNumber, Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -29,7 +29,7 @@ const SUMMARY = [
     description: 'Verified hotels',
     icon: '/static/icons/travel/ic_travel_verified_hotels.svg',
   },
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   textAlign: 'center',
@@ -37,7 +37,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -83,11 +83,15 @@ export default function TravelLandingSummary() {
                   formattingFn={(value: number) => fShortenNumber(value)}
                 />
               </Typography>
-              <Typography sx={{ color: 'text.secondary' }}> {value.description} </Typography>
+              <Typography sx={{ color: 'text.secondary' }}>
+                {' '}
+                {value.description}
+                {' '}
+              </Typography>
             </div>
           ))}
         </Box>
       </Container>
     </RootStyle>
-  );
+  )
 }

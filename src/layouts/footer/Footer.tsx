@@ -1,12 +1,12 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useState } from 'react'
 // icons
-import chevronDown from '@iconify/icons-carbon/chevron-down';
-import chevronRight from '@iconify/icons-carbon/chevron-right';
+import chevronDown from '@iconify/icons-carbon/chevron-down'
+import chevronRight from '@iconify/icons-carbon/chevron-right'
 // next
-import NextLink, { LinkProps } from 'next/link';
+import NextLink, { LinkProps } from 'next/link'
 // @mui
-import { SxProps } from '@mui/system';
-import Masonry from '@mui/lab/Masonry';
+import { SxProps } from '@mui/system'
+import Masonry from '@mui/lab/Masonry'
 import {
   Box,
   Grid,
@@ -19,24 +19,24 @@ import {
   Typography,
   FilledInput,
   InputAdornment,
-} from '@mui/material';
+} from '@mui/material'
 // hooks
-import { useResponsive } from '../../hooks';
+import { useResponsive } from '../../hooks'
 // components
-import { Logo, Iconify, SocialsButton, AppStoreButton } from '../../components';
+import { Logo, Iconify, SocialsButton, AppStoreButton } from '../../components'
 //
-import { PageLinks } from '../nav/NavConfig';
+import { PageLinks } from '../nav/NavConfig'
 
 // ----------------------------------------------------------------------
 
 export default function Footer() {
-  const isDesktop = useResponsive('up', 'md');
+  const isDesktop = useResponsive('up', 'md')
 
-  const lists = PageLinks.filter((list) => list.subheader !== 'Coming Soon');
+  const lists = PageLinks.filter((list) => list.subheader !== 'Coming Soon')
 
   const renderLists = isDesktop
     ? lists
-    : lists.sort((listA, listB) => Number(listA.order) - Number(listB.order));
+    : lists.sort((listA, listB) => Number(listA.order) - Number(listB.order))
 
   return (
     <>
@@ -74,13 +74,13 @@ export default function Footer() {
                 </Stack>
                 <FilledInput
                   placeholder="Email address"
-                  endAdornment={
+                  endAdornment={(
                     <InputAdornment position="end">
                       <Button variant="contained" size="small" sx={{ py: '9px' }}>
                         Subscribe
                       </Button>
                     </InputAdornment>
-                  }
+                  )}
                   sx={{
                     pr: 0.5,
                     '& .MuiFilledInput-input': { py: '14px' },
@@ -136,7 +136,7 @@ export default function Footer() {
         </Stack>
       </Container>
     </>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -163,7 +163,7 @@ function NextLinkItem({ children, sx, ...other }: NextLinkItemProps) {
         {children}
       </Link>
     </NextLink>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -179,7 +179,7 @@ type ListProps = {
 };
 
 function ListDesktop({ list }: ListProps) {
-  const { subheader, items } = list;
+  const { subheader, items } = list
 
   return (
     <Stack alignItems="flex-start" sx={{ pb: { md: 1 } }}>
@@ -190,18 +190,18 @@ function ListDesktop({ list }: ListProps) {
         </NextLinkItem>
       ))}
     </Stack>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 function ListMobile({ list }: ListProps) {
-  const { subheader, items } = list;
-  const [expand, setExpand] = useState(false);
+  const { subheader, items } = list
+  const [expand, setExpand] = useState(false)
 
   const onExpand = () => {
-    setExpand(!expand);
-  };
+    setExpand(!expand)
+  }
 
   return (
     <Stack spacing={1.5} alignItems="flex-start">
@@ -237,5 +237,5 @@ function ListMobile({ list }: ListProps) {
         </Box>
       </Collapse>
     </Stack>
-  );
+  )
 }

@@ -1,7 +1,7 @@
-import { ReactNode, memo } from 'react';
+import { ReactNode, memo } from 'react'
 // @mui
-import { SxProps } from '@mui/system';
-import { Box, BoxProps } from '@mui/material';
+import { SxProps } from '@mui/system'
+import { Box, BoxProps } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ function Circle({ children, hide = false, sx, ...other }: Props) {
 
       {children}
     </Box>
-  );
+  )
 }
 
-export default memo(Circle);
+export default memo(Circle)

@@ -1,22 +1,22 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // @mui
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../src/config'
 // utils
-import { getAllPosts } from '../../src/utils/get-mardown/marketing/posts';
+import { getAllPosts } from '../../src/utils/get-mardown/marketing/posts'
 // @types
-import { BlogPostProps } from '../../src/@types/blog';
+import { BlogPostProps } from '../../src/@types/blog'
 // _data
-import { _testimonials } from '../../_data/mock';
+import { _testimonials } from '../../_data/mock'
 // layouts
-import Layout from '../../src/layouts';
+import Layout from '../../src/layouts'
 // components
-import { Page } from '../../src/components';
+import { Page } from '../../src/components'
 // sections
-import { NewsletterMarketing } from '../../src/sections/newsletter';
-import { TestimonialsMarketing } from '../../src/sections/testimonials';
-import { BlogMarketingLatestPosts } from '../../src/sections/blog';
+import { NewsletterMarketing } from '../../src/sections/newsletter'
+import { TestimonialsMarketing } from '../../src/sections/testimonials'
+import { BlogMarketingLatestPosts } from '../../src/sections/blog'
 import {
   MarketingFreeSEO,
   MarketingServices,
@@ -24,7 +24,7 @@ import {
   MarketingServicesInclude,
   MarketingServicesHowItWork,
   MarketingServicesBenefits,
-} from '../../src/sections/@marketing';
+} from '../../src/sections/@marketing'
 
 // ----------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -64,14 +64,14 @@ export default function MarketingServicesPage({ posts }: Props) {
         <NewsletterMarketing />
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 MarketingServicesPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}
 
 // ----------------------------------------------------------------------
 
@@ -80,5 +80,5 @@ export async function getStaticProps() {
     props: {
       posts: getAllPosts(),
     },
-  };
+  }
 }

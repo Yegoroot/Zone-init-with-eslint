@@ -1,11 +1,11 @@
 // @mui
-import { Pagination, Box } from '@mui/material';
+import { Pagination, Box } from '@mui/material'
 // @types
-import { TourProps } from '../../../@types/travel';
+import { TourProps } from '../../../@types/travel'
 // components
-import { TourItemSkeleton } from '../../../components/skeleton';
+import { TourItemSkeleton } from '../../../components/skeleton'
 //
-import TravelTourItem from './TravelTourItem';
+import TravelTourItem from './TravelTourItem'
 
 // ----------------------------------------------------------------------
 
@@ -29,9 +29,7 @@ export default function TravelTourList({ tours, loading }: Props) {
           },
         }}
       >
-        {(loading ? [...Array(8)] : tours).map((tour, index) =>
-          tour ? <TravelTourItem key={tour.id} tour={tour} /> : <TourItemSkeleton key={index} />
-        )}
+        {(loading ? [...Array(8)] : tours).map((tour, index) => (tour ? <TravelTourItem key={tour.id} tour={tour} /> : <TourItemSkeleton key={index} />))}
       </Box>
 
       <Pagination
@@ -47,5 +45,5 @@ export default function TravelTourList({ tours, loading }: Props) {
         }}
       />
     </>
-  );
+  )
 }

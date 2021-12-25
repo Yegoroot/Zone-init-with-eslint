@@ -1,8 +1,8 @@
-import { Controller, Control, FieldPath } from 'react-hook-form';
+import { Controller, Control, FieldPath } from 'react-hook-form'
 // @mui
-import { Stack, Switch, Collapse, TextField, Typography, FormControlLabel } from '@mui/material';
+import { Stack, Switch, Collapse, TextField, Typography, FormControlLabel } from '@mui/material'
 // @types
-import { CheckoutFormValuesProps } from '../../../@types/travel';
+import { CheckoutFormValuesProps } from '../../../@types/travel'
 
 // ----------------------------------------------------------------------
 
@@ -67,7 +67,7 @@ export default function TravelCheckOutShippingForm({
         </Collapse>
       </section>
     </Stack>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -94,5 +94,5 @@ function Field({ control, name, label, ...other }: FieldProps) {
       )}
       {...other}
     />
-  );
+  )
 }

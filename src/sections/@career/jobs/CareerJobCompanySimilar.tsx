@@ -1,13 +1,13 @@
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { Stack, Typography, Link, Paper } from '@mui/material';
+import { Stack, Typography, Link, Paper } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // utils
-import { fDate } from '../../../utils/formatTime';
+import { fDate } from '../../../utils/formatTime'
 // @types
-import { JobProps } from '../../../@types/career';
+import { JobProps } from '../../../@types/career'
 
 // ----------------------------------------------------------------------
 
@@ -45,5 +45,5 @@ export default function CareerJobCompanySimilar({ jobs }: Props) {
         </Stack>
       ))}
     </Paper>
-  );
+  )
 }

@@ -1,12 +1,12 @@
 // icons
-import { IconifyIcon } from '@iconify/react';
-import caretRight from '@iconify/icons-carbon/caret-right';
+import { IconifyIcon } from '@iconify/react'
+import caretRight from '@iconify/icons-carbon/caret-right'
 // @mui
-import { alpha, useTheme, styled } from '@mui/material/styles';
-import { Typography, Box, BoxProps } from '@mui/material';
+import { alpha, useTheme, styled } from '@mui/material/styles'
+import { Typography, Box, BoxProps } from '@mui/material'
 //
-import Iconify from '../Iconify';
-import { IconButtonAnimate } from '../animate';
+import Iconify from '../Iconify'
+import { IconButtonAnimate } from '../animate'
 
 // ----------------------------------------------------------------------
 
@@ -20,14 +20,14 @@ const RootStyle = styled(Box)(({ theme }) => ({
   color: theme.palette.common.white,
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.grey[900], 0.48),
-}));
+}))
 
 const ArrowStyle = styled(IconButtonAnimate)(({ theme }) => ({
   padding: 6,
   opacity: 0.48,
   color: theme.palette.common.white,
   '&:hover': { opacity: 1 },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -35,8 +35,8 @@ export interface Props extends BoxProps {
   customIcon?: IconifyIcon;
   index: number;
   total: number;
-  onNext?: VoidFunction;
-  onPrevious?: VoidFunction;
+  onNext?: ()=>void;
+  onPrevious?: ()=>void;
 }
 
 export default function CarouselArrowsIndex({
@@ -47,14 +47,14 @@ export default function CarouselArrowsIndex({
   onPrevious,
   ...other
 }: Props) {
-  const theme = useTheme();
-  const isRTL = theme.direction === 'rtl';
+  const theme = useTheme()
+  const isRTL = theme.direction === 'rtl'
 
   return (
     <RootStyle {...other}>
       <ArrowStyle size="small" onClick={onPrevious}>
         <Iconify
-          icon={customIcon ? customIcon : caretRight}
+          icon={customIcon || caretRight}
           sx={{
             width: 20,
             height: 20,
@@ -65,12 +65,14 @@ export default function CarouselArrowsIndex({
       </ArrowStyle>
 
       <Typography variant="subtitle2">
-        {index + 1}/{total}
+        {index + 1}
+        /
+        {total}
       </Typography>
 
       <ArrowStyle size="small" onClick={onNext}>
         <Iconify
-          icon={customIcon ? customIcon : caretRight}
+          icon={customIcon || caretRight}
           sx={{
             width: 20,
             height: 20,
@@ -79,5 +81,5 @@ export default function CarouselArrowsIndex({
         />
       </ArrowStyle>
     </RootStyle>
-  );
+  )
 }

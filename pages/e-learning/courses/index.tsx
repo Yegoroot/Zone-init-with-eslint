@@ -1,22 +1,22 @@
-import { useState, ReactElement } from 'react';
+import { useState, ReactElement } from 'react'
 // icons
-import filterIcon from '@iconify/icons-carbon/filter';
+import filterIcon from '@iconify/icons-carbon/filter'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Container, Stack, Typography, Button, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Container, Stack, Typography, Button, Box } from '@mui/material'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT, DRAWER_WIDTH } from '../../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT, DRAWER_WIDTH } from '../../../src/config'
 // hooks
-import { useRequest } from '../../../src/hooks';
+import { useRequest } from '../../../src/hooks'
 // @types
-import { CourseProps } from '../../../src/@types/e-learning';
+import { CourseProps } from '../../../src/@types/e-learning'
 // layouts
-import Layout from '../../../src/layouts';
+import Layout from '../../../src/layouts'
 // components
-import { Page, ErrorScreen, Iconify } from '../../../src/components';
+import { Page, ErrorScreen, Iconify } from '../../../src/components'
 // sections
-import { NewsletterElearning } from '../../../src/sections/newsletter';
-import { ElearningCourseList, ElearningCourseBarFilters } from '../../../src/sections/@e-learning';
+import { NewsletterElearning } from '../../../src/sections/newsletter'
+import { ElearningCourseList, ElearningCourseBarFilters } from '../../../src/sections/@e-learning'
 
 // ----------------------------------------------------------------------
 
@@ -25,27 +25,27 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function ElearningCoursesPage() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   const { data: courses = [], error } = useRequest<CourseProps[]>({
-    url: `/api/e-learning/courses`,
-  });
+    url: '/api/e-learning/courses',
+  })
 
   const handleMobileOpen = () => {
-    setMobileOpen(true);
-  };
+    setMobileOpen(true)
+  }
 
   const handleMobileClose = () => {
-    setMobileOpen(false);
-  };
+    setMobileOpen(false)
+  }
 
   if (error) {
-    return <ErrorScreen />;
+    return <ErrorScreen />
   }
 
   return (
@@ -93,11 +93,11 @@ export default function ElearningCoursesPage() {
         <NewsletterElearning />
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 ElearningCoursesPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}

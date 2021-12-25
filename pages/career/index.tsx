@@ -1,11 +1,11 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // utils
-import { getAllPosts } from '../../src/utils/get-mardown/career/posts';
+import { getAllPosts } from '../../src/utils/get-mardown/career/posts'
 // hooks
-import { useRequest } from '../../src/hooks';
+import { useRequest } from '../../src/hooks'
 // @types
-import { JobProps } from '../../src/@types/career';
-import { BlogPostProps } from '../../src/@types/blog';
+import { JobProps } from '../../src/@types/career'
+import { BlogPostProps } from '../../src/@types/blog'
 // _data
 import {
   _brandsColor,
@@ -13,17 +13,17 @@ import {
   _jobsByCompanies,
   _jobsByCategories,
   _jobsByCountries,
-} from '../../_data/mock';
+} from '../../_data/mock'
 // layouts
-import Layout from '../../src/layouts';
+import Layout from '../../src/layouts'
 // components
-import { Page, ErrorScreen } from '../../src/components';
+import { Page, ErrorScreen } from '../../src/components'
 // sections
-import { NewsletterCareer } from '../../src/sections/newsletter';
-import { DownloadAppCareer } from '../../src/sections/download-app';
-import { BlogCareerLatestPosts } from '../../src/sections/blog';
-import { TestimonialsCareer } from '../../src/sections/testimonials';
-import { OurClientsCareer } from '../../src/sections/our-clients';
+import { NewsletterCareer } from '../../src/sections/newsletter'
+import { DownloadAppCareer } from '../../src/sections/download-app'
+import { BlogCareerLatestPosts } from '../../src/sections/blog'
+import { TestimonialsCareer } from '../../src/sections/testimonials'
+import { OurClientsCareer } from '../../src/sections/our-clients'
 import {
   CareerLandingHero,
   CareerLandingStep,
@@ -32,7 +32,7 @@ import {
   CareerLangdingConnections,
   CareerLandingHotCategories,
   CareerLangdingForRecruiters,
-} from '../../src/sections/@career';
+} from '../../src/sections/@career'
 
 // ----------------------------------------------------------------------
 
@@ -42,11 +42,11 @@ type Props = {
 
 export default function CareerLandingPage({ posts }: Props) {
   const { data: jobs = [], error } = useRequest<JobProps[]>({
-    url: `/api/career/jobs`,
-  });
+    url: '/api/career/jobs',
+  })
 
   if (error) {
-    return <ErrorScreen />;
+    return <ErrorScreen />
   }
 
   return (
@@ -75,14 +75,14 @@ export default function CareerLandingPage({ posts }: Props) {
 
       <NewsletterCareer />
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 CareerLandingPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout transparentHeader>{page}</Layout>;
-};
+  return <Layout transparentHeader>{page}</Layout>
+}
 
 // ----------------------------------------------------------------------
 
@@ -91,5 +91,5 @@ export async function getStaticProps() {
     props: {
       posts: getAllPosts(),
     },
-  };
+  }
 }

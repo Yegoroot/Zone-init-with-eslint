@@ -1,10 +1,10 @@
 // @mui
-import { alpha, styled } from '@mui/material/styles';
-import { Toolbar, ToolbarProps } from '@mui/material';
+import { alpha, styled } from '@mui/material/styles'
+import { Toolbar, ToolbarProps } from '@mui/material'
 // utils
-import cssStyles from '../../utils/cssStyles';
+import cssStyles from '../../utils/cssStyles'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../config'
 
 // ----------------------------------------------------------------------
 
@@ -36,7 +36,7 @@ export const ToolbarStyle = styled(Toolbar, {
       height: HEADER_DESKTOP_HEIGHT - 20,
     },
   }),
-}));
+}))
 
 export const ToolbarShadowStyle = styled('div')(({ theme }) => ({
   left: 0,
@@ -47,9 +47,9 @@ export const ToolbarShadowStyle = styled('div')(({ theme }) => ({
   margin: 'auto',
   borderRadius: '50%',
   position: 'absolute',
-  width: `calc(100% - 48px)`,
+  width: 'calc(100% - 48px)',
   boxShadow: `-23px 16px 56px -8px ${alpha(
     theme.palette.mode === 'light' ? theme.palette.grey[500] : theme.palette.common.black,
     1
   )}`,
-}));
+}))

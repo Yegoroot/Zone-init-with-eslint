@@ -1,4 +1,4 @@
-import { Paper, PaperProps, Typography } from '@mui/material';
+import { Paper, PaperProps, Typography } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -14,8 +14,12 @@ export default function SearchNotFound({ keyword = '', ...other }: SearchNotFoun
       </Typography>
       <Typography variant="body2" align="center">
         No results found for
-        <strong>{` ${keyword} `}</strong>.<br /> Try checking for typos or using complete words.
+        <strong>{` ${keyword} `}</strong>
+        .
+        <br />
+        {' '}
+        Try checking for typos or using complete words.
       </Typography>
     </Paper>
-  );
+  )
 }

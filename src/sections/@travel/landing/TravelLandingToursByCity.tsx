@@ -1,16 +1,16 @@
 // icons
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Stack, Typography, Paper, Avatar, Button, Container, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Stack, Typography, Paper, Avatar, Button, Container, Box } from '@mui/material'
 // @routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // @types
-import { TourProps } from '../../../@types/travel';
+import { TourProps } from '../../../@types/travel'
 // components
-import { Iconify, TextMaxLine } from '../../../components';
+import { Iconify, TextMaxLine } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingBottom: theme.spacing(15),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ export default function TravelLandingToursByCity({ tours }: Props) {
           <Stack spacing={3}>
             <Typography variant="h2">Tours By City</Typography>
             <Typography sx={{ color: 'text.secondary' }}>
-              {`Our Featured Tours can help you find the trip that's perfect for you!`}
+              Our Featured Tours can help you find the trip that's perfect for you!
             </Typography>
           </Stack>
 
@@ -91,7 +91,7 @@ export default function TravelLandingToursByCity({ tours }: Props) {
         </Stack>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -101,7 +101,7 @@ type TourItemProps = {
 };
 
 function TourItem({ tour }: TourItemProps) {
-  const { id, coverImg, location } = tour;
+  const { id, coverImg, location } = tour
 
   return (
     <NextLink as={Routes.travel.tour(id)} href={Routes.travel.tour('[id]')}>
@@ -130,5 +130,5 @@ function TourItem({ tour }: TourItemProps) {
         </Stack>
       </Paper>
     </NextLink>
-  );
+  )
 }

@@ -1,15 +1,15 @@
-import { useRef } from 'react';
+import { useRef } from 'react'
 // icons
-import launchIcon from '@iconify/icons-carbon/launch';
+import launchIcon from '@iconify/icons-carbon/launch'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Stack, Button, Container, Typography, Grid } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Stack, Button, Container, Typography, Grid } from '@mui/material'
 // hooks
-import { useBoundingClientRect } from '../../hooks';
+import { useBoundingClientRect } from '../../hooks'
 // routes
-import Routes from '../../routes';
+import Routes from '../../routes'
 // components
-import { Image, Iconify } from '../../components';
+import { Image, Iconify } from '../../components'
 
 // ----------------------------------------------------------------------
 
@@ -19,15 +19,15 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     height: '100vh',
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function HomeHero() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const container = useBoundingClientRect(containerRef);
+  const containerRef = useRef<HTMLDivElement>(null)
+  const container = useBoundingClientRect(containerRef)
 
-  const offsetLeft = container?.left;
+  const offsetLeft = container?.left
 
   return (
     <RootStyle>
@@ -44,9 +44,13 @@ export default function HomeHero() {
               }}
             >
               <Typography variant="h1">
-                Create Your <br /> Website Today with
+                Create Your
+                {' '}
+                <br />
+                {' '}
+                Website Today with
                 <Box component="span" sx={{ color: 'primary.main' }}>
-                  {''} ZONE
+                  ZONE
                 </Box>
               </Typography>
 
@@ -99,5 +103,5 @@ export default function HomeHero() {
         <Image alt="home-hero" src="/static/images/home/home_hero.png" />
       </Box>
     </RootStyle>
-  );
+  )
 }

@@ -1,7 +1,7 @@
 // @mui
-import { Theme } from '@mui/material/styles';
+import { Theme } from '@mui/material/styles'
 //
-import { ColorSchema } from '../palette';
+import { ColorSchema } from '../palette'
 
 // ----------------------------------------------------------------------
 
@@ -9,7 +9,7 @@ export default function ButtonGroup(theme: Theme) {
   const styleContained = (color: ColorSchema) => ({
     props: { variant: 'contained', color },
     style: { boxShadow: theme.customShadows[color] },
-  });
+  })
 
   return {
     MuiButtonGroup: {
@@ -48,5 +48,5 @@ export default function ButtonGroup(theme: Theme) {
         },
       },
     },
-  };
+  }
 }

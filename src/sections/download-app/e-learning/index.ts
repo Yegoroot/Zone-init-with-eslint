@@ -1,1 +1,1 @@
-export { default as DownloadAppElearning } from './DownloadAppElearning';
+export { default as DownloadAppElearning } from './DownloadAppElearning'

@@ -1,9 +1,9 @@
 // @mui
-import { Stack, Box, Typography, Button } from '@mui/material';
+import { Stack, Box, Typography, Button } from '@mui/material'
 // @types
-import { AdvertisementProps } from '../../@types/advertisement';
+import { AdvertisementProps } from '../../@types/advertisement'
 // components
-import { Image, BgOverlay } from '../../components';
+import { Image, BgOverlay } from '../../components'
 
 // ----------------------------------------------------------------------
 
@@ -12,7 +12,7 @@ type Props = {
 };
 
 export default function Advertisement01({ advertisement }: Props) {
-  const { title, description, path, imageUrl } = advertisement;
+  const { title, description, path, imageUrl } = advertisement
 
   return (
     <Box sx={{ position: 'relative', borderRadius: 2, overflow: 'hidden' }}>
@@ -42,5 +42,5 @@ export default function Advertisement01({ advertisement }: Props) {
 
       <BgOverlay />
     </Box>
-  );
+  )
 }

@@ -1,1 +1,1 @@
-export { default as TestimonialsTravel } from './TestimonialsTravel';
+export { default as TestimonialsTravel } from './TestimonialsTravel'

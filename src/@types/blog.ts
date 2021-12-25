@@ -1,7 +1,7 @@
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 //
-import { AuthorProps } from './author';
-import { SocialLinks } from './socials';
+import { AuthorProps } from './author'
+import { SocialLinks } from './socials'
 
 // ----------------------------------------------------------------------
 

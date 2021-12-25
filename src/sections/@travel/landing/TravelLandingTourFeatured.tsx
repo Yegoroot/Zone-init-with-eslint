@@ -1,14 +1,14 @@
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Container, Stack, Button, Typography, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Container, Stack, Button, Typography, Box } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // @types
-import { TourProps } from '../../../@types/travel';
+import { TourProps } from '../../../@types/travel'
 //
-import TravelTourItem from '../tours/TravelTourItem';
+import TravelTourItem from '../tours/TravelTourItem'
 
 // ----------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ export default function TravelLandingTourFeatured({ tours }: Props) {
         <Stack spacing={3} sx={{ textAlign: 'center' }}>
           <Typography variant="h3">Featured Tours</Typography>
           <Typography sx={{ color: 'text.secondary' }}>
-            {`Our Featured Tours can help you find the trip that's perfect for you!`}
+            Our Featured Tours can help you find the trip that's perfect for you!
           </Typography>
         </Stack>
 
@@ -63,5 +63,5 @@ export default function TravelLandingTourFeatured({ tours }: Props) {
         </Box>
       </Container>
     </RootStyle>
-  );
+  )
 }

@@ -1,28 +1,28 @@
-import { m, useCycle, MotionProps, AnimatePresence } from 'framer-motion';
-import { useEffect } from 'react';
+import { m, useCycle, MotionProps, AnimatePresence } from 'framer-motion'
+import { useEffect } from 'react'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Backdrop, Divider, Typography, BoxProps } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Backdrop, Divider, Typography, BoxProps } from '@mui/material'
 // hooks
-import { useSettings } from '../../hooks';
+import { useSettings } from '../../hooks'
 // config
-import { defaultSettings, DRAWER_WIDTH } from '../../config';
+import { defaultSettings, DRAWER_WIDTH } from '../../config'
 //
-import Scrollbar from '../Scrollbar';
-import { varFade } from '../animate';
+import Scrollbar from '../Scrollbar'
+import { varFade } from '../animate'
 //
-import HeaderSetting from './HeaderSetting';
-import ToggleButtonSetting from './ToggleButtonSetting';
-import SettingMode from './SettingMode';
-import SettingDirection from './SettingDirection';
-import SettingColorPresets from './SettingColorPresets';
+import HeaderSetting from './HeaderSetting'
+import ToggleButtonSetting from './ToggleButtonSetting'
+import SettingMode from './SettingMode'
+import SettingDirection from './SettingDirection'
+import SettingColorPresets from './SettingColorPresets'
 
 // ----------------------------------------------------------------------
 
-const zIndex = 1999;
+const zIndex = 1999
 
-const clipX = 'calc(100% - 55px)';
-const clipY = 'calc(100% - 64px)';
+const clipX = 'calc(100% - 55px)'
+const clipY = 'calc(100% - 64px)'
 
 const varSidebar = {
   initial: {
@@ -37,38 +37,37 @@ const varSidebar = {
     clipPath: `circle(28px at ${clipX} ${clipY})`,
     transition: { delay: 0.3, type: 'spring', stiffness: 400, damping: 40 },
   },
-};
+}
 
 const SidebarStyle = styled((props: BoxProps & MotionProps) => <Box {...props} />)(({ theme }) => ({
   top: 0,
   right: 0,
   bottom: 0,
   position: 'fixed',
-  zIndex: zIndex,
+  zIndex,
   width: DRAWER_WIDTH,
   boxShadow: theme.customShadows.z24,
   backgroundColor: theme.palette.background.default,
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function Settings() {
-  const { themeMode, themeDirection, themeColorPresets, onResetSetting } = useSettings();
+  const { themeMode, themeDirection, themeColorPresets, onResetSetting } = useSettings()
 
-  const [toggleOpen, setToggleOpen] = useCycle(false, true);
+  const [toggleOpen, setToggleOpen] = useCycle(false, true)
 
-  const notDefault =
-    themeMode !== defaultSettings.themeMode ||
-    themeDirection !== defaultSettings.themeDirection ||
-    themeColorPresets !== defaultSettings.themeColorPresets;
+  const notDefault = themeMode !== defaultSettings.themeMode
+    || themeDirection !== defaultSettings.themeDirection
+    || themeColorPresets !== defaultSettings.themeColorPresets
 
   useEffect(() => {
     if (toggleOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = 'unset'
     }
-  }, [toggleOpen]);
+  }, [toggleOpen])
 
   return (
     <>
@@ -119,5 +118,5 @@ export default function Settings() {
         )}
       </AnimatePresence>
     </>
-  );
+  )
 }

@@ -1,14 +1,14 @@
-import { m } from 'framer-motion';
+import { m } from 'framer-motion'
 // icons
-import chevronRight from '@iconify/icons-carbon/chevron-right';
+import chevronRight from '@iconify/icons-carbon/chevron-right'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Button, Box, Container, Typography, Paper } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Button, Box, Container, Typography, Paper } from '@mui/material'
 // routes
-import Routes from '../../routes';
+import Routes from '../../routes'
 // components
-import { Image, Iconify } from '../../components';
-import { MotionViewport, varFade } from '../../components/animate';
+import { Image, Iconify } from '../../components'
+import { MotionViewport, varFade } from '../../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     textAlign: 'left',
     padding: theme.spacing(10, 0, 15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -49,7 +49,9 @@ export default function HomeCombination() {
 
             <m.div variants={varFade().inLeft}>
               <Typography variant="h3" sx={{ mt: 2, mb: 3 }}>
-                Looking For a <br />
+                Looking For a
+                {' '}
+                <br />
                 Dashboard Template?
               </Typography>
             </m.div>
@@ -112,5 +114,5 @@ export default function HomeCombination() {
         </m.div>
       </Container>
     </RootStyle>
-  );
+  )
 }

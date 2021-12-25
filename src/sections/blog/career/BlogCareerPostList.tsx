@@ -1,15 +1,15 @@
 // icons
 
-import arrowDown from '@iconify/icons-carbon/arrow-down';
+import arrowDown from '@iconify/icons-carbon/arrow-down'
 // @mui
-import Masonry from '@mui/lab/Masonry';
-import { Button, Stack } from '@mui/material';
+import Masonry from '@mui/lab/Masonry'
+import { Button, Stack } from '@mui/material'
 // @types
-import { BlogPostProps } from '../../../@types/blog';
+import { BlogPostProps } from '../../../@types/blog'
 // components
-import { Iconify } from '../../../components';
+import { Iconify } from '../../../components'
 //
-import BlogCareerPostItem from './BlogCareerPostItem';
+import BlogCareerPostItem from './BlogCareerPostItem'
 
 // ----------------------------------------------------------------------
 
@@ -52,5 +52,5 @@ export default function BlogCareerPostList({ posts }: Props) {
         </Button>
       </Stack>
     </>
-  );
+  )
 }

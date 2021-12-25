@@ -1,20 +1,20 @@
-import { useState, ReactElement } from 'react';
+import { useState, ReactElement } from 'react'
 // next
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Grid, Stack, Container, Typography, Divider } from '@mui/material';
-import { SelectChangeEvent } from '@mui/material/Select';
+import { styled } from '@mui/material/styles'
+import { Grid, Stack, Container, Typography, Divider } from '@mui/material'
+import { SelectChangeEvent } from '@mui/material/Select'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config'
 // hooks
-import { useRequest, useResponsive } from '../../../src/hooks';
+import { useRequest, useResponsive } from '../../../src/hooks'
 // @types
-import { CourseProps } from '../../../src/@types/e-learning';
+import { CourseProps } from '../../../src/@types/e-learning'
 // _data
-import _mock, { _reviews } from '../../../_data/mock';
+import _mock, { _reviews } from '../../../_data/mock'
 // layouts
-import Layout from '../../../src/layouts';
+import Layout from '../../../src/layouts'
 // components
 import {
   Page,
@@ -22,23 +22,23 @@ import {
   LoadingScreen,
   DialogAnimate,
   SocialsButton,
-} from '../../../src/components';
+} from '../../../src/components'
 // sections
-import { NewsletterElearning } from '../../../src/sections/newsletter';
-import { Advertisement01 } from '../../../src/sections/advertisement';
+import { NewsletterElearning } from '../../../src/sections/newsletter'
+import { Advertisement01 } from '../../../src/sections/advertisement'
 import {
   ReviewForm,
   ReviewSummary,
   ReviewElearningCourseList,
   ReviewElearningToolbar,
-} from '../../../src/sections/reviews';
+} from '../../../src/sections/reviews'
 import {
   ElearningCourseHero,
   ElearningCourseInfo,
   ElearningCourseSimilar,
   ElearningCourseDetails,
   ElearningCourseTeachersInfo,
-} from '../../../src/sections/@e-learning';
+} from '../../../src/sections/@e-learning'
 
 // ----------------------------------------------------------------------
 
@@ -47,43 +47,43 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function ElearningCoursePage() {
-  const router = useRouter();
+  const router = useRouter()
 
-  const isDesktop = useResponsive('up', 'md');
+  const isDesktop = useResponsive('up', 'md')
 
-  const [sort, setSort] = useState('latest');
-  const [openForm, setOpenForm] = useState(false);
-  const [filter, setFilter] = useState<string | null>(null);
+  const [sort, setSort] = useState('latest')
+  const [openForm, setOpenForm] = useState(false)
+  const [filter, setFilter] = useState<string | null>(null)
 
   const handleChangeSort = (event: SelectChangeEvent) => {
-    setSort(event.target.value as string);
-  };
+    setSort(event.target.value as string)
+  }
 
   const handleChangeFilters = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFilter((event.target as HTMLInputElement).value);
-  };
+    setFilter((event.target as HTMLInputElement).value)
+  }
 
-  const { id } = router.query;
+  const { id } = router.query
 
   const { data: courses = [] } = useRequest<CourseProps[]>({
-    url: `/api/e-learning/courses`,
-  });
+    url: '/api/e-learning/courses',
+  })
 
   const { data: course, error: courseError } = useRequest<CourseProps>({
     url: id ? `/api/e-learning/courses/${id}` : '',
-  });
+  })
 
   if (courseError) {
-    return <ErrorScreen />;
+    return <ErrorScreen />
   }
 
   if (!course) {
-    return <LoadingScreen />;
+    return <LoadingScreen />
   }
 
   return (
@@ -172,11 +172,11 @@ export default function ElearningCoursePage() {
         <NewsletterElearning />
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 ElearningCoursePage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}

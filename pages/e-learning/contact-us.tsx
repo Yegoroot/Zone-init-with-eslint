@@ -1,15 +1,15 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // @mui
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../src/config'
 // layouts
-import Layout from '../../src/layouts';
+import Layout from '../../src/layouts'
 // components
-import { Page } from '../../src/components';
+import { Page } from '../../src/components'
 // sections
-import { NewsletterElearning } from '../../src/sections/newsletter';
-import { ElearningContactInfo, ElearningContactForm } from '../../src/sections/@e-learning';
+import { NewsletterElearning } from '../../src/sections/newsletter'
+import { ElearningContactInfo, ElearningContactForm } from '../../src/sections/@e-learning'
 
 // ----------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -33,11 +33,11 @@ export default function ElearningContactUsPage() {
         <NewsletterElearning />
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 ElearningContactUsPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}

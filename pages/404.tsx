@@ -1,15 +1,15 @@
-import { ReactElement } from 'react';
-import { m } from 'framer-motion';
+import { ReactElement } from 'react'
+import { m } from 'framer-motion'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Stack, Button, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Stack, Button, Typography } from '@mui/material'
 // layouts
-import Layout from '../src/layouts';
+import Layout from '../src/layouts'
 // components
-import { Page, Image } from '../src/components';
-import { MotionContainer, varBounce } from '../src/components/animate';
+import { Page, Image } from '../src/components'
+import { MotionContainer, varBounce } from '../src/components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('sm')]: {
     height: '100vh',
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -59,7 +59,7 @@ export default function PageNotFound() {
         </RootStyle>
       </Page>
     </MotionContainer>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -69,5 +69,5 @@ PageNotFound.getLayout = function getLayout(page: ReactElement) {
     <Layout simpleHeader disabledFooter>
       {page}
     </Layout>
-  );
-};
+  )
+}

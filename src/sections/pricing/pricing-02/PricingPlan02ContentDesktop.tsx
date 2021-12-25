@@ -1,11 +1,11 @@
 // icons
-import checkmarkIcon from '@iconify/icons-carbon/checkmark';
+import checkmarkIcon from '@iconify/icons-carbon/checkmark'
 // @mui
-import { Box, Stack, Button } from '@mui/material';
+import { Box, Stack, Button } from '@mui/material'
 // @types
-import { Pricing02Props } from '../../../@types/pricing';
+import { Pricing02Props } from '../../../@types/pricing'
 // components
-import { Iconify } from '../../../components';
+import { Iconify } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -14,11 +14,11 @@ type Props = {
 };
 
 export default function PricingPlan02ContentDesktop({ plan }: Props) {
-  const { options, license } = plan;
+  const { options, license } = plan
 
-  const startLicense = license === 'Start';
-  const proLicense = license === 'Pro';
-  const businessLicense = license === 'Business';
+  const startLicense = license === 'Start'
+  const proLicense = license === 'Pro'
+  const businessLicense = license === 'Business'
 
   return (
     <Box
@@ -27,7 +27,7 @@ export default function PricingPlan02ContentDesktop({ plan }: Props) {
       }}
     >
       {options.map((option) => {
-        const { title, disabled } = option;
+        const { title, disabled } = option
 
         return (
           <Stack
@@ -49,7 +49,7 @@ export default function PricingPlan02ContentDesktop({ plan }: Props) {
               <Iconify icon={checkmarkIcon} sx={{ width: 24, height: 24, color: 'primary.main' }} />
             )}
           </Stack>
-        );
+        )
       })}
 
       <Stack
@@ -73,5 +73,5 @@ export default function PricingPlan02ContentDesktop({ plan }: Props) {
         </Button>
       </Stack>
     </Box>
-  );
+  )
 }

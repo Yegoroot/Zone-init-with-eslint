@@ -1,6 +1,6 @@
-import ReactPlayer, { ReactPlayerProps } from 'react-player';
+import ReactPlayer, { ReactPlayerProps } from 'react-player'
 // @mui
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 
 // ----------------------------------------------------------------------
 
@@ -10,12 +10,12 @@ export const ReactPlayerStyle = styled(ReactPlayer)(() => ({
   '& video': {
     objectFit: 'cover',
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 // https://github.com/CookPete/react-player
 
 export default function Player({ ...other }: ReactPlayerProps) {
-  return <ReactPlayerStyle {...other} />;
+  return <ReactPlayerStyle {...other} />
 }

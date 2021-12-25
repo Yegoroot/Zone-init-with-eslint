@@ -1,10 +1,12 @@
-import { m } from 'framer-motion';
+import { m } from 'framer-motion'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Paper, Container, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import {
+  Box, Paper, Container, Typography
+} from '@mui/material'
 // components
-import { Image } from '../../components';
-import { MotionViewport, varFade } from '../../components/animate';
+import { Image } from '../../components'
+import { MotionViewport, varFade } from '../../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -13,7 +15,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -45,7 +47,11 @@ export default function HomeNewStart() {
               <Typography variant="h2" sx={{ mt: 2, mb: 3 }}>
                 The
                 <Box component="span" sx={{ color: 'primary.main' }}>
-                  {''} ZONE {''}
+
+                  {' '}
+                  ZONE
+                  {' '}
+
                 </Box>
                 UI Kit
               </Typography>
@@ -61,5 +67,5 @@ export default function HomeNewStart() {
         </Paper>
       </Container>
     </RootStyle>
-  );
+  )
 }

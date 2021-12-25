@@ -1,25 +1,25 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Divider } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Divider } from '@mui/material'
 // utils
-import { getAllPosts } from '../../src/utils/get-mardown/career/posts';
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../src/config';
+import { getAllPosts } from '../../src/utils/get-mardown/career/posts'
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../src/config'
 // @types
-import { BlogPostProps } from '../../src/@types/blog';
+import { BlogPostProps } from '../../src/@types/blog'
 // _data
-import { _testimonials, _members, _brandsColor } from '../../_data/mock';
+import { _testimonials, _members, _brandsColor } from '../../_data/mock'
 // layouts
-import Layout from '../../src/layouts';
+import Layout from '../../src/layouts'
 // components
-import { Page } from '../../src/components';
+import { Page } from '../../src/components'
 // sections
-import { NewsletterCareer } from '../../src/sections/newsletter';
-import { BlogCareerLatestPosts } from '../../src/sections/blog';
-import { TestimonialsCareer } from '../../src/sections/testimonials';
-import { TeamCareerAbout } from '../../src/sections/team';
-import { OurClientsCareer } from '../../src/sections/our-clients';
-import { CareerAbout, CareerAboutOurVision } from '../../src/sections/@career';
+import { NewsletterCareer } from '../../src/sections/newsletter'
+import { BlogCareerLatestPosts } from '../../src/sections/blog'
+import { TestimonialsCareer } from '../../src/sections/testimonials'
+import { TeamCareerAbout } from '../../src/sections/team'
+import { OurClientsCareer } from '../../src/sections/our-clients'
+import { CareerAbout, CareerAboutOurVision } from '../../src/sections/@career'
 
 // ----------------------------------------------------------------------
 
@@ -28,7 +28,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -57,14 +57,14 @@ export default function CareerAboutUsPage({ posts }: Props) {
         <NewsletterCareer />
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 CareerAboutUsPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}
 
 // ----------------------------------------------------------------------
 
@@ -73,5 +73,5 @@ export async function getStaticProps() {
     props: {
       posts: getAllPosts(),
     },
-  };
+  }
 }

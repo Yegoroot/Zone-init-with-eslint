@@ -1,18 +1,18 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // icons
-import searchIcon from '@iconify/icons-carbon/search';
+import searchIcon from '@iconify/icons-carbon/search'
 // @mui
-import { SxProps } from '@mui/system';
-import { styled } from '@mui/material/styles';
-import { Stack, Button, Divider, TextField, TextFieldProps } from '@mui/material';
+import { SxProps } from '@mui/system'
+import { styled } from '@mui/material/styles'
+import { Stack, Button, Divider, TextField, TextFieldProps } from '@mui/material'
 // utils
-import cssStyles from '../../../utils/cssStyles';
+import cssStyles from '../../../utils/cssStyles'
 // components
-import { Iconify } from '../../../components';
+import { Iconify } from '../../../components'
 //
-import TravelTourFilterTime from './TravelTourFilterTime';
-import TravelTourFilterLocation from './TravelTourFilterLocation';
-import TravelTourFilterGuests from './TravelTourFilterGuests';
+import TravelTourFilterTime from './TravelTourFilterTime'
+import TravelTourFilterLocation from './TravelTourFilterLocation'
+import TravelTourFilterGuests from './TravelTourFilterGuests'
 
 // ----------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 0),
   },
-}));
+}))
 
 type BarStyleProps = {
   onDark: boolean;
@@ -54,7 +54,7 @@ const BarStyle = styled(Stack, {
       },
     }),
   },
-}));
+}))
 
 export const InputStyle = styled((props: TextFieldProps) => <TextField fullWidth {...props} />)(
   ({ theme }) => ({
@@ -73,7 +73,7 @@ export const InputStyle = styled((props: TextFieldProps) => <TextField fullWidth
       },
     },
   })
-);
+)
 
 // ----------------------------------------------------------------------
 
@@ -83,11 +83,11 @@ type Props = {
 };
 
 export default function TravelTourBarFilters({ onDark = false, sx }: Props) {
-  const [departureDay, setDepartureDay] = useState<Date | null>(null);
+  const [departureDay, setDepartureDay] = useState<Date | null>(null)
   const [guests, setGuests] = useState({
     adults: 0,
     children: 0,
-  });
+  })
 
   return (
     <RootStyle sx={sx}>
@@ -102,7 +102,7 @@ export default function TravelTourBarFilters({ onDark = false, sx }: Props) {
           sx={{ width: 1 }}
           alignItems="center"
           direction={{ xs: 'column', md: 'row' }}
-          divider={
+          divider={(
             <Divider
               orientation="vertical"
               flexItem
@@ -110,7 +110,7 @@ export default function TravelTourBarFilters({ onDark = false, sx }: Props) {
                 display: { xs: 'none', md: 'block' },
               }}
             />
-          }
+          )}
         >
           <TravelTourFilterLocation />
           <TravelTourFilterTime departureDay={departureDay} setDepartureDay={setDepartureDay} />
@@ -131,5 +131,5 @@ export default function TravelTourBarFilters({ onDark = false, sx }: Props) {
         </Button>
       </BarStyle>
     </RootStyle>
-  );
+  )
 }

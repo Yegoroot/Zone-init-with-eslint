@@ -1,17 +1,17 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // icons
-import playIcon from '@iconify/icons-carbon/play';
-import lockedIcon from '@iconify/icons-carbon/locked';
-import chevronDown from '@iconify/icons-carbon/chevron-down';
-import chevronRight from '@iconify/icons-carbon/chevron-right';
-import pauseOutline from '@iconify/icons-carbon/pause-outline';
+import playIcon from '@iconify/icons-carbon/play'
+import lockedIcon from '@iconify/icons-carbon/locked'
+import chevronDown from '@iconify/icons-carbon/chevron-down'
+import chevronRight from '@iconify/icons-carbon/chevron-right'
+import pauseOutline from '@iconify/icons-carbon/pause-outline'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Accordion, Typography, AccordionSummary, AccordionDetails } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Accordion, Typography, AccordionSummary, AccordionDetails } from '@mui/material'
 // @types
-import { CourseLessonProp } from '../../../@types/e-learning';
+import { CourseLessonProp } from '../../../@types/e-learning'
 // components
-import { Iconify, PlayerWithButton } from '../../../components';
+import { Iconify, PlayerWithButton } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ const AccordionStyle = styled(Accordion)(({ theme }) => ({
     marginBottom: theme.spacing(2.5),
     boxShadow: theme.customShadows.z16,
   },
-}));
+}))
 
 const AccordionSummaryStyle = styled(AccordionSummary)(({ theme }) => ({
   '&.Mui-expanded': {
@@ -35,7 +35,7 @@ const AccordionSummaryStyle = styled(AccordionSummary)(({ theme }) => ({
     paddingRight: theme.spacing(1),
     '&.Mui-expanded': { margin: theme.spacing(2, 0) },
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -44,12 +44,11 @@ type Props = {
 };
 
 export default function ElearningCourseDetailsLessons({ lessons }: Props) {
-  const [expanded, setExpanded] = useState<string | false>(false);
+  const [expanded, setExpanded] = useState<string | false>(false)
 
-  const handleChangeExpanded =
-    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-      setExpanded(isExpanded ? panel : false);
-    };
+  const handleChangeExpanded = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+    setExpanded(isExpanded ? panel : false)
+  }
 
   return (
     <div>
@@ -66,7 +65,7 @@ export default function ElearningCourseDetailsLessons({ lessons }: Props) {
         />
       ))}
     </div>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -78,17 +77,17 @@ type LessonItemProps = {
 };
 
 function LessonItem({ lesson, selected, onChange }: LessonItemProps) {
-  const [openVideo, setOpenVideo] = useState(false);
+  const [openVideo, setOpenVideo] = useState(false)
 
   const handleOpenVideo = () => {
-    setOpenVideo(true);
-  };
+    setOpenVideo(true)
+  }
 
   const handleCloseVideo = () => {
-    setOpenVideo(false);
-  };
+    setOpenVideo(false)
+  }
 
-  const { title, duration, description, isUnLock, videoPath } = lesson;
+  const { title, duration, description, isUnLock, videoPath } = lesson
 
   return (
     <>
@@ -110,7 +109,9 @@ function LessonItem({ lesson, selected, onChange }: LessonItemProps) {
           </Typography>
 
           <Typography variant="body3" sx={{ mr: 2 }}>
-            {duration} m
+            {duration}
+            {' '}
+            m
           </Typography>
 
           <Iconify
@@ -139,5 +140,5 @@ function LessonItem({ lesson, selected, onChange }: LessonItemProps) {
         controls
       />
     </>
-  );
+  )
 }

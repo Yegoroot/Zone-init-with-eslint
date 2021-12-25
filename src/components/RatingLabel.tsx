@@ -1,11 +1,11 @@
 // icons
-import starFilled from '@iconify/icons-carbon/star-filled';
+import starFilled from '@iconify/icons-carbon/star-filled'
 // @mui
-import { Typography, Stack, Link, StackProps } from '@mui/material';
+import { Typography, Stack, Link, StackProps } from '@mui/material'
 // utils
-import { fShortenNumber } from '../utils/formatNumber';
+import { fShortenNumber } from '../utils/formatNumber'
 //
-import Iconify from './Iconify';
+import Iconify from './Iconify'
 
 // ----------------------------------------------------------------------
 
@@ -22,9 +22,12 @@ export default function RatingLabel({ reviews, ratings, ...other }: Props) {
 
       {reviews && (
         <Link variant="body2" sx={{ color: 'text.secondary' }}>
-          ({fShortenNumber(reviews)} reviews)
+          (
+          {fShortenNumber(reviews)}
+          {' '}
+          reviews)
         </Link>
       )}
     </Stack>
-  );
+  )
 }

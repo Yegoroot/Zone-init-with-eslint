@@ -1,21 +1,21 @@
-import { useRef, useEffect, useState, Dispatch, SetStateAction } from 'react';
-import getDaysInMonth from 'date-fns/getDaysInMonth';
+import { useRef, useEffect, useState, Dispatch, SetStateAction } from 'react'
+import getDaysInMonth from 'date-fns/getDaysInMonth'
 // icons
-import departureIcon from '@iconify/icons-carbon/departure';
-import calendarIcon from '@iconify/icons-carbon/calendar';
+import departureIcon from '@iconify/icons-carbon/departure'
+import calendarIcon from '@iconify/icons-carbon/calendar'
 // @mui
-import PickersDay from '@mui/lab/PickersDay';
-import DatePicker from '@mui/lab/DatePicker';
-import CalendarPickerSkeleton from '@mui/lab/CalendarPickerSkeleton';
-import { SxProps } from '@mui/system';
-import { Badge, Box, InputAdornment } from '@mui/material';
+import PickersDay from '@mui/lab/PickersDay'
+import DatePicker from '@mui/lab/DatePicker'
+import CalendarPickerSkeleton from '@mui/lab/CalendarPickerSkeleton'
+import { SxProps } from '@mui/system'
+import { Badge, Box, InputAdornment } from '@mui/material'
 //
-import { Iconify } from '../../../components';
-import { InputStyle } from './TravelTourBarFilters';
+import { Iconify } from '../../../components'
+import { InputStyle } from './TravelTourBarFilters'
 
 // ----------------------------------------------------------------------
 
-const INITIAL_DATE = new Date();
+const INITIAL_DATE = new Date()
 
 type Props = {
   sx?: SxProps;
@@ -24,50 +24,50 @@ type Props = {
 };
 
 export default function TravelTourFilterTime({ departureDay, setDepartureDay, sx }: Props) {
-  const [isLoading, setIsLoading] = useState(false);
-  const [openPicker, setOpenPicker] = useState(false);
-  const requestAbortController = useRef<AbortController | null>(null);
-  const [highlightedDays, setHighlightedDays] = useState([1, 2, 15]);
+  const [isLoading, setIsLoading] = useState(false)
+  const [openPicker, setOpenPicker] = useState(false)
+  const requestAbortController = useRef<AbortController | null>(null)
+  const [highlightedDays, setHighlightedDays] = useState([1, 2, 15])
 
   const fetchHighlightedDays = (date: Date) => {
-    const controller = new AbortController();
+    const controller = new AbortController()
     fakeFetch(date, {
       signal: controller.signal,
     })
       .then(({ daysToHighlight }) => {
-        setHighlightedDays(daysToHighlight);
-        setIsLoading(false);
+        setHighlightedDays(daysToHighlight)
+        setIsLoading(false)
       })
       .catch((error) => {
         if (error.name !== 'AbortError') {
-          throw error;
+          throw error
         }
-      });
+      })
 
-    requestAbortController.current = controller;
-  };
+    requestAbortController.current = controller
+  }
 
   useEffect(() => {
-    fetchHighlightedDays(INITIAL_DATE);
-    return () => requestAbortController.current?.abort();
-  }, []);
+    fetchHighlightedDays(INITIAL_DATE)
+    return () => requestAbortController.current?.abort()
+  }, [])
 
   const handleMonthChange = (date: Date) => {
     if (requestAbortController.current) {
-      requestAbortController.current.abort();
+      requestAbortController.current.abort()
     }
-    setIsLoading(true);
-    setHighlightedDays([]);
-    fetchHighlightedDays(date);
-  };
+    setIsLoading(true)
+    setHighlightedDays([])
+    fetchHighlightedDays(date)
+  }
 
   const handleOpenPicker = () => {
-    setOpenPicker(true);
-  };
+    setOpenPicker(true)
+  }
 
   const handleClosePicker = () => {
-    setOpenPicker(false);
-  };
+    setOpenPicker(false)
+  }
 
   return (
     <DatePicker
@@ -76,7 +76,7 @@ export default function TravelTourFilterTime({ departureDay, setDepartureDay, sx
       value={departureDay}
       loading={isLoading}
       onChange={(newValue) => {
-        setDepartureDay(newValue);
+        setDepartureDay(newValue)
       }}
       onMonthChange={handleMonthChange}
       shouldDisableDate={(date) => !highlightedDays.includes(date.getDate())}
@@ -86,7 +86,7 @@ export default function TravelTourFilterTime({ departureDay, setDepartureDay, sx
       disableOpenPicker
       inputFormat="dd MMM yyyy"
       renderInput={(params) => {
-        const { InputProps, inputProps } = params;
+        const { InputProps, inputProps } = params
         return (
           <Box onClick={handleOpenPicker} sx={{ width: 1, ...sx }}>
             <InputStyle
@@ -97,6 +97,7 @@ export default function TravelTourFilterTime({ departureDay, setDepartureDay, sx
                 ...inputProps,
                 placeholder: 'Departure day',
               }}
+              // eslint-disable-next-line react/jsx-no-duplicate-props
               InputProps={{
                 ...InputProps,
                 startAdornment: (
@@ -110,12 +111,11 @@ export default function TravelTourFilterTime({ departureDay, setDepartureDay, sx
               }}
             />
           </Box>
-        );
+        )
       }}
       renderLoading={() => <CalendarPickerSkeleton />}
       renderDay={(day, _value, DayComponentProps) => {
-        const isSelected =
-          !DayComponentProps.outsideCurrentMonth && highlightedDays.includes(day.getDate());
+        const isSelected = !DayComponentProps.outsideCurrentMonth && highlightedDays.includes(day.getDate())
 
         return (
           <Badge
@@ -129,30 +129,31 @@ export default function TravelTourFilterTime({ departureDay, setDepartureDay, sx
           >
             <PickersDay {...DayComponentProps} />
           </Badge>
-        );
+        )
       }}
     />
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 function getRandomNumber(min: number, max: number) {
-  return Math.round(Math.random() * (max - min) + min);
+  return Math.round(Math.random() * (max - min) + min)
 }
 
 function fakeFetch(date: Date, { signal }: { signal: AbortSignal }) {
   return new Promise<{ daysToHighlight: number[] }>((resolve, reject) => {
     const timeout = setTimeout(() => {
-      const daysInMonth = getDaysInMonth(date);
-      const daysToHighlight = [1, 2, 3].map(() => getRandomNumber(1, daysInMonth));
+      const daysInMonth = getDaysInMonth(date)
+      const daysToHighlight = [1, 2, 3].map(() => getRandomNumber(1, daysInMonth))
 
-      resolve({ daysToHighlight });
-    }, 500);
+      resolve({ daysToHighlight })
+    }, 500)
 
+    // eslint-disable-next-line no-param-reassign
     signal.onabort = () => {
-      clearTimeout(timeout);
-      reject(new DOMException('aborted', 'AbortError'));
-    };
-  });
+      clearTimeout(timeout)
+      reject(new DOMException('aborted', 'AbortError'))
+    }
+  })
 }

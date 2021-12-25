@@ -1,20 +1,20 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Grid, Container, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Grid, Container, Typography } from '@mui/material'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../src/config'
 // layouts
-import Layout from '../../src/layouts';
+import Layout from '../../src/layouts'
 // components
-import { Page } from '../../src/components';
+import { Page } from '../../src/components'
 // sections
-import { NewsletterMarketing } from '../../src/sections/newsletter';
+import { NewsletterMarketing } from '../../src/sections/newsletter'
 import {
   MarketingFreeSEO,
   MarketingContactInfo,
   MarketingContactForm,
-} from '../../src/sections/@marketing';
+} from '../../src/sections/@marketing'
 
 // ----------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -55,11 +55,11 @@ export default function MarketingContactUsPage() {
         <NewsletterMarketing />
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 MarketingContactUsPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}

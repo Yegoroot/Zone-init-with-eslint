@@ -1,7 +1,7 @@
-import { memo } from 'react';
+import { memo } from 'react'
 // @mui
-import { useTheme } from '@mui/material/styles';
-import { Box, BoxProps } from '@mui/material';
+import { useTheme } from '@mui/material/styles'
+import { Box, BoxProps } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -10,15 +10,15 @@ interface Props extends BoxProps {
 }
 
 function Character({ front = false, ...other }: Props) {
-  const theme = useTheme();
+  const theme = useTheme()
 
-  const PRIMARY_MAIN = theme.palette.primary.main;
-  const PRIMARY_DARK = theme.palette.primary.dark;
-  const PRIMARY_DARKER = theme.palette.primary.darker;
+  const PRIMARY_MAIN = theme.palette.primary.main
+  const PRIMARY_DARK = theme.palette.primary.dark
+  const PRIMARY_DARKER = theme.palette.primary.darker
 
-  const SECONDARY_MAIN = theme.palette.secondary.main;
-  const SECONDARY_DARK = theme.palette.secondary.dark;
-  const SECONDARY_DARKER = theme.palette.secondary.darker;
+  const SECONDARY_MAIN = theme.palette.secondary.main
+  const SECONDARY_DARK = theme.palette.secondary.dark
+  const SECONDARY_DARKER = theme.palette.secondary.darker
 
   return (
     <Box {...other}>
@@ -124,7 +124,7 @@ function Character({ front = false, ...other }: Props) {
         />
       </svg>
     </Box>
-  );
+  )
 }
 
-export default memo(Character);
+export default memo(Character)

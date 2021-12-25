@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // icons
-import locationIcon from '@iconify/icons-carbon/location';
+import locationIcon from '@iconify/icons-carbon/location'
 // @mui
-import { Typography, Stack, Link, Avatar } from '@mui/material';
+import { Typography, Stack, Link, Avatar } from '@mui/material'
 // @types
-import { TourProps } from '../../../@types/travel';
+import { TourProps } from '../../../@types/travel'
 // components
 import {
   Iconify,
@@ -12,7 +12,7 @@ import {
   RatingLabel,
   TextIconLabel,
   FavoriteButton,
-} from '../../../components';
+} from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -21,13 +21,13 @@ type Props = {
 };
 
 export default function TravelTourHeader({ tour }: Props) {
-  const { slug, ratings, reviews, location, favorited, tourGuide } = tour;
+  const { slug, ratings, reviews, location, favorited, tourGuide } = tour
 
-  const [favorite, setFavorite] = useState(favorited);
+  const [favorite, setFavorite] = useState(favorited)
 
   const handleChangeFavorite = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFavorite(event.target.checked);
-  };
+    setFavorite(event.target.checked)
+  }
 
   return (
     <>
@@ -57,7 +57,7 @@ export default function TravelTourHeader({ tour }: Props) {
 
         <TextIconLabel
           icon={<Avatar src={tourGuide?.picture} sx={{ width: 24, height: 24 }} />}
-          value={
+          value={(
             <>
               <Typography variant="body3" sx={{ color: 'text.secondary', mx: 0.5 }}>
                 Tour guide by
@@ -66,9 +66,9 @@ export default function TravelTourHeader({ tour }: Props) {
                 {tourGuide?.name}
               </Link>
             </>
-          }
+          )}
         />
       </Stack>
     </>
-  );
+  )
 }

@@ -1,8 +1,8 @@
-import { useState, ReactElement } from 'react';
+import { useState, ReactElement } from 'react'
 // next
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 // @mui
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import {
   Grid,
   Stack,
@@ -11,19 +11,19 @@ import {
   Container,
   Typography,
   SelectChangeEvent,
-} from '@mui/material';
+} from '@mui/material'
 // routes
-import Routes from '../../../src/routes';
+import Routes from '../../../src/routes'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config'
 // hooks
-import { useRequest } from '../../../src/hooks';
+import { useRequest } from '../../../src/hooks'
 // @types
-import { TourProps } from '../../../src/@types/travel';
+import { TourProps } from '../../../src/@types/travel'
 // _data
-import { _reviews } from '../../../_data/mock';
+import { _reviews } from '../../../_data/mock'
 // layouts
-import Layout from '../../../src/layouts';
+import Layout from '../../../src/layouts'
 // components
 import {
   Page,
@@ -31,14 +31,14 @@ import {
   LoadingScreen,
   Breadcrumbs,
   SocialsButton,
-} from '../../../src/components';
+} from '../../../src/components'
 // sections
-import { NewsletterTravel } from '../../../src/sections/newsletter';
+import { NewsletterTravel } from '../../../src/sections/newsletter'
 import {
   ReviewForm,
   ReviewTravelTourList,
   ReviewTravelToolbar,
-} from '../../../src/sections/reviews';
+} from '../../../src/sections/reviews'
 import {
   TravelTourHeader,
   TravelTourGallery,
@@ -46,7 +46,7 @@ import {
   TravelTourSimilar,
   TravelTourGuideInfo,
   TravelTourReserveForm,
-} from '../../../src/sections/@travel';
+} from '../../../src/sections/@travel'
 
 // ----------------------------------------------------------------------
 
@@ -55,36 +55,36 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function TravelTourPage() {
-  const router = useRouter();
+  const router = useRouter()
 
-  const [sort, setSort] = useState('latest');
-  const [openReview, setOpenReview] = useState(false);
+  const [sort, setSort] = useState('latest')
+  const [openReview, setOpenReview] = useState(false)
 
   const handleChangeSort = (event: SelectChangeEvent) => {
-    setSort(event.target.value as string);
-  };
+    setSort(event.target.value as string)
+  }
 
-  const { id } = router.query;
+  const { id } = router.query
 
   const { data: tours = [] } = useRequest<TourProps[]>({
-    url: `/api/travel/tours`,
-  });
+    url: '/api/travel/tours',
+  })
 
   const { data: tour, error: tourError } = useRequest<TourProps>({
     url: id ? `/api/travel/tours/${id}` : '',
-  });
+  })
 
   if (tourError) {
-    return <ErrorScreen />;
+    return <ErrorScreen />
   }
 
   if (!tour) {
-    return <LoadingScreen />;
+    return <LoadingScreen />
   }
 
   return (
@@ -151,11 +151,11 @@ export default function TravelTourPage() {
         <NewsletterTravel />
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 TravelTourPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}

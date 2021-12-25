@@ -1,8 +1,8 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // icons
-import chevronRight from '@iconify/icons-carbon/chevron-right';
+import chevronRight from '@iconify/icons-carbon/chevron-right'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
 import {
   Box,
@@ -10,9 +10,9 @@ import {
   Typography,
   Breadcrumbs as MUIBreadcrumbs,
   BreadcrumbsProps,
-} from '@mui/material';
+} from '@mui/material'
 //
-import Iconify from './Iconify';
+import Iconify from './Iconify'
 
 // ----------------------------------------------------------------------
 
@@ -34,9 +34,9 @@ export default function Breadcrumbs({
   onDark = false,
   ...other
 }: Props) {
-  const currentLink = links[links.length - 1].name;
+  const currentLink = links[links.length - 1].name
 
-  const listDefault = links.map((link) => <LinkItem key={link.name} link={link} onDark={onDark} />);
+  const listDefault = links.map((link) => <LinkItem key={link.name} link={link} onDark={onDark} />)
 
   const listActiveLast = links.map((link) => (
     <div key={link.name}>
@@ -58,11 +58,11 @@ export default function Breadcrumbs({
         </Typography>
       )}
     </div>
-  ));
+  ))
 
   return (
     <MUIBreadcrumbs
-      separator={
+      separator={(
         <Iconify
           icon={chevronRight}
           sx={{
@@ -74,12 +74,12 @@ export default function Breadcrumbs({
             }),
           }}
         />
-      }
+      )}
       {...other}
     >
       {activeLast ? listDefault : listActiveLast}
     </MUIBreadcrumbs>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -90,7 +90,7 @@ type LinkItemProps = {
 };
 
 function LinkItem({ link, onDark }: LinkItemProps) {
-  const { href = '', name, icon } = link;
+  const { href = '', name, icon } = link
   return (
     <NextLink key={name} href={href} passHref>
       <Link
@@ -118,5 +118,5 @@ function LinkItem({ link, onDark }: LinkItemProps) {
         {name}
       </Link>
     </NextLink>
-  );
+  )
 }

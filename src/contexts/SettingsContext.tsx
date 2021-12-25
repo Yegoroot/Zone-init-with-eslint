@@ -1,12 +1,13 @@
-import { ReactNode, createContext } from 'react';
+/* eslint-disable @typescript-eslint/no-empty-function */
+import { ReactNode, createContext } from 'react'
 // hooks
-import { useLocalStorage } from '../hooks';
+import { useLocalStorage } from '../hooks'
 // utils
-import getColorPresets, { colorPresets } from '../utils/getColorPresets';
+import getColorPresets, { colorPresets } from '../utils/getColorPresets'
 // config
-import { defaultSettings } from '../config';
+import { defaultSettings } from '../config'
 // @type
-import { SettingsContextProps } from '../@types/settings';
+import { SettingsContextProps } from '../@types/settings'
 
 // ----------------------------------------------------------------------
 
@@ -18,9 +19,9 @@ const initialState: SettingsContextProps = {
   onResetSetting: () => {},
   setColor: colorPresets[0],
   colorOption: [],
-};
+}
 
-const SettingsContext = createContext(initialState);
+const SettingsContext = createContext(initialState)
 
 type Props = {
   children: ReactNode;
@@ -29,34 +30,34 @@ type Props = {
 function SettingsProvider({ children }: Props) {
   const [settings, setSettings] = useLocalStorage('settings', {
     ...defaultSettings,
-  });
+  })
 
   const onToggleMode = () => {
     setSettings({
       ...settings,
       themeMode: settings.themeMode === 'light' ? 'dark' : 'light',
-    });
-  };
+    })
+  }
 
   const onToggleDirection = () => {
     setSettings({
       ...settings,
       themeDirection: settings.themeDirection === 'ltr' ? 'rtl' : 'ltr',
-    });
-  };
+    })
+  }
 
   const onChangeColorPresets = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSettings({
       ...settings,
       themeColorPresets: (event.target as HTMLInputElement).value,
-    });
-  };
+    })
+  }
 
   const onResetSetting = () => {
     setSettings({
       ...defaultSettings,
-    });
-  };
+    })
+  }
 
   return (
     <SettingsContext.Provider
@@ -83,7 +84,7 @@ function SettingsProvider({ children }: Props) {
     >
       {children}
     </SettingsContext.Provider>
-  );
+  )
 }
 
-export { SettingsProvider, SettingsContext };
+export { SettingsProvider, SettingsContext }

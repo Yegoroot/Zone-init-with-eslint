@@ -1,5 +1,5 @@
 // @mui
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import {
   Timeline,
   TimelineDot,
@@ -7,10 +7,10 @@ import {
   TimelineContent,
   TimelineSeparator,
   TimelineConnector,
-} from '@mui/lab';
-import { Stack, Typography, Container } from '@mui/material';
+} from '@mui/lab'
+import { Stack, Typography, Container } from '@mui/material'
 // hooks
-import useResponsive from '../../../hooks/useResponsive';
+import useResponsive from '../../../hooks/useResponsive'
 
 // ----------------------------------------------------------------------
 
@@ -39,9 +39,9 @@ const CORE_VALUES = [
     description:
       'Curabitur ullamcorper ultricies nisi. Praesent nonummy mi in odio. Donec mollis hendrerit risus.',
   },
-];
+]
 
-const COLORS = ['primary', 'secondary', 'warning', 'success'] as const;
+const COLORS = ['primary', 'secondary', 'warning', 'success'] as const
 
 const RootStyle = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.neutral,
@@ -49,12 +49,12 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function MarketingAboutStory() {
-  const isDesktop = useResponsive('up', 'md');
+  const isDesktop = useResponsive('up', 'md')
 
   return (
     <RootStyle>
@@ -77,7 +77,7 @@ export default function MarketingAboutStory() {
 
         <Timeline position={isDesktop ? 'alternate' : 'right'}>
           {CORE_VALUES.map((value, index) => {
-            const { title, description, year } = value;
+            const { title, description, year } = value
             return (
               <TimelineItem
                 key={title}
@@ -112,10 +112,10 @@ export default function MarketingAboutStory() {
                   </Typography>
                 </TimelineContent>
               </TimelineItem>
-            );
+            )
           })}
         </Timeline>
       </Container>
     </RootStyle>
-  );
+  )
 }

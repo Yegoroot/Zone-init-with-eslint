@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import { ReactPlayerProps } from 'react-player';
+import { useState } from 'react'
+import { ReactPlayerProps } from 'react-player'
 // icons
-import closeIcon from '@iconify/icons-carbon/close';
-import playFilledAlt from '@iconify/icons-carbon/play-filled-alt';
+import closeIcon from '@iconify/icons-carbon/close'
+import playFilledAlt from '@iconify/icons-carbon/play-filled-alt'
 // @mui
-import { Box, CircularProgress } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material'
 //
-import { ReactPlayerStyle } from './Player';
-import { DialogAnimate, IconButtonAnimate, FabButtonAnimate, zoom } from '../animate';
-import Image, { ImageRato } from '../Image';
-import Iconify from '../Iconify';
-import BgOverlay from '../BgOverlay';
+import { ReactPlayerStyle } from './Player'
+import { DialogAnimate, IconButtonAnimate, FabButtonAnimate, zoom } from '../animate'
+import Image, { ImageRato } from '../Image'
+import Iconify from '../Iconify'
+import BgOverlay from '../BgOverlay'
 
 // ----------------------------------------------------------------------
 
@@ -21,20 +21,20 @@ interface Props extends ReactPlayerProps {
 }
 
 export default function PlayerWithImage({ imgPath, ratio = '16/9', videoPath }: Props) {
-  const [loading, setLoading] = useState(true);
-  const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(true)
+  const [open, setOpen] = useState(false)
 
   const handleOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
   const handleClose = () => {
-    setOpen(false);
-  };
+    setOpen(false)
+  }
 
   const onReady = () => {
-    setLoading(false);
-  };
+    setLoading(false)
+  }
 
   return (
     <>
@@ -110,5 +110,5 @@ export default function PlayerWithImage({ imgPath, ratio = '16/9', videoPath }: 
         <ReactPlayerStyle url={videoPath} playing={!loading} onReady={onReady} />
       </DialogAnimate>
     </>
-  );
+  )
 }

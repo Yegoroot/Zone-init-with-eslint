@@ -1,20 +1,20 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Container } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Container } from '@mui/material'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config'
 // hooks
-import { useRequest } from '../../../src/hooks';
+import { useRequest } from '../../../src/hooks'
 // @types
-import { TourProps } from '../../../src/@types/travel';
+import { TourProps } from '../../../src/@types/travel'
 // layouts
-import Layout from '../../../src/layouts';
+import Layout from '../../../src/layouts'
 // components
-import { Page, ErrorScreen } from '../../../src/components';
+import { Page, ErrorScreen } from '../../../src/components'
 // sections
-import { NewsletterTravel } from '../../../src/sections/newsletter';
-import { TravelTourList, TravelTourBarFilters } from '../../../src/sections/@travel';
+import { NewsletterTravel } from '../../../src/sections/newsletter'
+import { TravelTourList, TravelTourBarFilters } from '../../../src/sections/@travel'
 
 // ----------------------------------------------------------------------
 
@@ -23,17 +23,17 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function TravelToursPage() {
   const { data: tours = [], error } = useRequest<TourProps[]>({
-    url: `/api/travel/tours`,
-  });
+    url: '/api/travel/tours',
+  })
 
   if (error) {
-    return <ErrorScreen />;
+    return <ErrorScreen />
   }
 
   return (
@@ -48,11 +48,11 @@ export default function TravelToursPage() {
         <NewsletterTravel />
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 TravelToursPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}

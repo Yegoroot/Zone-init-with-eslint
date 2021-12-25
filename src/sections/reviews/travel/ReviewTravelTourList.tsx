@@ -1,9 +1,9 @@
 // @mui
-import { Box, Pagination } from '@mui/material';
+import { Box, Pagination } from '@mui/material'
 // @types
-import { ReviewProp } from '../../../@types/review';
+import { ReviewProp } from '../../../@types/review'
 //
-import ReviewTravelTourItem from './ReviewTravelTourItem';
+import ReviewTravelTourItem from './ReviewTravelTourItem'
 
 // ----------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ export default function ReviewTravelTourList({ reviews }: Props) {
   return (
     <>
       {reviews.map((review) => {
-        const hasReply = review.replies.length > 0;
+        const hasReply = review.replies.length > 0
 
         return (
           <Box key={review.id}>
@@ -27,11 +27,11 @@ export default function ReviewTravelTourList({ reviews }: Props) {
               rating={review.rating}
               helpful={review.helpful}
             />
-            {hasReply &&
-              review.replies.map((reply) => {
+            {hasReply
+              && review.replies.map((reply) => {
                 const user = review.participants.find(
                   (participant) => participant.id === reply.userId
-                );
+                )
 
                 return (
                   <ReviewTravelTourItem
@@ -43,10 +43,10 @@ export default function ReviewTravelTourList({ reviews }: Props) {
                     avatarUrl={user?.avatarUrl}
                     hasReply
                   />
-                );
+                )
               })}
           </Box>
-        );
+        )
       })}
 
       <Pagination
@@ -62,5 +62,5 @@ export default function ReviewTravelTourList({ reviews }: Props) {
         }}
       />
     </>
-  );
+  )
 }

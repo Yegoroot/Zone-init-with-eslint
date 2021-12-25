@@ -1,12 +1,12 @@
-import Slider from 'react-slick';
-import { useRef } from 'react';
+import Slider from 'react-slick'
+import { useRef } from 'react'
 // @mui
-import { styled, useTheme } from '@mui/material/styles';
-import { Typography, Grid, Container, Stack, Rating } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles'
+import { Typography, Grid, Container, Stack, Rating } from '@mui/material'
 // @types
-import { TestimonialProps } from '../../../@types/testimonial';
+import { TestimonialProps } from '../../../@types/testimonial'
 // components
-import { CarouselArrows } from '../../../components';
+import { CarouselArrows } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -16,7 +16,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -25,23 +25,23 @@ type Props = {
 };
 
 export default function TestimonialsCareer({ testimonials }: Props) {
-  const theme = useTheme();
-  const carouselRef = useRef<Slider | null>(null);
+  const theme = useTheme()
+  const carouselRef = useRef<Slider | null>(null)
 
   const carouselSettings = {
     arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     rtl: Boolean(theme.direction === 'rtl'),
-  };
+  }
 
   const handlePrevious = () => {
-    carouselRef.current?.slickPrev();
-  };
+    carouselRef.current?.slickPrev()
+  }
 
   const handleNext = () => {
-    carouselRef.current?.slickNext();
-  };
+    carouselRef.current?.slickNext()
+  }
 
   return (
     <RootStyle>
@@ -70,7 +70,7 @@ export default function TestimonialsCareer({ testimonials }: Props) {
         />
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -80,7 +80,7 @@ type TestimonialItemProps = {
 };
 
 function TestimonialsItem({ testimonial }: TestimonialItemProps) {
-  const { name, review, role, rating } = testimonial;
+  const { name, review, role, rating } = testimonial
 
   return (
     <Stack alignItems="center" sx={{ textAlign: 'center' }}>
@@ -99,5 +99,5 @@ function TestimonialsItem({ testimonial }: TestimonialItemProps) {
         {role}
       </Typography>
     </Stack>
-  );
+  )
 }

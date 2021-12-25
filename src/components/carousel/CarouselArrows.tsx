@@ -1,17 +1,17 @@
-import { ReactNode } from 'react';
-import { IconifyIcon } from '@iconify/react';
+import { ReactNode } from 'react'
+import { IconifyIcon } from '@iconify/react'
 // icons
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // @mui
-import { useTheme, styled } from '@mui/material/styles';
-import { Box, BoxProps, Stack, StackProps } from '@mui/material';
+import { useTheme, styled } from '@mui/material/styles'
+import { Box, BoxProps, Stack, StackProps } from '@mui/material'
 //
-import Iconify from '../Iconify';
-import { IconButtonAnimate } from '../animate';
+import Iconify from '../Iconify'
+import { IconButtonAnimate } from '../animate'
 
 // ----------------------------------------------------------------------
 
-const BUTTON_SIZE = 40;
+const BUTTON_SIZE = 40
 
 const ArrowStyle = styled(IconButtonAnimate)(({ theme }) => ({
   width: BUTTON_SIZE,
@@ -24,7 +24,7 @@ const ArrowStyle = styled(IconButtonAnimate)(({ theme }) => ({
   '&:hover': {
     color: theme.palette.text.primary,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -33,8 +33,8 @@ type IProps = BoxProps & StackProps;
 interface Props extends IProps {
   children?: ReactNode;
   customIcon?: IconifyIcon;
-  onNext?: VoidFunction;
-  onPrevious?: VoidFunction;
+  onNext?: ()=>void;
+  onPrevious?: ()=>void;
 }
 
 export default function CarouselArrows({
@@ -44,15 +44,15 @@ export default function CarouselArrows({
   children,
   ...other
 }: Props) {
-  const theme = useTheme();
-  const isRTL = theme.direction === 'rtl';
+  const theme = useTheme()
+  const isRTL = theme.direction === 'rtl'
 
   const style = {
     position: 'absolute',
     mt: -2.5,
     top: '50%',
     zIndex: 9,
-  } as const;
+  } as const
 
   if (children) {
     return (
@@ -67,7 +67,7 @@ export default function CarouselArrows({
           <ArrowStyle onClick={onNext}>{rightIcon(customIcon, isRTL)}</ArrowStyle>
         </Box>
       </Box>
-    );
+    )
   }
 
   return (
@@ -75,14 +75,14 @@ export default function CarouselArrows({
       <ArrowStyle onClick={onPrevious}>{leftIcon(customIcon, isRTL)}</ArrowStyle>
       <ArrowStyle onClick={onNext}>{rightIcon(customIcon, isRTL)}</ArrowStyle>
     </Stack>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 const leftIcon = (customIcon?: IconifyIcon, isRTL?: boolean) => (
   <Iconify
-    icon={customIcon ? customIcon : directionStraightRight}
+    icon={customIcon || directionStraightRight}
     sx={{
       width: 24,
       height: 24,
@@ -90,15 +90,15 @@ const leftIcon = (customIcon?: IconifyIcon, isRTL?: boolean) => (
       ...(isRTL && { transform: ' scaleX(1)' }),
     }}
   />
-);
+)
 
 const rightIcon = (customIcon?: IconifyIcon, isRTL?: boolean) => (
   <Iconify
-    icon={customIcon ? customIcon : directionStraightRight}
+    icon={customIcon || directionStraightRight}
     sx={{
       width: 24,
       height: 24,
       ...(isRTL && { transform: ' scaleX(-1)' }),
     }}
   />
-);
+)

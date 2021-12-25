@@ -1,9 +1,9 @@
 // @mui
-import { Pagination, Box } from '@mui/material';
+import { Pagination, Box } from '@mui/material'
 // @types
-import { BlogPostProps } from '../../../@types/blog';
+import { BlogPostProps } from '../../../@types/blog'
 //
-import BlogTravelPostItem from './BlogTravelPostItem';
+import BlogTravelPostItem from './BlogTravelPostItem'
 
 // ----------------------------------------------------------------------
 
@@ -42,5 +42,5 @@ export default function BlogTravelPostList({ posts }: Props) {
         }}
       />
     </>
-  );
+  )
 }

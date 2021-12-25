@@ -1,18 +1,18 @@
-import Slider from 'react-slick';
-import { useRef } from 'react';
+import Slider from 'react-slick'
+import { useRef } from 'react'
 // @mui
-import { styled, alpha, useTheme } from '@mui/material/styles';
-import { Box, Grid, Container, Typography, Stack } from '@mui/material';
+import { styled, alpha, useTheme } from '@mui/material/styles'
+import { Box, Grid, Container, Typography, Stack } from '@mui/material'
 // utils
-import cssStyles from '../../../utils/cssStyles';
+import cssStyles from '../../../utils/cssStyles'
 // hooks
-import { useBoundingClientRect } from '../../../hooks';
+import { useBoundingClientRect } from '../../../hooks'
 // @types
-import { TeamMemberProps } from '../../../@types/team';
+import { TeamMemberProps } from '../../../@types/team'
 // components
-import { CarouselArrows, CarouselDots } from '../../../components';
+import { CarouselArrows, CarouselDots } from '../../../components'
 //
-import TeamMarketingMember from './TeamMarketingMember';
+import TeamMarketingMember from './TeamMarketingMember'
 
 // ----------------------------------------------------------------------
 
@@ -24,7 +24,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     position: 'relative',
     padding: theme.spacing(20, 0),
   },
-}));
+}))
 
 const ContainerStyle = styled(Container)(({ theme }) => ({
   position: 'relative',
@@ -36,7 +36,7 @@ const ContainerStyle = styled(Container)(({ theme }) => ({
     position: 'absolute',
     height: 'calc(100% - 320px)',
   },
-}));
+}))
 
 const CarouselArrowsStyle = styled(CarouselArrows)(({ theme }) => ({
   display: 'none',
@@ -53,7 +53,7 @@ const CarouselArrowsStyle = styled(CarouselArrows)(({ theme }) => ({
     bottom: 0,
     display: 'block',
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -62,13 +62,13 @@ type Props = {
 };
 
 export default function TeamMarketingLangding({ members }: Props) {
-  const theme = useTheme();
+  const theme = useTheme()
 
-  const carouselRef = useRef<Slider | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const container = useBoundingClientRect(containerRef);
+  const carouselRef = useRef<Slider | null>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const container = useBoundingClientRect(containerRef)
 
-  const offsetLeft = container?.left;
+  const offsetLeft = container?.left
 
   const carouselSettings = {
     dots: true,
@@ -96,15 +96,15 @@ export default function TeamMarketingLangding({ members }: Props) {
         settings: { slidesToShow: 1 },
       },
     ],
-  };
+  }
 
   const handlePrevious = () => {
-    carouselRef.current?.slickPrev();
-  };
+    carouselRef.current?.slickPrev()
+  }
 
   const handleNext = () => {
-    carouselRef.current?.slickNext();
-  };
+    carouselRef.current?.slickNext()
+  }
 
   return (
     <RootStyle>
@@ -135,7 +135,7 @@ export default function TeamMarketingLangding({ members }: Props) {
       <Box
         sx={{
           pl: `${offsetLeft}px`,
-          width: { md: `calc(100% + 120px)` },
+          width: { md: 'calc(100% + 120px)' },
         }}
       >
         <Slider ref={carouselRef} {...carouselSettings}>
@@ -155,5 +155,5 @@ export default function TeamMarketingLangding({ members }: Props) {
         </Slider>
       </Box>
     </RootStyle>
-  );
+  )
 }

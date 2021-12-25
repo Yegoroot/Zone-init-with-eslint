@@ -1,11 +1,11 @@
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Grid, Stack, Container, Typography, Button, Divider } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Grid, Stack, Container, Typography, Button, Divider } from '@mui/material'
 // utils
-import { fShortenNumber } from '../../../utils/formatNumber';
+import { fShortenNumber } from '../../../utils/formatNumber'
 // components
-import { Iconify, Image } from '../../../components';
+import { Iconify, Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     paddingBottom: 0,
     paddingTop: theme.spacing(10),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -82,7 +82,7 @@ export default function MarketingLandingAbout() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -116,5 +116,5 @@ function LineItem({ total, label, text }: LineItemProps) {
         {text}
       </Typography>
     </Stack>
-  );
+  )
 }

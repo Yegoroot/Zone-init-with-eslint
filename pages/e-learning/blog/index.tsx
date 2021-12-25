@@ -1,27 +1,26 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Grid, Container } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Grid, Container } from '@mui/material'
 // utils
-import { getAllPosts } from '../../../src/utils/get-mardown/e-learning/posts';
+import { getAllPosts } from '../../../src/utils/get-mardown/e-learning/posts'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config'
 // @types
-import { BlogPostProps } from '../../../src/@types/blog';
+import { BlogPostProps } from '../../../src/@types/blog'
 // _data
-import _mock from '../../../_data/mock';
+import _mock from '../../../_data/mock'
 // layouts
-import Layout from '../../../src/layouts';
+import Layout from '../../../src/layouts'
 // components
-import { Page } from '../../../src/components';
-import { SearchInput } from '../../../src/components';
+import { Page, SearchInput } from '../../../src/components'
 // sections
-import { NewsletterElearning } from '../../../src/sections/newsletter';
+import { NewsletterElearning } from '../../../src/sections/newsletter'
 import {
   BlogSidebar,
   BlogElearningPostList,
   BlogElearningFeaturedPosts,
-} from '../../../src/sections/blog';
+} from '../../../src/sections/blog'
 
 // ----------------------------------------------------------------------
 
@@ -30,7 +29,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -81,14 +80,14 @@ export default function ElearningBlogPage({ posts }: Props) {
         <NewsletterElearning />
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 ElearningBlogPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}
 
 // ----------------------------------------------------------------------
 
@@ -97,5 +96,5 @@ export async function getStaticProps() {
     props: {
       posts: getAllPosts(),
     },
-  };
+  }
 }

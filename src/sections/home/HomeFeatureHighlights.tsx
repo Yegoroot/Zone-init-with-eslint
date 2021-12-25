@@ -1,29 +1,29 @@
-import { m } from 'framer-motion';
+import { m } from 'framer-motion'
 // icons
-import asleepIcon from '@iconify/icons-carbon/asleep';
-import scriptIcon from '@iconify/icons-carbon/script';
-import textFont from '@iconify/icons-carbon/text-font';
-import booleanIcon from '@iconify/icons-carbon/boolean';
-import devicesIcon from '@iconify/icons-carbon/devices';
-import headsetIcon from '@iconify/icons-carbon/headset';
-import updateNow from '@iconify/icons-carbon/update-now';
-import notebookIcon from '@iconify/icons-carbon/notebook';
-import translateIcon from '@iconify/icons-carbon/translate';
-import colorSwitch from '@iconify/icons-carbon/color-switch';
-import listDropdown from '@iconify/icons-carbon/list-dropdown';
-import applicationWeb from '@iconify/icons-carbon/application-web';
-import settingsAdjust from '@iconify/icons-carbon/settings-adjust';
-import stackedScrolling2 from '@iconify/icons-carbon/stacked-scrolling-2';
+import asleepIcon from '@iconify/icons-carbon/asleep'
+import scriptIcon from '@iconify/icons-carbon/script'
+import textFont from '@iconify/icons-carbon/text-font'
+import booleanIcon from '@iconify/icons-carbon/boolean'
+import devicesIcon from '@iconify/icons-carbon/devices'
+import headsetIcon from '@iconify/icons-carbon/headset'
+import updateNow from '@iconify/icons-carbon/update-now'
+import notebookIcon from '@iconify/icons-carbon/notebook'
+import translateIcon from '@iconify/icons-carbon/translate'
+import colorSwitch from '@iconify/icons-carbon/color-switch'
+import listDropdown from '@iconify/icons-carbon/list-dropdown'
+import applicationWeb from '@iconify/icons-carbon/application-web'
+import settingsAdjust from '@iconify/icons-carbon/settings-adjust'
+import stackedScrolling2 from '@iconify/icons-carbon/stacked-scrolling-2'
 // @mui
-import { styled, alpha } from '@mui/material/styles';
-import { Container, Typography, Button, Grid, Box } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles'
+import { Container, Typography, Button, Grid, Box } from '@mui/material'
 // theme
-import cssStyles from '../../utils/cssStyles';
+import cssStyles from '../../utils/cssStyles'
 // routes
-import Routes from '../../routes';
+import Routes from '../../routes'
 // components
-import { Iconify, SvgIconStyle } from '../../components';
-import { MotionViewport, varFade } from '../../components/animate';
+import { Iconify, SvgIconStyle } from '../../components'
+import { MotionViewport, varFade } from '../../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ const FEATURE_HIGHLIGHTS = [
   { title: 'Free Updates', icon: <Iconify icon={updateNow} /> },
   { title: 'Fast Support', icon: <Iconify icon={headsetIcon} /> },
   { title: 'Well Documented', icon: <Iconify icon={notebookIcon} /> },
-];
+]
 
 // ----------------------------------------------------------------------
 
@@ -56,7 +56,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -81,7 +81,7 @@ export default function HomeFeatureHighlights() {
 
               <m.div variants={varFade().inUp}>
                 <Typography sx={{ color: 'text.secondary' }}>
-                  {`Let's see what makes our theme super powerful and user-friendly!`}
+                  Let's see what makes our theme super powerful and user-friendly!
                 </Typography>
               </m.div>
 
@@ -159,5 +159,5 @@ export default function HomeFeatureHighlights() {
         </Container>
       </RootStyle>
     </MotionViewport>
-  );
+  )
 }

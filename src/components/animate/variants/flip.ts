@@ -1,15 +1,15 @@
 // @types
-import { VariantsType } from '../../../@types/animate';
+import { VariantsType } from '../../../@types/animate'
 //
-import { varTranEnter, varTranExit } from './transition';
+import { varTranEnter, varTranExit } from './transition'
 
 // ----------------------------------------------------------------------
 
 export const varFlip = (props?: VariantsType) => {
-  const durationIn = props?.durationIn;
-  const durationOut = props?.durationOut;
-  const easeIn = props?.easeIn;
-  const easeOut = props?.easeOut;
+  const durationIn = props?.durationIn
+  const durationOut = props?.durationOut
+  const easeIn = props?.easeIn
+  const easeOut = props?.easeOut
 
   return {
     // IN
@@ -33,5 +33,5 @@ export const varFlip = (props?: VariantsType) => {
       initial: { rotateY: 0, opacity: 1 },
       animate: { rotateY: 70, opacity: 0, transition: varTranExit({ durationOut, easeOut }) },
     },
-  };
-};
+  }
+}

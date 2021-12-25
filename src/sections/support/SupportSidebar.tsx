@@ -1,16 +1,16 @@
 // icons
-import emailIcon from '@iconify/icons-carbon/email';
-import chatIcon from '@iconify/icons-carbon/chat';
-import mobileIcon from '@iconify/icons-carbon/mobile';
+import emailIcon from '@iconify/icons-carbon/email'
+import chatIcon from '@iconify/icons-carbon/chat'
+import mobileIcon from '@iconify/icons-carbon/mobile'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Tab, Tabs, Stack, Drawer, Typography, CardActionArea } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Tab, Tabs, Stack, Drawer, Typography, CardActionArea } from '@mui/material'
 // hooks
-import useResponsive from '../../hooks/useResponsive';
+import useResponsive from '../../hooks/useResponsive'
 // utils
-import { DRAWER_WIDTH } from '../../config';
+import { DRAWER_WIDTH } from '../../config'
 // components
-import { Scrollbar, Iconify, Image } from '../../components';
+import { Scrollbar, Iconify, Image } from '../../components'
 
 // ----------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ const ContactButtonStyle = styled((props) => (
   borderRadius: theme.shape.borderRadius,
   padding: theme.spacing(2),
   border: `solid 1px ${theme.palette.divider}`,
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ type SupportSidebarProps = {
     icon: string;
   }[];
   isOpenSidebar: boolean;
-  onCloseSidebar: VoidFunction;
+  onCloseSidebar: ()=>void;
   topic: string;
   onChangeTopic: (event: React.SyntheticEvent, newValue: string) => void;
 };
@@ -45,7 +45,7 @@ export default function SupportSidebar({
   isOpenSidebar,
   onCloseSidebar,
 }: SupportSidebarProps) {
-  const isDesktop = useResponsive('up', 'md');
+  const isDesktop = useResponsive('up', 'md')
 
   const renderContent = (
     <Scrollbar
@@ -66,13 +66,13 @@ export default function SupportSidebar({
             key={topic.title}
             value={topic.title}
             label={topic.title}
-            icon={
+            icon={(
               <Image
                 alt={topic.icon}
                 src={topic.icon}
-                sx={{ width: 28, height: 28, mr: `20px !important` }}
+                sx={{ width: 28, height: 28, mr: '20px !important' }}
               />
-            }
+            )}
             sx={{
               height: 56,
               typography: 'body2',
@@ -111,7 +111,8 @@ export default function SupportSidebar({
           <ContactButtonStyle>
             <Iconify icon={mobileIcon} sx={{ width: 24, height: 24 }} />
             <Typography variant="subtitle2">
-              Call{' '}
+              Call
+              {' '}
               <Box component="span" sx={{ color: 'primary.main' }}>
                 552-917-1454
               </Box>
@@ -120,7 +121,7 @@ export default function SupportSidebar({
         </Stack>
       </Box>
     </Scrollbar>
-  );
+  )
 
   return (
     <>
@@ -150,5 +151,5 @@ export default function SupportSidebar({
         </Drawer>
       )}
     </>
-  );
+  )
 }

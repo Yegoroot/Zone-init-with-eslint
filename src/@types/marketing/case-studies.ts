@@ -1,6 +1,6 @@
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 //
-import { SocialLinks } from '../socials';
+import { SocialLinks } from '../socials'
 
 // ----------------------------------------------------------------------
 

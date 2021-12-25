@@ -1,9 +1,9 @@
 // @mui
-import { SxProps } from '@mui/system';
-import { styled } from '@mui/material/styles';
-import { LinearProgress, Box } from '@mui/material';
+import { SxProps } from '@mui/system'
+import { styled } from '@mui/material/styles'
+import { LinearProgress, Box } from '@mui/material'
 //
-import cssStyles from '../utils/cssStyles';
+import cssStyles from '../utils/cssStyles'
 
 // ----------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -37,5 +37,5 @@ export default function LoadingScreen({ sx }: Props) {
 
       <Box sx={{ width: '100%', height: '100vh' }} />
     </>
-  );
+  )
 }

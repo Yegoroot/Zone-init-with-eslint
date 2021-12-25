@@ -1,12 +1,12 @@
-import parse from 'autosuggest-highlight/parse';
-import match from 'autosuggest-highlight/match';
+import parse from 'autosuggest-highlight/parse'
+import match from 'autosuggest-highlight/match'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Autocomplete, Checkbox, TextField, Chip } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Autocomplete, Checkbox, TextField, Chip } from '@mui/material'
 // @type
-import { CountriesProps } from '../../../@types/map';
+import { CountriesProps } from '../../../@types/map'
 // _data
-import _mock from '../../../../_data/mock';
+import _mock from '../../../../_data/mock'
 // components
 
 // ----------------------------------------------------------------------
@@ -18,7 +18,7 @@ const RootStyle = styled('div')(() => ({
       padding: '12px',
     },
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -49,34 +49,32 @@ export default function ElearningCourseLanguageFilter({ filterLanguage, onChange
             }}
           />
         )}
-        renderTags={(value, getTagProps) =>
-          value.map((option, index) => (
-            <Chip
-              {...getTagProps({ index })}
-              key={option.label}
-              label={option.label}
-              size="small"
-              sx={{
-                bgcolor: 'text.primary',
-                color: (theme) => (theme.palette.mode === 'light' ? 'common.white' : 'grey.800'),
-                '& .MuiChip-deleteIcon': {
-                  opacity: 0.48,
+        renderTags={(value, getTagProps) => value.map((option, index) => (
+          <Chip
+            {...getTagProps({ index })}
+            key={option.label}
+            label={option.label}
+            size="small"
+            sx={{
+              bgcolor: 'text.primary',
+              color: (theme) => (theme.palette.mode === 'light' ? 'common.white' : 'grey.800'),
+              '& .MuiChip-deleteIcon': {
+                opacity: 0.48,
+                color: 'currentColor',
+                '&:hover': {
+                  opacity: 0.72,
                   color: 'currentColor',
-                  '&:hover': {
-                    opacity: 0.72,
-                    color: 'currentColor',
-                  },
                 },
-              }}
-            />
-          ))
-        }
+              },
+            }}
+          />
+        ))}
         renderOption={(props, option, { inputValue, selected }) => {
-          const matches = match(option.label, inputValue);
+          const matches = match(option.label, inputValue)
           const parts: {
             text: string;
             highlight: boolean;
-          }[] = parse(option.label, matches);
+          }[] = parse(option.label, matches)
           return (
             <Box component="li" sx={{ my: 1, p: '0 !important' }} {...props}>
               <Checkbox size="small" checked={selected} />
@@ -95,9 +93,9 @@ export default function ElearningCourseLanguageFilter({ filterLanguage, onChange
                 </Box>
               ))}
             </Box>
-          );
+          )
         }}
       />
     </RootStyle>
-  );
+  )
 }

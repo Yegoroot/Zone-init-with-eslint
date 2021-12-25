@@ -41,4 +41,4 @@ export const email = [
   'barney88@gmail.com',
   'diamond_johns@hotmail.com',
   'gus80@hotmail.com',
-];
+]

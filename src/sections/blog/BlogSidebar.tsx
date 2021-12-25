@@ -1,19 +1,19 @@
 // @mui
-import { Stack, StackProps } from '@mui/material';
+import { Stack, StackProps } from '@mui/material'
 // @types
-import { AuthorProps } from '../../@types/author';
-import { BlogPostProps } from '../../@types/blog';
-import { AdvertisementProps } from '../../@types/advertisement';
+import { AuthorProps } from '../../@types/author'
+import { BlogPostProps } from '../../@types/blog'
+import { AdvertisementProps } from '../../@types/advertisement'
 // hooks
-import { useResponsive } from '../../hooks';
+import { useResponsive } from '../../hooks'
 // components
-import { SearchInput } from '../../components';
+import { SearchInput } from '../../components'
 //
-import { Advertisement01 } from '../advertisement';
-import BlogSidebarAuthor from './BlogSidebarAuthor';
-import BlogSidebarCategories from './BlogSidebarCategories';
-import BlogSidebarPopularTags from './BlogSidebarPopularTags';
-import BlogSidebarRecentPosts from './BlogSidebarRecentPosts';
+import { Advertisement01 } from '../advertisement'
+import BlogSidebarAuthor from './BlogSidebarAuthor'
+import BlogSidebarCategories from './BlogSidebarCategories'
+import BlogSidebarPopularTags from './BlogSidebarPopularTags'
+import BlogSidebarRecentPosts from './BlogSidebarRecentPosts'
 
 // ----------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ interface Props extends StackProps {
 }
 
 export default function BlogSidebar({ author, recentPosts, advertisement, sx, ...other }: Props) {
-  const isDesktop = useResponsive('up', 'md');
+  const isDesktop = useResponsive('up', 'md')
 
   return (
     <>
@@ -50,5 +50,5 @@ export default function BlogSidebar({ author, recentPosts, advertisement, sx, ..
         <Advertisement01 advertisement={advertisement} />
       </Stack>
     </>
-  );
+  )
 }

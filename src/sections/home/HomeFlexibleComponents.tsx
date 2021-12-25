@@ -1,17 +1,17 @@
-import { m } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { m } from 'framer-motion'
+import { useEffect, useState } from 'react'
 // icons
-import addIcon from '@iconify/icons-carbon/add';
-import cloudUpload from '@iconify/icons-carbon/cloud-upload';
-import mediaLibrary from '@iconify/icons-carbon/media-library';
-import chevronRight from '@iconify/icons-carbon/chevron-right';
-import alignHorizontalLeft from '@iconify/icons-carbon/align-horizontal-left';
-import alignHorizontalRight from '@iconify/icons-carbon/align-horizontal-right';
-import alignHorizontalCenter from '@iconify/icons-carbon/align-horizontal-center';
+import addIcon from '@iconify/icons-carbon/add'
+import cloudUpload from '@iconify/icons-carbon/cloud-upload'
+import mediaLibrary from '@iconify/icons-carbon/media-library'
+import chevronRight from '@iconify/icons-carbon/chevron-right'
+import alignHorizontalLeft from '@iconify/icons-carbon/align-horizontal-left'
+import alignHorizontalRight from '@iconify/icons-carbon/align-horizontal-right'
+import alignHorizontalCenter from '@iconify/icons-carbon/align-horizontal-center'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import {
   Tab,
   Chip,
@@ -37,15 +37,15 @@ import {
   FormControlLabel,
   ToggleButtonGroup,
   Slider as MUISlider,
-} from '@mui/material';
-import { CalendarPicker } from '@mui/lab';
+} from '@mui/material'
+import { CalendarPicker } from '@mui/lab'
 // routes
-import Routes from '../../routes';
+import Routes from '../../routes'
 // _data
-import _mock from '../../../_data/mock';
+import _mock from '../../../_data/mock'
 // components
-import { FabButtonAnimate, Iconify } from '../../components';
-import { MotionViewport, varFade } from '../../components/animate';
+import { FabButtonAnimate, Iconify } from '../../components'
+import { MotionViewport, varFade } from '../../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -53,14 +53,14 @@ const FASHION_CATEGORY = [
   { value: 'clothes', label: 'Clothes' },
   { value: 'footwear', label: 'Footwear' },
   { value: 'jean', label: 'Jean' },
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 const BlockStyle = styled((props: StackProps) => (
   <Stack
@@ -77,41 +77,41 @@ const BlockStyle = styled((props: StackProps) => (
     marginTop: '20px !important',
     marginBottom: '20px !important',
   },
-});
+})
 
 // ----------------------------------------------------------------------
 
 export default function HomeFlexibleComponents() {
-  const [tab, setTab] = useState('angular');
-  const [progress, setProgress] = useState(0);
-  const [alignment, setAlignment] = useState('left');
-  const [category, setCategory] = useState('clothes');
-  const [rating, setRating] = useState<number | null>(5);
-  const [date, setDate] = useState<Date | null>(new Date());
+  const [tab, setTab] = useState('angular')
+  const [progress, setProgress] = useState(0)
+  const [alignment, setAlignment] = useState('left')
+  const [category, setCategory] = useState('clothes')
+  const [rating, setRating] = useState<number | null>(5)
+  const [date, setDate] = useState<Date | null>(new Date())
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10));
-    }, 800);
+      setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 10))
+    }, 800)
 
     return () => {
-      clearInterval(timer);
-    };
-  }, []);
+      clearInterval(timer)
+    }
+  }, [])
 
   const handleChangeTab = (event: React.SyntheticEvent, newValue: string) => {
-    setTab(newValue);
-  };
+    setTab(newValue)
+  }
 
   const handleChangeAlignment = (event: React.MouseEvent<HTMLElement>, newAlignment: string) => {
     if (newAlignment !== null) {
-      setAlignment(newAlignment);
+      setAlignment(newAlignment)
     }
-  };
+  }
 
   const handleChangeCategory = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCategory(event.target.value);
-  };
+    setCategory(event.target.value)
+  }
 
   return (
     <RootStyle>
@@ -217,7 +217,7 @@ export default function HomeFlexibleComponents() {
                   variant="outlined"
                   color="primary"
                   label="Pamela"
-                  onDelete={() => {}}
+                  onDelete={() => console.log('heeeeey')}
                   avatar={<Avatar alt="Pamela">P</Avatar>}
                 />
               </BlockStyle>
@@ -246,7 +246,7 @@ export default function HomeFlexibleComponents() {
                 <Rating
                   value={rating}
                   onChange={(event, newValue) => {
-                    setRating(newValue);
+                    setRating(newValue)
                   }}
                 />
               </BlockStyle>
@@ -263,7 +263,11 @@ export default function HomeFlexibleComponents() {
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <Alert severity="success">
-                      This is a <strong>success</strong> alert
+                      This is a
+                      {' '}
+                      <strong>success</strong>
+                      {' '}
+                      alert
                     </Alert>
                   </Grid>
                 </Grid>
@@ -310,5 +314,5 @@ export default function HomeFlexibleComponents() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

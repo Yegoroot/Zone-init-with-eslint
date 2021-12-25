@@ -1,23 +1,23 @@
 // icons
-import timeIcon from '@iconify/icons-carbon/time';
-import documentIcon from '@iconify/icons-carbon/document';
-import contentDeliveryNetwork from '@iconify/icons-carbon/content-delivery-network';
-import helpIcon from '@iconify/icons-carbon/help';
+import timeIcon from '@iconify/icons-carbon/time'
+import documentIcon from '@iconify/icons-carbon/document'
+import contentDeliveryNetwork from '@iconify/icons-carbon/content-delivery-network'
+import helpIcon from '@iconify/icons-carbon/help'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Stack, Divider, Container, Grid, Box, Avatar, Link } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Stack, Divider, Container, Grid, Box, Avatar, Link } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // utils
-import { fShortenNumber } from '../../../utils/formatNumber';
-import { getLevelIcon } from '../../../utils/getIcon';
+import { fShortenNumber } from '../../../utils/formatNumber'
+import { getLevelIcon } from '../../../utils/getIcon'
 // @types
-import { CourseProps } from '../../../@types/e-learning';
+import { CourseProps } from '../../../@types/e-learning'
 // _data
-import _mock from '../../../../_data/mock';
+import _mock from '../../../../_data/mock'
 // components
-import { PlayerWithImage } from '../../../components/player';
-import { Label, Breadcrumbs, RatingLabel, TextIconLabel, Iconify } from '../../../components';
+import { PlayerWithImage } from '../../../components/player'
+import { Label, Breadcrumbs, RatingLabel, TextIconLabel, Iconify } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -25,7 +25,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   paddingTop: theme.spacing(5),
   paddingBottom: theme.spacing(10),
   backgroundColor: theme.palette.background.neutral,
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -49,7 +49,7 @@ export default function ElearningCourseHero({ course }: Props) {
     reviews,
     students,
     teachers = [],
-  } = course;
+  } = course
 
   return (
     <RootStyle>
@@ -98,7 +98,9 @@ export default function ElearningCourseHero({ course }: Props) {
               >
                 <RatingLabel ratings={ratings} reviews={reviews} />
                 <Stack direction="row" sx={{ typography: 'subtitle2' }}>
-                  {fShortenNumber(students)} {''}
+                  {fShortenNumber(students)}
+                  {' '}
+
                   <Box component="span" typography="body2" sx={{ ml: 0.5 }}>
                     students
                   </Box>
@@ -107,18 +109,22 @@ export default function ElearningCourseHero({ course }: Props) {
 
               <TextIconLabel
                 icon={<Avatar src={teachers[0]?.picture} />}
-                value={
+                value={(
                   <>
                     <Typography variant="body2" sx={{ ml: 1, mr: 0.5 }}>
                       {teachers[0]?.name}
                     </Typography>
                     {teachers?.length > 0 && (
                       <Link underline="always" color="text.secondary" variant="body2">
-                        + {teachers?.length} teachers
+                        +
+                        {' '}
+                        {teachers?.length}
+                        {' '}
+                        teachers
                       </Link>
                     )}
                   </>
-                }
+                )}
               />
 
               <Divider sx={{ borderStyle: 'dashed' }} />
@@ -150,12 +156,12 @@ export default function ElearningCourseHero({ course }: Props) {
                   }}
                 >
                   <TextIconLabel
-                    icon={
+                    icon={(
                       <Iconify
                         icon={contentDeliveryNetwork}
                         sx={{ width: 20, height: 20, mr: 1 }}
                       />
-                    }
+                    )}
                     value={typeof languages === 'string' ? languages : languages?.join(', ')}
                   />
                   <TextIconLabel
@@ -169,5 +175,5 @@ export default function ElearningCourseHero({ course }: Props) {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, BoxProps } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, BoxProps } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -31,7 +31,7 @@ const RootStyle = styled(Box, {
       },
     }),
   },
-}));
+}))
 
 const DotWrapStyle = styled('div')(() => ({
   width: '100%',
@@ -39,7 +39,7 @@ const DotWrapStyle = styled('div')(() => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-}));
+}))
 
 const DotStyle = styled('span')(({ theme }) => ({
   width: 8,
@@ -49,7 +49,7 @@ const DotStyle = styled('span')(({ theme }) => ({
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.short,
   }),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -59,8 +59,8 @@ export interface Props extends BoxProps {
 }
 
 export default function CarouselDots(props?: Props) {
-  const color = props?.color;
-  const rounded = props?.rounded || false;
+  const color = props?.color
+  const rounded = props?.rounded || false
 
   return {
     appendDots: (dots: ReactNode) => (
@@ -80,5 +80,5 @@ export default function CarouselDots(props?: Props) {
         />
       </DotWrapStyle>
     ),
-  };
+  }
 }

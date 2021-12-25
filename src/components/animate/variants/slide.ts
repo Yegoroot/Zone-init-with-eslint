@@ -1,16 +1,16 @@
 // @types
-import { VariantsType } from '../../../@types/animate';
+import { VariantsType } from '../../../@types/animate'
 //
-import { varTranEnter, varTranExit } from './transition';
+import { varTranEnter, varTranExit } from './transition'
 
 // ----------------------------------------------------------------------
 
 export const varSlide = (props?: VariantsType) => {
-  const distance = props?.distance || 160;
-  const durationIn = props?.durationIn;
-  const durationOut = props?.durationOut;
-  const easeIn = props?.easeIn;
-  const easeOut = props?.easeOut;
+  const distance = props?.distance || 160
+  const durationIn = props?.durationIn
+  const durationOut = props?.durationOut
+  const easeIn = props?.easeIn
+  const easeOut = props?.easeOut
 
   return {
     // IN
@@ -56,5 +56,5 @@ export const varSlide = (props?: VariantsType) => {
       animate: { x: distance, transition: varTranEnter({ durationIn, easeIn }) },
       exit: { x: 0, transition: varTranExit({ durationOut, easeOut }) },
     },
-  };
-};
+  }
+}

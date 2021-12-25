@@ -1,11 +1,11 @@
-import { useRef } from 'react';
-import Slider from 'react-slick';
-import { m } from 'framer-motion';
+import { useRef } from 'react'
+import Slider from 'react-slick'
+import { m } from 'framer-motion'
 // next
-import NextLink from 'next/link';
-import { useRouter } from 'next/router';
+import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 // @mui
-import { styled, useTheme } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles'
 import {
   Box,
   Grid,
@@ -17,14 +17,14 @@ import {
   ListItemProps,
   ListSubheader,
   ListSubheaderProps,
-} from '@mui/material';
+} from '@mui/material'
 // config
-import { HEADER_DESKTOP_HEIGHT } from '../../config';
+import { HEADER_DESKTOP_HEIGHT } from '../../config'
 // @types
-import { NavDesktopMenuProps } from '../../@types/layout';
+import { NavDesktopMenuProps } from '../../@types/layout'
 //
-import { Image, CarouselDots, CarouselArrows } from '../../components';
-import { DialogAnimate, MotionContainer, varFade } from '../../components/animate';
+import { Image, CarouselDots, CarouselArrows } from '../../components'
+import { DialogAnimate, MotionContainer, varFade } from '../../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ const SubLinkStyle = styled(ListItem, {
     ...theme.typography.subtitle3,
     color: theme.palette.text.primary,
   }),
-}));
+}))
 
 const IconBulletStyle = styled(Box, {
   shouldForwardProp: (prop) => prop !== 'active',
@@ -81,7 +81,7 @@ const IconBulletStyle = styled(Box, {
       }),
     },
   }),
-}));
+}))
 
 const ListSubheaderStyled = styled((props: ListSubheaderProps) => (
   <ListSubheader disableSticky disableGutters {...props} />
@@ -89,7 +89,7 @@ const ListSubheaderStyled = styled((props: ListSubheaderProps) => (
   ...theme.typography.h5,
   marginBottom: theme.spacing(2.5),
   color: theme.palette.text.primary,
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -99,15 +99,15 @@ export default function NavDesktopMenu({
   onClose,
   isScrolling,
 }: NavDesktopMenuProps) {
-  const router = useRouter();
-  const theme = useTheme();
+  const router = useRouter()
+  const theme = useTheme()
 
-  const carouselRef = useRef<Slider | null>(null);
+  const carouselRef = useRef<Slider | null>(null)
 
-  const carouselList = lists.filter((list) => list.subheader !== 'Common');
-  const commonList = lists.filter((list) => list.subheader === 'Common')[0];
+  const carouselList = lists.filter((list) => list.subheader !== 'Common')
+  const commonList = lists.filter((list) => list.subheader === 'Common')[0]
 
-  const minList = lists.length > 5;
+  const minList = lists.length > 5
 
   const carouselSettings = {
     arrows: false,
@@ -117,15 +117,15 @@ export default function NavDesktopMenu({
     slidesToScroll: 1,
     rtl: Boolean(theme.direction === 'rtl'),
     ...CarouselDots(),
-  };
+  }
 
   const handlePrevious = () => {
-    carouselRef.current?.slickPrev();
-  };
+    carouselRef.current?.slickPrev()
+  }
 
   const handleNext = () => {
-    carouselRef.current?.slickNext();
-  };
+    carouselRef.current?.slickNext()
+  }
 
   return (
     <DialogAnimate
@@ -156,9 +156,9 @@ export default function NavDesktopMenu({
           <Box sx={{ position: 'relative', px: 2, py: 6 }}>
             <Slider ref={carouselRef} {...carouselSettings}>
               {carouselList.map((list) => {
-                const { subheader, items, cover } = list;
+                const { subheader, items, cover } = list
 
-                const path = items.length > 0 ? items[0].path : '';
+                const path = items.length > 0 ? items[0].path : ''
 
                 return (
                   <List key={subheader} disablePadding sx={{ px: 2 }} component={MotionContainer}>
@@ -207,15 +207,15 @@ export default function NavDesktopMenu({
 
                     <Stack spacing={1.5} alignItems="flex-start">
                       {items?.map((item) => {
-                        const { title, path } = item;
+                        const { title, path } = item
 
-                        const active = router.pathname === path || router.asPath === path;
+                        const active = router.pathname === path || router.asPath === path
 
-                        return <LinkItem key={title} title={title} href={path} active={active} />;
+                        return <LinkItem key={title} title={title} href={path} active={active} />
                       })}
                     </Stack>
                   </List>
-                );
+                )
               })}
             </Slider>
 
@@ -245,17 +245,17 @@ export default function NavDesktopMenu({
             <ListSubheaderStyled>{commonList.subheader}</ListSubheaderStyled>
             <Stack spacing={1.5} alignItems="flex-start">
               {commonList.items.map((item) => {
-                const { title, path } = item;
-                const active = router.pathname === path;
+                const { title, path } = item
+                const active = router.pathname === path
 
-                return <LinkItem key={title} title={title} href={path} active={active} />;
+                return <LinkItem key={title} title={title} href={path} active={active} />
               })}
             </Stack>
           </List>
         </Grid>
       </Grid>
     </DialogAnimate>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -288,5 +288,5 @@ function LinkItem({ title, href, active }: LinkItemProps) {
         </SubLinkStyle>
       </Link>
     </NextLink>
-  );
+  )
 }

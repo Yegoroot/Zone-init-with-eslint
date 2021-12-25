@@ -1,20 +1,20 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // @mui
-import { Stack, Drawer, Box, Typography } from '@mui/material';
-import { SelectChangeEvent } from '@mui/material/Select';
+import { Stack, Drawer, Box, Typography } from '@mui/material'
+import { SelectChangeEvent } from '@mui/material/Select'
 // config
-import { DRAWER_WIDTH, HEADER_DESKTOP_HEIGHT } from '../../../config';
+import { DRAWER_WIDTH, HEADER_DESKTOP_HEIGHT } from '../../../config'
 // @type
-import { CountriesProps } from '../../../@types/map';
-import { CourseFiltersProps } from '../../../@types/e-learning';
+import { CountriesProps } from '../../../@types/map'
+import { CourseFiltersProps } from '../../../@types/e-learning'
 //
-import { SearchInput } from '../../../components';
-import ElearningCourseFeeFilter from './ElearningCourseFeeFilter';
-import ElearningCourseLevelFilter from './ElearningCourseLevelFilter';
-import ElearningCourseRatingFilter from './ElearningCourseRatingFilter';
-import ElearningCourseLanguageFilter from './ElearningCourseLanguageFilter';
-import ElearningCourseDurationFilter from './ElearningCourseDurationFilter';
-import ElearningCourseCategoriesFilter from './ElearningCourseCategoriesFilter';
+import { SearchInput } from '../../../components'
+import ElearningCourseFeeFilter from './ElearningCourseFeeFilter'
+import ElearningCourseLevelFilter from './ElearningCourseLevelFilter'
+import ElearningCourseRatingFilter from './ElearningCourseRatingFilter'
+import ElearningCourseLanguageFilter from './ElearningCourseLanguageFilter'
+import ElearningCourseDurationFilter from './ElearningCourseDurationFilter'
+import ElearningCourseCategoriesFilter from './ElearningCourseCategoriesFilter'
 
 // ----------------------------------------------------------------------
 
@@ -25,66 +25,66 @@ const defaultValues = {
   filterFee: [],
   filterLevel: [],
   filterLanguage: [],
-};
+}
 
 type Props = {
   mobileOpen: boolean;
-  onMobileClose: VoidFunction;
+  onMobileClose: ()=>void;
 };
 
 export default function ElearningCourseBarFilters({ mobileOpen, onMobileClose }: Props) {
-  const [filters, setFilters] = useState<CourseFiltersProps>(defaultValues);
+  const [filters, setFilters] = useState<CourseFiltersProps>(defaultValues)
 
   const handleChangeRating = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFilters({
       ...filters,
       filterRating: (event.target as HTMLInputElement).value,
-    });
-  };
+    })
+  }
 
   const handleChangeCategory = (keyword: string[]) => {
     setFilters({
       ...filters,
       filterCategories: keyword,
-    });
-  };
+    })
+  }
 
   const handleChangeLevel = (event: SelectChangeEvent<typeof filters.filterLevel>) => {
     const {
       target: { value },
-    } = event;
+    } = event
     setFilters({
       ...filters,
       filterLevel: typeof value === 'string' ? value.split(',') : value,
-    });
-  };
+    })
+  }
 
   const handleChangeFee = (event: SelectChangeEvent<typeof filters.filterFee>) => {
     const {
       target: { value },
-    } = event;
+    } = event
     setFilters({
       ...filters,
       filterFee: typeof value === 'string' ? value.split(',') : value,
-    });
-  };
+    })
+  }
 
   const handleChangeDuration = (event: SelectChangeEvent<typeof filters.filterDuration>) => {
     const {
       target: { value },
-    } = event;
+    } = event
     setFilters({
       ...filters,
       filterDuration: typeof value === 'string' ? value.split(',') : value,
-    });
-  };
+    })
+  }
 
   const handleChangeLanguage = (keyword: CountriesProps[]) => {
     setFilters({
       ...filters,
       filterLanguage: keyword,
-    });
-  };
+    })
+  }
 
   const renderFilters = (
     <Stack spacing={2.5}>
@@ -148,7 +148,7 @@ export default function ElearningCourseBarFilters({ mobileOpen, onMobileClose }:
         />
       </section>
     </Stack>
-  );
+  )
 
   return (
     <>
@@ -185,5 +185,5 @@ export default function ElearningCourseBarFilters({ mobileOpen, onMobileClose }:
         {renderFilters}
       </Drawer>
     </>
-  );
+  )
 }

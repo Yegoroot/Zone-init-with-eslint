@@ -1,2 +1,2 @@
-export * from './illustrations';
-export * from './pattern';
+export * from './illustrations'
+export * from './pattern'

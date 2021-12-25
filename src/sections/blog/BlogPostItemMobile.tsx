@@ -1,14 +1,14 @@
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Stack } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Stack } from '@mui/material'
 // utils
-import { fDate } from '../../utils/formatTime';
+import { fDate } from '../../utils/formatTime'
 // @types
-import { BlogPostProps } from '../../@types/blog';
+import { BlogPostProps } from '../../@types/blog'
 // components
-import { Image, TextMaxLine } from '../../components';
+import { Image, TextMaxLine } from '../../components'
 
 // ----------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ const DotStyle = styled('span')(({ theme }) => ({
   borderRadius: '50%',
   backgroundColor: 'currentColor',
   margin: theme.spacing(0, 1),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -29,11 +29,11 @@ type BlogPostItemMobileProps = {
 };
 
 export default function BlogPostItemMobile({ post, path, onSiderbar }: BlogPostItemMobileProps) {
-  const { slug, frontmatter } = post;
-  const { title, duration, coverImg, createdAt } = frontmatter;
+  const { slug, frontmatter } = post
+  const { title, duration, coverImg, createdAt } = frontmatter
 
-  const as = `${path}/${slug}`;
-  const href = `${path}/[slug]`;
+  const as = `${path}/${slug}`
+  const href = `${path}/[slug]`
 
   return (
     <Stack
@@ -72,5 +72,5 @@ export default function BlogPostItemMobile({ post, path, onSiderbar }: BlogPostI
         </Stack>
       </Stack>
     </Stack>
-  );
+  )
 }

@@ -1,31 +1,31 @@
-import { useState, ReactElement } from 'react';
+import { useState, ReactElement } from 'react'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Stack, Container, Typography, ToggleButton, ToggleButtonGroup } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Stack, Container, Typography, ToggleButton, ToggleButtonGroup } from '@mui/material'
 // _data
-import { _pricing01 } from '../_data/mock';
+import { _pricing01 } from '../_data/mock'
 // layouts
-import Layout from '../src/layouts';
+import Layout from '../src/layouts'
 // components
-import { Page } from '../src/components';
-import { PricingPlan01Card } from '../src/sections/pricing';
+import { Page } from '../src/components'
+import { PricingPlan01Card } from '../src/sections/pricing'
 
 // ----------------------------------------------------------------------
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(12, 0),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function Pricing01Page() {
-  const [subscription, setSubscription] = useState('monthly');
+  const [subscription, setSubscription] = useState('monthly')
 
   const handleChangeSubscription = (event: React.MouseEvent<HTMLElement>, newValue: string) => {
     if (newValue !== null) {
-      setSubscription(newValue);
+      setSubscription(newValue)
     }
-  };
+  }
 
   return (
     <Page title="Pricing 01">
@@ -33,12 +33,14 @@ export default function Pricing01Page() {
         <Container>
           <Box sx={{ textAlign: 'center' }}>
             <Typography variant="h3" sx={{ mt: 2, mb: 3, mx: 'auto', maxWidth: 480 }}>
-              {`Flexible Plans For Your Community's Size and Needs`}
+              Flexible Plans For Your Community's Size and Needs
             </Typography>
 
             <Typography sx={{ color: 'text.secondary' }}>
               Choose the perfect plan for your needs.
-              <br /> Always flexible to grow
+              <br />
+              {' '}
+              Always flexible to grow
             </Typography>
           </Box>
 
@@ -61,8 +63,7 @@ export default function Pricing01Page() {
                   },
                   '&.Mui-selected': {
                     bgcolor: 'text.primary',
-                    color: (theme) =>
-                      theme.palette.mode === 'light' ? 'common.white' : 'grey.800',
+                    color: (theme) => (theme.palette.mode === 'light' ? 'common.white' : 'grey.800'),
                     '&:hover': {
                       bgcolor: 'text.primary',
                     },
@@ -93,7 +94,7 @@ export default function Pricing01Page() {
         </Container>
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -103,5 +104,5 @@ Pricing01Page.getLayout = function getLayout(page: ReactElement) {
     <Layout simpleHeader disabledFooter>
       {page}
     </Layout>
-  );
-};
+  )
+}

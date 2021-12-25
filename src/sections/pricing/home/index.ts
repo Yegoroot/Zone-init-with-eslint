@@ -1,1 +1,1 @@
-export { default as PricingHome } from './PricingHome';
+export { default as PricingHome } from './PricingHome'

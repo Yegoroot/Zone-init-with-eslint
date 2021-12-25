@@ -1,9 +1,9 @@
-import { memo } from 'react';
+import { memo } from 'react'
 // @mui
-import { SxProps } from '@mui/system';
-import { Box } from '@mui/material';
+import { SxProps } from '@mui/system'
+import { Box } from '@mui/material'
 // theme
-import { ColorSchema } from '../../theme/palette';
+import { ColorSchema } from '../../theme/palette'
 
 // ----------------------------------------------------------------------
 
@@ -27,6 +27,6 @@ function Dot({ size = 24, color = 'primary', sx }: Props) {
         ...sx,
       }}
     />
-  );
+  )
 }
-export default memo(Dot);
+export default memo(Dot)

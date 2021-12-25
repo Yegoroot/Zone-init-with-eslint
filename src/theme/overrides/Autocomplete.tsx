@@ -1,6 +1,7 @@
-import { Theme } from '@mui/material/styles';
+/* eslint-disable react/destructuring-assignment */
+import { Theme } from '@mui/material/styles'
 //
-import { AutocompleteIcon } from './CustomIcons';
+import { AutocompleteIcon } from './CustomIcons'
 
 // ----------------------------------------------------------------------
 
@@ -24,5 +25,5 @@ export default function Autocomplete(theme: Theme) {
         },
       },
     },
-  };
+  }
 }

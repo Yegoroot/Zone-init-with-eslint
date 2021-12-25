@@ -1,10 +1,10 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Grid, Container, Typography, Box, Stack } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Grid, Container, Typography, Box, Stack } from '@mui/material'
 // utils
-import { fShortenNumber } from '../../../utils/formatNumber';
+import { fShortenNumber } from '../../../utils/formatNumber'
 // components
-import { Image, CountUpNumber } from '../../../components';
+import { Image, CountUpNumber } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -27,14 +27,14 @@ const SUMMARY = [
     description:
       'Ut varius tincidunt libero. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.',
   },
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -118,5 +118,5 @@ export default function ElearningAbout() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

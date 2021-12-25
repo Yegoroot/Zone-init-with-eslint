@@ -1,19 +1,19 @@
-import * as Yup from 'yup';
-import { useForm, Controller } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
-import { useState } from 'react';
+import * as Yup from 'yup'
+import { useForm, Controller } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
+import { useState } from 'react'
 // icons
-import viewIcon from '@iconify/icons-carbon/view';
-import viewOff from '@iconify/icons-carbon/view-off';
+import viewIcon from '@iconify/icons-carbon/view'
+import viewOff from '@iconify/icons-carbon/view-off'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { LoadingButton } from '@mui/lab';
-import { Stack, Link, TextField, IconButton, InputAdornment } from '@mui/material';
+import { LoadingButton } from '@mui/lab'
+import { Stack, Link, TextField, IconButton, InputAdornment } from '@mui/material'
 // routes
-import Routes from '../../routes';
+import Routes from '../../routes'
 // components
-import { Iconify } from '../../components';
+import { Iconify } from '../../components'
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ const FormSchema = Yup.object().shape({
   password: Yup.string()
     .required('Password is required')
     .min(6, 'Password should be of minimum 6 characters length'),
-});
+})
 
 type FormValuesProps = {
   email: string;
@@ -30,7 +30,7 @@ type FormValuesProps = {
 };
 
 export default function LoginForm() {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false)
 
   const {
     reset,
@@ -44,17 +44,17 @@ export default function LoginForm() {
       email: '',
       password: '',
     },
-  });
+  })
 
   const handleShowPassword = () => {
-    setShowPassword(!showPassword);
-  };
+    setShowPassword(!showPassword)
+  }
 
   const onSubmit = async (data: FormValuesProps) => {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    alert(JSON.stringify(data, null, 2));
-    reset();
-  };
+    await new Promise((resolve) => setTimeout(resolve, 500))
+    alert(JSON.stringify(data, null, 2))
+    reset()
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -114,5 +114,5 @@ export default function LoginForm() {
         </LoadingButton>
       </Stack>
     </form>
-  );
+  )
 }

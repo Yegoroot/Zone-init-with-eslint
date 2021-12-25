@@ -1,10 +1,10 @@
-import * as Yup from 'yup';
-import { useForm, Controller } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
+import * as Yup from 'yup'
+import { useForm, Controller } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 // @mui
-import { styled } from '@mui/material/styles';
-import { LoadingButton } from '@mui/lab';
-import { Grid, Stack, TextField, Container, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { LoadingButton } from '@mui/lab'
+import { Grid, Stack, TextField, Container, Typography } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ const FormSchema = Yup.object().shape({
   email: Yup.string().required('Email is required').email('That is not an email'),
   subject: Yup.string().required('Subject is required'),
   message: Yup.string().required('Message is required'),
-});
+})
 
 type FormValuesProps = {
   fullName: string;
@@ -46,13 +46,13 @@ export default function CareerContactForm() {
       email: '',
       message: '',
     },
-  });
+  })
 
   const onSubmit = async (data: FormValuesProps) => {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    alert(JSON.stringify(data, null, 2));
-    reset();
-  };
+    await new Promise((resolve) => setTimeout(resolve, 500))
+    alert(JSON.stringify(data, null, 2))
+    reset()
+  }
 
   return (
     <RootStyle>
@@ -143,5 +143,5 @@ export default function CareerContactForm() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

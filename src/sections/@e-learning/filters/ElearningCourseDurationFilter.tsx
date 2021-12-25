@@ -1,20 +1,20 @@
 // @mui
-import { MenuItem, Checkbox, FormControl, Typography } from '@mui/material';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { MenuItem, Checkbox, FormControl, Typography } from '@mui/material'
+import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 // ----------------------------------------------------------------------
 
-const DURATIONS = ['0 - 1 Hour', '1 - 3 Hours', '3 - 6 Hours', '6 - 18 Hours', '18+ Hours'];
+const DURATIONS = ['0 - 1 Hour', '1 - 3 Hours', '3 - 6 Hours', '6 - 18 Hours', '18+ Hours']
 
 const inputStyle = {
   '& .MuiFilledInput-input': { py: 2 },
-};
+}
 
 const placeholder = (
   <Typography variant="body2" sx={{ color: 'text.disabled' }}>
     All Duration
   </Typography>
-);
+)
 
 // ----------------------------------------------------------------------
 
@@ -33,13 +33,13 @@ export default function ElearningCourseDurationFilter({ filterDuration, onChange
         onChange={onChangeDuration}
         renderValue={(selected) => {
           if (selected.length === 0) {
-            return placeholder;
+            return placeholder
           }
           return (
             <Typography variant="subtitle2" component="span">
               {selected.join(', ')}
             </Typography>
-          );
+          )
         }}
       >
         {DURATIONS.map((duration) => (
@@ -50,5 +50,5 @@ export default function ElearningCourseDurationFilter({ filterDuration, onChange
         ))}
       </Select>
     </FormControl>
-  );
+  )
 }

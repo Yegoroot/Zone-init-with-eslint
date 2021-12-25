@@ -1,8 +1,8 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Container, Typography, Stack } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Container, Typography, Stack } from '@mui/material'
 // components
-import { Image } from '../../../components';
+import { Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -37,7 +37,7 @@ const BENEFITS = [
     description: 'Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. ',
     iconColor: 'primary',
   },
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
@@ -45,7 +45,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -98,7 +98,7 @@ export default function MarketingServicesBenefits() {
         </Box>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -114,7 +114,7 @@ type BenefitItemProps = {
 };
 
 function BenefitItem({ benefit, reverse, index }: BenefitItemProps) {
-  const { title, description, iconColor } = benefit;
+  const { title, description, iconColor } = benefit
   return (
     <Stack
       spacing={1}
@@ -155,5 +155,5 @@ function BenefitItem({ benefit, reverse, index }: BenefitItemProps) {
         </Typography>
       </Stack>
     </Stack>
-  );
+  )
 }

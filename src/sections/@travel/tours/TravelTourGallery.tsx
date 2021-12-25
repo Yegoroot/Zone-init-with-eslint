@@ -1,11 +1,11 @@
-import { m } from 'framer-motion';
-import { useState } from 'react';
+import { m } from 'framer-motion'
+import { useState } from 'react'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box } from '@mui/material'
 // components
-import { Image, LightboxModal } from '../../../components';
-import { varTranHover } from '../../../components/animate';
+import { Image, LightboxModal } from '../../../components'
+import { varTranHover } from '../../../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     paddingTop: theme.spacing(5),
     paddingBottom: theme.spacing(10),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -24,15 +24,15 @@ type Props = {
 };
 
 export default function TravelTourGallery({ gallery }: Props) {
-  const [openLightbox, setOpenLightbox] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<number>(0);
+  const [openLightbox, setOpenLightbox] = useState(false)
+  const [selectedImage, setSelectedImage] = useState<number>(0)
 
   const handleOpenLightbox = (url: string) => {
-    const selectedImage = gallery.findIndex((index) => url === index);
+    const selectedImage = gallery.findIndex((index) => url === index)
 
-    setOpenLightbox(true);
-    setSelectedImage(selectedImage);
-  };
+    setOpenLightbox(true)
+    setSelectedImage(selectedImage)
+  }
 
   return (
     <RootStyle>
@@ -70,14 +70,14 @@ export default function TravelTourGallery({ gallery }: Props) {
         onCloseRequest={() => setOpenLightbox(false)}
       />
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 type PhotoItemProps = {
   photo: string;
-  onOpenLightbox: VoidFunction;
+  onOpenLightbox: ()=>void;
 };
 
 function PhotoItem({ photo, onOpenLightbox }: PhotoItemProps) {
@@ -97,5 +97,5 @@ function PhotoItem({ photo, onOpenLightbox }: PhotoItemProps) {
         sx={{ borderRadius: 2, cursor: 'pointer' }}
       />
     </m.div>
-  );
+  )
 }

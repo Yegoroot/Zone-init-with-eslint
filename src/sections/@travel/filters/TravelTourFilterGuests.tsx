@@ -1,17 +1,17 @@
-import { useRef, useState, Dispatch, SetStateAction } from 'react';
+import { useRef, useState, Dispatch, SetStateAction } from 'react'
 // icons
-import eventsIcon from '@iconify/icons-carbon/events';
-import addAlt from '@iconify/icons-carbon/add-alt';
-import subtractAlt from '@iconify/icons-carbon/subtract-alt';
+import eventsIcon from '@iconify/icons-carbon/events'
+import addAlt from '@iconify/icons-carbon/add-alt'
+import subtractAlt from '@iconify/icons-carbon/subtract-alt'
 // @mui
-import { SxProps } from '@mui/system';
-import { Box, Stack, Divider, Typography, InputAdornment } from '@mui/material';
+import { SxProps } from '@mui/system'
+import { Box, Stack, Divider, Typography, InputAdornment } from '@mui/material'
 // components
-import { Popover, Iconify } from '../../../components';
-import { IconButtonAnimate } from '../../../components/animate';
+import { Popover, Iconify } from '../../../components'
+import { IconButtonAnimate } from '../../../components/animate'
 
 //
-import { InputStyle } from './TravelTourBarFilters';
+import { InputStyle } from './TravelTourBarFilters'
 
 // ----------------------------------------------------------------------
 
@@ -30,42 +30,42 @@ type Props = {
 };
 
 export default function TravelTourFilterGuests({ guests, setGuests, sx }: Props) {
-  const anchorRef = useRef(null);
-  const [open, setOpen] = useState(false);
+  const anchorRef = useRef(null)
+  const [open, setOpen] = useState(false)
 
-  const totalGuests = guests.children + guests.adults;
+  const totalGuests = guests.children + guests.adults
 
   const handleOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
   const handleIncrementGuests = (guest?: string) => {
     if (guest === 'children') {
       setGuests({
         ...guests,
         children: guests.children + 1,
-      });
+      })
     } else {
       setGuests({
         ...guests,
         adults: guests.adults + 1,
-      });
+      })
     }
-  };
+  }
 
   const handleDecreaseGuests = (guest?: string) => {
     if (guest === 'children') {
       setGuests({
         ...guests,
         children: guests.children - 1,
-      });
+      })
     } else {
       setGuests({
         ...guests,
         adults: guests.adults - 1,
-      });
+      })
     }
-  };
+  }
 
   return (
     <>
@@ -114,7 +114,7 @@ export default function TravelTourFilterGuests({ guests, setGuests, sx }: Props)
         </Stack>
       </Popover>
     </>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -123,8 +123,8 @@ type RowProps = {
   title: string;
   caption: string;
   total: number;
-  onDecrease: VoidFunction;
-  onIncrement: VoidFunction;
+  onDecrease: ()=>void;
+  onIncrement: ()=>void;
 };
 
 function Input({ title, caption, total, onDecrease, onIncrement }: RowProps) {
@@ -156,5 +156,5 @@ function Input({ title, caption, total, onDecrease, onIncrement }: RowProps) {
         </IconButtonAnimate>
       </Stack>
     </Stack>
-  );
+  )
 }

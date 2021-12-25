@@ -1,12 +1,12 @@
-import { m } from 'framer-motion';
-import { useRef, useState } from 'react';
-import Slider from 'react-slick';
+import { m } from 'framer-motion'
+import { useRef, useState } from 'react'
+import Slider from 'react-slick'
 // @mui
-import { useTheme } from '@mui/material/styles';
-import { Typography, Box, Stack } from '@mui/material';
+import { useTheme } from '@mui/material/styles'
+import { Typography, Box, Stack } from '@mui/material'
 // components
-import { Image, CarouselArrows, LightboxModal } from '../../../components';
-import { varHover, varTranHover } from '../../../components/animate';
+import { Image, CarouselArrows, LightboxModal } from '../../../components'
+import { varHover, varTranHover } from '../../../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -15,11 +15,11 @@ type Props = {
 };
 
 export default function MarketingCaseStudyGallery({ images }: Props) {
-  const theme = useTheme();
-  const carouselRef = useRef<Slider | null>(null);
+  const theme = useTheme()
+  const carouselRef = useRef<Slider | null>(null)
 
-  const [openLightbox, setOpenLightbox] = useState(false);
-  const [selectedImage, setSelectedImage] = useState<number>(0);
+  const [openLightbox, setOpenLightbox] = useState(false)
+  const [selectedImage, setSelectedImage] = useState<number>(0)
 
   const carouselSettings = {
     arrows: false,
@@ -36,21 +36,21 @@ export default function MarketingCaseStudyGallery({ images }: Props) {
         settings: { slidesToShow: 1 },
       },
     ],
-  };
+  }
 
   const handlePrevious = () => {
-    carouselRef.current?.slickPrev();
-  };
+    carouselRef.current?.slickPrev()
+  }
 
   const handleNext = () => {
-    carouselRef.current?.slickNext();
-  };
+    carouselRef.current?.slickNext()
+  }
 
   const handleOpenLightbox = (url: string) => {
-    const selectedImage = images.findIndex((index) => url === index);
-    setOpenLightbox(true);
-    setSelectedImage(selectedImage);
-  };
+    const selectedImage = images.findIndex((index) => url === index)
+    setOpenLightbox(true)
+    setSelectedImage(selectedImage)
+  }
 
   return (
     <>
@@ -86,5 +86,5 @@ export default function MarketingCaseStudyGallery({ images }: Props) {
         onCloseRequest={() => setOpenLightbox(false)}
       />
     </>
-  );
+  )
 }

@@ -1,7 +1,7 @@
 // @mui
-import { Typography, Stack, Container, Link } from '@mui/material';
+import { Typography, Stack, Container, Link } from '@mui/material'
 // components
-import { SocialsButton } from '../../../components';
+import { SocialsButton } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -20,7 +20,9 @@ export default function CareerContactInfo() {
           mt: 3,
           mb: { xs: 3, md: 6 },
         }}
-      >{`We'd love to talk about how we can help you.`}</Typography>
+      >
+        {'We\'d love to talk about how we can help you.'}
+      </Typography>
 
       <Stack spacing={{ xs: 3, md: 5 }} direction={{ xs: 'column', md: 'row' }}>
         <Stack spacing={1}>
@@ -54,5 +56,5 @@ export default function CareerContactInfo() {
         </Stack>
       </Stack>
     </Container>
-  );
+  )
 }

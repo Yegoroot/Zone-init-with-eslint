@@ -1,19 +1,19 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // icons
-import chevronLeft from '@iconify/icons-carbon/chevron-left';
+import chevronLeft from '@iconify/icons-carbon/chevron-left'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Button, Link, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Button, Link, Typography } from '@mui/material'
 // routes
-import Routes from '../../src/routes';
+import Routes from '../../src/routes'
 // layouts
-import Layout from '../../src/layouts';
+import Layout from '../../src/layouts'
 // components
-import { Page, Iconify, Image } from '../../src/components';
+import { Page, Iconify, Image } from '../../src/components'
 // sections
-import { VerifyCodeForm } from '../../src/sections/auth';
+import { VerifyCodeForm } from '../../src/sections/auth'
 
 // ----------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('sm')]: {
     height: '100vh',
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -68,15 +68,17 @@ export default function VerifyCodePage() {
           <VerifyCodeForm />
 
           <Typography variant="body2" align="center">
-            Don’t have a code? {''}
-            <Link variant="subtitle2" underline="none" onClick={() => {}}>
+            Don’t have a code?
+            {' '}
+
+            <Link variant="subtitle2" underline="none" onClick={() => null}>
               Resend code
             </Link>
           </Typography>
         </Box>
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -86,5 +88,5 @@ VerifyCodePage.getLayout = function getLayout(page: ReactElement) {
     <Layout simpleHeader disabledFooter>
       {page}
     </Layout>
-  );
-};
+  )
+}

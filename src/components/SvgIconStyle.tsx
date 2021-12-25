@@ -1,4 +1,4 @@
-import { Box, BoxProps } from '@mui/material';
+import { Box, BoxProps } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -20,5 +20,5 @@ export default function SvgIconStyle({ src, sx }: SvgIconStyleProps) {
         ...sx,
       }}
     />
-  );
+  )
 }

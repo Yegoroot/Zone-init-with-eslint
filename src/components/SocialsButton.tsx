@@ -1,15 +1,15 @@
 // icons
-import logoLinkedin from '@iconify/icons-carbon/logo-linkedin';
-import logoFacebook from '@iconify/icons-carbon/logo-facebook';
-import logoTwitter from '@iconify/icons-carbon/logo-twitter';
-import logoInstagram from '@iconify/icons-carbon/logo-instagram';
+import logoLinkedin from '@iconify/icons-carbon/logo-linkedin'
+import logoFacebook from '@iconify/icons-carbon/logo-facebook'
+import logoTwitter from '@iconify/icons-carbon/logo-twitter'
+import logoInstagram from '@iconify/icons-carbon/logo-instagram'
 // @mui
-import { alpha } from '@mui/material/styles';
-import { Stack, IconButton, Button, IconButtonProps, ButtonProps, Link } from '@mui/material';
+import { alpha } from '@mui/material/styles'
+import { Stack, IconButton, Button, IconButtonProps, ButtonProps, Link } from '@mui/material'
 // @types
-import { SocialLinks } from '../@types/socials';
+import { SocialLinks } from '../@types/socials'
 //
-import Iconify from './Iconify';
+import Iconify from './Iconify'
 
 // ----------------------------------------------------------------------
 
@@ -53,12 +53,12 @@ export default function SocialsButton({
       socialColor: '#00AAEC',
       path: links.twitter || '#twitter-link',
     },
-  ];
+  ]
 
   return (
     <Stack direction="row" flexWrap="wrap" alignItems="center">
       {SOCIALS.map((social) => {
-        const { name, icon, path, socialColor } = social;
+        const { name, icon, path, socialColor } = social
         return simple ? (
           <Link key={name} href={path}>
             <IconButton
@@ -102,8 +102,8 @@ export default function SocialsButton({
           >
             {name}
           </Button>
-        );
+        )
       })}
     </Stack>
-  );
+  )
 }

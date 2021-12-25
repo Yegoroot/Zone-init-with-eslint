@@ -1,14 +1,14 @@
-import { memo } from 'react';
-import { m } from 'framer-motion';
+import { memo } from 'react'
+import { m } from 'framer-motion'
 // @mui
-import { styled, useTheme } from '@mui/material/styles';
-import { Box, BoxProps } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles'
+import { Box, BoxProps } from '@mui/material'
 // hooks
-import { useHoverParallax } from '../../hooks';
+import { useHoverParallax } from '../../hooks'
 // components
-import { SvgIconStyle, Image } from '../../components';
+import { SvgIconStyle, Image } from '../../components'
 // pattern
-import { Icon, Label, Character, Pattern01, Pattern02 } from '../pattern';
+import { Icon, Label, Character, Pattern01, Pattern02 } from '../pattern'
 
 // ----------------------------------------------------------------------
 
@@ -16,7 +16,7 @@ const styleIcon = {
   width: 40,
   height: 40,
   color: 'common.black',
-};
+}
 
 const RootStyle = styled(Box)(() => ({
   width: 564,
@@ -25,18 +25,18 @@ const RootStyle = styled(Box)(() => ({
   alignItems: 'center',
   justifyContent: 'center',
   position: 'relative',
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 function CareerHeroIllustration({ ...other }: BoxProps) {
-  const theme = useTheme();
+  const theme = useTheme()
 
-  const { offsetX, offsetY, onMouseMoveHandler, onMouseLeaveHandler } = useHoverParallax();
+  const { offsetX, offsetY, onMouseMoveHandler, onMouseLeaveHandler } = useHoverParallax()
 
-  const BLUE = theme.palette.info.main;
-  const GREEN = theme.palette.success.main;
-  const YELLOW = theme.palette.warning.main;
+  const BLUE = theme.palette.info.main
+  const GREEN = theme.palette.success.main
+  const YELLOW = theme.palette.warning.main
 
   return (
     <RootStyle
@@ -59,13 +59,13 @@ function CareerHeroIllustration({ ...other }: BoxProps) {
           <m.div style={{ y: offsetY(-50) }}>
             <Label
               text="Accounting"
-              icon={
+              icon={(
                 <Image
                   alt="accounting"
                   src="/static/icons/ic_accounting.svg"
                   sx={{ width: 48, height: 48 }}
                 />
-              }
+              )}
             />
           </m.div>
         </Box>
@@ -77,13 +77,13 @@ function CareerHeroIllustration({ ...other }: BoxProps) {
         <m.div style={{ x: offsetX(80), y: offsetY(80) }}>
           <Label
             text="Banking"
-            icon={
+            icon={(
               <Image
                 alt="banking"
                 src="/static/icons/ic_banking_currency.svg"
                 sx={{ width: 48, height: 48 }}
               />
-            }
+            )}
           />
         </m.div>
       </Box>
@@ -93,13 +93,13 @@ function CareerHeroIllustration({ ...other }: BoxProps) {
         <m.div style={{ y: offsetY(80) }}>
           <Label
             text="Health Care"
-            icon={
+            icon={(
               <Image
                 alt="health care"
                 src="/static/icons/ic_health_care.svg"
                 sx={{ width: 48, height: 48 }}
               />
-            }
+            )}
           />
         </m.div>
       </Box>
@@ -116,13 +116,13 @@ function CareerHeroIllustration({ ...other }: BoxProps) {
         <m.div style={{ y: offsetY(-60) }}>
           <Label
             text="Software"
-            icon={
+            icon={(
               <Image
                 alt="software development"
                 src="/static/icons/ic_software_development.svg"
                 sx={{ width: 48, height: 48 }}
               />
-            }
+            )}
           />
         </m.div>
       </Box>
@@ -164,7 +164,7 @@ function CareerHeroIllustration({ ...other }: BoxProps) {
       <Pattern01 />
       <Pattern02 />
     </RootStyle>
-  );
+  )
 }
 
-export default memo(CareerHeroIllustration);
+export default memo(CareerHeroIllustration)

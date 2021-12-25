@@ -1,4 +1,4 @@
-import { Theme, alpha } from '@mui/material/styles';
+import { Theme, alpha } from '@mui/material/styles'
 
 // ----------------------------------------------------------------------
 
@@ -44,5 +44,5 @@ export default function Switch(theme: Theme) {
         },
       },
     },
-  };
+  }
 }

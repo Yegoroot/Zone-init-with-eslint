@@ -46,7 +46,7 @@ export const _pricingHome = [
       { title: 'Commercial applications', disabled: false },
     ],
   },
-];
+]
 
 export const _pricingMarketing = [
   {
@@ -81,7 +81,7 @@ export const _pricingMarketing = [
       '20 Design templates',
     ],
   },
-];
+]
 
 export const _pricing01 = [
   {
@@ -120,7 +120,7 @@ export const _pricing01 = [
       { title: 'Permissions & workflows', disabled: false },
     ],
   },
-];
+]
 
 export const _pricing02 = [
   {
@@ -165,4 +165,4 @@ export const _pricing02 = [
       { title: 'Long feature one', tootip: 'Long feature one', disabled: false },
     ],
   },
-];
+]

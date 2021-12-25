@@ -1,16 +1,16 @@
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Container, Stack, Box, Avatar } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Container, Stack, Box, Avatar } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // utils
-import { fDate } from '../../../utils/formatTime';
+import { fDate } from '../../../utils/formatTime'
 // @types
-import { BlogPostProps } from '../../../@types/blog';
+import { BlogPostProps } from '../../../@types/blog'
 // components
-import { Image, BgOverlay, TextMaxLine } from '../../../components';
+import { Image, BgOverlay, TextMaxLine } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 0),
   },
-}));
+}))
 
 const DotStyle = styled('span')(({ theme }) => ({
   width: 4,
@@ -27,7 +27,7 @@ const DotStyle = styled('span')(({ theme }) => ({
   borderRadius: '50%',
   backgroundColor: 'currentColor',
   margin: theme.spacing(0, 1),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -68,7 +68,7 @@ export default function BlogTravelFeaturedPosts({ posts }: Props) {
         </Box>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -79,8 +79,8 @@ type PostItemProps = {
 };
 
 function PostItem({ post, largePost }: PostItemProps) {
-  const { slug, frontmatter } = post;
-  const { title, description, duration, createdAt, author, coverImg } = frontmatter;
+  const { slug, frontmatter } = post
+  const { title, description, duration, createdAt, author, coverImg } = frontmatter
 
   return (
     <Box sx={{ borderRadius: 2, overflow: 'hidden', position: 'relative' }}>
@@ -140,5 +140,5 @@ function PostItem({ post, largePost }: PostItemProps) {
 
       <BgOverlay />
     </Box>
-  );
+  )
 }

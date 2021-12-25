@@ -1,12 +1,12 @@
-import { ReactNode, useMemo } from 'react';
+import { ReactNode, useMemo } from 'react'
 // @mui
-import { alpha, useTheme, createTheme, ThemeProvider } from '@mui/material/styles';
+import { alpha, useTheme, createTheme, ThemeProvider } from '@mui/material/styles'
 // hooks
-import { useSettings } from '../hooks';
+import { useSettings } from '../hooks'
 // utils
-import createGradient from '../utils/createGradient';
+import createGradient from '../utils/createGradient'
 //
-import componentsOverride from '../theme/overrides';
+import componentsOverride from '../theme/overrides'
 
 // ----------------------------------------------------------------------
 
@@ -15,18 +15,18 @@ type Props = {
 };
 
 export default function ThemeColorPresets({ children }: Props) {
-  const defaultTheme = useTheme();
-  const { setColor } = useSettings();
+  const defaultTheme = useTheme()
+  const { setColor } = useSettings()
 
-  const { primary, secondary } = setColor;
+  const { primary, secondary } = setColor
 
   const themeOptions = useMemo(
     () => ({
       ...defaultTheme,
       palette: {
         ...defaultTheme.palette,
-        primary: primary,
-        secondary: secondary,
+        primary,
+        secondary,
         gradients: {
           ...defaultTheme.palette.gradients,
           primary: createGradient(primary.light, primary.main),
@@ -40,10 +40,10 @@ export default function ThemeColorPresets({ children }: Props) {
       },
     }),
     [defaultTheme, primary, secondary]
-  );
+  )
 
-  const theme = createTheme(themeOptions);
-  theme.components = componentsOverride(theme);
+  const theme = createTheme(themeOptions)
+  theme.components = componentsOverride(theme)
 
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }

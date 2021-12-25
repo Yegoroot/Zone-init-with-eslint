@@ -1,10 +1,10 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Container, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Container, Typography } from '@mui/material'
 // _data
-import _mock from '../../../../_data/mock';
+import _mock from '../../../../_data/mock'
 // components
-import { PlayerWithImage } from '../../../components';
+import { PlayerWithImage } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(0),
   },
-}));
+}))
 
 const TypographyStyle = styled(Typography)(({ theme }) => ({
   textAlign: 'center',
@@ -25,7 +25,7 @@ const TypographyStyle = styled(Typography)(({ theme }) => ({
     position: 'absolute',
     color: theme.palette.common.white,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -53,5 +53,5 @@ export default function MarketingAboutOurVision() {
         </Container>
       </RootStyle>
     </>
-  );
+  )
 }

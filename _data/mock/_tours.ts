@@ -1,6 +1,6 @@
-import { add } from 'date-fns';
+import { add } from 'date-fns'
 //
-import _mock from './_mock';
+import _mock from './_mock'
 
 // ----------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ const CONTINENTS = [
   'Antarctica',
   'South America',
   'Antarctica',
-];
+]
 
 export const _tours = [...Array(12)].map((_, index) => ({
   id: _mock.id(index),
@@ -37,6 +37,7 @@ export const _tours = [...Array(12)].map((_, index) => ({
   price: (index % 2 && 159.99) || 269.99,
   priceSale: (index === 2 && 89.99) || (index === 5 && 69.99) || 0,
   reviews: 345,
+  // eslint-disable-next-line eqeqeq
   favorited: index === 2 || index == 4 || false,
   ratings: 3.5 + index / 10,
   tourGuide: {
@@ -74,4 +75,4 @@ export const _tours = [...Array(12)].map((_, index) => ({
     text: _mock.text.description(index),
   })),
   shareLinks: _mock.shareLinks,
-}));
+}))

@@ -1,19 +1,19 @@
-import Slider from 'react-slick';
-import { useRef, useEffect, useState } from 'react';
+import Slider from 'react-slick'
+import { useRef, useEffect, useState } from 'react'
 // icons
-import locationIcon from '@iconify/icons-carbon/location';
-import timeIcon from '@iconify/icons-carbon/time';
-import starIcon from '@iconify/icons-carbon/star';
-import currencyIcon from '@iconify/icons-carbon/currency';
+import locationIcon from '@iconify/icons-carbon/location'
+import timeIcon from '@iconify/icons-carbon/time'
+import starIcon from '@iconify/icons-carbon/star'
+import currencyIcon from '@iconify/icons-carbon/currency'
 // @mui
-import { alpha, useTheme } from '@mui/material/styles';
-import { Stack, Typography, Button, Avatar, Box } from '@mui/material';
+import { alpha, useTheme } from '@mui/material/styles'
+import { Stack, Typography, Button, Avatar, Box } from '@mui/material'
 // utils
-import cssStyles from '../../../utils/cssStyles';
+import cssStyles from '../../../utils/cssStyles'
 // @utils
-import { fCurrency } from '../../../utils/formatNumber';
+import { fCurrency } from '../../../utils/formatNumber'
 // @types
-import { TourProps } from '../../../@types/travel';
+import { TourProps } from '../../../@types/travel'
 // components
 import {
   Image,
@@ -22,7 +22,7 @@ import {
   TextMaxLine,
   CarouselDots,
   TextIconLabel,
-} from '../../../components';
+} from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -31,19 +31,19 @@ type Props = {
 };
 
 export default function TravelLandingHero({ tours }: Props) {
-  const theme = useTheme();
+  const theme = useTheme()
 
-  const [selected, setSelected] = useState(1);
+  const [selected, setSelected] = useState(1)
 
-  const [carouselContent, setCarouselContent] = useState<Slider>();
-  const [carouselThumbnail, setCarouselThumbnail] = useState<Slider>();
-  const carouselRef1 = useRef<Slider | null>(null);
-  const carouselRef2 = useRef<Slider | null>(null);
+  const [carouselContent, setCarouselContent] = useState<Slider>()
+  const [carouselThumbnail, setCarouselThumbnail] = useState<Slider>()
+  const carouselRef1 = useRef<Slider | null>(null)
+  const carouselRef2 = useRef<Slider | null>(null)
 
   useEffect(() => {
-    setCarouselContent(carouselRef1.current || undefined);
-    setCarouselThumbnail(carouselRef2.current || undefined);
-  }, [selected]);
+    setCarouselContent(carouselRef1.current || undefined)
+    setCarouselThumbnail(carouselRef2.current || undefined)
+  }, [selected])
 
   const carouselContentSettings = {
     initialSlide: selected,
@@ -65,7 +65,7 @@ export default function TravelLandingHero({ tours }: Props) {
         position: 'absolute',
       },
     }),
-  };
+  }
 
   const carouselThumbnailSettings = {
     centerMode: true,
@@ -80,7 +80,7 @@ export default function TravelLandingHero({ tours }: Props) {
     focusOnSelect: true,
     rtl: Boolean(theme.direction === 'rtl'),
     beforeChange: (current: number, next: number) => setSelected(next),
-  };
+  }
 
   return (
     <Box sx={{ minHeight: '100vh', position: 'relative' }}>
@@ -113,7 +113,7 @@ export default function TravelLandingHero({ tours }: Props) {
         )}
       </Stack>
     </Box>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -124,8 +124,8 @@ type ItemProps = {
 };
 
 function ContentItem({ tour }: ItemProps) {
-  const theme = useTheme();
-  const { slug, location, heroImg, ratings, price, duration } = tour;
+  const theme = useTheme()
+  const { slug, location, heroImg, ratings, price, duration } = tour
 
   return (
     <Box
@@ -218,14 +218,14 @@ function ContentItem({ tour }: ItemProps) {
         />
       </Box>
     </Box>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 function ThumbnailItem({ tour, isSelected }: ItemProps) {
-  const theme = useTheme();
-  const { continent, heroImg, location } = tour;
+  const theme = useTheme()
+  const { continent, heroImg, location } = tour
 
   return (
     <Stack
@@ -253,19 +253,19 @@ function ThumbnailItem({ tour, isSelected }: ItemProps) {
           {location}
         </TextMaxLine>
         <TextIconLabel
-          icon={
+          icon={(
             <Iconify
               icon={locationIcon}
               sx={{ width: 20, height: 20, mr: 1, color: 'primary.main' }}
             />
-          }
-          value={
+          )}
+          value={(
             <TextMaxLine variant="caption" line={1} sx={{ opacity: 0.48 }}>
               {continent}
             </TextMaxLine>
-          }
+          )}
         />
       </Stack>
     </Stack>
-  );
+  )
 }

@@ -1,13 +1,13 @@
 // icon
-import rotate360 from '@iconify/icons-carbon/rotate-360';
+import rotate360 from '@iconify/icons-carbon/rotate-360'
 // next
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Stack, Button } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Stack, Button } from '@mui/material'
 //
-import Image from './Image';
-import Iconify from './Iconify';
+import Image from './Image'
+import Iconify from './Iconify'
 
 // ----------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ const RootStyle = styled('div')(() => ({
   textAlign: 'center',
   alignItems: 'center',
   justifyContent: 'center',
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -28,11 +28,11 @@ type Props = {
 };
 
 export default function ErrorScreen({ title, description, ...other }: Props) {
-  const router = useRouter();
+  const router = useRouter()
 
   const handleReload = () => {
-    router.reload();
-  };
+    router.reload()
+  }
 
   return (
     <RootStyle {...other}>
@@ -40,7 +40,10 @@ export default function ErrorScreen({ title, description, ...other }: Props) {
         <Image alt="500" src="/static/illustrations/illustration_500.svg" sx={{ maxWidth: 240 }} />
 
         <Stack spacing={2}>
-          <Typography variant="h3"> {title || 'Failed To Load '}</Typography>
+          <Typography variant="h3">
+            {' '}
+            {title || 'Failed To Load '}
+          </Typography>
           <Typography sx={{ color: 'text.secondary' }}>
             {description || 'Unable to download data please try again'}
           </Typography>
@@ -56,5 +59,5 @@ export default function ErrorScreen({ title, description, ...other }: Props) {
         </Button>
       </Stack>
     </RootStyle>
-  );
+  )
 }

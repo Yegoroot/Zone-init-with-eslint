@@ -1,16 +1,16 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Grid, Link, Stack, Divider, Container, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Grid, Link, Stack, Divider, Container, Typography } from '@mui/material'
 // routes
-import Routes from '../../src/routes';
+import Routes from '../../src/routes'
 // layouts
-import Layout from '../../src/layouts';
+import Layout from '../../src/layouts'
 // components
-import { Page, Image } from '../../src/components';
-import { AuthWithSocial, LoginForm } from '../../src/sections/auth';
+import { Page, Image } from '../../src/components'
+import { AuthWithSocial, LoginForm } from '../../src/sections/auth'
 
 // ----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(22, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -51,7 +51,7 @@ export default function LoginIllustrationPage() {
                     Don’t have an account?
                     <NextLink href={Routes.registerIllustration}>
                       <Link variant="subtitle2" color="primary">
-                        {''} Get started
+                        Get started
                       </Link>
                     </NextLink>
                   </Typography>
@@ -72,7 +72,7 @@ export default function LoginIllustrationPage() {
         </Container>
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -82,5 +82,5 @@ LoginIllustrationPage.getLayout = function getLayout(page: ReactElement) {
     <Layout simpleHeader disabledFooter>
       {page}
     </Layout>
-  );
-};
+  )
+}

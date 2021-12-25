@@ -1,15 +1,15 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // icons
-import chevronUp from '@iconify/icons-carbon/chevron-up';
-import checkmarkIcon from '@iconify/icons-carbon/checkmark';
-import chevronDown from '@iconify/icons-carbon/chevron-down';
-import closeOutline from '@iconify/icons-carbon/close-outline';
+import chevronUp from '@iconify/icons-carbon/chevron-up'
+import checkmarkIcon from '@iconify/icons-carbon/checkmark'
+import chevronDown from '@iconify/icons-carbon/chevron-down'
+import closeOutline from '@iconify/icons-carbon/close-outline'
 // @mui
-import { Link, Stack, Button, Collapse, Typography } from '@mui/material';
+import { Link, Stack, Button, Collapse, Typography } from '@mui/material'
 // @types
-import { Pricing02Props } from '../../../@types/pricing';
+import { Pricing02Props } from '../../../@types/pricing'
 // components
-import { Iconify } from '../../../components';
+import { Iconify } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -18,13 +18,13 @@ type Props = {
 };
 
 export default function PricingPlan02ContentMobile({ plan }: Props) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
-  const { options } = plan;
+  const { options } = plan
 
-  const startLicense = plan.license === 'Start';
-  const proLicense = plan.license === 'Pro';
-  const businessLicense = plan.license === 'Business';
+  const startLicense = plan.license === 'Start'
+  const proLicense = plan.license === 'Pro'
+  const businessLicense = plan.license === 'Business'
 
   return (
     <Stack
@@ -48,14 +48,16 @@ export default function PricingPlan02ContentMobile({ plan }: Props) {
             }),
           }}
         >
-          {open ? 'Hide' : 'Show'} all feature
+          {open ? 'Hide' : 'Show'}
+          {' '}
+          all feature
           <Iconify icon={open ? chevronUp : chevronDown} sx={{ width: 20, height: 20, ml: 1 }} />
         </Link>
 
         <Collapse in={open}>
           <Stack spacing={2}>
             {options.map((option) => {
-              const { title, disabled } = option;
+              const { title, disabled } = option
               return (
                 <Stack
                   key={title}
@@ -86,7 +88,7 @@ export default function PricingPlan02ContentMobile({ plan }: Props) {
                     }}
                   />
                 </Stack>
-              );
+              )
             })}
           </Stack>
         </Collapse>
@@ -103,5 +105,5 @@ export default function PricingPlan02ContentMobile({ plan }: Props) {
         {businessLicense && 'Contact Sale'}
       </Button>
     </Stack>
-  );
+  )
 }

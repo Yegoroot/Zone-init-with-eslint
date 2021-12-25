@@ -1,18 +1,18 @@
 // icons
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Container, Stack, Button, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Container, Stack, Button, Typography } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // @types
-import { CourseProps } from '../../../@types/e-learning';
+import { CourseProps } from '../../../@types/e-learning'
 // components
-import { Iconify } from '../../../components';
+import { Iconify } from '../../../components'
 //
-import ElearningCourseItem from './ElearningCourseItem';
+import ElearningCourseItem from './ElearningCourseItem'
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -87,5 +87,5 @@ export default function ElearningCourseSimilar({ courses }: Props) {
         </Stack>
       </Container>
     </RootStyle>
-  );
+  )
 }

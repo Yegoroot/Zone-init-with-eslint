@@ -1,9 +1,9 @@
 // @mui
-import { Stack, Typography, Link, Paper } from '@mui/material';
+import { Stack, Typography, Link, Paper } from '@mui/material'
 // @types
-import { JobProps } from '../../../@types/career';
+import { JobProps } from '../../../@types/career'
 // components
-import { Image } from '../../../components';
+import { Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -12,7 +12,7 @@ type Props = {
 };
 
 export default function CareerJobCompanyInfo({ job }: Props) {
-  const { companyLogo, companyName } = job;
+  const { companyLogo, companyName } = job
 
   return (
     <Paper variant="outlined" sx={{ p: 3, borderRadius: 2, bgcolor: 'background.default' }}>
@@ -31,5 +31,5 @@ export default function CareerJobCompanyInfo({ job }: Props) {
         </Stack>
       </Stack>
     </Paper>
-  );
+  )
 }

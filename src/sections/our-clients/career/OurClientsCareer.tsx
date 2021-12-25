@@ -1,11 +1,11 @@
-import Slider from 'react-slick';
+import Slider from 'react-slick'
 // @mui
-import { styled, useTheme } from '@mui/material/styles';
-import { Typography, Stack, Container, Paper, Box } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles'
+import { Typography, Stack, Container, Paper, Box } from '@mui/material'
 // @types
-import { BrandProps } from '../../../@types/brand';
+import { BrandProps } from '../../../@types/brand'
 // components
-import { Image } from '../../../components';
+import { Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ const RootStyle = styled(Stack)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ type Props = {
 };
 
 export default function OurClientsCareer({ brands }: Props) {
-  const theme = useTheme();
+  const theme = useTheme()
 
   const carouselSettings = {
     arrows: false,
@@ -44,7 +44,7 @@ export default function OurClientsCareer({ brands }: Props) {
         settings: { slidesToShow: 2 },
       },
     ],
-  };
+  }
 
   return (
     <RootStyle>
@@ -91,5 +91,5 @@ export default function OurClientsCareer({ brands }: Props) {
         </Slider>
       </Container>
     </RootStyle>
-  );
+  )
 }

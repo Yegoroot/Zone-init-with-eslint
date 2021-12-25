@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // icons
-import chevronDown from '@iconify/icons-carbon/chevron-down';
-import chevronRight from '@iconify/icons-carbon/chevron-right';
+import chevronDown from '@iconify/icons-carbon/chevron-down'
+import chevronRight from '@iconify/icons-carbon/chevron-right'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Accordion, AccordionSummary, Typography, Stack, AccordionDetails } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Accordion, AccordionSummary, Typography, Stack, AccordionDetails } from '@mui/material'
 // components
-import { Iconify } from '../../components';
+import { Iconify } from '../../components'
 
 // ----------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ const RootStyle = styled(Stack)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingLeft: theme.spacing(10),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -27,17 +27,16 @@ type SupportContentProps = {
 };
 
 export default function SupportContent({ contents }: SupportContentProps) {
-  const [expanded, setExpanded] = useState<string | false>(false);
+  const [expanded, setExpanded] = useState<string | false>(false)
 
-  const handleChangeExpanded =
-    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-      setExpanded(isExpanded ? panel : false);
-    };
+  const handleChangeExpanded = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+    setExpanded(isExpanded ? panel : false)
+  }
 
   return (
     <RootStyle>
       {contents.map((faq) => {
-        const { id, question, answer } = faq;
+        const { id, question, answer } = faq
 
         return (
           <Accordion
@@ -67,8 +66,8 @@ export default function SupportContent({ contents }: SupportContentProps) {
               <Typography sx={{ color: 'text.secondary' }}>{answer}</Typography>
             </AccordionDetails>
           </Accordion>
-        );
+        )
       })}
     </RootStyle>
-  );
+  )
 }

@@ -1,7 +1,7 @@
 // icons
-import chevronRight from '@iconify/icons-carbon/chevron-right';
+import chevronRight from '@iconify/icons-carbon/chevron-right'
 // @mui
-import { styled, alpha } from '@mui/material/styles';
+import { styled, alpha } from '@mui/material/styles'
 import {
   Grid,
   Stack,
@@ -10,11 +10,11 @@ import {
   Typography,
   FilledInput,
   InputAdornment,
-} from '@mui/material';
+} from '@mui/material'
 // utils
-import cssStyles from '../../utils/cssStyles';
+import cssStyles from '../../utils/cssStyles'
 // components
-import { Iconify } from '../../components';
+import { Iconify } from '../../components'
 
 // ----------------------------------------------------------------------
 
@@ -35,7 +35,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     backgroundPosition: 'center, left ',
     backgroundSize: 'cover, auto 100%',
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -55,19 +55,21 @@ export default function NewsletterTravel() {
               <Typography variant="h2">Newsletter</Typography>
               <Typography>
                 Sign up now to receive hot special offers
-                <br /> and information about the best tours!
+                <br />
+                {' '}
+                and information about the best tours!
               </Typography>
 
               <FilledInput
                 fullWidth
                 placeholder="Enter your email"
-                endAdornment={
+                endAdornment={(
                   <InputAdornment position="end">
                     <Button variant="contained" size="large" sx={{ minWidth: 48, px: 0 }}>
                       <Iconify icon={chevronRight} sx={{ width: 22, height: 22 }} />
                     </Button>
                   </InputAdornment>
-                }
+                )}
                 sx={{
                   pr: 0.5,
                   my: 5,
@@ -81,5 +83,5 @@ export default function NewsletterTravel() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

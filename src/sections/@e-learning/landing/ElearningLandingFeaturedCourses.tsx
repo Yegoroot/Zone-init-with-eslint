@@ -1,14 +1,14 @@
-import Slider from 'react-slick';
-import { useRef } from 'react';
+import Slider from 'react-slick'
+import { useRef } from 'react'
 // @mui
-import { styled, useTheme } from '@mui/material/styles';
-import { Container, Stack, Typography, Box } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles'
+import { Container, Stack, Typography, Box } from '@mui/material'
 // @types
-import { CourseProps } from '../../../@types/e-learning';
+import { CourseProps } from '../../../@types/e-learning'
 // components
-import { CarouselArrows } from '../../../components';
+import { CarouselArrows } from '../../../components'
 // sections
-import ElearningCourseItem from '../courses/ElearningCourseItem';
+import ElearningCourseItem from '../courses/ElearningCourseItem'
 
 // ----------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: theme.spacing(10),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -26,8 +26,8 @@ type Props = {
 };
 
 export default function ElearningLandingFeaturedCourses({ courses }: Props) {
-  const theme = useTheme();
-  const carouselRef = useRef<Slider | null>(null);
+  const theme = useTheme()
+  const carouselRef = useRef<Slider | null>(null)
 
   const carouselSettings = {
     arrows: false,
@@ -44,15 +44,15 @@ export default function ElearningLandingFeaturedCourses({ courses }: Props) {
         settings: { slidesToShow: 1 },
       },
     ],
-  };
+  }
 
   const handlePrevious = () => {
-    carouselRef.current?.slickPrev();
-  };
+    carouselRef.current?.slickPrev()
+  }
 
   const handleNext = () => {
-    carouselRef.current?.slickNext();
-  };
+    carouselRef.current?.slickNext()
+  }
 
   return (
     <RootStyle>
@@ -118,5 +118,5 @@ export default function ElearningLandingFeaturedCourses({ courses }: Props) {
         </Box>
       </Container>
     </RootStyle>
-  );
+  )
 }

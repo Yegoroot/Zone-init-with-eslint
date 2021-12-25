@@ -1,4 +1,4 @@
-import _mock from './_mock';
+import _mock from './_mock'
 
 // ----------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ const teachers = [...Array(5)].map((_, index) => ({
   reviews: 3458,
   students: 18000,
   ratings: 3.5 + index / 10,
-}));
+}))
 
 const lessons = [...Array(9)].map((_, index) => ({
   id: _mock.id(index),
@@ -20,7 +20,7 @@ const lessons = [...Array(9)].map((_, index) => ({
   duration: 60 - index,
   title: `Lesson ${index + 1}`,
   isUnLock: index !== 0 && index !== 1,
-}));
+}))
 
 export const _courses = [...Array(12)].map((_, index) => ({
   id: _mock.id(index),
@@ -41,10 +41,10 @@ export const _courses = [...Array(12)].map((_, index) => ({
   ratings: 3.5 + index / 10,
   bestSeller: index === 2 || false,
   level:
-    (index % 2 && 'Intermediate') ||
-    (index % 4 && 'Expert') ||
-    (index % 5 && 'All Levels') ||
-    'Beginner',
+    (index % 2 && 'Intermediate')
+    || (index % 4 && 'Expert')
+    || (index % 5 && 'All Levels')
+    || 'Beginner',
   languages: ['Russian', 'Spanish', 'English'],
   skills: ['Photography', 'Design', 'Art', 'History', 'Museums', 'Creativity', 'Art History'],
   learnList: [
@@ -56,7 +56,7 @@ export const _courses = [...Array(12)].map((_, index) => ({
     'Curabitur a felis in nunc fringilla tristique. Praesent congue erat at massa.',
   ],
   shareLinks: _mock.shareLinks,
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -70,10 +70,10 @@ const NAMES = [
   'Web Development',
   'Machine Learning',
   'Photography',
-];
+]
 
 export const _coursesByCategories = [...Array(9)].map((_, index) => ({
   id: _mock.id(index),
   name: NAMES[index],
   students: 101 + index,
-}));
+}))

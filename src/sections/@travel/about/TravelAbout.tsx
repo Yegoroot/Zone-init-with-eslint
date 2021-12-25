@@ -1,22 +1,22 @@
 // @mui
-import { Grid, Container, Typography, Box } from '@mui/material';
+import { Grid, Container, Typography, Box } from '@mui/material'
 // utils
-import { fShortenNumber } from '../../../utils/formatNumber';
+import { fShortenNumber } from '../../../utils/formatNumber'
 // _data
-import _mock from '../../../../_data/mock';
+import _mock from '../../../../_data/mock'
 // components
-import { Image, CountUpNumber } from '../../../components';
+import { Image, CountUpNumber } from '../../../components'
 
 // ----------------------------------------------------------------------
 
-const IMAGES = [...Array(4)].map((_, index) => _mock.image.travel(index + 2));
+const IMAGES = [...Array(4)].map((_, index) => _mock.image.travel(index + 2))
 
 const SUMMARY = [
   { name: 'Air tickets sold', number: 130 },
   { name: 'Tours booked', number: 196 },
   { name: 'Site visitors', number: 10679 },
   { name: 'Verified hotels', number: 877 },
-];
+]
 
 // ----------------------------------------------------------------------
 
@@ -137,5 +137,5 @@ export default function TravelAbout() {
         </Grid>
       </Grid>
     </Container>
-  );
+  )
 }

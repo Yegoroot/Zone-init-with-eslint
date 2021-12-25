@@ -1,11 +1,11 @@
 // @mui
-import { Pagination, Stack } from '@mui/material';
+import { Pagination, Stack } from '@mui/material'
 // @types
-import { CourseProps } from '../../../@types/e-learning';
+import { CourseProps } from '../../../@types/e-learning'
 // components
-import { CourseItemSkeleton } from '../../../components/skeleton';
+import { CourseItemSkeleton } from '../../../components/skeleton'
 //
-import ElearningCourseItem from './ElearningCourseItem';
+import ElearningCourseItem from './ElearningCourseItem'
 
 // ----------------------------------------------------------------------
 
@@ -38,5 +38,5 @@ export default function ElearningCourseList({ courses, loading }: Props) {
         }}
       />
     </>
-  );
+  )
 }

@@ -1,8 +1,8 @@
 // @mui
-import { alpha, styled } from '@mui/material/styles';
-import { Container, Typography, Stack, Box } from '@mui/material';
+import { alpha, styled } from '@mui/material/styles'
+import { Container, Typography, Stack, Box } from '@mui/material'
 // components
-import { Image, AppStoreButton } from '../../../components';
+import { Image, AppStoreButton } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -12,7 +12,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     backgroundColor: alpha(theme.palette.primary.main, 0.08),
   },
   [theme.breakpoints.up('md')]: { padding: theme.spacing(21, 0) },
-}));
+}))
 
 const ContentStyle = styled(Stack)(({ theme }) => ({
   textAlign: 'center',
@@ -25,7 +25,7 @@ const ContentStyle = styled(Stack)(({ theme }) => ({
     flexDirection: 'row',
     alignItems: 'center',
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -69,5 +69,5 @@ export default function DownloadAppCareer() {
         </ContentStyle>
       </Container>
     </RootStyle>
-  );
+  )
 }

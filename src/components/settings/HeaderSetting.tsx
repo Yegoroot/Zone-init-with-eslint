@@ -1,18 +1,18 @@
 // icons
-import closeIcon from '@iconify/icons-carbon/close';
-import resetIcon from '@iconify/icons-carbon/reset';
+import closeIcon from '@iconify/icons-carbon/close'
+import resetIcon from '@iconify/icons-carbon/reset'
 // @mui
-import { Typography, Stack } from '@mui/material';
+import { Typography, Stack } from '@mui/material'
 //
-import Iconify from '../Iconify';
-import { IconButtonAnimate } from '../animate';
+import Iconify from '../Iconify'
+import { IconButtonAnimate } from '../animate'
 
 // ----------------------------------------------------------------------
 
 type Props = {
   notDefault: boolean;
-  onReset: VoidFunction;
-  onToggle: VoidFunction;
+  onReset: ()=>void;
+  onToggle: ()=>void;
 };
 
 export default function HeaderSetting({ notDefault, onReset, onToggle }: Props) {
@@ -30,5 +30,5 @@ export default function HeaderSetting({ notDefault, onReset, onToggle }: Props) 
         </IconButtonAnimate>
       </div>
     </Stack>
-  );
+  )
 }

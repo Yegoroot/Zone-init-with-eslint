@@ -1,13 +1,13 @@
 // icons
-import eventIcon from '@iconify/icons-carbon/event';
-import chatBot from '@iconify/icons-carbon/chat-bot';
-import airportLocation from '@iconify/icons-carbon/airport-location';
-import icon3dCurveAutoColon from '@iconify/icons-carbon/3d-curve-auto-colon';
+import eventIcon from '@iconify/icons-carbon/event'
+import chatBot from '@iconify/icons-carbon/chat-bot'
+import airportLocation from '@iconify/icons-carbon/airport-location'
+import icon3dCurveAutoColon from '@iconify/icons-carbon/3d-curve-auto-colon'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Grid, Container, Stack } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Grid, Container, Stack } from '@mui/material'
 // components
-import { Iconify } from '../../../components';
+import { Iconify } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -32,14 +32,14 @@ const CORE_VALUES = [
     description: 'Aenean urna dictum adipiscing nec, cras quisque.',
     icon: eventIcon,
   },
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -66,7 +66,7 @@ export default function ElearningAboutCoreValues() {
 
         <Grid container spacing={8}>
           {CORE_VALUES.map((value) => {
-            const { title, description, icon } = value;
+            const { title, description, icon } = value
             return (
               <Grid
                 key={title}
@@ -82,12 +82,16 @@ export default function ElearningAboutCoreValues() {
                 <Typography variant="h5" sx={{ mt: 5, mb: 2 }}>
                   {title}
                 </Typography>
-                <Typography sx={{ color: 'text.secondary' }}> {description} </Typography>
+                <Typography sx={{ color: 'text.secondary' }}>
+                  {' '}
+                  {description}
+                  {' '}
+                </Typography>
               </Grid>
-            );
+            )
           })}
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

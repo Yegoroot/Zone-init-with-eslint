@@ -1,18 +1,19 @@
-import { memo } from 'react';
+/* eslint-disable max-len */
+import { memo } from 'react'
 // @mui
-import { useTheme } from '@mui/material/styles';
-import { Box, BoxProps } from '@mui/material';
+import { useTheme } from '@mui/material/styles'
+import { Box, BoxProps } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
 function Shape({ ...other }: BoxProps) {
-  const theme = useTheme();
+  const theme = useTheme()
 
-  const PRIMARY_LIGHT = theme.palette.primary.light;
-  const PRIMARY_MAIN = theme.palette.primary.main;
+  const PRIMARY_LIGHT = theme.palette.primary.light
+  const PRIMARY_MAIN = theme.palette.primary.main
 
-  const SECONDARY_LIGHT = theme.palette.secondary.light;
-  const SECONDARY_MAIN = theme.palette.secondary.main;
+  const SECONDARY_LIGHT = theme.palette.secondary.light
+  const SECONDARY_MAIN = theme.palette.secondary.main
 
   return (
     <Box {...other}>
@@ -55,7 +56,7 @@ function Shape({ ...other }: BoxProps) {
         </g>
       </svg>
     </Box>
-  );
+  )
 }
 
-export default memo(Shape);
+export default memo(Shape)

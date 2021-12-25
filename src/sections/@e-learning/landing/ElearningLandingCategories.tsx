@@ -1,10 +1,10 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Stack, Container, Grid, Paper, Button, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Stack, Container, Grid, Paper, Button, Box } from '@mui/material'
 // @types
-import { CourseByCategoryProps } from '../../../@types/e-learning';
+import { CourseByCategoryProps } from '../../../@types/e-learning'
 // components
-import { TextMaxLine } from '../../../components';
+import { TextMaxLine } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ const RootStyle = styled(Stack)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -66,7 +66,7 @@ export default function ElearningLandingCategories({ categories }: Props) {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -84,10 +84,9 @@ function CategoryItem({ category }: CategoryItemProps) {
         borderRadius: 1.5,
         cursor: 'pointer',
         bgcolor: 'transparent',
-        transition: (theme) =>
-          theme.transitions.create('all', {
-            duration: theme.transitions.duration.enteringScreen,
-          }),
+        transition: (theme) => theme.transitions.create('all', {
+          duration: theme.transitions.duration.enteringScreen,
+        }),
         '&:hover': {
           bgcolor: 'background.paper',
           boxShadow: (theme) => theme.customShadows.z24,
@@ -102,8 +101,10 @@ function CategoryItem({ category }: CategoryItemProps) {
       </TextMaxLine>
 
       <Typography variant="body3" sx={{ color: 'text.disabled' }}>
-        {category.students} students
+        {category.students}
+        {' '}
+        students
       </Typography>
     </Paper>
-  );
+  )
 }

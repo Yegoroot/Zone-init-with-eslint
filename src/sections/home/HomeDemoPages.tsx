@@ -1,13 +1,13 @@
-import { m } from 'framer-motion';
-import { useState } from 'react';
+import { m } from 'framer-motion'
+import { useState } from 'react'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Tabs, Tab, Container, Typography, Link } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Tabs, Tab, Container, Typography, Link } from '@mui/material'
 // components
-import { Image } from '../../components';
-import { MotionViewport, MotionContainer, varFade } from '../../components/animate';
+import { Image } from '../../components'
+import { MotionViewport, MotionContainer, varFade } from '../../components/animate'
 //
-import { PageLinks } from '../../layouts/nav/NavConfig';
+import { PageLinks } from '../../layouts/nav/NavConfig'
 
 // ----------------------------------------------------------------------
 
@@ -17,16 +17,16 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function HomeDemoPages() {
-  const [category, setCategory] = useState('All');
+  const [category, setCategory] = useState('All')
 
   const handleChangeCategory = (event: React.SyntheticEvent, newValue: string) => {
-    setCategory(newValue);
-  };
+    setCategory(newValue)
+  }
 
   return (
     <RootStyle>
@@ -70,13 +70,10 @@ export default function HomeDemoPages() {
           </Tabs>
         </Box>
 
-        {CATEGORIES.map(
-          (website) =>
-            website.title === category && GridPages({ key: website.title, array: website.contents })
-        )}
+        {CATEGORIES.map((website) => website.title === category && GridPages({ key: website.title, array: website.contents }))}
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -140,20 +137,19 @@ function GridPages({ key, array }: GridPagesProps) {
         ))}
       </Box>
     </MotionContainer>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 function getData(website: string, imgs: string[]) {
-  const Arr =
-    PageLinks.find((category) => category.subheader === website)?.items.map((item, index) => ({
-      ...item,
-      website,
-      img: imgs[index],
-    })) || [];
+  const Arr = PageLinks.find((category) => category.subheader === website)?.items.map((item, index) => ({
+    ...item,
+    website,
+    img: imgs[index],
+  })) || []
 
-  return Arr;
+  return Arr
 }
 
 const MARKETING_PAGES = getData('Marketing', [
@@ -165,7 +161,7 @@ const MARKETING_PAGES = getData('Marketing', [
   'marketing/blog_post',
   'marketing/about',
   'marketing/contact',
-]);
+])
 
 const TRAVEL_PAGES = getData('Travel', [
   'travel/landing',
@@ -177,7 +173,7 @@ const TRAVEL_PAGES = getData('Travel', [
   'travel/blog_post',
   'travel/about',
   'travel/contact',
-]);
+])
 
 const CAREER_PAGES = getData('Career', [
   'career/landing',
@@ -187,7 +183,7 @@ const CAREER_PAGES = getData('Career', [
   'career/blog_post',
   'career/about',
   'career/contact',
-]);
+])
 
 const ELEARNING_PAGES = getData('E-Learning', [
   'e-learning/landing',
@@ -197,7 +193,7 @@ const ELEARNING_PAGES = getData('E-Learning', [
   'e-learning/blog_post',
   'e-learning/about',
   'e-learning/contact',
-]);
+])
 
 const OTHERS_PAGES = getData('Common', [
   'common/login',
@@ -214,7 +210,7 @@ const OTHERS_PAGES = getData('Common', [
   'common/pricing02',
   'common/checkout',
   'common/support',
-]);
+])
 
 const CATEGORIES = [
   {
@@ -232,4 +228,4 @@ const CATEGORIES = [
   { title: 'Career', contents: CAREER_PAGES },
   { title: 'E-Learning', contents: ELEARNING_PAGES },
   { title: 'Others', contents: OTHERS_PAGES },
-];
+]

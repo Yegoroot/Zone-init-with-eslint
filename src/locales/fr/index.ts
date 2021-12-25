@@ -1,9 +1,9 @@
-import home from './home.json';
+import home from './home.json'
 
 // ----------------------------------------------------------------------
 
 const fr = {
   ...home,
-};
+}
 
-export default fr;
+export default fr

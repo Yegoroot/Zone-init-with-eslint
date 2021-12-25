@@ -1,16 +1,16 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // next
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 // @mui
-import { Typography, Stack, Box, Button, Divider, Card } from '@mui/material';
+import { Typography, Stack, Box, Button, Divider, Card } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // utils
-import { fCurrency } from '../../../utils/formatNumber';
+import { fCurrency } from '../../../utils/formatNumber'
 // @types
-import { TourProps } from '../../../@types/travel';
+import { TourProps } from '../../../@types/travel'
 //
-import { TravelTourFilterGuests, TravelTourFilterTime } from '../filters';
+import { TravelTourFilterGuests, TravelTourFilterTime } from '../filters'
 
 // ----------------------------------------------------------------------
 
@@ -19,21 +19,21 @@ type Props = {
 };
 
 export default function TravelTourReserveForm({ tour }: Props) {
-  const router = useRouter();
+  const router = useRouter()
 
-  const [departureDay, setDepartureDay] = useState<Date | null>(null);
+  const [departureDay, setDepartureDay] = useState<Date | null>(null)
   const [guests, setGuests] = useState({
     adults: 0,
     children: 0,
-  });
+  })
 
-  const { price, priceSale } = tour;
+  const { price, priceSale } = tour
 
-  const totalGuests = guests.adults + guests.children;
+  const totalGuests = guests.adults + guests.children
 
   const handleChangeReserve = () => {
-    router.push(Routes.travel.checkout);
-  };
+    router.push(Routes.travel.checkout)
+  }
 
   return (
     <Card>
@@ -92,5 +92,5 @@ export default function TravelTourReserveForm({ tour }: Props) {
         </Button>
       </Stack>
     </Card>
-  );
+  )
 }

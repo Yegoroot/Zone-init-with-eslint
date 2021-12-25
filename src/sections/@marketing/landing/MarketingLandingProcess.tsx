@@ -1,14 +1,14 @@
 // icons
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // @mui
-import { styled, alpha } from '@mui/material/styles';
-import { Stack, Container, Typography, Card, Box } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles'
+import { Stack, Container, Typography, Card, Box } from '@mui/material'
 // components
-import { Iconify, SvgIconStyle } from '../../../components';
+import { Iconify, SvgIconStyle } from '../../../components'
 
 // ----------------------------------------------------------------------
 
-const COLORS = ['primary', 'secondary', 'warning', 'success'] as const;
+const COLORS = ['primary', 'secondary', 'warning', 'success'] as const
 
 const SERVICES = [
   {
@@ -27,14 +27,14 @@ const SERVICES = [
     name: 'Results',
     icon: '/static/icons/ic_analysis.svg',
   },
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
   [theme.breakpoints.up('md')]: {
     paddingBottom: theme.spacing(5),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -81,7 +81,7 @@ export default function MarketingLandingProcess() {
         </Box>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -95,7 +95,7 @@ type ServiceItemProps = {
 };
 
 function ServiceItem({ service, index }: ServiceItemProps) {
-  const { name, icon } = service;
+  const { name, icon } = service
 
   return (
     <Card
@@ -130,5 +130,5 @@ function ServiceItem({ service, index }: ServiceItemProps) {
         )}
       </Stack>
     </Card>
-  );
+  )
 }

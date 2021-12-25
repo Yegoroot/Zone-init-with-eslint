@@ -1,37 +1,37 @@
-import { useState, ReactElement } from 'react';
-import { serialize } from 'next-mdx-remote/serialize';
+import { useState, ReactElement } from 'react'
+import { serialize } from 'next-mdx-remote/serialize'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Grid, Container, Typography, Divider, Stack, Avatar, Chip } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Grid, Container, Typography, Divider, Stack, Avatar, Chip } from '@mui/material'
 // routes
-import Routes from '../../../src/routes';
+import Routes from '../../../src/routes'
 // utils
-import { fDate } from '../../../src/utils/formatTime';
+import { fDate } from '../../../src/utils/formatTime'
 import {
   getAllPosts,
   getPostData,
   getAllPostSlugs,
-} from '../../../src/utils/get-mardown/marketing/posts';
+} from '../../../src/utils/get-mardown/marketing/posts'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config'
 // @types
-import { BlogPostProps } from '../../../src/@types/blog';
+import { BlogPostProps } from '../../../src/@types/blog'
 // layouts
-import Layout from '../../../src/layouts';
+import Layout from '../../../src/layouts'
 // components
-import { Page } from '../../../src/components';
 import {
   Image,
+  Page,
   Markdown,
   ShareButton,
   Breadcrumbs,
   SocialsButton,
   FavoriteButton,
-} from '../../../src/components';
+} from '../../../src/components'
 // sections
-import { MarketingFreeSEO } from '../../../src/sections/@marketing';
-import { NewsletterMarketing } from '../../../src/sections/newsletter';
-import { BlogAuthorInfo, BlogMarketingLatestPosts } from '../../../src/sections/blog';
+import { MarketingFreeSEO } from '../../../src/sections/@marketing'
+import { NewsletterMarketing } from '../../../src/sections/newsletter'
+import { BlogAuthorInfo, BlogMarketingLatestPosts } from '../../../src/sections/blog'
 
 // ----------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -50,15 +50,14 @@ type Props = {
 };
 
 export default function MarketingPostPage({ post, posts }: Props) {
-  const { frontmatter, content } = post;
-  const { title, description, duration, createdAt, author, favorited, heroImg, shareLinks, tags } =
-    frontmatter;
+  const { frontmatter, content } = post
+  const { title, description, duration, createdAt, author, favorited, heroImg, shareLinks, tags } = frontmatter
 
-  const [favorite, setFavorite] = useState(favorited);
+  const [favorite, setFavorite] = useState(favorited)
 
   const handleChangeFavorite = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFavorite(event.target.checked);
-  };
+    setFavorite(event.target.checked)
+  }
 
   return (
     <Page title={`${title} - Post | Marketing`}>
@@ -123,7 +122,7 @@ export default function MarketingPostPage({ post, posts }: Props) {
                   Tags:
                 </Typography>
                 {tags.map((tag) => (
-                  <Chip key={tag} size="small" label={tag} sx={{ m: 0.5 }} onClick={() => {}} />
+                  <Chip key={tag} size="small" label={tag} sx={{ m: 0.5 }} onClick={() => null} />
                 ))}
               </Stack>
 
@@ -148,14 +147,14 @@ export default function MarketingPostPage({ post, posts }: Props) {
         <NewsletterMarketing />
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 MarketingPostPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}
 
 // ----------------------------------------------------------------------
 
@@ -166,7 +165,7 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostData(params.slug);
+  const post = getPostData(params.slug)
 
   return {
     props: {
@@ -176,14 +175,14 @@ export async function getStaticProps({ params }: Params) {
         content: await serialize(post.content),
       },
     },
-  };
+  }
 }
 
 export async function getStaticPaths() {
-  const files = getAllPostSlugs();
+  const files = getAllPostSlugs()
 
   return {
     paths: files,
     fallback: false,
-  };
+  }
 }

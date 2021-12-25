@@ -1,20 +1,20 @@
-import { useState, useEffect, ReactElement } from 'react';
+import { useState, useEffect, ReactElement } from 'react'
 // icons
-import menuIcon from '@iconify/icons-carbon/menu';
+import menuIcon from '@iconify/icons-carbon/menu'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Container, Stack, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Container, Stack, Typography } from '@mui/material'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../src/config'
 // _data
-import { _faqsSupport } from '../_data/mock';
+import { _faqsSupport } from '../_data/mock'
 // layouts
-import Layout from '../src/layouts';
+import Layout from '../src/layouts'
 // components
-import { Iconify, Page } from '../src/components';
-import { IconButtonAnimate } from '../src/components/animate';
+import { Iconify, Page } from '../src/components'
+import { IconButtonAnimate } from '../src/components/animate'
 // sections
-import { SupportHero, SupportSidebar, SupportContent } from '../src/sections/support';
+import { SupportHero, SupportSidebar, SupportContent } from '../src/sections/support'
 
 // ----------------------------------------------------------------------
 
@@ -49,31 +49,31 @@ const TOPICS = [
     icon: '/static/icons/faq/ic_faq_assurances.svg',
     content: <SupportContent contents={_faqsSupport} />,
   },
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   paddingTop: HEADER_MOBILE_HEIGHT,
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function SupportPage() {
-  const [topic, setTopic] = useState('Payment');
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [topic, setTopic] = useState('Payment')
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   const handleChangeTopic = (event: React.SyntheticEvent, newValue: string) => {
-    setTopic(newValue);
-  };
+    setTopic(newValue)
+  }
 
   useEffect(() => {
     if (mobileOpen) {
-      setMobileOpen(false);
+      setMobileOpen(false)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [topic]);
+  }, [topic])
 
   return (
     <Page title="Support">
@@ -119,18 +119,18 @@ export default function SupportPage() {
             />
 
             {TOPICS.map((item) => {
-              const { title, content } = item;
-              return title === topic && <div key={title}>{content}</div>;
+              const { title, content } = item
+              return title === topic && <div key={title}>{content}</div>
             })}
           </Stack>
         </Container>
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 SupportPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}

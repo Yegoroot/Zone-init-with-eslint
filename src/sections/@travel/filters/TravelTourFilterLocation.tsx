@@ -1,16 +1,16 @@
-import parse from 'autosuggest-highlight/parse';
-import match from 'autosuggest-highlight/match';
+import parse from 'autosuggest-highlight/parse'
+import match from 'autosuggest-highlight/match'
 // icons
-import locationIcon from '@iconify/icons-carbon/location';
+import locationIcon from '@iconify/icons-carbon/location'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Autocomplete, InputAdornment } from '@mui/material';
-import { createFilterOptions } from '@mui/material/Autocomplete';
+import { styled } from '@mui/material/styles'
+import { Box, Autocomplete, InputAdornment } from '@mui/material'
+import { createFilterOptions } from '@mui/material/Autocomplete'
 // _data
-import _mock from '../../../../_data/mock';
+import _mock from '../../../../_data/mock'
 // components
-import { Image, Iconify } from '../../../components';
-import { InputStyle } from './TravelTourBarFilters';
+import { Image, Iconify } from '../../../components'
+import { InputStyle } from './TravelTourBarFilters'
 
 // ----------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ const RootStyle = styled('div')(() => ({
       padding: '0 12px',
     },
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -55,11 +55,11 @@ export default function TravelTourFilterLocation() {
           />
         )}
         renderOption={(props, option, { inputValue }) => {
-          const matches = match(option.label, inputValue);
+          const matches = match(option.label, inputValue)
           const parts: {
             text: string;
             highlight: boolean;
-          }[] = parse(option.label, matches);
+          }[] = parse(option.label, matches)
           return (
             <Box component="li" {...props}>
               <Image
@@ -87,9 +87,9 @@ export default function TravelTourFilterLocation() {
                 </Box>
               ))}
             </Box>
-          );
+          )
         }}
       />
     </RootStyle>
-  );
+  )
 }

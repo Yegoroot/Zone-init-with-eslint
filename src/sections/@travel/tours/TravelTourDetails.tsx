@@ -1,20 +1,20 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // icons
-import checkmarkIcon from '@iconify/icons-carbon/checkmark';
-import locationIcon from '@iconify/icons-carbon/location';
-import mobileIcon from '@iconify/icons-carbon/mobile';
-import calendarIcon from '@iconify/icons-carbon/calendar';
-import translateIcon from '@iconify/icons-carbon/translate';
-import userIcon from '@iconify/icons-carbon/user';
-import timeIcon from '@iconify/icons-carbon/time';
+import checkmarkIcon from '@iconify/icons-carbon/checkmark'
+import locationIcon from '@iconify/icons-carbon/location'
+import mobileIcon from '@iconify/icons-carbon/mobile'
+import calendarIcon from '@iconify/icons-carbon/calendar'
+import translateIcon from '@iconify/icons-carbon/translate'
+import userIcon from '@iconify/icons-carbon/user'
+import timeIcon from '@iconify/icons-carbon/time'
 // @mui
-import { Typography, Stack, Box, Divider } from '@mui/material';
+import { Typography, Stack, Box, Divider } from '@mui/material'
 // utils
-import { fDate } from '../../../utils/formatTime';
+import { fDate } from '../../../utils/formatTime'
 // @types
-import { TourProps } from '../../../@types/travel';
+import { TourProps } from '../../../@types/travel'
 // utils
-import { TextIconLabel, Iconify } from '../../../components';
+import { TextIconLabel, Iconify } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -34,7 +34,7 @@ export default function TravelTourDetails({ tour }: Props) {
     description,
     availableEnd,
     availableStart,
-  } = tour;
+  } = tour
 
   return (
     <Stack spacing={5}>
@@ -123,7 +123,7 @@ export default function TravelTourDetails({ tour }: Props) {
           {includes.map((option) => (
             <TextIconLabel
               key={option.label}
-              icon={
+              icon={(
                 <Iconify
                   icon={checkmarkIcon}
                   sx={{
@@ -134,7 +134,7 @@ export default function TravelTourDetails({ tour }: Props) {
                     ...(!option.enabled && { color: 'currentColor' }),
                   }}
                 />
-              }
+              )}
               value={option.label}
               sx={{
                 ...(!option.enabled && { color: 'text.disabled' }),
@@ -152,7 +152,7 @@ export default function TravelTourDetails({ tour }: Props) {
         ))}
       </Stack>
     </Stack>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -169,15 +169,15 @@ function OverviewItem({ icon, label, text = '-' }: OverviewItemProp) {
       spacing={1.5}
       alignItems="flex-start"
       icon={icon}
-      value={
+      value={(
         <Stack spacing={0.5}>
           <Typography variant="body2">{label}</Typography>
           <Typography sx={{ color: 'text.secondary' }}>{text}</Typography>
         </Stack>
-      }
+      )}
       sx={{ '& svg': { width: 24, height: 24 } }}
     />
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -202,5 +202,5 @@ function HighlightItem({ label, text }: HighlightItemProps) {
       </Typography>
       <Typography>{text}</Typography>
     </Stack>
-  );
+  )
 }

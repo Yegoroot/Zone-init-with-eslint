@@ -1,7 +1,7 @@
 // @mui
-import { Theme, alpha } from '@mui/material/styles';
+import { Theme, alpha } from '@mui/material/styles'
 // theme
-import { ColorSchema } from '../../theme/palette';
+import { ColorSchema } from '../palette'
 
 // ----------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ export default function ToggleButton(theme: Theme) {
         borderColor: alpha(theme.palette[color].main, 0.48),
       },
     },
-  });
+  })
 
   return {
     MuiToggleButton: {
@@ -58,5 +58,5 @@ export default function ToggleButton(theme: Theme) {
         },
       },
     },
-  };
+  }
 }

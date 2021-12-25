@@ -1,18 +1,18 @@
 // icons
-import locationIcon from '@iconify/icons-carbon/location';
-import mobileIcon from '@iconify/icons-carbon/mobile';
-import emailIcon from '@iconify/icons-carbon/email';
+import locationIcon from '@iconify/icons-carbon/location'
+import mobileIcon from '@iconify/icons-carbon/mobile'
+import emailIcon from '@iconify/icons-carbon/email'
 // next
-import dynamic from 'next/dynamic';
+import dynamic from 'next/dynamic'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Stack, Container, Grid, Link, Divider } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Stack, Container, Grid, Link, Divider } from '@mui/material'
 // _data
-import { _offices } from '../../../../_data/mock';
+import { _offices } from '../../../../_data/mock'
 // components
-import { SocialsButton, Iconify, TextIconLabel } from '../../../components';
+import { SocialsButton, Iconify, TextIconLabel } from '../../../components'
 //
-const ContactMap = dynamic(() => import('../../../components/map/ContactMap'));
+const ContactMap = dynamic(() => import('../../../components/map/ContactMap'))
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -90,5 +90,5 @@ export default function ElearningContactInfo() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

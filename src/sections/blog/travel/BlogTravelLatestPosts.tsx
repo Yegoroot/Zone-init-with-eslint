@@ -1,22 +1,22 @@
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // icons
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Stack, Button, Avatar, Container, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Stack, Button, Avatar, Container, Typography } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // hooks
-import useResponsive from '../../../hooks/useResponsive';
+import useResponsive from '../../../hooks/useResponsive'
 // utils
-import { fDate } from '../../../utils/formatTime';
+import { fDate } from '../../../utils/formatTime'
 // @types
-import { BlogPostProps } from '../../../@types/blog';
+import { BlogPostProps } from '../../../@types/blog'
 // components
-import { Image, Iconify, TextMaxLine } from '../../../components';
+import { Image, Iconify, TextMaxLine } from '../../../components'
 //
-import BlogPostItemMobile from '../BlogPostItemMobile';
+import BlogPostItemMobile from '../BlogPostItemMobile'
 
 // ----------------------------------------------------------------------
 
@@ -25,7 +25,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 const DotStyle = styled('span')(({ theme }) => ({
   width: 4,
@@ -33,7 +33,7 @@ const DotStyle = styled('span')(({ theme }) => ({
   borderRadius: '50%',
   backgroundColor: 'currentColor',
   margin: theme.spacing(0, 1),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -42,7 +42,7 @@ type Props = {
 };
 
 export default function BlogTravelLatestPosts({ posts }: Props) {
-  const isDesktop = useResponsive('up', 'md');
+  const isDesktop = useResponsive('up', 'md')
 
   return (
     <RootStyle>
@@ -80,13 +80,11 @@ export default function BlogTravelLatestPosts({ posts }: Props) {
         >
           {posts
             .slice(0, 4)
-            .map((post) =>
-              isDesktop ? (
-                <PostItem key={post.slug} post={post} />
-              ) : (
-                <BlogPostItemMobile key={post.slug} post={post} path="/travel/blog" />
-              )
-            )}
+            .map((post) => (isDesktop ? (
+              <PostItem key={post.slug} post={post} />
+            ) : (
+              <BlogPostItemMobile key={post.slug} post={post} path="/travel/blog" />
+            )))}
         </Box>
 
         <Stack
@@ -106,7 +104,7 @@ export default function BlogTravelLatestPosts({ posts }: Props) {
         </Stack>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -116,8 +114,8 @@ type PostItemProps = {
 };
 
 function PostItem({ post }: PostItemProps) {
-  const { slug, frontmatter } = post;
-  const { title, duration, coverImg, author, createdAt } = frontmatter;
+  const { slug, frontmatter } = post
+  const { title, duration, coverImg, author, createdAt } = frontmatter
 
   return (
     <Stack spacing={2.5}>
@@ -146,5 +144,5 @@ function PostItem({ post }: PostItemProps) {
         <Typography variant="body2">{author.name}</Typography>
       </Stack>
     </Stack>
-  );
+  )
 }

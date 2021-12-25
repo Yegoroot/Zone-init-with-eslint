@@ -13,4 +13,4 @@ export const _paymentMethods = [
     caption: 'We support Mastercard, Visa, Discover and Stripe.',
     icons: ['/static/icons/payment/ic_mastercard.svg', '/static/icons/payment/ic_visa.svg'],
   },
-];
+]

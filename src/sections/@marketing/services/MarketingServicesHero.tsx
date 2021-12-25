@@ -1,8 +1,8 @@
 // icons
-import emailIcon from '@iconify/icons-carbon/email';
-import licenseGlobal from '@iconify/icons-carbon/license-global';
+import emailIcon from '@iconify/icons-carbon/email'
+import licenseGlobal from '@iconify/icons-carbon/license-global'
 // @mui
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import {
   Grid,
   Stack,
@@ -14,11 +14,11 @@ import {
   FilledInput,
   InputAdornment,
   FilledInputProps,
-} from '@mui/material';
+} from '@mui/material'
 // utils
-import cssStyles from '../../../utils/cssStyles';
+import cssStyles from '../../../utils/cssStyles'
 // components
-import { Image, BgOverlay, Iconify } from '../../../components';
+import { Image, BgOverlay, Iconify } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -28,7 +28,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(20, 0),
   },
-}));
+}))
 
 const BarStyle = styled((props: StackProps) => (
   <Stack
@@ -48,7 +48,7 @@ const BarStyle = styled((props: StackProps) => (
     padding: theme.spacing(1),
     borderRadius: theme.shape.borderRadius,
   },
-}));
+}))
 
 const InputStyle = styled((props: FilledInputProps) => <FilledInput fullWidth {...props} />)(
   ({ theme }) => ({
@@ -72,7 +72,7 @@ const InputStyle = styled((props: FilledInputProps) => <FilledInput fullWidth {.
       },
     },
   })
-);
+)
 
 // ----------------------------------------------------------------------
 
@@ -112,7 +112,7 @@ export default function MarketingServicesHero() {
         sx={{ position: 'absolute', top: 0, left: 0, width: 1, height: 1 }}
       />
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -123,7 +123,7 @@ function ServicesForm() {
       <Stack
         alignItems="center"
         direction={{ xs: 'column', md: 'row' }}
-        divider={
+        divider={(
           <Divider
             orientation="vertical"
             sx={{
@@ -131,25 +131,25 @@ function ServicesForm() {
               display: { xs: 'none', md: 'block' },
             }}
           />
-        }
+        )}
         spacing={2.5}
         sx={{ width: 1 }}
       >
         <InputStyle
-          startAdornment={
+          startAdornment={(
             <InputAdornment position="start">
               <Iconify icon={emailIcon} sx={{ width: 24, height: 24, color: 'grey.500' }} />
             </InputAdornment>
-          }
+          )}
           placeholder="Email"
         />
 
         <InputStyle
-          startAdornment={
+          startAdornment={(
             <InputAdornment position="start">
               <Iconify icon={licenseGlobal} sx={{ width: 24, height: 24, color: 'grey.500' }} />
             </InputAdornment>
-          }
+          )}
           placeholder="Website URL"
         />
       </Stack>
@@ -165,5 +165,5 @@ function ServicesForm() {
         Analyse
       </Button>
     </BarStyle>
-  );
+  )
 }

@@ -1,10 +1,10 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Stack, Container } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Stack, Container } from '@mui/material'
 // @types
-import { BrandProps } from '../../../@types/brand';
+import { BrandProps } from '../../../@types/brand'
 // components
-import { Image } from '../../../components';
+import { Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ const RootStyle = styled(Stack)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -45,5 +45,5 @@ export default function OurClientsMarketingAbout({ brands }: Props) {
         </Stack>
       </Container>
     </RootStyle>
-  );
+  )
 }

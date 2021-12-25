@@ -1,14 +1,14 @@
 // @mui
-import { Theme } from '@mui/material/styles';
+import { Theme } from '@mui/material/styles'
 // theme
-import { ColorSchema } from '../../theme/palette';
+import { ColorSchema } from '../palette'
 //
-import { ErrorIcon, InfoIcon, SuccessIcon, WarningIcon } from './CustomIcons';
+import { ErrorIcon, InfoIcon, SuccessIcon, WarningIcon } from './CustomIcons'
 
 // ----------------------------------------------------------------------
 
 export default function Alert(theme: Theme) {
-  const isLight = theme.palette.mode === 'light';
+  const isLight = theme.palette.mode === 'light'
 
   const standardStyle = (color: ColorSchema) => ({
     color: theme.palette[color][isLight ? 'darker' : 'lighter'],
@@ -16,11 +16,11 @@ export default function Alert(theme: Theme) {
     '& .MuiAlert-icon': {
       color: theme.palette[color][isLight ? 'dark' : 'light'],
     },
-  });
+  })
 
   const filledStyle = (color: ColorSchema) => ({
     color: theme.palette[color].contrastText,
-  });
+  })
 
   const outlinedStyle = (color: ColorSchema) => ({
     color: theme.palette[color][isLight ? 'darker' : 'lighter'],
@@ -29,7 +29,7 @@ export default function Alert(theme: Theme) {
     '& .MuiAlert-icon': {
       color: theme.palette[color][isLight ? 'dark' : 'light'],
     },
-  });
+  })
 
   return {
     MuiAlert: {
@@ -73,5 +73,5 @@ export default function Alert(theme: Theme) {
         outlinedError: outlinedStyle('error'),
       },
     },
-  };
+  }
 }

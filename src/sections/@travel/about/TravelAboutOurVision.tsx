@@ -1,8 +1,8 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Stack, Container, Typography, Grid, Card } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Stack, Container, Typography, Grid, Card } from '@mui/material'
 // components
-import { Image } from '../../../components';
+import { Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -16,14 +16,14 @@ const VISIONS = [
     description: 'Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.',
   },
   { name: 'Praesent', description: 'Suspendisse feugiat. Quisque id odio.' },
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -64,10 +64,10 @@ export default function TravelAboutOurVision() {
               alignItems={{ md: 'flex-end' }}
             >
               {VISIONS.map((vision, index) => {
-                const { name, description } = vision;
-                const firstVision = index === 0;
-                const secondVision = index === 1;
-                const thirdVision = index === 2;
+                const { name, description } = vision
+                const firstVision = index === 0
+                const secondVision = index === 1
+                const thirdVision = index === 2
 
                 return (
                   <Card
@@ -110,12 +110,12 @@ export default function TravelAboutOurVision() {
 
                     <Typography sx={{ color: 'text.secondary' }}>{description}</Typography>
                   </Card>
-                );
+                )
               })}
             </Stack>
           </Grid>
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

@@ -7,7 +7,7 @@ import {
   Typography,
   FormControl,
   SelectChangeEvent,
-} from '@mui/material';
+} from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -15,12 +15,12 @@ const SORT_OPTIONS = [
   { value: 'latest', label: 'Latest' },
   { value: 'oldest', label: 'Oldest' },
   { value: 'popular', label: 'Popular' },
-];
+]
 
 type Props = {
   sort: string;
   totalReview: number;
-  onOpenReview: VoidFunction;
+  onOpenReview: ()=>void;
   onChangeSort: (event: SelectChangeEvent) => void;
 };
 
@@ -38,7 +38,9 @@ export default function ReviewTravelToolbar({
       sx={{ mb: 5 }}
     >
       <Typography variant="h4" sx={{ width: 1 }}>
-        {totalReview} Reviews
+        {totalReview}
+        {' '}
+        Reviews
       </Typography>
 
       <Stack direction="row" spacing={2} alignItems="center" flexShrink={0}>
@@ -63,5 +65,5 @@ export default function ReviewTravelToolbar({
         </Button>
       </Stack>
     </Stack>
-  );
+  )
 }

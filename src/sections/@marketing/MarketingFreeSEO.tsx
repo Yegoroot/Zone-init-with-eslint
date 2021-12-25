@@ -1,8 +1,8 @@
 // icons
-import emailIcon from '@iconify/icons-carbon/email';
-import locationIcon from '@iconify/icons-carbon/location';
+import emailIcon from '@iconify/icons-carbon/email'
+import locationIcon from '@iconify/icons-carbon/location'
 // @mui
-import { styled, alpha } from '@mui/material/styles';
+import { styled, alpha } from '@mui/material/styles'
 import {
   Grid,
   Link,
@@ -12,11 +12,11 @@ import {
   TextField,
   Typography,
   TextFieldProps,
-} from '@mui/material';
+} from '@mui/material'
 // utils
-import cssStyles from '../../utils/cssStyles';
+import cssStyles from '../../utils/cssStyles'
 // components
-import { Iconify } from '../../components';
+import { Iconify } from '../../components'
 
 // ----------------------------------------------------------------------
 
@@ -31,7 +31,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 const InputStyle = styled((props: TextFieldProps) => <TextField fullWidth {...props} />)(
   ({ theme }) => ({
@@ -42,7 +42,7 @@ const InputStyle = styled((props: TextFieldProps) => <TextField fullWidth {...pr
       color: theme.palette.grey[500],
     },
   })
-);
+)
 
 // ----------------------------------------------------------------------
 
@@ -62,7 +62,9 @@ export default function MarketingFreeSEO() {
               }}
             >
               Get Free
-              <br /> SEO Analysis
+              <br />
+              {' '}
+              SEO Analysis
             </Typography>
 
             <Stack
@@ -104,5 +106,5 @@ export default function MarketingFreeSEO() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

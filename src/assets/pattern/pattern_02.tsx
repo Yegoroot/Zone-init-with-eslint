@@ -1,23 +1,23 @@
-import { memo } from 'react';
-import { m } from 'framer-motion';
+import { memo } from 'react'
+import { m } from 'framer-motion'
 // @mui
-import { SxProps } from '@mui/system';
-import { Box, BoxProps } from '@mui/material';
+import { SxProps } from '@mui/system'
+import { Box, BoxProps } from '@mui/material'
 //
-import Dot from './dots';
-import Circle from './circle';
+import Dot from './dots'
+import Circle from './circle'
 
 // ----------------------------------------------------------------------
 
 const animateDown = (duration = 60) => ({
   animate: { rotate: [360, 0] },
   transition: { duration, repeat: Infinity, ease: 'linear' },
-});
+})
 
 const animateUp = (duration = 60) => ({
   animate: { rotate: [0, 360] },
   transition: { duration, repeat: Infinity, ease: 'linear' },
-});
+})
 
 interface Props extends BoxProps {
   sx?: SxProps;
@@ -53,7 +53,7 @@ function Pattern02({ sx, ...other }: Props) {
         <Dot size={12} color="warning" sx={{ top: 54, right: 70 }} />
       </Circle>
     </Box>
-  );
+  )
 }
 
-export default memo(Pattern02);
+export default memo(Pattern02)

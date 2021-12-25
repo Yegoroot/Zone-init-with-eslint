@@ -1,15 +1,15 @@
-import * as Yup from 'yup';
-import { useForm, Controller } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
+import * as Yup from 'yup'
+import { useForm, Controller } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 // @mui
-import { LoadingButton } from '@mui/lab';
-import { Stack, TextField } from '@mui/material';
+import { LoadingButton } from '@mui/lab'
+import { Stack, TextField } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
 const FormSchema = Yup.object().shape({
   email: Yup.string().required('Email is required').email('That is not an email'),
-});
+})
 
 type FormValuesProps = {
   email: string;
@@ -17,7 +17,7 @@ type FormValuesProps = {
 };
 
 type ResetPasswordFormProps = {
-  onSent: VoidFunction;
+  onSent: ()=>void;
   onGetEmail: (value: string) => void;
 };
 
@@ -33,14 +33,14 @@ export default function ResetPasswordForm({ onSent, onGetEmail }: ResetPasswordF
     defaultValues: {
       email: '',
     },
-  });
+  })
 
   const onSubmit = async (data: FormValuesProps) => {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    onSent();
-    onGetEmail(data.email);
-    reset();
-  };
+    await new Promise((resolve) => setTimeout(resolve, 500))
+    onSent()
+    onGetEmail(data.email)
+    reset()
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -70,5 +70,5 @@ export default function ResetPasswordForm({ onSent, onGetEmail }: ResetPasswordF
         </LoadingButton>
       </Stack>
     </form>
-  );
+  )
 }

@@ -1,10 +1,10 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Grid, Container, Typography, Stack, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Grid, Container, Typography, Stack, Box } from '@mui/material'
 // utils
-import { fShortenNumber } from '../../../utils/formatNumber';
+import { fShortenNumber } from '../../../utils/formatNumber'
 //
-import { Image, BgOverlay, CountUpNumber } from '../../../components';
+import { Image, BgOverlay, CountUpNumber } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -13,20 +13,20 @@ const SUMMARY = [
   { name: 'Successful Hiring', number: 500000 },
   { name: 'Partners', number: 250 },
   { name: 'Employee', number: 1560 },
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 0),
   },
-}));
+}))
 
 const SectionStyle = styled('div')(({ theme }) => ({
   overflow: 'hidden',
   position: 'relative',
   borderRadius: Number(theme.shape.borderRadius) * 2,
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -72,7 +72,7 @@ export default function CareerAbout() {
         <Section />
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -151,5 +151,5 @@ function Section() {
         />
       </Box>
     </SectionStyle>
-  );
+  )
 }

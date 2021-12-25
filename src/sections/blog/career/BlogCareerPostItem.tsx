@@ -1,16 +1,16 @@
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Stack, Link, Avatar, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Stack, Link, Avatar, Typography } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // utils
-import { fDate } from '../../../utils/formatTime';
+import { fDate } from '../../../utils/formatTime'
 // @types
-import { BlogPostProps } from '../../../@types/blog';
+import { BlogPostProps } from '../../../@types/blog'
 // components
-import { Image } from '../../../components';
+import { Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ const DotStyle = styled('span')(({ theme }) => ({
   borderRadius: '50%',
   backgroundColor: 'currentColor',
   margin: theme.spacing(0, 1),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -30,11 +30,11 @@ type Props = {
 };
 
 export default function BlogCareerPostItem({ post, index }: Props) {
-  const { slug, frontmatter } = post;
-  const { title, duration, coverImg, author, description, createdAt } = frontmatter;
+  const { slug, frontmatter } = post
+  const { title, duration, coverImg, author, description, createdAt } = frontmatter
 
-  const noImage = index === 1 || index === 4;
-  const smallImage = index === 2 || index === 7;
+  const noImage = index === 1 || index === 4
+  const smallImage = index === 2 || index === 7
 
   return (
     <Stack
@@ -114,5 +114,5 @@ export default function BlogCareerPostItem({ post, index }: Props) {
         </Stack>
       </Stack>
     </Stack>
-  );
+  )
 }

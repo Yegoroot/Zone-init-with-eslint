@@ -1,14 +1,14 @@
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Link, Stack, Divider, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Link, Stack, Divider, Typography } from '@mui/material'
 // routes
-import Routes from '../../src/routes';
+import Routes from '../../src/routes'
 // components
-import { Page, Logo } from '../../src/components';
+import { Page, Logo } from '../../src/components'
 // sections
-import { AuthWithSocial, AuthCarousel, LoginForm } from '../../src/sections/auth';
+import { AuthWithSocial, AuthCarousel, LoginForm } from '../../src/sections/auth'
 
 // ----------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     overflow: 'hidden',
     height: '100vh',
   },
-}));
+}))
 
 const ContentStyle = styled('div')(({ theme }) => ({
   width: '100%',
@@ -27,7 +27,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
     maxWidth: 480,
     padding: theme.spacing(8, 10),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ export default function LoginCoverPage() {
               Don’t have an account?
               <NextLink href={Routes.registerCover}>
                 <Link variant="subtitle2" color="primary">
-                  {''} Get started
+                  Get started
                 </Link>
               </NextLink>
             </Typography>
@@ -72,5 +72,5 @@ export default function LoginCoverPage() {
         <AuthCarousel title="Hi, Welcome Back" />
       </RootStyle>
     </Page>
-  );
+  )
 }

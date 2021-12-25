@@ -1,21 +1,21 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Container } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Container } from '@mui/material'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config'
 // hooks
-import { useRequest } from '../../../src/hooks';
+import { useRequest } from '../../../src/hooks'
 // @types
-import { TourProps } from '../../../src/@types/travel';
+import { TourProps } from '../../../src/@types/travel'
 // _data
-import { _tours } from '../../../_data/mock';
+import { _tours } from '../../../_data/mock'
 // layouts
-import Layout from '../../../src/layouts';
+import Layout from '../../../src/layouts'
 // components
-import { Page, ErrorScreen, Image } from '../../../src/components';
+import { Page, ErrorScreen, Image } from '../../../src/components'
 // sections
-import { TravelCheckOutCompleteInfo } from '../../../src/sections/@travel';
+import { TravelCheckOutCompleteInfo } from '../../../src/sections/@travel'
 
 // ----------------------------------------------------------------------
 
@@ -24,21 +24,21 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function TravelCheckoutCompletePage() {
   const { data: tour, error } = useRequest<TourProps>({
     url: `/api/travel/tours/${_tours[0].id}`,
-  });
+  })
 
   if (error) {
-    return <ErrorScreen />;
+    return <ErrorScreen />
   }
 
   if (!tour) {
-    return null;
+    return null
   }
 
   return (
@@ -65,11 +65,11 @@ export default function TravelCheckoutCompletePage() {
         </Container>
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 TravelCheckoutCompletePage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}

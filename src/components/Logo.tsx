@@ -1,9 +1,9 @@
-import { memo } from 'react';
+import { memo } from 'react'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { useTheme } from '@mui/material/styles';
-import { Box, BoxProps } from '@mui/material';
+import { useTheme } from '@mui/material/styles'
+import { Box, BoxProps } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -13,12 +13,12 @@ interface LogoProps extends BoxProps {
 }
 
 function Logo({ onDark = false, isSimple = false, sx }: LogoProps) {
-  const theme = useTheme();
-  const isLight = theme.palette.mode === 'light';
+  const theme = useTheme()
+  const isLight = theme.palette.mode === 'light'
 
-  const PRIMARY_MAIN = theme.palette.primary.main;
-  const LIGHT_COLOR = theme.palette.common.white;
-  const DARK_COLOR = theme.palette.grey[800];
+  const PRIMARY_MAIN = theme.palette.primary.main
+  const LIGHT_COLOR = theme.palette.common.white
+  const DARK_COLOR = theme.palette.grey[800]
 
   return (
     <NextLink href="/">
@@ -62,7 +62,7 @@ function Logo({ onDark = false, isSimple = false, sx }: LogoProps) {
         )}
       </Box>
     </NextLink>
-  );
+  )
 }
 
-export default memo(Logo);
+export default memo(Logo)

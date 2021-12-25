@@ -1,21 +1,21 @@
 // @mui
-import { Stack, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material'
 // @types
-import { BlogPostProps } from '../../@types/blog';
+import { BlogPostProps } from '../../@types/blog'
 //
-import BlogPostItemMobile from './BlogPostItemMobile';
+import BlogPostItemMobile from './BlogPostItemMobile'
 
 // ----------------------------------------------------------------------
 
-type BlogSidebarRecentPosts = {
+interface IBlogSidebarRecentPosts {
   recentPosts: {
     list: BlogPostProps[];
     path: string;
   };
-};
+}
 
-export default function BlogSidebarRecentPosts({ recentPosts }: BlogSidebarRecentPosts) {
-  const { list, path } = recentPosts;
+export default function BlogSidebarRecentPosts({ recentPosts }: IBlogSidebarRecentPosts) {
+  const { list, path } = recentPosts
 
   return (
     <Stack spacing={3}>
@@ -26,5 +26,5 @@ export default function BlogSidebarRecentPosts({ recentPosts }: BlogSidebarRecen
         <BlogPostItemMobile key={post.slug} post={post} onSiderbar path={path} />
       ))}
     </Stack>
-  );
+  )
 }

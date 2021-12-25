@@ -1,15 +1,15 @@
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { Stack, Avatar, Typography, Paper, Divider } from '@mui/material';
+import { Stack, Avatar, Typography, Paper, Divider } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // utils
-import { fDate } from '../../../utils/formatTime';
+import { fDate } from '../../../utils/formatTime'
 // @types
-import { BlogPostProps } from '../../../@types/blog';
+import { BlogPostProps } from '../../../@types/blog'
 // components
-import { Image, TextMaxLine } from '../../../components';
+import { Image, TextMaxLine } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -18,8 +18,8 @@ type Props = {
 };
 
 export default function BlogElearningPostItem({ post }: Props) {
-  const { slug, frontmatter } = post;
-  const { title, duration, coverImg, description, author, createdAt } = frontmatter;
+  const { slug, frontmatter } = post
+  const { title, duration, coverImg, description, author, createdAt } = frontmatter
 
   return (
     <Paper variant="outlined" sx={{ borderRadius: 2, overflow: 'hidden' }}>
@@ -59,5 +59,5 @@ export default function BlogElearningPostItem({ post }: Props) {
         </Stack>
       </Stack>
     </Paper>
-  );
+  )
 }

@@ -1,14 +1,14 @@
-import parse from 'autosuggest-highlight/parse';
-import match from 'autosuggest-highlight/match';
+import parse from 'autosuggest-highlight/parse'
+import match from 'autosuggest-highlight/match'
 // icons
-import searchIcon from '@iconify/icons-carbon/search';
+import searchIcon from '@iconify/icons-carbon/search'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Autocomplete, InputAdornment, TextField } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Autocomplete, InputAdornment, TextField } from '@mui/material'
 // _data
-import _mock from '../../../../_data/mock';
+import _mock from '../../../../_data/mock'
 // components
-import { Iconify, SearchNotFound } from '../../../components';
+import { Iconify, SearchNotFound } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ const RootStyle = styled('div')(() => ({
       padding: '0 12px',
     },
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -62,11 +62,11 @@ export default function CareerJobKeywordFilter({ filterKeyword, onChangeKeyword 
           />
         )}
         renderOption={(props, option, { inputValue }) => {
-          const matches = match(option, inputValue);
+          const matches = match(option, inputValue)
           const parts: {
             text: string | null;
             highlight: boolean;
-          }[] = parse(option, matches);
+          }[] = parse(option, matches)
           return (
             <Box component="li" {...props}>
               {parts.map((part, index) => (
@@ -83,9 +83,9 @@ export default function CareerJobKeywordFilter({ filterKeyword, onChangeKeyword 
                 </Box>
               ))}
             </Box>
-          );
+          )
         }}
       />
     </RootStyle>
-  );
+  )
 }

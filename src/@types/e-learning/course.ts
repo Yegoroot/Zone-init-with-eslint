@@ -1,6 +1,6 @@
 //
-import { SocialLinks } from '../socials';
-import { CountriesProps } from '../map';
+import { SocialLinks } from '../socials'
+import { CountriesProps } from '../map'
 
 // ----------------------------------------------------------------------
 

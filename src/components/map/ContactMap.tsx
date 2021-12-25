@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import GoogleMapReact from 'google-map-react';
+import React, { useState } from 'react'
+import GoogleMapReact from 'google-map-react'
 // @mui
-import { SxProps } from '@mui/system';
-import { BoxProps, Box } from '@mui/material';
+import { SxProps } from '@mui/system'
+import { BoxProps, Box } from '@mui/material'
 // config
-import { GOOGLE_API } from '../../config';
+import { GOOGLE_API } from '../../config'
 // @types
-import { OfficeMapProps } from '../../@types/map';
+import { OfficeMapProps } from '../../@types/map'
 //
-import Popup from './Popup';
-import Marker from './Marker';
-import MapStyle from './MapStyle';
+import Popup from './Popup'
+import Marker from './Marker'
+import MapStyle from './MapStyle'
 
 // ----------------------------------------------------------------------
 
@@ -20,21 +20,22 @@ interface Props extends BoxProps {
 }
 
 export default function ContactMap({ offices, sx, ...other }: Props) {
-  const [tooltip, setTooltip] = useState<OfficeMapProps | any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [tooltip, setTooltip] = useState<OfficeMapProps | any>(null)
 
   const [centerMap, setCenterMap] = useState({
     lat: offices[0].latlng[0],
     lng: offices[0].latlng[1],
-  });
+  })
 
   const handleOpen = (lat: number, lng: number, office: OfficeMapProps) => {
     setCenterMap({
       ...centerMap,
       lat: lat - 32,
       lng,
-    });
-    setTooltip(office);
-  };
+    })
+    setTooltip(office)
+  }
 
   return (
     <Box sx={{ height: 480, overflow: 'hidden', ...sx }} {...other}>
@@ -66,5 +67,5 @@ export default function ContactMap({ offices, sx, ...other }: Props) {
         )}
       </GoogleMapReact>
     </Box>
-  );
+  )
 }

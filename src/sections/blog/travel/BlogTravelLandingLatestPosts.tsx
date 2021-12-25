@@ -1,21 +1,21 @@
-import Slider from 'react-slick';
-import { useRef } from 'react';
+import Slider from 'react-slick'
+import { useRef } from 'react'
 // icons
-import chevronRight from '@iconify/icons-carbon/chevron-right';
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import chevronRight from '@iconify/icons-carbon/chevron-right'
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled, useTheme } from '@mui/material/styles';
-import { Box, Grid, Stack, Button, Divider, Typography } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles'
+import { Box, Grid, Stack, Button, Divider, Typography } from '@mui/material'
 // hooks
-import { useBoundingClientRect, useResponsive } from '../../../hooks';
+import { useBoundingClientRect, useResponsive } from '../../../hooks'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // utils
-import { fDate } from '../../../utils/formatTime';
+import { fDate } from '../../../utils/formatTime'
 // @types
-import { BlogPostProps } from '../../../@types/blog';
+import { BlogPostProps } from '../../../@types/blog'
 // components
 import {
   Image,
@@ -24,14 +24,14 @@ import {
   TextMaxLine,
   CarouselDots,
   CarouselArrows,
-} from '../../../components';
-import { FabButtonAnimate } from '../../../components/animate';
+} from '../../../components'
+import { FabButtonAnimate } from '../../../components/animate'
 
 // ----------------------------------------------------------------------
 
 const RootStyle = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.grey[900],
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -40,23 +40,23 @@ type Props = {
 };
 
 export default function BlogMarketingLatestPosts({ posts }: Props) {
-  const theme = useTheme();
-  const isDesktop = useResponsive('up', 'md');
+  const theme = useTheme()
+  const isDesktop = useResponsive('up', 'md')
 
-  const carouselRef = useRef<Slider | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef<Slider | null>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
 
-  const container = useBoundingClientRect(containerRef);
+  const container = useBoundingClientRect(containerRef)
 
   const imageSize = isDesktop
     ? {
-        width: container?.width,
-        height: container?.height,
-      }
+      width: container?.width,
+      height: container?.height,
+    }
     : {
-        width: 1,
-        height: 800,
-      };
+      width: 1,
+      height: 800,
+    }
 
   const carouselSettings = {
     dots: true,
@@ -69,15 +69,15 @@ export default function BlogMarketingLatestPosts({ posts }: Props) {
       bottom: 80,
       position: 'absolute',
     }),
-  };
+  }
 
   const handlePrevious = () => {
-    carouselRef.current?.slickPrev();
-  };
+    carouselRef.current?.slickPrev()
+  }
 
   const handleNext = () => {
-    carouselRef.current?.slickNext();
-  };
+    carouselRef.current?.slickNext()
+  }
 
   return (
     <RootStyle>
@@ -145,7 +145,7 @@ export default function BlogMarketingLatestPosts({ posts }: Props) {
         </Grid>
       </Grid>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -159,8 +159,8 @@ type PostItemProps = {
 };
 
 function PostItem({ post }: PostItemProps) {
-  const { slug, frontmatter } = post;
-  const { title, description, createdAt } = frontmatter;
+  const { slug, frontmatter } = post
+  const { title, description, createdAt } = frontmatter
 
   return (
     <div>
@@ -180,14 +180,14 @@ function PostItem({ post }: PostItemProps) {
 
       <Divider sx={{ borderStyle: 'dashed', mt: 3 }} />
     </div>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 function PostCarouselItem({ post, imageSize }: PostItemProps) {
-  const { slug, frontmatter } = post;
-  const { title, coverImg, description, createdAt } = frontmatter;
+  const { slug, frontmatter } = post
+  const { title, coverImg, description, createdAt } = frontmatter
 
   return (
     <Stack sx={{ position: 'relative', ...imageSize }}>
@@ -227,5 +227,5 @@ function PostCarouselItem({ post, imageSize }: PostItemProps) {
 
       <Image src={coverImg} alt={title} sx={{ width: 1, height: 1 }} />
     </Stack>
-  );
+  )
 }

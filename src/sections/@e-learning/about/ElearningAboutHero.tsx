@@ -1,8 +1,8 @@
 // @mui
-import { styled, alpha } from '@mui/material/styles';
-import { Grid, Container, Typography, Button } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles'
+import { Grid, Container, Typography, Button } from '@mui/material'
 // components
-import { Image } from '../../../components';
+import { Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -12,7 +12,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -47,5 +47,5 @@ export default function ElearningAboutHero() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

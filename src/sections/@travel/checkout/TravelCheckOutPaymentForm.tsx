@@ -1,6 +1,6 @@
-import { Controller, Control, FieldPath } from 'react-hook-form';
+import { Controller, Control, FieldPath } from 'react-hook-form'
 // @mui
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import {
   Radio,
   Paper,
@@ -9,13 +9,13 @@ import {
   RadioGroup,
   Typography,
   FormControlLabel,
-} from '@mui/material';
+} from '@mui/material'
 // utils
-import { _paymentMethods } from '../../../../_data/mock';
+import { _paymentMethods } from '../../../../_data/mock'
 // @types
-import { CheckoutFormValuesProps } from '../../../@types/travel';
+import { CheckoutFormValuesProps } from '../../../@types/travel'
 // components
-import { Image } from '../../../components';
+import { Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -34,7 +34,7 @@ const OptionStyle = styled(Paper, {
   ...(selected && {
     boxShadow: theme.customShadows.z24,
   }),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -51,10 +51,10 @@ export default function TravelCheckOutPaymentForm({ control }: Props) {
         <RadioGroup {...field}>
           <Stack spacing={3}>
             {_paymentMethods.map((method) => {
-              const { value, label, caption, icons } = method;
+              const { value, label, caption, icons } = method
 
-              const isSelected = value === field.value;
-              const hasChildren = value === 'credit_card';
+              const isSelected = value === field.value
+              const hasChildren = value === 'credit_card'
 
               return (
                 <OptionStyle key={value} selected={isSelected}>
@@ -66,14 +66,14 @@ export default function TravelCheckOutPaymentForm({ control }: Props) {
                     <FormControlLabel
                       value={value}
                       control={<Radio />}
-                      label={
+                      label={(
                         <Stack spacing={0.5} sx={{ ml: 1 }}>
                           <Typography variant="h6">{label}</Typography>
                           <Typography variant="body3" sx={{ color: 'text.secondary' }}>
                             {caption}
                           </Typography>
                         </Stack>
-                      }
+                      )}
                       sx={{ mx: 0, flexGrow: 1 }}
                     />
                     <Stack direction="row" spacing={1}>
@@ -114,13 +114,13 @@ export default function TravelCheckOutPaymentForm({ control }: Props) {
                     </Stack>
                   )}
                 </OptionStyle>
-              );
+              )
             })}
           </Stack>
         </RadioGroup>
       )}
     />
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -148,5 +148,5 @@ function Field({ control, name, placeholder, label, ...other }: FieldProps) {
       )}
       {...other}
     />
-  );
+  )
 }

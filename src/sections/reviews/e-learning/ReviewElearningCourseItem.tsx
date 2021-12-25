@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // icons
-import replyIcon from '@iconify/icons-carbon/reply';
-import thumbsUp from '@iconify/icons-carbon/thumbs-up';
+import replyIcon from '@iconify/icons-carbon/reply'
+import thumbsUp from '@iconify/icons-carbon/thumbs-up'
 // @mui
 import {
   Box,
@@ -12,18 +12,18 @@ import {
   Divider,
   Typography,
   FilledInput,
-} from '@mui/material';
+} from '@mui/material'
 // utils
-import { fDate } from '../../../utils/formatTime';
+import { fDate } from '../../../utils/formatTime'
 // @types
-import { ReviewProp } from '../../../@types/review';
+import { ReviewProp } from '../../../@types/review'
 // components
-import { Iconify } from '../../../components';
+import { Iconify } from '../../../components'
 
 // ----------------------------------------------------------------------
 
-const AVATAR_SIZE = 64;
-const WIDTH = `calc(100% - ${AVATAR_SIZE + 20}px)`;
+const AVATAR_SIZE = 64
+const WIDTH = `calc(100% - ${AVATAR_SIZE + 20}px)`
 
 type IProps = Partial<ReviewProp>;
 
@@ -42,16 +42,16 @@ export default function ReviewElearningCourseItem({
   hasReply,
   avatarUrl,
 }: Props) {
-  const [openReply, setOpenReply] = useState(false);
-  const [isHelpful, setIsHelpful1] = useState(false);
+  const [openReply, setOpenReply] = useState(false)
+  const [isHelpful, setIsHelpful1] = useState(false)
 
   const handleOpenReply = () => {
-    setOpenReply(!openReply);
-  };
+    setOpenReply(!openReply)
+  }
 
   const handleToggleHelpful = () => {
-    setIsHelpful1(!isHelpful);
-  };
+    setIsHelpful1(!isHelpful)
+  }
 
   return (
     <>
@@ -132,7 +132,7 @@ export default function ReviewElearningCourseItem({
         }}
       />
     </>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -141,8 +141,8 @@ type ReviewActionsProps = {
   helpful: number;
   isHelpful?: boolean;
   isOpen?: boolean;
-  onToggleHelpful: VoidFunction;
-  onOpenReply: VoidFunction;
+  onToggleHelpful: ()=>void;
+  onOpenReply: ()=>void;
 };
 
 function ReviewActions({
@@ -152,14 +152,14 @@ function ReviewActions({
   onOpenReply,
   onToggleHelpful,
 }: ReviewActionsProps) {
-  const totalHelpful =
-    helpful > 0
-      ? isHelpful
-        ? `(${helpful + 1})`
-        : `(${helpful})`
-      : isHelpful
+  // eslint-disable-next-line no-nested-ternary
+  const totalHelpful = helpful > 0
+    ? isHelpful
       ? `(${helpful + 1})`
-      : '';
+      : `(${helpful})`
+    : isHelpful
+      ? `(${helpful + 1})`
+      : ''
 
   return (
     <Stack direction="row" alignItems="center" spacing={2} sx={{ mt: 2 }}>
@@ -169,7 +169,9 @@ function ReviewActions({
         onClick={onToggleHelpful}
         startIcon={<Iconify icon={thumbsUp} />}
       >
-        Helpful {totalHelpful}
+        Helpful
+        {' '}
+        {totalHelpful}
       </Button>
       <Box sx={{ width: 4, height: 4, bgcolor: 'text.disabled', borderRadius: '50%' }} />
       <Button
@@ -181,5 +183,5 @@ function ReviewActions({
         Reply
       </Button>
     </Stack>
-  );
+  )
 }

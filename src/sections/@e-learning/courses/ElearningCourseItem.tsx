@@ -1,16 +1,16 @@
 // icons
-import timeIcon from '@iconify/icons-carbon/time';
+import timeIcon from '@iconify/icons-carbon/time'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { Divider, Stack, Card, Typography, Box, Link, Avatar } from '@mui/material';
+import { Divider, Stack, Card, Typography, Box, Link, Avatar } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // utils
-import { getLevelIcon } from '../../../utils/getIcon';
-import { fCurrency, fShortenNumber } from '../../../utils/formatNumber';
+import { getLevelIcon } from '../../../utils/getIcon'
+import { fCurrency, fShortenNumber } from '../../../utils/formatNumber'
 // @types
-import { CourseProps } from '../../../@types/e-learning';
+import { CourseProps } from '../../../@types/e-learning'
 // components
 import {
   Image,
@@ -19,7 +19,7 @@ import {
   RatingLabel,
   TextMaxLine,
   TextIconLabel,
-} from '../../../components';
+} from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -44,7 +44,7 @@ export default function ElearningCourseItem({ course, vertical }: Props) {
     bestSeller,
     totalHours,
     description,
-  } = course;
+  } = course
 
   return (
     <Card
@@ -103,7 +103,8 @@ export default function ElearningCourseItem({ course, vertical }: Props) {
                 >
                   {fCurrency(priceSale)}
                 </Box>
-              )}{' '}
+              )}
+              {' '}
               {fCurrency(price)}
             </Typography>
           </Stack>
@@ -152,18 +153,22 @@ export default function ElearningCourseItem({ course, vertical }: Props) {
 
         <TextIconLabel
           icon={<Avatar src={teachers[0]?.picture} />}
-          value={
+          value={(
             <>
               <Typography variant="body2" sx={{ ml: 1, mr: 0.5 }}>
                 {teachers[0]?.name}
               </Typography>
               {teachers?.length > 0 && (
                 <Link underline="always" color="text.secondary" variant="body2">
-                  + {teachers?.length} teachers
+                  +
+                  {' '}
+                  {teachers?.length}
+                  {' '}
+                  teachers
                 </Link>
               )}
             </>
-          }
+          )}
         />
 
         <Divider
@@ -190,5 +195,5 @@ export default function ElearningCourseItem({ course, vertical }: Props) {
         </Stack>
       </Stack>
     </Card>
-  );
+  )
 }

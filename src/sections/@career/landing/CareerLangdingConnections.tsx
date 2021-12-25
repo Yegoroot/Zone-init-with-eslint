@@ -1,22 +1,22 @@
-import { useRef } from 'react';
-import Slider from 'react-slick';
-import { m } from 'framer-motion';
+import { useRef } from 'react'
+import Slider from 'react-slick'
+import { m } from 'framer-motion'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // icons
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // @mui
-import { styled, useTheme } from '@mui/material/styles';
-import { Box, Grid, Container, Typography, Stack, Card, Button } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles'
+import { Box, Grid, Container, Typography, Stack, Card, Button } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // hooks
-import { useBoundingClientRect } from '../../../hooks';
+import { useBoundingClientRect } from '../../../hooks'
 // @types
-import { JobByCountryProps } from '../../../@types/career';
+import { JobByCountryProps } from '../../../@types/career'
 // components
-import { CarouselArrows, Image, Iconify, SvgIconStyle } from '../../../components';
-import { varHover, varTranHover } from '../../../components/animate';
+import { CarouselArrows, Image, Iconify, SvgIconStyle } from '../../../components'
+import { varHover, varTranHover } from '../../../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     position: 'relative',
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 const ContainerStyle = styled(Container)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
@@ -37,7 +37,7 @@ const ContainerStyle = styled(Container)(({ theme }) => ({
     position: 'absolute',
     height: 'calc(100% - 320px)',
   },
-}));
+}))
 
 const CarouselArrowsStyle = styled(CarouselArrows)(({ theme }) => ({
   position: 'unset',
@@ -46,7 +46,7 @@ const CarouselArrowsStyle = styled(CarouselArrows)(({ theme }) => ({
     borderRadius: '50%',
     border: `solid 1px ${theme.palette.divider}`,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -55,13 +55,13 @@ type Props = {
 };
 
 export default function CareerLangdingConnections({ countries }: Props) {
-  const theme = useTheme();
+  const theme = useTheme()
 
-  const carouselRef = useRef<Slider | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const container = useBoundingClientRect(containerRef);
+  const carouselRef = useRef<Slider | null>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const container = useBoundingClientRect(containerRef)
 
-  const offsetLeft = container?.left;
+  const offsetLeft = container?.left
 
   const carouselSettings = {
     arrows: false,
@@ -82,15 +82,15 @@ export default function CareerLangdingConnections({ countries }: Props) {
         settings: { slidesToShow: 1 },
       },
     ],
-  };
+  }
 
   const handlePrevious = () => {
-    carouselRef.current?.slickPrev();
-  };
+    carouselRef.current?.slickPrev()
+  }
 
   const handleNext = () => {
-    carouselRef.current?.slickNext();
-  };
+    carouselRef.current?.slickNext()
+  }
 
   return (
     <RootStyle>
@@ -144,7 +144,7 @@ export default function CareerLangdingConnections({ countries }: Props) {
       <Box
         sx={{
           pl: `${offsetLeft}px`,
-          width: { md: `calc(100% + 120px)` },
+          width: { md: 'calc(100% + 120px)' },
         }}
       >
         <Slider ref={carouselRef} {...carouselSettings}>
@@ -167,7 +167,7 @@ export default function CareerLangdingConnections({ countries }: Props) {
         <CarouselArrowsStyle onNext={handleNext} onPrevious={handlePrevious} />
       </Box>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -177,7 +177,7 @@ type JobByCountryItemProp = {
 };
 
 function JobByCountryItem({ country }: JobByCountryItemProp) {
-  const { location, coverImg, totalJobs } = country;
+  const { location, coverImg, totalJobs } = country
   return (
     <NextLink href={Routes.career.jobs}>
       <Card
@@ -199,10 +199,12 @@ function JobByCountryItem({ country }: JobByCountryItemProp) {
         <Stack spacing={1} sx={{ textAlign: 'center', p: 2.5 }}>
           <Typography variant="h5">{location}</Typography>
           <Typography variant="body3" sx={{ color: 'text.disabled' }}>
-            {totalJobs} Jobs
+            {totalJobs}
+            {' '}
+            Jobs
           </Typography>
         </Stack>
       </Card>
     </NextLink>
-  );
+  )
 }

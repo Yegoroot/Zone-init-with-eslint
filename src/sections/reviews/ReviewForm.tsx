@@ -1,9 +1,9 @@
-import * as Yup from 'yup';
-import { useForm, Controller } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
+import * as Yup from 'yup'
+import { useForm, Controller } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 // @mui
-import { styled } from '@mui/material/styles';
-import { LoadingButton } from '@mui/lab';
+import { styled } from '@mui/material/styles'
+import { LoadingButton } from '@mui/lab'
 import {
   Stack,
   Paper,
@@ -13,7 +13,7 @@ import {
   PaperProps,
   Typography,
   FormHelperText,
-} from '@mui/material';
+} from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ const RootStyle = styled((props: PaperProps) => <Paper variant="outlined" {...pr
     padding: theme.spacing(3),
     borderRadius: Number(theme.shape.borderRadius) * 2,
   })
-);
+)
 
 // ----------------------------------------------------------------------
 
@@ -31,7 +31,7 @@ const FormSchema = Yup.object().shape({
   rating: Yup.mixed().required('Rating is required'),
   review: Yup.string().required('Review is required'),
   email: Yup.string().required('Email is required').email('That is not an email'),
-});
+})
 
 type FormValuesProps = {
   rating: number | null;
@@ -41,7 +41,7 @@ type FormValuesProps = {
 };
 
 type Props = {
-  onClose: VoidFunction;
+  onClose: ()=>void;
 };
 
 export default function ReviewElearningForm({ onClose }: Props) {
@@ -59,10 +59,10 @@ export default function ReviewElearningForm({ onClose }: Props) {
       name: '',
       email: '',
     },
-  });
+  })
 
   const onSubmit = async (data: FormValuesProps) => {
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    await new Promise((resolve) => setTimeout(resolve, 500))
     alert(
       JSON.stringify(
         {
@@ -72,10 +72,10 @@ export default function ReviewElearningForm({ onClose }: Props) {
         null,
         2
       )
-    );
-    reset();
-    onClose();
-  };
+    )
+    reset()
+    onClose()
+  }
 
   return (
     <RootStyle>
@@ -158,5 +158,5 @@ export default function ReviewElearningForm({ onClose }: Props) {
         </Stack>
       </form>
     </RootStyle>
-  );
+  )
 }

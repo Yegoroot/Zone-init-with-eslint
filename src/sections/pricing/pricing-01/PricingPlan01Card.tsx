@@ -1,9 +1,9 @@
 // @mui
-import { Card, Stack, Button, Typography } from '@mui/material';
+import { Card, Stack, Button, Typography } from '@mui/material'
 // @types
-import { Pricing01Props } from '../../../@types/pricing';
+import { Pricing01Props } from '../../../@types/pricing'
 //
-import { Label, Image } from '../../../components';
+import { Label, Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -12,11 +12,11 @@ type Props = {
 };
 
 export default function PricingPlan01Card({ plan }: Props) {
-  const { license, icon, options, price } = plan;
+  const { license, icon, options, price } = plan
 
-  const basicLicense = license === 'Basic';
-  const starterLicense = license === 'Starter';
-  const premiumLicense = license === 'Premium';
+  const basicLicense = license === 'Basic'
+  const starterLicense = license === 'Starter'
+  const premiumLicense = license === 'Premium'
 
   return (
     <Card
@@ -79,5 +79,5 @@ export default function PricingPlan01Card({ plan }: Props) {
         </Button>
       </Stack>
     </Card>
-  );
+  )
 }

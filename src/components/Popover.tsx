@@ -1,6 +1,6 @@
 // @mui
-import { alpha, styled } from '@mui/material/styles';
-import { Popover as MUIPopover, PopoverProps } from '@mui/material';
+import { alpha, styled } from '@mui/material/styles'
+import { Popover as MUIPopover, PopoverProps } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -19,7 +19,7 @@ const ArrowStyle = styled('span')(({ theme }) => ({
     borderRight: `solid 1px ${alpha(theme.palette.grey[500], 0.12)}`,
     borderBottom: `solid 1px ${alpha(theme.palette.grey[500], 0.12)}`,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -53,5 +53,5 @@ export default function Popover({ children, arrow = false, sx, ...other }: Props
 
       {children}
     </MUIPopover>
-  );
+  )
 }

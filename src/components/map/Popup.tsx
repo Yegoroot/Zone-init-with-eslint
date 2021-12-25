@@ -1,15 +1,15 @@
-import { Stack, Typography, Paper, Box } from '@mui/material';
+import { Stack, Typography, Paper, Box } from '@mui/material'
 // icons
-import emailIcon from '@iconify/icons-carbon/email';
-import phoneIcon from '@iconify/icons-carbon/phone';
-import closeFilled from '@iconify/icons-carbon/close-filled';
+import emailIcon from '@iconify/icons-carbon/email'
+import phoneIcon from '@iconify/icons-carbon/phone'
+import closeFilled from '@iconify/icons-carbon/close-filled'
 // @types
-import { OfficeMapProps } from '../../@types/map';
+import { OfficeMapProps } from '../../@types/map'
 //
-import Image from '../Image';
-import Iconify from '../Iconify';
-import TextIconLabel from '../TextIconLabel';
-import { IconButtonAnimate } from '../animate';
+import Image from '../Image'
+import Iconify from '../Iconify'
+import TextIconLabel from '../TextIconLabel'
+import { IconButtonAnimate } from '../animate'
 
 // ----------------------------------------------------------------------
 
@@ -17,14 +17,14 @@ type Props = {
   office: OfficeMapProps;
   lat: number;
   lng: number;
-  onClose: VoidFunction;
+  onClose: ()=>void;
 };
 
 export default function Popup({ office, onClose }: Props) {
   const handleClose = (event: React.MouseEvent<HTMLElement>) => {
-    event.stopPropagation();
-    onClose();
-  };
+    event.stopPropagation()
+    onClose()
+  }
 
   return (
     <Paper
@@ -91,5 +91,5 @@ export default function Popup({ office, onClose }: Props) {
         )}
       </Stack>
     </Paper>
-  );
+  )
 }

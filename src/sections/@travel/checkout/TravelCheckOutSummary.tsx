@@ -1,18 +1,18 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from 'react'
 // icons
-import eventsIcon from '@iconify/icons-carbon/events';
-import calendarIcon from '@iconify/icons-carbon/calendar';
+import eventsIcon from '@iconify/icons-carbon/events'
+import calendarIcon from '@iconify/icons-carbon/calendar'
 // @mui
-import { LoadingButton } from '@mui/lab';
-import { Card, Grid, Stack, Divider, Typography, Avatar } from '@mui/material';
+import { LoadingButton } from '@mui/lab'
+import { Card, Grid, Stack, Divider, Typography, Avatar } from '@mui/material'
 // utils
-import { fCurrency } from '../../../utils/formatNumber';
+import { fCurrency } from '../../../utils/formatNumber'
 // @types
-import { TourProps } from '../../../@types/travel';
+import { TourProps } from '../../../@types/travel'
 // components
-import { Image, RatingLabel, Iconify, TextMaxLine } from '../../../components';
+import { Image, RatingLabel, Iconify, TextMaxLine } from '../../../components'
 //
-import { TravelTourFilterGuests, TravelTourFilterTime } from '../filters';
+import { TravelTourFilterGuests, TravelTourFilterTime } from '../filters'
 
 // ----------------------------------------------------------------------
 
@@ -26,7 +26,7 @@ const resetInputStyles = {
   '& .MuiInputAdornment-root': {
     display: 'none',
   },
-};
+}
 
 // ----------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ export default function TravelCheckOutSummary({
   setDepartureDay,
   isSubmitting,
 }: Props) {
-  const { coverImg, slug, ratings, reviews, price, tourGuide } = tour;
+  const { coverImg, slug, ratings, reviews, price, tourGuide } = tour
 
   return (
     <Card>
@@ -88,13 +88,13 @@ export default function TravelCheckOutSummary({
         <Stack
           spacing={2.5}
           direction={{ xs: 'column', sm: 'row' }}
-          divider={
+          divider={(
             <Divider
               orientation="vertical"
               flexItem
               sx={{ borderStyle: 'dashed', display: { xs: 'none', sm: 'block' } }}
             />
-          }
+          )}
           sx={{
             p: 2.5,
             borderRadius: 2,
@@ -161,5 +161,5 @@ export default function TravelCheckOutSummary({
         </LoadingButton>
       </Stack>
     </Card>
-  );
+  )
 }

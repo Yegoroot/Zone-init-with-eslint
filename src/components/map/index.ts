@@ -1,1 +1,1 @@
-export { default as ContactMap } from './ContactMap';
+export { default as ContactMap } from './ContactMap'

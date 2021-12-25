@@ -1,35 +1,35 @@
-import { ReactElement } from 'react';
-import { serialize } from 'next-mdx-remote/serialize';
+import { ReactElement } from 'react'
+import { serialize } from 'next-mdx-remote/serialize'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Container, Grid, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Container, Grid, Box } from '@mui/material'
 // routes
-import Routes from '../../../src/routes';
+import Routes from '../../../src/routes'
 // utils
 import {
   getCaseStudyData,
   getAllCaseStudies,
   getCaseStudiesSlugs,
-} from '../../../src/utils/get-mardown/marketing/case-studies';
+} from '../../../src/utils/get-mardown/marketing/case-studies'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config'
 // @types
-import { CaseStudyProps } from '../../../src/@types/marketing';
+import { CaseStudyProps } from '../../../src/@types/marketing'
 // _data
-import { _testimonials } from '../../../_data/mock';
+import { _testimonials } from '../../../_data/mock'
 // layouts
-import Layout from '../../../src/layouts';
+import Layout from '../../../src/layouts'
 // components
-import { Page, Image, Markdown, Breadcrumbs } from '../../../src/components';
+import { Page, Image, Markdown, Breadcrumbs } from '../../../src/components'
 // sections
-import { NewsletterMarketing } from '../../../src/sections/newsletter';
-import { TestimonialsMarketing } from '../../../src/sections/testimonials';
+import { NewsletterMarketing } from '../../../src/sections/newsletter'
+import { TestimonialsMarketing } from '../../../src/sections/testimonials'
 import {
   MarketingFreeSEO,
   MarketingCaseStudySummary,
   MarketingCaseStudyGallery,
   MarketingCaseStudiesSimilar,
-} from '../../../src/sections/@marketing';
+} from '../../../src/sections/@marketing'
 
 // ----------------------------------------------------------------------
 
@@ -38,7 +38,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -48,17 +48,17 @@ type Props = {
 };
 
 export default function MarketingCaseStudyPage({ caseStudies, caseStudy }: Props) {
-  const { frontmatter, content } = caseStudy;
-  const { title, coverImg, heroImg, galleryImgs } = frontmatter;
+  const { frontmatter, content } = caseStudy
+  const { title, coverImg, heroImg, galleryImgs } = frontmatter
 
   return (
     <Page
       title={`${title} - Case Study`}
-      meta={
+      meta={(
         <>
           <meta property="og:image" content={coverImg} />
         </>
-      }
+      )}
     >
       <RootStyle>
         <Container>
@@ -106,14 +106,14 @@ export default function MarketingCaseStudyPage({ caseStudies, caseStudy }: Props
         <NewsletterMarketing />
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 MarketingCaseStudyPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}
 
 // ----------------------------------------------------------------------
 
@@ -124,7 +124,7 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const caseStudy = getCaseStudyData(params.slug);
+  const caseStudy = getCaseStudyData(params.slug)
 
   return {
     props: {
@@ -134,14 +134,14 @@ export async function getStaticProps({ params }: Params) {
         content: await serialize(caseStudy.content),
       },
     },
-  };
+  }
 }
 
 export async function getStaticPaths() {
-  const files = getCaseStudiesSlugs();
+  const files = getCaseStudiesSlugs()
 
   return {
     paths: files,
     fallback: false,
-  };
+  }
 }

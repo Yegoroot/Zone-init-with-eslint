@@ -1,10 +1,10 @@
 // icons
-import playIcon from '@iconify/icons-carbon/play';
+import playIcon from '@iconify/icons-carbon/play'
 // @mui
-import { styled, alpha } from '@mui/material/styles';
-import { Grid, Stack, Container, Typography, Button, Box } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles'
+import { Grid, Stack, Container, Typography, Button, Box } from '@mui/material'
 // components
-import { Iconify, Image } from '../../../components';
+import { Iconify, Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -50,7 +50,7 @@ export default function MarketingLandingHero() {
                   disableRipple
                   color="inherit"
                   size="large"
-                  startIcon={
+                  startIcon={(
                     <Box
                       sx={{
                         width: 48,
@@ -67,7 +67,7 @@ export default function MarketingLandingHero() {
                         sx={{ width: 24, height: 24, color: 'primary.main' }}
                       />
                     </Box>
-                  }
+                  )}
                   sx={{
                     px: 0,
                     '&:hover': { bgcolor: 'transparent' },
@@ -96,5 +96,5 @@ export default function MarketingLandingHero() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

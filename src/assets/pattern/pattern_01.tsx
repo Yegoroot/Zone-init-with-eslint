@@ -1,30 +1,31 @@
-import { memo } from 'react';
-import { m } from 'framer-motion';
+/* eslint-disable max-len */
+import { memo } from 'react'
+import { m } from 'framer-motion'
 // @mui
-import { SxProps, useTheme } from '@mui/system';
-import { Box, BoxProps } from '@mui/material';
+import { SxProps, useTheme } from '@mui/system'
+import { Box, BoxProps } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
 const varUp = {
   animate: { y: [-12, 12, -12] },
   transition: { duration: 8, repeat: Infinity },
-};
+}
 
 const varDown = {
   animate: { y: [12, -12, 12] },
   transition: { duration: 8, repeat: Infinity },
-};
+}
 
 const varLeft = {
   animate: { x: [10, -10, 10] },
   transition: { duration: 7, repeat: Infinity },
-};
+}
 
 const varRight = {
   animate: { x: [10, -10, 10] },
   transition: { duration: 7, repeat: Infinity },
-};
+}
 
 // ----------------------------------------------------------------------
 
@@ -33,14 +34,14 @@ interface Props extends BoxProps {
 }
 
 function Pattern01({ sx }: Props) {
-  const theme = useTheme();
+  const theme = useTheme()
 
-  const PURPLE = '#DC8CFF';
-  const BLUE = theme.palette.info.light;
-  const RED = theme.palette.error.light;
-  const CYAN = theme.palette.info.lighter;
-  const GREEN = theme.palette.success.light;
-  const ORANGE = theme.palette.warning.light;
+  const PURPLE = '#DC8CFF'
+  const BLUE = theme.palette.info.light
+  const RED = theme.palette.error.light
+  const CYAN = theme.palette.info.lighter
+  const GREEN = theme.palette.success.light
+  const ORANGE = theme.palette.warning.light
 
   return (
     <Box sx={{ width: 1, height: 1, position: 'absolute', opacity: 0.32, ...sx }}>
@@ -120,7 +121,7 @@ function Pattern01({ sx }: Props) {
         />
       </svg>
     </Box>
-  );
+  )
 }
 
-export default memo(Pattern01);
+export default memo(Pattern01)

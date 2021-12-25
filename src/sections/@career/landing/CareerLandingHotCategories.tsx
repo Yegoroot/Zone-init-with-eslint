@@ -1,14 +1,14 @@
 // icons
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // @mui
-import { styled, alpha } from '@mui/material/styles';
-import { Typography, Stack, Container, Box, Paper, Button } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles'
+import { Typography, Stack, Container, Box, Paper, Button } from '@mui/material'
 // utils
-import cssStyles from '../../../utils/cssStyles';
+import cssStyles from '../../../utils/cssStyles'
 // @types
-import { JobByCategoryProps } from '../../../@types/career';
+import { JobByCategoryProps } from '../../../@types/career'
 // components
-import { Iconify, TextMaxLine, SvgIconStyle } from '../../../components';
+import { Iconify, TextMaxLine, SvgIconStyle } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ const RootStyle = styled(Stack)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -67,7 +67,7 @@ export default function CareerLandingHotCategories({ categories }: Props) {
         </Stack>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -132,9 +132,11 @@ function CategoryItem({ category }: CategoryItemProps) {
         </TextMaxLine>
 
         <Typography variant="body2" sx={{ color: 'text.disabled', mt: 0.5 }}>
-          {category.totalJobs} jobs
+          {category.totalJobs}
+          {' '}
+          jobs
         </Typography>
       </Stack>
     </Paper>
-  );
+  )
 }

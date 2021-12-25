@@ -41,4 +41,4 @@ export const role = [
   'UI/UX Designer',
   'UI Designer',
   'Full Stack Designer',
-];
+]

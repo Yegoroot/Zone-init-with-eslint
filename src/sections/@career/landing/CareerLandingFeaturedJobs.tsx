@@ -1,20 +1,20 @@
 // icons
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled, alpha } from '@mui/material/styles';
-import { Grid, Container, Stack, Button, Typography, Box } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles'
+import { Grid, Container, Stack, Button, Typography, Box } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // theme
-import cssStyles from '../../../utils/cssStyles';
+import cssStyles from '../../../utils/cssStyles'
 // @types
-import { JobProps } from '../../../@types/career';
+import { JobProps } from '../../../@types/career'
 // components
-import { Iconify } from '../../../components';
+import { Iconify } from '../../../components'
 //
-import CareerJobItem from '../jobs/CareerJobItem';
+import CareerJobItem from '../jobs/CareerJobItem'
 
 // ----------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -91,5 +91,5 @@ export default function CareerLandingFeaturedJobs({ jobs }: Props) {
         </Stack>
       </Container>
     </RootStyle>
-  );
+  )
 }

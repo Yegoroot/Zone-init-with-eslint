@@ -1,7 +1,7 @@
-import useSWR, { SWRConfiguration, SWRResponse } from 'swr';
-import { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios';
+import useSWR, { SWRConfiguration, SWRResponse } from 'swr'
+import { AxiosRequestConfig, AxiosResponse, AxiosError } from 'axios'
 // utils
-import axios from '../utils/axios';
+import axios from '../utils/axios'
 
 // ----------------------------------------------------------------------
 
@@ -46,7 +46,7 @@ export default function useRequest<Data = unknown, Error = unknown>(
         data: fallbackData,
       },
     }
-  );
+  )
 
   return {
     data: response && response.data,
@@ -54,5 +54,5 @@ export default function useRequest<Data = unknown, Error = unknown>(
     error,
     isValidating,
     mutate,
-  };
+  }
 }

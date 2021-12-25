@@ -1,14 +1,14 @@
 // icons
-import informationIcon from '@iconify/icons-carbon/information';
+import informationIcon from '@iconify/icons-carbon/information'
 // @mui
-import { Stack, Button, Tooltip, TextField, InputAdornment } from '@mui/material';
+import { Stack, Button, Tooltip, TextField, InputAdornment } from '@mui/material'
 // components
-import { Iconify } from '../../components';
+import { Iconify } from '../../components'
 
 // ----------------------------------------------------------------------
 
 type CheckoutNewCardFormProps = {
-  onCancel: VoidFunction;
+  onCancel: ()=>void;
 };
 
 export default function CheckoutNewCardForm({ onCancel }: CheckoutNewCardFormProps) {
@@ -51,5 +51,5 @@ export default function CheckoutNewCardForm({ onCancel }: CheckoutNewCardFormPro
         </Button>
       </Stack>
     </Stack>
-  );
+  )
 }

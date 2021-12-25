@@ -1,10 +1,10 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Container, Stack, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Container, Stack, Box } from '@mui/material'
 // @types
-import { TeamMemberProps } from '../../../@types/team';
+import { TeamMemberProps } from '../../../@types/team'
 //
-import TeamTravelMember from './TeamTravelMember';
+import TeamTravelMember from './TeamTravelMember'
 
 // ----------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 0, 15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -59,5 +59,5 @@ export default function TeamTravelAbout({ members }: Props) {
         </Box>
       </Container>
     </RootStyle>
-  );
+  )
 }

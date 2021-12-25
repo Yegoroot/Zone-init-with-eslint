@@ -1,8 +1,8 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Stack, Container, Grid, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Stack, Container, Grid, Box } from '@mui/material'
 // components
-import { Image } from '../../../components';
+import { Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ const RootStyle = styled(Stack)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -47,7 +47,8 @@ export default function ElearningLandingIntroduce() {
 
           <Grid item xs={12} md={6} lg={6}>
             <Typography variant="h3" sx={{ mb: 3 }}>
-              Phasellus gravida semper nisi. Vestibulum rutrum{' '}
+              Phasellus gravida semper nisi. Vestibulum rutrum
+              {' '}
             </Typography>
             <Typography sx={{ color: 'text.secondary' }}>
               Curabitur a felis in nunc fringilla tristique. Fusce egestas elit eget lorem. Etiam
@@ -80,5 +81,5 @@ export default function ElearningLandingIntroduce() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

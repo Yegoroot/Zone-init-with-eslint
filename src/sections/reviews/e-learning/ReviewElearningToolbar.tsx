@@ -1,5 +1,5 @@
 // @mui
-import { Stack, Select, MenuItem, Typography, FormControl, SelectChangeEvent } from '@mui/material';
+import { Stack, Select, MenuItem, Typography, FormControl, SelectChangeEvent } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -7,7 +7,7 @@ const SORT_OPTIONS = [
   { value: 'latest', label: 'Latest' },
   { value: 'oldest', label: 'Oldest' },
   { value: 'popular', label: 'Popular' },
-];
+]
 
 type Props = {
   sort: string;
@@ -39,5 +39,5 @@ export default function ReviewElearningToolbar({ sort, onChangeSort }: Props) {
         </FormControl>
       </Stack>
     </Stack>
-  );
+  )
 }

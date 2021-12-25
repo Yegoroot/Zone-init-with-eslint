@@ -1,7 +1,7 @@
-import { useState, useRef } from 'react';
+import { useState, useRef } from 'react'
 // @mui
-import { Slider as MUISlider, FormControl, Typography, Popover, Box, Select } from '@mui/material';
-import { fCurrency } from '../../../utils/formatNumber';
+import { Slider as MUISlider, FormControl, Typography, Popover, Box, Select } from '@mui/material'
+import { fCurrency } from '../../../utils/formatNumber'
 
 // ----------------------------------------------------------------------
 
@@ -9,13 +9,13 @@ const inputStyle = {
   width: { xs: 1, md: 160 },
   '& .MuiFilledInput-input': { py: { xs: '15px', md: 0.5 } },
   '& .MuiSvgIcon-root': { color: 'text.disabled', width: 18, height: 18 },
-};
+}
 
 const placeholder = (
   <Typography variant="body2" sx={{ color: 'text.disabled' }}>
     All salary ranges
   </Typography>
-);
+)
 
 // ----------------------------------------------------------------------
 
@@ -25,19 +25,19 @@ type Props = {
 };
 
 export default function CareerJobSalaryFilter({ filterSalary, onChangeSalary }: Props) {
-  const anchorRef = useRef(null);
-  const [open, setOpen] = useState(false);
+  const anchorRef = useRef(null)
+  const [open, setOpen] = useState(false)
 
-  const minSalary = filterSalary[0];
-  const maxSalary = filterSalary[1];
+  const minSalary = filterSalary[0]
+  const maxSalary = filterSalary[1]
 
   const handleOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
   const handleClose = () => {
-    setOpen(false);
-  };
+    setOpen(false)
+  }
 
   return (
     <>
@@ -49,13 +49,15 @@ export default function CareerJobSalaryFilter({ filterSalary, onChangeSalary }: 
             value=""
             renderValue={() => {
               if (minSalary === 0 && maxSalary === 20000) {
-                return placeholder;
+                return placeholder
               }
               return (
-                <Typography variant="subtitle2" component="span">{`${fCurrency(
-                  minSalary
-                )} - ${fCurrency(maxSalary)}`}</Typography>
-              );
+                <Typography variant="subtitle2" component="span">
+                  {`${fCurrency(
+                    minSalary
+                  )} - ${fCurrency(maxSalary)}`}
+                </Typography>
+              )
             }}
           />
         </FormControl>
@@ -93,5 +95,5 @@ export default function CareerJobSalaryFilter({ filterSalary, onChangeSalary }: 
         />
       </Popover>
     </>
-  );
+  )
 }

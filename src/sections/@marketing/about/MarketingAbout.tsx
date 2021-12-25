@@ -1,19 +1,19 @@
 // icons
-import { IconifyIcon } from '@iconify/react';
-import trophyIcon from '@iconify/icons-carbon/trophy';
-import dataVis4 from '@iconify/icons-carbon/data-vis-4';
-import increaseLevel from '@iconify/icons-carbon/increase-level';
-import userCertification from '@iconify/icons-carbon/user-certification';
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import { IconifyIcon } from '@iconify/react'
+import trophyIcon from '@iconify/icons-carbon/trophy'
+import dataVis4 from '@iconify/icons-carbon/data-vis-4'
+import increaseLevel from '@iconify/icons-carbon/increase-level'
+import userCertification from '@iconify/icons-carbon/user-certification'
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // @mui
-import { styled, alpha } from '@mui/material/styles';
-import { Grid, Box, Container, Typography, Button } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles'
+import { Grid, Box, Container, Typography, Button } from '@mui/material'
 // utils
-import { fShortenNumber } from '../../../utils/formatNumber';
+import { fShortenNumber } from '../../../utils/formatNumber'
 // theme
-import { ColorSchema } from '../../../theme/palette';
+import { ColorSchema } from '../../../theme/palette'
 // components
-import { Iconify, CountUpNumber, Image } from '../../../components';
+import { Iconify, CountUpNumber, Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -22,16 +22,16 @@ const SUMMARY = [
   { title: 'Awards', total: 20, icon: trophyIcon },
   { title: 'Projects', total: 150, icon: dataVis4 },
   { title: 'Happy clients', total: 32000, icon: userCertification },
-];
+]
 
-const COLORS = ['primary', 'secondary', 'warning', 'success'] as const;
+const COLORS = ['primary', 'secondary', 'warning', 'success'] as const
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(10, 0),
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 type IconStyleProps = {
   color: ColorSchema;
@@ -62,7 +62,7 @@ const IconStyle = styled('div', {
   '& svg': {
     zIndex: 9,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -130,7 +130,7 @@ export default function MarketingAbout() {
         </Box>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -159,5 +159,5 @@ function BoxItem({ value, index }: BoxItemProps) {
       </Typography>
       <Typography sx={{ color: 'text.secondary' }}>{value.title}</Typography>
     </div>
-  );
+  )
 }

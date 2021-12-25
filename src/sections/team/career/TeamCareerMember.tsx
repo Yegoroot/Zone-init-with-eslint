@@ -1,10 +1,10 @@
 // @mui
-import { alpha, useTheme } from '@mui/material/styles';
-import { Typography, Stack, Box } from '@mui/material';
+import { alpha, useTheme } from '@mui/material/styles'
+import { Typography, Stack, Box } from '@mui/material'
 // @types
-import { TeamMemberProps } from '../../../@types/team';
+import { TeamMemberProps } from '../../../@types/team'
 // components
-import { Image, SocialsButton, BgOverlay } from '../../../components';
+import { Image, SocialsButton, BgOverlay } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -13,8 +13,8 @@ type Props = {
 };
 
 export default function TeamCareerMember({ member }: Props) {
-  const theme = useTheme();
-  const { name, role, photo, socialLinks } = member;
+  const theme = useTheme()
+  const { name, role, photo, socialLinks } = member
 
   return (
     <>
@@ -26,11 +26,10 @@ export default function TeamCareerMember({ member }: Props) {
             opacity: 0,
             display: 'flex',
             alignItems: 'center',
-            transition: (theme) =>
-              theme.transitions.create('opacity', {
-                easing: theme.transitions.easing.sharp,
-                duration: theme.transitions.duration.short,
-              }),
+            transition: (theme) => theme.transitions.create('opacity', {
+              easing: theme.transitions.easing.sharp,
+              duration: theme.transitions.duration.short,
+            }),
             '&:hover': { opacity: 1 },
           }}
         >
@@ -56,5 +55,5 @@ export default function TeamCareerMember({ member }: Props) {
         <Image src={photo} alt={name} ratio="4/3" />
       </Box>
     </>
-  );
+  )
 }

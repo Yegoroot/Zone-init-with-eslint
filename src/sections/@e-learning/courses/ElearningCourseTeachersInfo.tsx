@@ -1,13 +1,13 @@
 // icons
-import eventsIcon from '@iconify/icons-carbon/events';
-import notebookIcon from '@iconify/icons-carbon/notebook';
+import eventsIcon from '@iconify/icons-carbon/events'
+import notebookIcon from '@iconify/icons-carbon/notebook'
 // @mui
-import { Stack, Avatar, Typography, Paper, Box } from '@mui/material';
-import { fShortenNumber } from '../../../utils/formatNumber';
+import { Stack, Avatar, Typography, Paper, Box } from '@mui/material'
+import { fShortenNumber } from '../../../utils/formatNumber'
 // @types
-import { CourseTeacherProp } from '../../../@types/e-learning';
+import { CourseTeacherProp } from '../../../@types/e-learning'
 // components
-import { RatingLabel, TextIconLabel, Iconify } from '../../../components';
+import { RatingLabel, TextIconLabel, Iconify } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -19,7 +19,9 @@ export default function ElearningCourseTeachersInfo({ teachers = [] }: Props) {
   return (
     <>
       <Typography variant="h4" sx={{ mb: 5 }}>
-        Instructors {teachers.length > 0 && `(${teachers.length})`}
+        Instructors
+        {' '}
+        {teachers.length > 0 && `(${teachers.length})`}
       </Typography>
 
       <Box
@@ -37,7 +39,7 @@ export default function ElearningCourseTeachersInfo({ teachers = [] }: Props) {
         ))}
       </Box>
     </>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -47,13 +49,13 @@ type TeacherItemProps = {
 };
 
 function TeacherItem({ teacher }: TeacherItemProps) {
-  const { picture, name, role, ratings, reviews, students, courses } = teacher;
+  const { picture, name, role, ratings, reviews, students, courses } = teacher
 
   const labelStyle = {
     typography: 'body3',
     color: 'text.disabled',
     '& svg': { width: 20, height: 20, mr: 1 },
-  };
+  }
 
   return (
     <Paper variant="outlined" sx={{ p: 3, borderRadius: 2 }}>
@@ -73,30 +75,30 @@ function TeacherItem({ teacher }: TeacherItemProps) {
           <TextIconLabel
             sx={{ ...labelStyle }}
             icon={<Iconify icon={eventsIcon} sx={{ width: 20, height: 20, mr: 1 }} />}
-            value={
+            value={(
               <>
                 <Box component="strong" sx={{ mr: 0.25 }}>
                   {fShortenNumber(students)}
                 </Box>
                 Lessons
               </>
-            }
+            )}
           />
 
           <TextIconLabel
             sx={{ ...labelStyle }}
             icon={<Iconify icon={notebookIcon} sx={{ width: 20, height: 20, mr: 1 }} />}
-            value={
+            value={(
               <>
                 <Box component="strong" sx={{ mr: 0.25 }}>
                   {courses}
                 </Box>
                 Lessons
               </>
-            }
+            )}
           />
         </Stack>
       </Stack>
     </Paper>
-  );
+  )
 }

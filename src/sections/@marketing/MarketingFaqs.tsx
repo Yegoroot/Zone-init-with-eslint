@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // icons
-import addIcon from '@iconify/icons-carbon/add';
-import subtractIcon from '@iconify/icons-carbon/subtract';
+import addIcon from '@iconify/icons-carbon/add'
+import subtractIcon from '@iconify/icons-carbon/subtract'
 // @mui
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import {
   Grid,
   Stack,
@@ -12,11 +12,11 @@ import {
   Typography,
   AccordionSummary,
   AccordionDetails,
-} from '@mui/material';
+} from '@mui/material'
 // _data
-import { _faqs } from '../../../_data/mock';
+import { _faqs } from '../../../_data/mock'
 // components
-import { Iconify, Image } from '../../components';
+import { Iconify, Image } from '../../components'
 
 // ----------------------------------------------------------------------
 
@@ -25,17 +25,16 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 0, 15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function MarketingFaqs() {
-  const [expanded, setExpanded] = useState<string | false>(false);
+  const [expanded, setExpanded] = useState<string | false>(false)
 
-  const handleChangeExpanded =
-    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-      setExpanded(isExpanded ? panel : false);
-    };
+  const handleChangeExpanded = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+    setExpanded(isExpanded ? panel : false)
+  }
 
   return (
     <RootStyle>
@@ -85,5 +84,5 @@ export default function MarketingFaqs() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

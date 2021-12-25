@@ -1,8 +1,8 @@
 // @mui
-import { alpha, styled } from '@mui/material/styles';
-import { Container, Typography, Stack, Grid, Divider } from '@mui/material';
+import { alpha, styled } from '@mui/material/styles'
+import { Container, Typography, Stack, Grid, Divider } from '@mui/material'
 // components
-import { Image, AppStoreButton, SvgIconStyle } from '../../../components';
+import { Image, AppStoreButton, SvgIconStyle } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -50,7 +50,9 @@ export default function DownloadAppElearning() {
                 />
                 <Typography variant="h6">
                   Scan QR code to
-                  <br /> install on your device
+                  <br />
+                  {' '}
+                  install on your device
                 </Typography>
               </Stack>
               <Divider sx={{ my: 5, width: 1, borderStyle: 'dashed' }} />
@@ -64,13 +66,12 @@ export default function DownloadAppElearning() {
               src="/static/images/course/course_download_app.png"
               sx={{
                 maxWidth: 564,
-                filter: (theme) =>
-                  `drop-shadow(0 48px 80px ${alpha(theme.palette.common.black, 0.24)})`,
+                filter: (theme) => `drop-shadow(0 48px 80px ${alpha(theme.palette.common.black, 0.24)})`,
               }}
             />
           </Grid>
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

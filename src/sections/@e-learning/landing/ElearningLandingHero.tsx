@@ -1,21 +1,21 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // icons
-import playIcon from '@iconify/icons-carbon/play';
-import chevronRight from '@iconify/icons-carbon/chevron-right';
+import playIcon from '@iconify/icons-carbon/play'
+import chevronRight from '@iconify/icons-carbon/chevron-right'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Stack, Container, Box, Grid, Divider, Button } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Stack, Container, Box, Grid, Divider, Button } from '@mui/material'
 // utils
-import { fShortenNumber } from '../../../utils/formatNumber';
+import { fShortenNumber } from '../../../utils/formatNumber'
 // theme
-import { ColorSchema } from '../../../theme/palette';
+import { ColorSchema } from '../../../theme/palette'
 // _data
-import _mock from '../../../../_data/mock';
+import _mock from '../../../../_data/mock'
 // assets
-import { ElearningHeroIllustration } from '../../../assets';
+import { ElearningHeroIllustration } from '../../../assets'
 // components
-import { Iconify, TextIconLabel, PlayerWithButton } from '../../../components';
-import { FabButtonAnimate } from '../../../components/animate';
+import { Iconify, TextIconLabel, PlayerWithButton } from '../../../components'
+import { FabButtonAnimate } from '../../../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -29,20 +29,20 @@ const RootStyle = styled(Stack)(({ theme }) => ({
     justifyContent: 'center',
     paddingBottom: theme.spacing(15),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function ElearningLandingHero() {
-  const [openVideo, setOpenVideo] = useState(false);
+  const [openVideo, setOpenVideo] = useState(false)
 
   const handleOpenVideo = () => {
-    setOpenVideo(true);
-  };
+    setOpenVideo(true)
+  }
 
   const handleCloseVideo = () => {
-    setOpenVideo(false);
-  };
+    setOpenVideo(false)
+  }
 
   return (
     <>
@@ -59,10 +59,12 @@ export default function ElearningLandingHero() {
                   Free
                   <Box component="span" sx={{ color: 'text.disabled' }}>
                     {' '}
-                    Online{' '}
+                    Online
+                    {' '}
                   </Box>
                   <Box component="span" sx={{ color: 'primary.main', textDecoration: 'underline' }}>
-                    Courses{' '}
+                    Courses
+                    {' '}
                   </Box>
                   From The Experts
                 </Typography>
@@ -81,11 +83,11 @@ export default function ElearningLandingHero() {
                     Ready Start
                   </Button>
                   <TextIconLabel
-                    icon={
+                    icon={(
                       <FabButtonAnimate color="secondary" sx={{ mr: 2 }}>
                         <Iconify icon={playIcon} />
                       </FabButtonAnimate>
-                    }
+                    )}
                     value="Watch Video"
                     onClick={handleOpenVideo}
                     justifyContent={{ xs: 'center', sm: 'unset' }}
@@ -112,7 +114,7 @@ export default function ElearningLandingHero() {
 
       <PlayerWithButton open={openVideo} onClose={handleCloseVideo} videoPath={_mock.video} />
     </>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -128,7 +130,7 @@ function SummarySection() {
       {SummaryItem(1050, 'Courses', 'error')}
       {SummaryItem(59000, 'Graduates', 'success')}
     </Stack>
-  );
+  )
 }
 
 function SummaryItem(total: number, label: string, color: ColorSchema) {
@@ -147,10 +149,13 @@ function SummaryItem(total: number, label: string, color: ColorSchema) {
           bgcolor: (theme) => theme.palette[color].main,
         }}
       />
-      <Typography variant="h3">{fShortenNumber(total)}+</Typography>
+      <Typography variant="h3">
+        {fShortenNumber(total)}
+        +
+      </Typography>
       <Typography variant="body2" sx={{ color: 'text.secondary' }}>
         {label}
       </Typography>
     </Stack>
-  );
+  )
 }

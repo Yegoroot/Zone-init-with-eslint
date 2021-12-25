@@ -1,23 +1,23 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // icons
-import cubeIcon from '@iconify/icons-carbon/cube';
-import eventsIcon from '@iconify/icons-carbon/events';
-import packageIcon from '@iconify/icons-carbon/package';
-import receiptIcon from '@iconify/icons-carbon/receipt';
-import calendarIcon from '@iconify/icons-carbon/calendar';
-import purchaseIcon from '@iconify/icons-carbon/purchase';
-import chevronLeft from '@iconify/icons-carbon/chevron-left';
+import cubeIcon from '@iconify/icons-carbon/cube'
+import eventsIcon from '@iconify/icons-carbon/events'
+import packageIcon from '@iconify/icons-carbon/package'
+import receiptIcon from '@iconify/icons-carbon/receipt'
+import calendarIcon from '@iconify/icons-carbon/calendar'
+import purchaseIcon from '@iconify/icons-carbon/purchase'
+import chevronLeft from '@iconify/icons-carbon/chevron-left'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { Typography, Stack, Avatar, Divider, Button } from '@mui/material';
+import { Typography, Stack, Avatar, Divider, Button } from '@mui/material'
 // @utils
-import { fDate } from '../../../utils/formatTime';
-import { fCurrency } from '../../../utils/formatNumber';
+import { fDate } from '../../../utils/formatTime'
+import { fCurrency } from '../../../utils/formatNumber'
 // @types
-import { TourProps } from '../../../@types/travel';
+import { TourProps } from '../../../@types/travel'
 // components
-import { RatingLabel, TextIconLabel, Iconify } from '../../../components';
+import { RatingLabel, TextIconLabel, Iconify } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -26,7 +26,7 @@ type Props = {
 };
 
 export default function TravelCheckOutCompleteInfo({ tour }: Props) {
-  const { slug, ratings, reviews, price, tourGuide } = tour;
+  const { slug, ratings, reviews, price, tourGuide } = tour
 
   return (
     <Stack spacing={5}>
@@ -96,7 +96,7 @@ export default function TravelCheckOutCompleteInfo({ tour }: Props) {
         </Button>
       </Stack>
     </Stack>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -104,6 +104,7 @@ export default function TravelCheckOutCompleteInfo({ tour }: Props) {
 type LineItemProps = {
   icon: ReactElement;
   label: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value: any;
 };
 
@@ -111,7 +112,7 @@ function LineItem({ icon, label, value }: LineItemProps) {
   return (
     <TextIconLabel
       icon={icon}
-      value={
+      value={(
         <>
           {label}
           <Typography
@@ -121,11 +122,11 @@ function LineItem({ icon, label, value }: LineItemProps) {
             {value}
           </Typography>
         </>
-      }
+      )}
       sx={{
         color: 'text.disabled',
         '& svg': { mr: 1, width: 24, height: 24 },
       }}
     />
-  );
+  )
 }

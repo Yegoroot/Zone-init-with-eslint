@@ -1,8 +1,8 @@
-import { Stack, Avatar, Typography } from '@mui/material';
+import { Stack, Avatar, Typography } from '@mui/material'
 // components
-import { SocialsButton } from '../../components';
+import { SocialsButton } from '../../components'
 // @types
-import { AuthorProps } from '../../@types/author';
+import { AuthorProps } from '../../@types/author'
 
 // ----------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ type Props = {
 };
 
 export default function BlogSidebarAuthor({ author }: Props) {
-  const { name, role, picture, socialLinks } = author;
+  const { name, role, picture, socialLinks } = author
 
   return (
     <Stack
@@ -30,5 +30,5 @@ export default function BlogSidebarAuthor({ author }: Props) {
         <SocialsButton initialColor links={socialLinks} />
       </Stack>
     </Stack>
-  );
+  )
 }

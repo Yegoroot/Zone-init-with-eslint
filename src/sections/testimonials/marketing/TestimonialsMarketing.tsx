@@ -1,12 +1,12 @@
-import Slider from 'react-slick';
-import { useRef } from 'react';
+import Slider from 'react-slick'
+import { useRef } from 'react'
 // @mui
-import { styled, useTheme } from '@mui/material/styles';
-import { Typography, Grid, Container, Stack, Avatar } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles'
+import { Typography, Grid, Container, Stack, Avatar } from '@mui/material'
 // @types
-import { TestimonialProps } from '../../../@types/testimonial';
+import { TestimonialProps } from '../../../@types/testimonial'
 // components
-import { CarouselDots, CarouselArrows } from '../../../components';
+import { CarouselDots, CarouselArrows } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -16,7 +16,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -25,8 +25,8 @@ type Props = {
 };
 
 export default function TestimonialsMarketing({ testimonials }: Props) {
-  const theme = useTheme();
-  const carouselRef = useRef<Slider | null>(null);
+  const theme = useTheme()
+  const carouselRef = useRef<Slider | null>(null)
 
   const carouselSettings = {
     dots: true,
@@ -41,15 +41,15 @@ export default function TestimonialsMarketing({ testimonials }: Props) {
         mt: { xs: 8, md: 10 },
       },
     }),
-  };
+  }
 
   const handlePrevious = () => {
-    carouselRef.current?.slickPrev();
-  };
+    carouselRef.current?.slickPrev()
+  }
 
   const handleNext = () => {
-    carouselRef.current?.slickNext();
-  };
+    carouselRef.current?.slickNext()
+  }
 
   return (
     <RootStyle>
@@ -74,7 +74,7 @@ export default function TestimonialsMarketing({ testimonials }: Props) {
         </CarouselArrows>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -84,7 +84,7 @@ type TestimonialItemProps = {
 };
 
 function TestimonialsItem({ testimonial }: TestimonialItemProps) {
-  const { name, role, avatar, review } = testimonial;
+  const { name, role, avatar, review } = testimonial
 
   return (
     <Stack direction={{ xs: 'column', md: 'row' }} spacing={{ xs: 5, md: 10 }}>
@@ -113,5 +113,5 @@ function TestimonialsItem({ testimonial }: TestimonialItemProps) {
         </Typography>
       </Stack>
     </Stack>
-  );
+  )
 }

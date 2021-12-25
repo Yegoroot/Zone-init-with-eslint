@@ -1,19 +1,19 @@
 // icons
-import documentIcon from '@iconify/icons-carbon/document';
+import documentIcon from '@iconify/icons-carbon/document'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Grid, Container, Typography, Button } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Grid, Container, Typography, Button } from '@mui/material'
 // utils
-import cssStyles from '../../../utils/cssStyles';
+import cssStyles from '../../../utils/cssStyles'
 // components
-import { Iconify, Image } from '../../../components';
+import { Iconify, Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
 const RootStyle = styled('div')(({ theme }) => ({
   ...cssStyles(theme).bgImage(),
   padding: theme.spacing(10, 0),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -60,5 +60,5 @@ export default function CareerLangdingForRecruiters() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

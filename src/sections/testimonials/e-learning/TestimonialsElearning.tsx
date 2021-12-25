@@ -1,17 +1,17 @@
-import Slider from 'react-slick';
-import { useRef, useEffect, useState } from 'react';
+import Slider from 'react-slick'
+import { useRef, useEffect, useState } from 'react'
 // @mui
-import { styled, useTheme } from '@mui/material/styles';
-import { Typography, Grid, Container, Stack, Box } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles'
+import { Typography, Grid, Container, Stack, Box } from '@mui/material'
 // @types
-import { TestimonialProps } from '../../../@types/testimonial';
+import { TestimonialProps } from '../../../@types/testimonial'
 // components
-import { CarouselArrows } from '../../../components';
+import { CarouselArrows } from '../../../components'
 //
 import {
   TestimonialsElearningContentItem,
   TestimonialsElearningThumbnailItem,
-} from './TestimonialsElearningItem';
+} from './TestimonialsElearningItem'
 
 // ----------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -30,20 +30,20 @@ type Props = {
 };
 
 export default function TestimonialsElearning({ testimonials }: Props) {
-  const theme = useTheme();
+  const theme = useTheme()
 
-  const [selected, setSelected] = useState(0);
+  const [selected, setSelected] = useState(0)
 
-  const [carouselContent, setCarouselContent] = useState<Slider>();
-  const [carouselThumbnail, setCarouselThumbnail] = useState<Slider>();
+  const [carouselContent, setCarouselContent] = useState<Slider>()
+  const [carouselThumbnail, setCarouselThumbnail] = useState<Slider>()
 
-  const carouselRef1 = useRef<Slider | null>(null);
-  const carouselRef2 = useRef<Slider | null>(null);
+  const carouselRef1 = useRef<Slider | null>(null)
+  const carouselRef2 = useRef<Slider | null>(null)
 
   useEffect(() => {
-    setCarouselContent(carouselRef1.current || undefined);
-    setCarouselThumbnail(carouselRef2.current || undefined);
-  }, [selected]);
+    setCarouselContent(carouselRef1.current || undefined)
+    setCarouselThumbnail(carouselRef2.current || undefined)
+  }, [selected])
 
   const carouselContentSettings = {
     dots: false,
@@ -53,7 +53,7 @@ export default function TestimonialsElearning({ testimonials }: Props) {
     slidesToScroll: 1,
     adaptiveHeight: true,
     beforeChange: (current: number, next: number) => setSelected(next),
-  };
+  }
 
   const carouselThumbnailSettings = {
     dots: false,
@@ -75,15 +75,15 @@ export default function TestimonialsElearning({ testimonials }: Props) {
         },
       },
     ],
-  };
+  }
 
   const handlePrevious = () => {
-    carouselRef2.current?.slickPrev();
-  };
+    carouselRef2.current?.slickPrev()
+  }
 
   const handleNext = () => {
-    carouselRef2?.current?.slickNext();
-  };
+    carouselRef2?.current?.slickNext()
+  }
 
   return (
     <RootStyle>
@@ -122,19 +122,18 @@ export default function TestimonialsElearning({ testimonials }: Props) {
             </CarouselArrows>
 
             {testimonials.map(
-              (testimonial, index) =>
-                selected === index && (
-                  <Stack key={testimonial.id} spacing={0.5}>
-                    <Typography variant="h6">{testimonial.name}</Typography>
-                    <Typography variant="body3" sx={{ color: 'text.secondary' }}>
-                      {testimonial.role}
-                    </Typography>
-                  </Stack>
-                )
+              (testimonial, index) => selected === index && (
+              <Stack key={testimonial.id} spacing={0.5}>
+                <Typography variant="h6">{testimonial.name}</Typography>
+                <Typography variant="body3" sx={{ color: 'text.secondary' }}>
+                  {testimonial.role}
+                </Typography>
+              </Stack>
+              )
             )}
           </Grid>
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

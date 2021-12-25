@@ -1,19 +1,19 @@
 // @mui
-import { Box, SvgIcon } from '@mui/material';
+import { Box, SvgIcon } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
 type Props = {
-  onOpen: VoidFunction;
+  onOpen: ()=>void;
   lat: number;
   lng: number;
 };
 
 export default function Marker({ onOpen }: Props) {
   const handleOpen = (event: React.MouseEvent<HTMLElement>) => {
-    event.stopPropagation();
-    onOpen();
-  };
+    event.stopPropagation()
+    onOpen()
+  }
 
   return (
     <Box onClick={handleOpen}>
@@ -25,5 +25,5 @@ C20.1,15.8,20.2,15.8,20.2,15.7z"
         />
       </SvgIcon>
     </Box>
-  );
+  )
 }

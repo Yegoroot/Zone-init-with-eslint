@@ -1,34 +1,34 @@
-import { ReactElement } from 'react';
-import { serialize } from 'next-mdx-remote/serialize';
+import { ReactElement } from 'react'
+import { serialize } from 'next-mdx-remote/serialize'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Grid, Chip, Stack, Divider, Container, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Grid, Chip, Stack, Divider, Container, Typography } from '@mui/material'
 // routes
-import Routes from '../../../src/routes';
+import Routes from '../../../src/routes'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config'
 // utils
 import {
   getAllPosts,
   getPostData,
   getAllPostSlugs,
-} from '../../../src/utils/get-mardown/travel/posts';
+} from '../../../src/utils/get-mardown/travel/posts'
 // @types
-import { BlogPostProps } from '../../../src/@types/blog';
+import { BlogPostProps } from '../../../src/@types/blog'
 // _data
-import _mock from '../../../_data/mock';
+import _mock from '../../../_data/mock'
 // layouts
-import Layout from '../../../src/layouts';
+import Layout from '../../../src/layouts'
 // components
-import { Breadcrumbs, SocialsButton, Page, Markdown } from '../../../src/components';
+import { Breadcrumbs, SocialsButton, Page, Markdown } from '../../../src/components'
 // sections
-import { NewsletterTravel } from '../../../src/sections/newsletter';
+import { NewsletterTravel } from '../../../src/sections/newsletter'
 import {
   BlogSidebar,
   BlogAuthorInfo,
   BlogTravelPostHero,
   BlogTravelLatestPosts,
-} from '../../../src/sections/blog';
+} from '../../../src/sections/blog'
 
 // ----------------------------------------------------------------------
 
@@ -37,7 +37,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -47,8 +47,8 @@ type Props = {
 };
 
 export default function TravelPostPage({ post, posts }: Props) {
-  const { frontmatter, content } = post;
-  const { title, description, author, shareLinks, tags } = frontmatter;
+  const { frontmatter, content } = post
+  const { title, description, author, shareLinks, tags } = frontmatter
 
   return (
     <Page title={`${title} - Post | Travel`}>
@@ -86,7 +86,7 @@ export default function TravelPostPage({ post, posts }: Props) {
                   Tags:
                 </Typography>
                 {tags.map((tag) => (
-                  <Chip key={tag} size="small" label={tag} sx={{ m: 0.5 }} onClick={() => {}} />
+                  <Chip key={tag} size="small" label={tag} sx={{ m: 0.5 }} onClick={() => null} />
                 ))}
               </Stack>
 
@@ -126,14 +126,14 @@ export default function TravelPostPage({ post, posts }: Props) {
         <NewsletterTravel />
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 TravelPostPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}
 
 // ----------------------------------------------------------------------
 
@@ -144,7 +144,7 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostData(params.slug);
+  const post = getPostData(params.slug)
 
   return {
     props: {
@@ -154,14 +154,14 @@ export async function getStaticProps({ params }: Params) {
         content: await serialize(post.content),
       },
     },
-  };
+  }
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPostSlugs();
+  const paths = getAllPostSlugs()
 
   return {
     paths,
     fallback: false,
-  };
+  }
 }

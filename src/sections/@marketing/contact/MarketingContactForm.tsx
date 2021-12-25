@@ -1,8 +1,8 @@
-import * as Yup from 'yup';
-import { useForm, Controller } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
+import * as Yup from 'yup'
+import { useForm, Controller } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 // @mui
-import { LoadingButton } from '@mui/lab';
+import { LoadingButton } from '@mui/lab'
 import {
   Stack,
   TextField,
@@ -10,20 +10,20 @@ import {
   ToggleButton,
   FormHelperText,
   Slider as MUISlider,
-} from '@mui/material';
+} from '@mui/material'
 // utils
-import { fCurrency } from '../../../utils/formatNumber';
+import { fCurrency } from '../../../utils/formatNumber'
 
 // ----------------------------------------------------------------------
 
-const SERVICES = ['Email marketing', 'SEO', ' Social Marketing', 'Research'];
+const SERVICES = ['Email marketing', 'SEO', ' Social Marketing', 'Research']
 
 const FormSchema = Yup.object().shape({
   services: Yup.array().required().min(1, 'Services field must have at least 1 items'),
   email: Yup.string().required('Email is required').email('That is not an email'),
   compnany: Yup.string().required('Compnany is required'),
   website: Yup.string().required('Website is required'),
-});
+})
 
 type FormValuesProps = {
   services: string[];
@@ -59,13 +59,13 @@ export default function MarketingContactForm() {
       budget: [2000, 10000],
       message: '',
     },
-  });
+  })
 
   const onSubmit = async (data: FormValuesProps) => {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    alert(JSON.stringify(data, null, 2));
-    reset();
-  };
+    await new Promise((resolve) => setTimeout(resolve, 500))
+    alert(JSON.stringify(data, null, 2))
+    reset()
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -77,10 +77,9 @@ export default function MarketingContactForm() {
             // Using with lodash https://lodash.com/docs/4.17.15#xor
             // const onSelected = (service: string) => xor(field.value, [service]);
 
-            const onSelected = (service: string) =>
-              field.value.includes(service)
-                ? field.value.filter((value) => value !== service)
-                : [...field.value, service];
+            const onSelected = (service: string) => (field.value.includes(service)
+              ? field.value.filter((value) => value !== service)
+              : [...field.value, service])
 
             return (
               <div>
@@ -99,8 +98,7 @@ export default function MarketingContactForm() {
                         typography: 'body2',
                         '&.Mui-selected': {
                           bgcolor: 'text.primary',
-                          color: (theme) =>
-                            theme.palette.mode === 'light' ? 'common.white' : 'grey.800',
+                          color: (theme) => (theme.palette.mode === 'light' ? 'common.white' : 'grey.800'),
                           '&:hover': {
                             bgcolor: 'text.primary',
                           },
@@ -114,11 +112,12 @@ export default function MarketingContactForm() {
 
                 {error && (
                   <FormHelperText error sx={{ px: 2, textTransform: 'capitalize' }}>
+                    {/*  eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                     {(error as any)?.message}
                   </FormHelperText>
                 )}
               </div>
-            );
+            )
           }}
         />
 
@@ -260,5 +259,5 @@ export default function MarketingContactForm() {
         </LoadingButton>
       </Stack>
     </form>
-  );
+  )
 }

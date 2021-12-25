@@ -1,28 +1,28 @@
-import { useState } from 'react';
-import { ReactPlayerProps } from 'react-player';
+import { useState } from 'react'
+import { ReactPlayerProps } from 'react-player'
 // icons
-import closeIcon from '@iconify/icons-carbon/close';
+import closeIcon from '@iconify/icons-carbon/close'
 // @mui
-import { Box, CircularProgress } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material'
 //
-import { DialogAnimate, IconButtonAnimate, zoom } from '../animate';
-import { ReactPlayerStyle } from './Player';
-import Iconify from '../Iconify';
+import { DialogAnimate, IconButtonAnimate, zoom } from '../animate'
+import { ReactPlayerStyle } from './Player'
+import Iconify from '../Iconify'
 
 // ----------------------------------------------------------------------
 
 interface Props extends ReactPlayerProps {
   videoPath: string;
   open: boolean;
-  onClose: VoidFunction;
+  onClose: ()=>void;
 }
 
 export default function PlayerWithButton({ videoPath, open, onClose, ...other }: Props) {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true)
 
   const onReady = () => {
-    setLoading(false);
-  };
+    setLoading(false)
+  }
 
   return (
     <DialogAnimate
@@ -70,5 +70,5 @@ export default function PlayerWithButton({ videoPath, open, onClose, ...other }:
 
       <ReactPlayerStyle url={videoPath} playing={!loading} onReady={onReady} {...other} />
     </DialogAnimate>
-  );
+  )
 }

@@ -1,37 +1,36 @@
-import { useState, ReactElement } from 'react';
-import { serialize } from 'next-mdx-remote/serialize';
+import { useState, ReactElement } from 'react'
+import { serialize } from 'next-mdx-remote/serialize'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Grid, Chip, Stack, Avatar, Divider, Container, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Grid, Chip, Stack, Avatar, Divider, Container, Typography } from '@mui/material'
 // routes
-import Routes from '../../../src/routes';
+import Routes from '../../../src/routes'
 // utils
-import { fDate } from '../../../src/utils/formatTime';
+import { fDate } from '../../../src/utils/formatTime'
 import {
   getAllPosts,
   getPostData,
   getAllPostSlugs,
-} from '../../../src/utils/get-mardown/e-learning/posts';
+} from '../../../src/utils/get-mardown/e-learning/posts'
 // hooks
-import { useResponsive } from '../../../src/hooks';
+import { useResponsive } from '../../../src/hooks'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config'
 // @types
-import { BlogPostProps } from '../../../src/@types/blog';
+import { BlogPostProps } from '../../../src/@types/blog'
 // _data
-import _mock from '../../../_data/mock';
+import _mock from '../../../_data/mock'
 // layouts
-import Layout from '../../../src/layouts';
+import Layout from '../../../src/layouts'
 // components
-import { Page, PlayerWithImage, Markdown } from '../../../src/components';
-import { SocialsButton, Breadcrumbs, ShareButton, FavoriteButton } from '../../../src/components';
+import { Page, PlayerWithImage, Markdown, SocialsButton, Breadcrumbs, ShareButton, FavoriteButton } from '../../../src/components'
 // sections
-import { NewsletterElearning } from '../../../src/sections/newsletter';
+import { NewsletterElearning } from '../../../src/sections/newsletter'
 import {
   BlogAuthorInfo,
   BlogElearningLatestPosts,
   BlogPrevAndNextPost,
-} from '../../../src/sections/blog';
+} from '../../../src/sections/blog'
 
 // ----------------------------------------------------------------------
 
@@ -40,7 +39,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -50,22 +49,21 @@ type Props = {
 };
 
 export default function ElearningPostPage({ post, posts }: Props) {
-  const isDesktop = useResponsive('up', 'md');
+  const isDesktop = useResponsive('up', 'md')
 
-  const { slug, frontmatter, content } = post;
-  const { title, description, duration, createdAt, author, favorited, heroImg, shareLinks, tags } =
-    frontmatter;
+  const { slug, frontmatter, content } = post
+  const { title, description, duration, createdAt, author, favorited, heroImg, shareLinks, tags } = frontmatter
 
-  const [favorite, setFavorite] = useState(favorited);
+  const [favorite, setFavorite] = useState(favorited)
 
   const handleChangeFavorite = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFavorite(event.target.checked);
-  };
+    setFavorite(event.target.checked)
+  }
 
-  const currentPost = posts.findIndex((post) => post.slug === slug);
+  const currentPost = posts.findIndex((post) => post.slug === slug)
 
-  const prevPost = posts.find((_, index) => index === currentPost - 1);
-  const nextPost = posts.find((_, index) => index === currentPost + 1);
+  const prevPost = posts.find((_, index) => index === currentPost - 1)
+  const nextPost = posts.find((_, index) => index === currentPost + 1)
 
   return (
     <Page title={`${title} - Post | E-Learning`}>
@@ -136,7 +134,7 @@ export default function ElearningPostPage({ post, posts }: Props) {
                   Tags:
                 </Typography>
                 {tags.map((tag) => (
-                  <Chip key={tag} size="small" label={tag} sx={{ m: 0.5 }} onClick={() => {}} />
+                  <Chip key={tag} size="small" label={tag} sx={{ m: 0.5 }} onClick={() => null} />
                 ))}
               </Stack>
 
@@ -166,14 +164,14 @@ export default function ElearningPostPage({ post, posts }: Props) {
         <NewsletterElearning />
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 ElearningPostPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}
 
 // ----------------------------------------------------------------------
 
@@ -184,7 +182,7 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostData(params.slug);
+  const post = getPostData(params.slug)
 
   return {
     props: {
@@ -194,14 +192,14 @@ export async function getStaticProps({ params }: Params) {
         content: await serialize(post.content),
       },
     },
-  };
+  }
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPostSlugs();
+  const paths = getAllPostSlugs()
 
   return {
     paths,
     fallback: false,
-  };
+  }
 }

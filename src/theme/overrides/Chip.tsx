@@ -1,7 +1,7 @@
 // @mui
-import { Theme } from '@mui/material/styles';
+import { Theme } from '@mui/material/styles'
 //
-import { CloseIcon } from './CustomIcons';
+import { CloseIcon } from './CustomIcons'
 
 // ----------------------------------------------------------------------
 
@@ -55,5 +55,5 @@ export default function Chip(theme: Theme) {
         },
       },
     },
-  };
+  }
 }

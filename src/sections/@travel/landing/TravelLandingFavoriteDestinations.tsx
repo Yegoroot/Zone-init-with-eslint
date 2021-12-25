@@ -1,14 +1,14 @@
 // icons
-import locationIcon from '@iconify/icons-carbon/location';
+import locationIcon from '@iconify/icons-carbon/location'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Grid, Container, Typography, Stack, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Grid, Container, Typography, Stack, Box } from '@mui/material'
 // hooks
-import useResponsive from '../../../hooks/useResponsive';
+import useResponsive from '../../../hooks/useResponsive'
 // @types
-import { TourProps } from '../../../@types/travel';
+import { TourProps } from '../../../@types/travel'
 // components
-import { Image, BgOverlay, Iconify, TextMaxLine, TextIconLabel } from '../../../components';
+import { Image, BgOverlay, Iconify, TextMaxLine, TextIconLabel } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -19,14 +19,14 @@ const LINES = [
   'Latest Model Vehicles',
   'Handpicked Hotels',
   'Accesibility managment',
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ export default function TravelLandingFavoriteDestinations({ tours }: Props) {
               {LINES.map((line) => (
                 <TextIconLabel
                   key={line}
-                  icon={
+                  icon={(
                     <Box
                       sx={{
                         mr: 2,
@@ -65,7 +65,7 @@ export default function TravelLandingFavoriteDestinations({ tours }: Props) {
                         bgcolor: 'primary.main',
                       }}
                     />
-                  }
+                  )}
                   value={line}
                   sx={{ typography: 'body1' }}
                 />
@@ -96,7 +96,7 @@ export default function TravelLandingFavoriteDestinations({ tours }: Props) {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -107,9 +107,9 @@ type DestinationItemProps = {
 };
 
 function DestinationItem({ tour, order }: DestinationItemProps) {
-  const isDesktop = useResponsive('up', 'md');
+  const isDesktop = useResponsive('up', 'md')
 
-  const { location, continent, coverImg } = tour;
+  const { location, continent, coverImg } = tour
 
   return (
     <Box
@@ -142,19 +142,19 @@ function DestinationItem({ tour, order }: DestinationItemProps) {
           {location}
         </TextMaxLine>
         <TextIconLabel
-          icon={
+          icon={(
             <Iconify
               icon={locationIcon}
               sx={{ width: 20, height: 20, mr: 1, color: 'primary.main' }}
             />
-          }
-          value={
+          )}
+          value={(
             <TextMaxLine variant="body2" line={1} sx={{ opacity: 0.72 }}>
               {continent}
             </TextMaxLine>
-          }
+          )}
         />
       </Stack>
     </Box>
-  );
+  )
 }

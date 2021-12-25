@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // icons
-import chevronRight from '@iconify/icons-carbon/chevron-right';
-import chevronDown from '@iconify/icons-carbon/chevron-down';
+import chevronRight from '@iconify/icons-carbon/chevron-right'
+import chevronDown from '@iconify/icons-carbon/chevron-down'
 // next
-import NextLink from 'next/link';
-import { useRouter } from 'next/router';
+import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 // @mui
-import { alpha, styled } from '@mui/material/styles';
+import { alpha, styled } from '@mui/material/styles'
 import {
   Box,
   List,
@@ -17,9 +17,9 @@ import {
   ListSubheader,
   ListItemButton,
   ListItemButtonProps,
-} from '@mui/material';
+} from '@mui/material'
 // components
-import { Iconify } from '../components';
+import { Iconify } from '.'
 
 // ----------------------------------------------------------------------
 
@@ -31,7 +31,7 @@ const ListSubheaderStyle = styled((props) => (
   marginBottom: theme.spacing(2),
   paddingLeft: theme.spacing(5),
   color: theme.palette.text.primary,
-}));
+}))
 
 interface ListItemStyleProps extends ListItemButtonProps {
   activeRoot?: boolean;
@@ -69,7 +69,7 @@ const ListItemStyle = styled(ListItemButton, {
     color: theme.palette.text.primary,
     fontWeight: theme.typography.fontWeightMedium,
   }),
-}));
+}))
 
 const ListItemIconStyle = styled(ListItemIcon)({
   width: 22,
@@ -81,7 +81,7 @@ const ListItemIconStyle = styled(ListItemIcon)({
     width: 22,
     height: 22,
   },
-});
+})
 
 interface ListSubItemIconStyleProps extends BoxProps {
   active?: boolean;
@@ -102,7 +102,7 @@ const ListSubItemIconStyle = styled(Box, {
     transform: 'scale(2)',
     backgroundColor: theme.palette.primary.main,
   }),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -136,7 +136,7 @@ export default function NavSection({ navConfig, ...other }: NavSectionProps) {
         </List>
       ))}
     </Box>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -146,16 +146,16 @@ type NavSectionItemProps = {
 };
 
 function NavSectionItem({ item }: NavSectionItemProps) {
-  const { pathname, asPath } = useRouter();
+  const { pathname, asPath } = useRouter()
 
-  const { title, path, icon, info, children } = item;
-  const isActiveRoot = pathname === path || asPath === path;
+  const { title, path, icon, info, children } = item
+  const isActiveRoot = pathname === path || asPath === path
 
-  const [open, setOpen] = useState(isActiveRoot);
+  const [open, setOpen] = useState(isActiveRoot)
 
   const handleOpen = () => {
-    setOpen(!open);
-  };
+    setOpen(!open)
+  }
 
   if (children) {
     return (
@@ -170,8 +170,8 @@ function NavSectionItem({ item }: NavSectionItemProps) {
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
             {children.map((item) => {
-              const { title, path } = item;
-              const isActiveSub = pathname === path || asPath === path;
+              const { title, path } = item
+              const isActiveSub = pathname === path || asPath === path
 
               return (
                 <NextLink key={title} href={path}>
@@ -182,12 +182,12 @@ function NavSectionItem({ item }: NavSectionItemProps) {
                     <ListItemText disableTypography primary={title} />
                   </ListItemStyle>
                 </NextLink>
-              );
+              )
             })}
           </List>
         </Collapse>
       </>
-    );
+    )
   }
 
   return (
@@ -198,5 +198,5 @@ function NavSectionItem({ item }: NavSectionItemProps) {
         {info && info}
       </ListItemStyle>
     </NextLink>
-  );
+  )
 }

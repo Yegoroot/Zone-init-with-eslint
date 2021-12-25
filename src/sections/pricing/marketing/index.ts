@@ -1,1 +1,1 @@
-export { default as PricingMarketing } from './PricingMarketing';
+export { default as PricingMarketing } from './PricingMarketing'

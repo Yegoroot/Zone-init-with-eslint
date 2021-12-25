@@ -1,7 +1,7 @@
-import { ReactElement, memo } from 'react';
+import { ReactElement, memo } from 'react'
 // @mui
-import { SxProps } from '@mui/system';
-import { Box, Stack, StackProps } from '@mui/material';
+import { SxProps } from '@mui/system'
+import { Box, Stack, StackProps } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -25,8 +25,7 @@ function Label({ icon, text, sx, ...other }: Props) {
         color: 'common.black',
         bgcolor: 'common.white',
         fontWeight: 'fontWeightBold',
-        boxShadow: (theme) =>
-          `0px 24px 48px rgba(0, 0, 0, 0.8), inset 0px -4px 10px ${theme.palette.grey[600]}`,
+        boxShadow: (theme) => `0px 24px 48px rgba(0, 0, 0, 0.8), inset 0px -4px 10px ${theme.palette.grey[600]}`,
         '& > div': { lineHeight: 0 },
         '& svg': { width: 44, height: 44 },
         ...sx,
@@ -36,7 +35,7 @@ function Label({ icon, text, sx, ...other }: Props) {
       {icon}
       <Box sx={{ ml: 1 }}>{text}</Box>
     </Stack>
-  );
+  )
 }
 
-export default memo(Label);
+export default memo(Label)

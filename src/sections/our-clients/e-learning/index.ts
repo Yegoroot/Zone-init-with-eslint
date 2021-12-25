@@ -1,1 +1,1 @@
-export { default as OurClientsElearning } from './OurClientsElearning';
+export { default as OurClientsElearning } from './OurClientsElearning'

@@ -1,20 +1,20 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Container } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Container } from '@mui/material'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config'
 // hooks
-import { useRequest } from '../../../src/hooks';
+import { useRequest } from '../../../src/hooks'
 // @types
-import { JobProps } from '../../../src/@types/career';
+import { JobProps } from '../../../src/@types/career'
 // layouts
-import Layout from '../../../src/layouts';
+import Layout from '../../../src/layouts'
 // components
-import { Page, ErrorScreen } from '../../../src/components';
+import { Page, ErrorScreen } from '../../../src/components'
 // sections
-import { NewsletterCareer } from '../../../src/sections/newsletter';
-import { CareerJobList, CareerJobBarFilters } from '../../../src/sections/@career';
+import { NewsletterCareer } from '../../../src/sections/newsletter'
+import { CareerJobList, CareerJobBarFilters } from '../../../src/sections/@career'
 
 // ----------------------------------------------------------------------
 
@@ -23,17 +23,17 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function CareerJobsPage() {
   const { data: jobs = [], error } = useRequest<JobProps[]>({
-    url: `/api/career/jobs`,
-  });
+    url: '/api/career/jobs',
+  })
 
   if (error) {
-    return <ErrorScreen />;
+    return <ErrorScreen />
   }
 
   return (
@@ -46,11 +46,11 @@ export default function CareerJobsPage() {
         <NewsletterCareer />
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 CareerJobsPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}

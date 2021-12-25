@@ -1,6 +1,6 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, TextField, Stack } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, TextField, Stack } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -9,10 +9,11 @@ const RootStyle = styled('div')(({ theme }) => ({
     paddingTop: theme.spacing(5),
     paddingLeft: theme.spacing(4),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
+// eslint-disable-next-line no-empty-pattern
 export default function CheckoutBillingAddress({}) {
   return (
     <RootStyle>
@@ -26,5 +27,5 @@ export default function CheckoutBillingAddress({}) {
         <TextField fullWidth label="Address" />
       </Stack>
     </RootStyle>
-  );
+  )
 }

@@ -1,7 +1,7 @@
 // @mui
-import { Breakpoint } from '@mui/system';
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import { Breakpoint } from '@mui/system'
+import { useTheme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 
 // ----------------------------------------------------------------------
 
@@ -10,30 +10,31 @@ type Key = Breakpoint | number;
 type Start = Breakpoint | number;
 type End = Breakpoint | number;
 
+// eslint-disable-next-line consistent-return
 export default function useResponsive(query: Query, key?: Key, start?: Start, end?: End) {
-  const theme = useTheme();
+  const theme = useTheme()
 
-  const mediaUp = useMediaQuery(theme.breakpoints.up(key as Key));
+  const mediaUp = useMediaQuery(theme.breakpoints.up(key as Key))
 
-  const mediaDown = useMediaQuery(theme.breakpoints.down(key as Key));
+  const mediaDown = useMediaQuery(theme.breakpoints.down(key as Key))
 
-  const mediaBetween = useMediaQuery(theme.breakpoints.between(start as Start, end as End));
+  const mediaBetween = useMediaQuery(theme.breakpoints.between(start as Start, end as End))
 
-  const mediaOnly = useMediaQuery(theme.breakpoints.only(key as Breakpoint));
+  const mediaOnly = useMediaQuery(theme.breakpoints.only(key as Breakpoint))
 
   if (query === 'up') {
-    return mediaUp;
+    return mediaUp
   }
 
   if (query === 'down') {
-    return mediaDown;
+    return mediaDown
   }
 
   if (query === 'between') {
-    return mediaBetween;
+    return mediaBetween
   }
 
   if (query === 'only') {
-    return mediaOnly;
+    return mediaOnly
   }
 }

@@ -1,9 +1,12 @@
+/* eslint-disable max-len */
 // ----------------------------------------------------------------------
 // https://www.convertsimple.com/convert-markdown-to-html/
 
 export const jobContent = `
 <h4 id="one">Job Description</h4>
-<p>Occaecati est et illo quibusdam accusamus qui. Incidunt aut et molestiae ut facere aut. Est quidem iusto praesentium excepturi harum nihil tenetur facilis. Ut omnis voluptates nihil accusantium doloribus eaque debitis.</p>
+<p>Occaecati est et illo quibusdam accusamus qui. Incidunt aut et molestiae ut facere aut. 
+Est quidem iusto praesentium excepturi harum nihil tenetur facilis. 
+Ut omnis voluptates nihil accusantium doloribus eaque debitis.</p>
 <h4 id="two">Key Responsibilitiess</h4>
 <ul>
   <li>Working with agency for design drawing detail, quotation and local production.</li>
@@ -24,7 +27,7 @@ export const jobContent = `
   <li>Monitor costs and work within budget.</li>
   <li>Liaise with suppliers and source elements.</li>
 </ul>
-`;
+`
 
 export const brandsName = [
   'airbnb',
@@ -39,7 +42,7 @@ export const brandsName = [
   'spotify',
   'tripadvisor',
   'vimeo',
-];
+]
 
 // ----------------------------------------------------------------------
 
@@ -60,7 +63,7 @@ export const jobTitle = [
   'Relational Accountability Liason',
   'Regional Brand Associate',
   'Interactive Creative Supervisor',
-];
+]
 
 // ----------------------------------------------------------------------
 
@@ -81,7 +84,7 @@ export const jobCategories = [
   'Social sciences and religion',
   'Science, mathematics and statistics',
   'Transport, distribution and logistics',
-];
+]
 
 // ----------------------------------------------------------------------
 
@@ -102,7 +105,7 @@ export const tourName = [
   'Death Valley Day Tour from Las Vegas- Small Groups Tour',
   'National Parks Winter Tour',
   'National Parks Tour 3 Days Small Group Tour from Las Vegas',
-];
+]
 
 // ----------------------------------------------------------------------
 
@@ -123,7 +126,7 @@ export const courseTitle = [
   'Copywriting secrets - How to write copy that sells',
   'Instagram Marketing 2021: Complete Guide To Instagram Growth',
   'Python for Finance and Algorithmic Trading with QuantConnect',
-];
+]
 
 // ----------------------------------------------------------------------
 
@@ -168,7 +171,7 @@ export const blogTitle = [
   '30 Ways To Avoid Event Burnout',
   '30 Ways To Improve Event',
   'How To Make More Event By Doing Less',
-];
+]
 
 // ----------------------------------------------------------------------
 
@@ -213,7 +216,7 @@ export const sentence = [
   'Numquam ullam beatae possimus.',
   'Fuga velit cupiditate ex culpa odio aut ut.',
   'Vero corrupti nam voluptatum excepturi est et.',
-];
+]
 
 // ----------------------------------------------------------------------
 
@@ -258,6 +261,6 @@ export const description = [
   'Impedit perferendis vel quis ratione. Id aut id officia. Illum fuga saepe provident voluptate eligendi provident. Et nostrum maxime magni. Nobis cumque id magni in iste earum.',
   'Dolor numquam maiores praesentium dolorem nihil minus praesentium rem dolorem. Est rerum placeat. Numquam sed magni aliquam laborum enim facere ducimus.',
   'In sint enim nam et itaque et qui. Molestiae a iusto quidem quia temporibus id quia eaque eius. Quis quia consectetur saepe vero et molestias. Rem minima accusamus vitae adipisci molestiae unde voluptate consequatur molestiae. Rerum exercitationem quisquam vitae.',
-];
+]
 
 // ----------------------------------------------------------------------

@@ -1,11 +1,11 @@
 // icons
-import quotesIcon from '@iconify/icons-carbon/quotes';
+import quotesIcon from '@iconify/icons-carbon/quotes'
 // @mui
-import { Typography, Stack, Avatar } from '@mui/material';
+import { Typography, Stack, Avatar } from '@mui/material'
 // @types
-import { TestimonialProps } from '../../../@types/testimonial';
+import { TestimonialProps } from '../../../@types/testimonial'
 // components
-import { Iconify } from '../../../components';
+import { Iconify } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ type Props = {
 };
 
 export function TestimonialsElearningContentItem({ testimonial }: Props) {
-  const { review } = testimonial;
+  const { review } = testimonial
 
   return (
     <Stack alignItems="center">
@@ -35,13 +35,13 @@ export function TestimonialsElearningContentItem({ testimonial }: Props) {
         {review}
       </Typography>
     </Stack>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 export function TestimonialsElearningThumbnailItem({ testimonial, isSelected }: Props) {
-  const { avatar } = testimonial;
+  const { avatar } = testimonial
 
   return (
     <Stack
@@ -67,5 +67,5 @@ export function TestimonialsElearningThumbnailItem({ testimonial, isSelected }: 
         }}
       />
     </Stack>
-  );
+  )
 }

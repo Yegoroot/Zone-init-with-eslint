@@ -1,10 +1,10 @@
 // icons
-import logoFacebook from '@iconify/icons-carbon/logo-facebook';
-import logoGithub from '@iconify/icons-carbon/logo-github';
+import logoFacebook from '@iconify/icons-carbon/logo-facebook'
+import logoGithub from '@iconify/icons-carbon/logo-github'
 // @mui
-import { Stack, Button } from '@mui/material';
+import { Stack, Button } from '@mui/material'
 // components
-import { Image, Iconify } from '../../components';
+import { Image, Iconify } from '../../components'
 
 // ----------------------------------------------------------------------
 
@@ -41,5 +41,5 @@ export default function AuthWithSocial() {
         <Iconify icon={logoGithub} sx={{ color: 'text.primary', width: 24, height: 24 }} />
       </Button>
     </Stack>
-  );
+  )
 }

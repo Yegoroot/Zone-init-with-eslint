@@ -1,14 +1,14 @@
-import { useRef, useState } from 'react';
-//icon
-import contentDeliveryNetwork from '@iconify/icons-carbon/content-delivery-network';
+import { useRef, useState } from 'react'
+// icon
+import contentDeliveryNetwork from '@iconify/icons-carbon/content-delivery-network'
 // @mui
-import { SxProps } from '@mui/system';
-import { Box, List, ListItemIcon, MenuItem, ListItemText } from '@mui/material';
+import { SxProps } from '@mui/system'
+import { Box, List, ListItemIcon, MenuItem, ListItemText } from '@mui/material'
 // hooks
-import { useLocales } from '../hooks';
+import { useLocales } from '../hooks'
 // components
-import { Popover, Iconify } from '../components';
-import { IconButtonAnimate } from '../components/animate';
+import { Popover, Iconify } from '../components'
+import { IconButtonAnimate } from '../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -17,18 +17,18 @@ type LanguagePopoverProps = {
 };
 
 export default function LanguagePopover({ sx }: LanguagePopoverProps) {
-  const anchorRef = useRef(null);
-  const [open, setOpen] = useState(false);
+  const anchorRef = useRef(null)
+  const [open, setOpen] = useState(false)
   // const { onChangeLanguage } = useLocales();
-  const { allLang, currentLang } = useLocales();
+  const { allLang, currentLang } = useLocales()
 
   const handleOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
   const handleClose = () => {
-    setOpen(false);
-  };
+    setOpen(false)
+  }
 
   return (
     <>
@@ -49,7 +49,7 @@ export default function LanguagePopover({ sx }: LanguagePopoverProps) {
               key={option.value}
               selected={option.value === currentLang}
               onClick={() => {
-                handleClose();
+                handleClose()
                 // onChangeLanguage(option.value);
               }}
             >
@@ -70,5 +70,5 @@ export default function LanguagePopover({ sx }: LanguagePopoverProps) {
         </List>
       </Popover>
     </>
-  );
+  )
 }

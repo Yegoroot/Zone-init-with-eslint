@@ -1,19 +1,19 @@
-import Slider from 'react-slick';
-import { useRef, useState } from 'react';
+import Slider from 'react-slick'
+import { useRef, useState } from 'react'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled, useTheme } from '@mui/material/styles';
-import { Container, Stack, Avatar, Box, Link } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles'
+import { Container, Stack, Avatar, Box, Link } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // utils
-import { fDate } from '../../../utils/formatTime';
-import cssStyles from '../../../utils/cssStyles';
+import { fDate } from '../../../utils/formatTime'
+import cssStyles from '../../../utils/cssStyles'
 // @types
-import { BlogPostProps } from '../../../@types/blog';
+import { BlogPostProps } from '../../../@types/blog'
 // components
-import { Image, BgOverlay, CarouselDots, CarouselArrows, TextMaxLine } from '../../../components';
+import { Image, BgOverlay, CarouselDots, CarouselArrows, TextMaxLine } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -26,7 +26,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0, 10, 0),
   },
-}));
+}))
 
 const DotStyle = styled('span')(({ theme }) => ({
   width: 4,
@@ -34,7 +34,7 @@ const DotStyle = styled('span')(({ theme }) => ({
   borderRadius: '50%',
   backgroundColor: 'currentColor',
   margin: theme.spacing(0, 1),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -43,10 +43,10 @@ type Props = {
 };
 
 export default function BlogMarketingFeaturedPosts({ posts }: Props) {
-  const theme = useTheme();
+  const theme = useTheme()
 
-  const [selected, setSelected] = useState(0);
-  const carouselRef = useRef<Slider | null>(null);
+  const [selected, setSelected] = useState(0)
+  const carouselRef = useRef<Slider | null>(null)
 
   const carouselSettings = {
     dots: true,
@@ -60,15 +60,15 @@ export default function BlogMarketingFeaturedPosts({ posts }: Props) {
       rounded: true,
       sx: { mt: 5 },
     }),
-  };
+  }
 
   const handlePrevious = () => {
-    carouselRef.current?.slickPrev();
-  };
+    carouselRef.current?.slickPrev()
+  }
 
   const handleNext = () => {
-    carouselRef.current?.slickNext();
-  };
+    carouselRef.current?.slickNext()
+  }
 
   return (
     <RootStyle>
@@ -103,28 +103,27 @@ export default function BlogMarketingFeaturedPosts({ posts }: Props) {
       </Container>
 
       {posts.map(
-        (post, index) =>
-          selected === index && (
-            <Box key={post.slug} sx={{ position: 'absolute', top: 0, width: 1, height: 1 }}>
-              <BgOverlay
-                sx={{
-                  ...cssStyles().bgBlur({
-                    color: theme.palette.grey[900],
-                    opacity: 0.24,
-                  }),
-                }}
-              />
+        (post, index) => selected === index && (
+        <Box key={post.slug} sx={{ position: 'absolute', top: 0, width: 1, height: 1 }}>
+          <BgOverlay
+            sx={{
+              ...cssStyles().bgBlur({
+                color: theme.palette.grey[900],
+                opacity: 0.24,
+              }),
+            }}
+          />
 
-              <Image
-                alt="post cover"
-                src={post.frontmatter.coverImg}
-                sx={{ width: 1, height: 1 }}
-              />
-            </Box>
-          )
+          <Image
+            alt="post cover"
+            src={post.frontmatter.coverImg}
+            sx={{ width: 1, height: 1 }}
+          />
+        </Box>
+        )
       )}
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -134,8 +133,8 @@ type PostItemProps = {
 };
 
 function PostItem({ post }: PostItemProps) {
-  const { slug, frontmatter } = post;
-  const { title, duration, coverImg, author, description, createdAt } = frontmatter;
+  const { slug, frontmatter } = post
+  const { title, duration, coverImg, author, description, createdAt } = frontmatter
 
   return (
     <Stack direction={{ xs: 'column', md: 'row' }} sx={{ bgcolor: 'background.default' }}>
@@ -181,5 +180,5 @@ function PostItem({ post }: PostItemProps) {
         </Stack>
       </Stack>
     </Stack>
-  );
+  )
 }

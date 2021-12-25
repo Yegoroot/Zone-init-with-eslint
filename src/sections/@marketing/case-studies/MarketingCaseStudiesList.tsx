@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // @mui
-import { Pagination, Tabs, Tab, Box } from '@mui/material';
+import { Pagination, Tabs, Tab, Box } from '@mui/material'
 // @types
-import { CaseStudyProps } from '../../../@types/marketing';
+import { CaseStudyProps } from '../../../@types/marketing'
 //
-import MarketingCaseStudyItem from './MarketingCaseStudyItem';
+import MarketingCaseStudyItem from './MarketingCaseStudyItem'
 
 // ----------------------------------------------------------------------
 
@@ -13,17 +13,17 @@ type Props = {
 };
 
 export default function MarketingCaseStudiesList({ caseStudies }: Props) {
-  const [selected, setSelected] = useState('All');
+  const [selected, setSelected] = useState('All')
 
-  const getCategories = caseStudies.map((project) => project.frontmatter.category);
+  const getCategories = caseStudies.map((project) => project.frontmatter.category)
 
-  const categories = ['All', ...Array.from(new Set(getCategories))];
+  const categories = ['All', ...Array.from(new Set(getCategories))]
 
-  const filtered = applyFilter(caseStudies, selected);
+  const filtered = applyFilter(caseStudies, selected)
 
   const handleChangeCategory = (event: React.SyntheticEvent, newValue: string) => {
-    setSelected(newValue);
-  };
+    setSelected(newValue)
+  }
 
   return (
     <>
@@ -76,14 +76,15 @@ export default function MarketingCaseStudiesList({ caseStudies }: Props) {
         }}
       />
     </>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 function applyFilter(arr: CaseStudyProps[], category: string) {
   if (category !== 'All') {
-    arr = arr.filter((project) => project.frontmatter.category === category);
+    // eslint-disable-next-line no-param-reassign
+    arr = arr.filter((project) => project.frontmatter.category === category)
   }
-  return arr;
+  return arr
 }

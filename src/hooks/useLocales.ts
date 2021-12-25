@@ -1,9 +1,9 @@
 // next
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 // @mui
-import { enUS, deDE, frFR } from '@mui/material/locale';
+import { enUS, deDE, frFR } from '@mui/material/locale'
 //
-import { EN, FR, DE } from '../locales';
+import { EN, FR, DE } from '../locales'
 
 // ----------------------------------------------------------------------
 
@@ -29,19 +29,19 @@ const LANGS = [
     manualValue: FR,
     icon: '/static/icons/flags/ic_flag_fr.svg',
   },
-] as const;
+] as const
 
 export default function useLocales() {
-  const { pathname, asPath, locale, push } = useRouter();
+  const { pathname, asPath, locale, push } = useRouter()
 
   const onChangeLanguage = (lang: 'en' | 'de' | 'fr') => {
-    push(pathname, asPath, { locale: lang, scroll: false });
-  };
+    push(pathname, asPath, { locale: lang, scroll: false })
+  }
 
   return {
     trans: LANGS.find((lang) => lang.value === locale)?.manualValue,
     currentLang: locale,
     allLang: LANGS,
     onChangeLanguage,
-  };
+  }
 }

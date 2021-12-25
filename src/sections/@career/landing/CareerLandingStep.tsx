@@ -1,10 +1,10 @@
 // icons
-import cloudUpload from '@iconify/icons-carbon/cloud-upload';
+import cloudUpload from '@iconify/icons-carbon/cloud-upload'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Container, Button, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Container, Button, Box } from '@mui/material'
 // components
-import { Iconify, SvgIconStyle } from '../../../components';
+import { Iconify, SvgIconStyle } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -24,7 +24,7 @@ const STEPS = [
     description: 'Nunc nonummy metus. Donec elit libero.',
     icon: '/static/icons/ic_search_job.svg',
   },
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   textAlign: 'center',
@@ -34,7 +34,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     paddingTop: theme.spacing(15),
     paddingBottom: theme.spacing(10),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -76,7 +76,7 @@ export default function CareerLandingStep() {
         </Button>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -98,7 +98,9 @@ function StepItem({ value, index }: StepItemProps) {
         sx={{ width: 80, height: 80, mx: 'auto', color: 'primary.main' }}
       />
       <Typography variant="overline" sx={{ mt: 4, display: 'block', color: 'text.disabled' }}>
-        Step {index + 1}
+        Step
+        {' '}
+        {index + 1}
       </Typography>
       <Typography variant="h5" sx={{ mt: 2, mb: 1 }}>
         {value.title}
@@ -107,5 +109,5 @@ function StepItem({ value, index }: StepItemProps) {
         {value.description}
       </Typography>
     </div>
-  );
+  )
 }

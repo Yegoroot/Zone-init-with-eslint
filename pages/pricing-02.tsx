@@ -1,26 +1,26 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // icons
-import informationIcon from '@iconify/icons-carbon/information';
+import informationIcon from '@iconify/icons-carbon/information'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Grid, Stack, Tooltip, Container, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Grid, Stack, Tooltip, Container, Typography } from '@mui/material'
 // _data
-import { _pricing02 } from '../_data/mock';
+import { _pricing02 } from '../_data/mock'
 // layouts
-import Layout from '../src/layouts';
+import Layout from '../src/layouts'
 // components
-import { Page, Iconify } from '../src/components';
+import { Page, Iconify } from '../src/components'
 import {
   PricingPlan02Header,
   PricingPlan02ContentMobile,
   PricingPlan02ContentDesktop,
-} from '../src/sections/pricing/pricing-02';
+} from '../src/sections/pricing/pricing-02'
 
 // ----------------------------------------------------------------------
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(12, 0),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -31,12 +31,14 @@ export default function Pricing02Page() {
         <Container>
           <Box sx={{ textAlign: 'center', mb: { xs: 5, md: 10 } }}>
             <Typography variant="h3" sx={{ mt: 2, mb: 3, mx: 'auto', maxWidth: 480 }}>
-              {`Flexible Plans For Your \n Community's Size and Needs`}
+              {'Flexible Plans For Your \n Community\'s Size and Needs'}
             </Typography>
 
             <Typography sx={{ color: 'text.secondary' }}>
               Choose the perfect plan for your needs.
-              <br /> Always flexible to grow
+              <br />
+              {' '}
+              Always flexible to grow
             </Typography>
           </Box>
 
@@ -124,7 +126,7 @@ export default function Pricing02Page() {
         </Container>
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -134,5 +136,5 @@ Pricing02Page.getLayout = function getLayout(page: ReactElement) {
     <Layout simpleHeader disabledFooter>
       {page}
     </Layout>
-  );
-};
+  )
+}

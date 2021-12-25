@@ -1,23 +1,23 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // @mui
-import { Box, Container } from '@mui/material';
+import { Box, Container } from '@mui/material'
 // utils
-import { getAllPosts } from '../../src/utils/get-mardown/travel/posts';
+import { getAllPosts } from '../../src/utils/get-mardown/travel/posts'
 // hooks
-import { useRequest } from '../../src/hooks';
+import { useRequest } from '../../src/hooks'
 // @types
-import { TourProps } from '../../src/@types/travel';
-import { BlogPostProps } from '../../src/@types/blog';
+import { TourProps } from '../../src/@types/travel'
+import { BlogPostProps } from '../../src/@types/blog'
 // _data
-import { _testimonials } from '../../_data/mock';
+import { _testimonials } from '../../_data/mock'
 // layouts
-import Layout from '../../src/layouts';
+import Layout from '../../src/layouts'
 // components
-import { Page, ErrorScreen } from '../../src/components';
+import { Page, ErrorScreen } from '../../src/components'
 // sections
-import { NewsletterTravel } from '../../src/sections/newsletter';
-import { TestimonialsTravel } from '../../src/sections/testimonials';
-import { BlogTravelLandingLatestPosts } from '../../src/sections/blog';
+import { NewsletterTravel } from '../../src/sections/newsletter'
+import { TestimonialsTravel } from '../../src/sections/testimonials'
+import { BlogTravelLandingLatestPosts } from '../../src/sections/blog'
 import {
   TravelLandingHero,
   TravelLandingSummary,
@@ -26,7 +26,7 @@ import {
   TravelLandingToursByCity,
   TravelLandingTourFeatured,
   TravelLandingFavoriteDestinations,
-} from '../../src/sections/@travel';
+} from '../../src/sections/@travel'
 
 // ----------------------------------------------------------------------
 
@@ -36,11 +36,11 @@ type Props = {
 
 export default function TravelLandingPage({ posts }: Props) {
   const { data: tours = [], error } = useRequest<TourProps[]>({
-    url: `/api/travel/tours`,
-  });
+    url: '/api/travel/tours',
+  })
 
   if (error) {
-    return <ErrorScreen />;
+    return <ErrorScreen />
   }
 
   return (
@@ -77,14 +77,14 @@ export default function TravelLandingPage({ posts }: Props) {
 
       <NewsletterTravel />
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 TravelLandingPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout transparentHeader>{page}</Layout>;
-};
+  return <Layout transparentHeader>{page}</Layout>
+}
 
 // ----------------------------------------------------------------------
 
@@ -93,5 +93,5 @@ export async function getStaticProps() {
     props: {
       posts: getAllPosts(),
     },
-  };
+  }
 }

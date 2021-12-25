@@ -1,4 +1,4 @@
-import _mock from './_mock';
+import _mock from './_mock'
 
 // ----------------------------------------------------------------------
 
@@ -6,7 +6,7 @@ const users = [...Array(12)].map((_, index) => ({
   id: _mock.id(index),
   name: _mock.name.fullName(index),
   avatarUrl: _mock.image.avatar(index),
-}));
+}))
 
 export const _reviews = [
   {
@@ -86,4 +86,4 @@ export const _reviews = [
     participants: [],
     replies: [],
   },
-];
+]

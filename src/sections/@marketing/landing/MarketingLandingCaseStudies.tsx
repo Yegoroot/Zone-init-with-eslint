@@ -1,20 +1,20 @@
-import { m } from 'framer-motion';
+import { m } from 'framer-motion'
 // icons
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Grid, Stack, Paper, Button, Container, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Grid, Stack, Paper, Button, Container, Typography } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // hooks
-import { useResponsive } from '../../../hooks';
+import { useResponsive } from '../../../hooks'
 // @types
-import { CaseStudyProps } from '../../../@types/marketing';
+import { CaseStudyProps } from '../../../@types/marketing'
 // components
-import { Image, Iconify, BgOverlay } from '../../../components';
-import { varHover, varTranHover } from '../../../components/animate';
+import { Image, Iconify, BgOverlay } from '../../../components'
+import { varHover, varTranHover } from '../../../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -32,18 +32,18 @@ type Props = {
 };
 
 export default function MarketingLandingCaseStudies({ caseStudies }: Props) {
-  const isDesktop = useResponsive('up', 'md');
+  const isDesktop = useResponsive('up', 'md')
 
   const getData = (index: number) => {
-    const item = caseStudies[index];
+    const item = caseStudies[index]
     return {
       slug: item.slug,
       title: item.frontmatter.title,
       coverImg: item.frontmatter.coverImg,
       category: item.frontmatter.category,
       description: item.frontmatter.description,
-    };
-  };
+    }
+  }
 
   return (
     <RootStyle>
@@ -122,7 +122,7 @@ export default function MarketingLandingCaseStudies({ caseStudies }: Props) {
         </Stack>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -180,7 +180,7 @@ function LargeItem({ slug, coverImg, title, category, description }: LargeItemPr
         </Grid>
       </Grid>
     </Paper>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -226,5 +226,5 @@ function SmallItem({ slug, coverImg, title, category, isSquare, isDesktop }: Sma
         </m.div>
       </Paper>
     </NextLink>
-  );
+  )
 }

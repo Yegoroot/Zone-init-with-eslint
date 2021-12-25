@@ -1,16 +1,16 @@
-import { useRef, useState } from 'react';
-//icon
-import shareIcon from '@iconify/icons-carbon/share';
-import logoLinkedin from '@iconify/icons-carbon/logo-linkedin';
-import logoFacebook from '@iconify/icons-carbon/logo-facebook';
-import logoTwitter from '@iconify/icons-carbon/logo-twitter';
-import logoInstagram from '@iconify/icons-carbon/logo-instagram';
+import { useRef, useState } from 'react'
+// icon
+import shareIcon from '@iconify/icons-carbon/share'
+import logoLinkedin from '@iconify/icons-carbon/logo-linkedin'
+import logoFacebook from '@iconify/icons-carbon/logo-facebook'
+import logoTwitter from '@iconify/icons-carbon/logo-twitter'
+import logoInstagram from '@iconify/icons-carbon/logo-instagram'
 // @mui
-import { SxProps } from '@mui/system';
-import { MenuItem, ListItemIcon, ListItemText } from '@mui/material';
+import { SxProps } from '@mui/system'
+import { MenuItem, ListItemIcon, ListItemText } from '@mui/material'
 // components
-import { Popover, Iconify } from './';
-import { IconButtonAnimate } from './animate';
+import { Popover, Iconify } from '.'
+import { IconButtonAnimate } from './animate'
 
 // ----------------------------------------------------------------------
 
@@ -19,16 +19,16 @@ type LanguagePopoverProps = {
 };
 
 export default function ShareButton({ sx }: LanguagePopoverProps) {
-  const anchorRef = useRef(null);
-  const [open, setOpen] = useState(false);
+  const anchorRef = useRef(null)
+  const [open, setOpen] = useState(false)
 
   const handleOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
   const handleClose = () => {
-    setOpen(false);
-  };
+    setOpen(false)
+  }
 
   const SOCIALS = [
     {
@@ -51,7 +51,7 @@ export default function ShareButton({ sx }: LanguagePopoverProps) {
       icon: logoTwitter,
       socialColor: '#00AAEC',
     },
-  ];
+  ]
 
   return (
     <>
@@ -84,11 +84,13 @@ export default function ShareButton({ sx }: LanguagePopoverProps) {
               />
             </ListItemIcon>
             <ListItemText primaryTypographyProps={{ variant: 'body3', noWrap: true }}>
-              Share via {option.name}
+              Share via
+              {' '}
+              {option.name}
             </ListItemText>
           </MenuItem>
         ))}
       </Popover>
     </>
-  );
+  )
 }

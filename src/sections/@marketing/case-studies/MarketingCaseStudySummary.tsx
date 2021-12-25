@@ -1,11 +1,11 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Divider, Stack } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Divider, Stack } from '@mui/material'
 // utils
-import { fDate } from '../../../../src/utils/formatTime';
+import { fDate } from '../../../utils/formatTime'
 // @types
-import { CaseStudyFrontmatter } from '../../../@types/marketing';
-import { SocialsButton } from '../../../components';
+import { CaseStudyFrontmatter } from '../../../@types/marketing'
+import { SocialsButton } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(5),
   backgroundColor: theme.palette.background.neutral,
   borderRadius: Number(theme.shape.borderRadius) * 2,
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ type Props = {
 };
 
 export default function MarketingCaseStudySummary({ frontmatter }: Props) {
-  const { title, description, category, website, createdAt, socialLinks } = frontmatter;
+  const { title, description, category, website, createdAt, socialLinks } = frontmatter
 
   return (
     <RootStyle>
@@ -64,5 +64,5 @@ export default function MarketingCaseStudySummary({ frontmatter }: Props) {
         </Stack>
       </Stack>
     </RootStyle>
-  );
+  )
 }

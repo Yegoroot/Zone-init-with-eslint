@@ -1,16 +1,16 @@
-import { m } from 'framer-motion';
+import { m } from 'framer-motion'
 // icons
-import launchIcon from '@iconify/icons-carbon/launch';
+import launchIcon from '@iconify/icons-carbon/launch'
 // @mui
-import { styled, alpha } from '@mui/material/styles';
-import { Button, Typography } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles'
+import { Button, Typography } from '@mui/material'
 // utils
-import cssStyles from '../../utils/cssStyles';
+import cssStyles from '../../utils/cssStyles'
 // routes
-import Routes from '../../routes';
+import Routes from '../../routes'
 // components
-import { Iconify } from '../../components';
-import { MotionViewport, varFade } from '../../components/animate';
+import { Iconify } from '../../components'
+import { MotionViewport, varFade } from '../../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     startColor: alpha(theme.palette.grey[900], 0.8),
     endColor: alpha(theme.palette.grey[900], 0.8),
   }),
-}));
+}))
 
 const ContentStyle = styled('div')(({ theme }) => ({
   textAlign: 'center',
@@ -29,7 +29,7 @@ const ContentStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -65,5 +65,5 @@ export default function HomeForDesigner() {
         </ContentStyle>
       </RootStyle>
     </MotionViewport>
-  );
+  )
 }

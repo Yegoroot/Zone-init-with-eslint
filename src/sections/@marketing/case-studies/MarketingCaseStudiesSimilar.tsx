@@ -1,18 +1,18 @@
 // icons
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Container, Stack, Button, Typography, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Container, Stack, Button, Typography, Box } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // @types
-import { CaseStudyProps } from '../../../@types/marketing';
+import { CaseStudyProps } from '../../../@types/marketing'
 // components
-import { Iconify } from '../../../components';
+import { Iconify } from '../../../components'
 //
-import MarketingCaseStudyItem from './MarketingCaseStudyItem';
+import MarketingCaseStudyItem from './MarketingCaseStudyItem'
 
 // ----------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -86,5 +86,5 @@ export default function MarketingCaseStudiesSimilar({ caseStudies }: Props) {
         </Stack>
       </Container>
     </RootStyle>
-  );
+  )
 }

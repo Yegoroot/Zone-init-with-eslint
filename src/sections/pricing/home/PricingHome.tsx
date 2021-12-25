@@ -1,15 +1,15 @@
-import { m } from 'framer-motion';
+import { m } from 'framer-motion'
 // @mui
-import { styled, alpha } from '@mui/material/styles';
-import { Box, Container, Typography } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles'
+import { Box, Container, Typography } from '@mui/material'
 // utils
-import cssStyles from '../../../utils/cssStyles';
+import cssStyles from '../../../utils/cssStyles'
 // @types
-import { PricingHomeProps } from '../../../@types/pricing';
+import { PricingHomeProps } from '../../../@types/pricing'
 // components
-import { MotionViewport, varFade } from '../../../components/animate';
+import { MotionViewport, varFade } from '../../../components/animate'
 //
-import PricingHomeCard from './PricingHomeCard';
+import PricingHomeCard from './PricingHomeCard'
 
 // ----------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -50,7 +50,9 @@ export default function PricingHome({ plans }: Props) {
 
             <m.div variants={varFade().inDown}>
               <Typography variant="h2" sx={{ mt: 2, mb: 3 }}>
-                The Right Plan <br />
+                The Right Plan
+                {' '}
+                <br />
                 For Your Business
               </Typography>
             </m.div>
@@ -82,5 +84,5 @@ export default function PricingHome({ plans }: Props) {
         </Container>
       </RootStyle>
     </MotionViewport>
-  );
+  )
 }

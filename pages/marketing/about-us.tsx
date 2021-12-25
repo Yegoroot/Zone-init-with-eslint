@@ -1,19 +1,19 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // @mui
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../src/config'
 // _data
-import { _testimonials, _members, _brandsColor } from '../../_data/mock';
+import { _testimonials, _members, _brandsColor } from '../../_data/mock'
 // layouts
-import Layout from '../../src/layouts';
+import Layout from '../../src/layouts'
 // components
-import { Page } from '../../src/components';
+import { Page } from '../../src/components'
 // sections
-import { TeamMarketingAbout } from '../../src/sections/team';
-import { NewsletterMarketing } from '../../src/sections/newsletter';
-import { OurClientsMarketingAbout } from '../../src/sections/our-clients';
-import { TestimonialsMarketing } from '../../src/sections/testimonials';
+import { TeamMarketingAbout } from '../../src/sections/team'
+import { NewsletterMarketing } from '../../src/sections/newsletter'
+import { OurClientsMarketingAbout } from '../../src/sections/our-clients'
+import { TestimonialsMarketing } from '../../src/sections/testimonials'
 import {
   MarketingFaqs,
   MarketingAbout,
@@ -21,7 +21,7 @@ import {
   MarketingAboutStory,
   MarketingAboutOurVision,
   MarketingAboutCoreValues,
-} from '../../src/sections/@marketing';
+} from '../../src/sections/@marketing'
 
 // ----------------------------------------------------------------------
 
@@ -30,7 +30,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -59,11 +59,11 @@ export default function MarketingAboutUsPage() {
         <NewsletterMarketing />
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 MarketingAboutUsPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}

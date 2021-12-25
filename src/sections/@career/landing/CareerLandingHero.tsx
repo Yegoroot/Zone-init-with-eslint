@@ -1,23 +1,23 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // icons
-import searchIcon from '@iconify/icons-carbon/search';
+import searchIcon from '@iconify/icons-carbon/search'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Stack, Container, Box, Grid, Divider, Button } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Stack, Container, Box, Grid, Divider, Button } from '@mui/material'
 // utils
-import cssStyles from '../../../utils/cssStyles';
-import { fShortenNumber } from '../../../utils/formatNumber';
+import cssStyles from '../../../utils/cssStyles'
+import { fShortenNumber } from '../../../utils/formatNumber'
 // @types
-import { CountriesProps } from '../../../@types/map';
-import { JobFiltersProps } from '../../../@types/career';
+import { CountriesProps } from '../../../@types/map'
+import { JobFiltersProps } from '../../../@types/career'
 // utils
-import { _brands } from '../../../../_data/mock';
+import { _brands } from '../../../../_data/mock'
 // assets
-import { CareerHeroIllustration } from '../../../assets';
+import { CareerHeroIllustration } from '../../../assets'
 // components
-import { Iconify, SvgIconStyle } from '../../../components';
+import { Iconify, SvgIconStyle } from '../../../components'
 //
-import { CareerJobKeywordFilter, CareerJobLocationsFilter } from '../filters';
+import { CareerJobKeywordFilter, CareerJobLocationsFilter } from '../filters'
 
 // ----------------------------------------------------------------------
 
@@ -32,7 +32,7 @@ const RootStyle = styled(Stack)(({ theme }) => ({
     justifyContent: 'center',
     paddingBottom: theme.spacing(15),
   },
-}));
+}))
 
 const BarStyle = styled(Stack)(({ theme }) => ({
   padding: theme.spacing(1),
@@ -52,7 +52,7 @@ const BarStyle = styled(Stack)(({ theme }) => ({
     flexDirection: 'row',
     justifyContent: 'center',
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -62,21 +62,21 @@ export default function CareerLandingHero() {
   const [filters, setFilters] = useState<FiltersProps>({
     filterKeyword: null,
     filterLocation: null,
-  });
+  })
 
   const handleChangeKeyword = (keyword: string | null) => {
     setFilters({
       ...filters,
       filterKeyword: keyword,
-    });
-  };
+    })
+  }
 
   const handleChangeLocation = (keyword: CountriesProps | null) => {
     setFilters({
       ...filters,
       filterLocation: keyword,
-    });
-  };
+    })
+  }
 
   return (
     <RootStyle>
@@ -91,10 +91,12 @@ export default function CareerLandingHero() {
             >
               <Stack spacing={3}>
                 <Typography variant="h1" sx={{ color: 'common.white' }}>
-                  Get The{' '}
+                  Get The
+                  {' '}
                   <Box component="span" sx={{ color: 'primary.main' }}>
                     Career
-                  </Box>{' '}
+                  </Box>
+                  {' '}
                   You Deserve
                 </Typography>
                 <Typography sx={{ color: 'grey.500' }}>
@@ -142,12 +144,12 @@ export default function CareerLandingHero() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
-const DividerStyle = <Divider orientation="vertical" flexItem sx={{ borderStyle: 'dashed' }} />;
+const DividerStyle = <Divider orientation="vertical" flexItem sx={{ borderStyle: 'dashed' }} />
 
 function BrandsSection() {
   return (
@@ -182,7 +184,7 @@ function BrandsSection() {
         </Box>
       ))}
     </Stack>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -204,16 +206,19 @@ function SummarySection() {
         {SummaryItem(156000, 'Employee')}
       </Stack>
     </Stack>
-  );
+  )
 }
 
 function SummaryItem(total: number, label: string) {
   return (
     <Stack spacing={0.5} sx={{ color: 'common.white', width: { xs: 0.5, md: 'auto' } }}>
-      <Typography variant="h4">{fShortenNumber(total)}+</Typography>
+      <Typography variant="h4">
+        {fShortenNumber(total)}
+        +
+      </Typography>
       <Typography variant="body2" sx={{ opacity: 0.48 }}>
         {label}
       </Typography>
     </Stack>
-  );
+  )
 }

@@ -1,10 +1,10 @@
 // icons
-import favoriteIcon from '@iconify/icons-carbon/favorite';
-import favoriteFilled from '@iconify/icons-carbon/favorite-filled';
+import favoriteIcon from '@iconify/icons-carbon/favorite'
+import favoriteFilled from '@iconify/icons-carbon/favorite-filled'
 // @mui
-import { Checkbox, CheckboxProps } from '@mui/material';
+import { Checkbox, CheckboxProps } from '@mui/material'
 //
-import Iconify from './Iconify';
+import Iconify from './Iconify'
 
 // ----------------------------------------------------------------------
 
@@ -16,5 +16,5 @@ export default function FavoriteButton({ ...other }: CheckboxProps) {
       checkedIcon={<Iconify icon={favoriteFilled} sx={{ width: 20, height: 20 }} />}
       {...other}
     />
-  );
+  )
 }

@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // icons
-import addIcon from '@iconify/icons-carbon/add';
-import checkmarkOutline from '@iconify/icons-carbon/checkmark-outline';
+import addIcon from '@iconify/icons-carbon/add'
+import checkmarkOutline from '@iconify/icons-carbon/checkmark-outline'
 // @mui
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import {
   Stack,
   Paper,
@@ -15,13 +15,13 @@ import {
   Typography,
   RadioGroup,
   FormControlLabel,
-} from '@mui/material';
+} from '@mui/material'
 // _data
-import { _paymentMethods } from '../../../_data/mock';
+import { _paymentMethods } from '../../../_data/mock'
 // components
-import { Image, Iconify } from '../../components';
+import { Image, Iconify } from '../../components'
 //
-import CheckoutNewCardForm from './CheckoutNewCardForm';
+import CheckoutNewCardForm from './CheckoutNewCardForm'
 
 // ----------------------------------------------------------------------
 
@@ -38,14 +38,14 @@ const CARD_OPTIONS = [
     value: 'mastercard',
     label: '**** **** **** 4545 - Cole Armstrong',
   },
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: theme.spacing(5),
     marginBottom: theme.spacing(5),
   },
-}));
+}))
 
 type OptionStyleProps = {
   hasChildren: boolean;
@@ -70,30 +70,31 @@ const OptionStyle = styled(Paper, {
   ...(selected && {
     boxShadow: theme.customShadows.z24,
   }),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
+// eslint-disable-next-line no-empty-pattern
 export default function CheckoutMethods({}) {
-  const [show, setShow] = useState(false);
-  const [method, setMethod] = useState('paypal');
+  const [show, setShow] = useState(false)
+  const [method, setMethod] = useState('paypal')
 
   const handleCollapseIn = () => {
     if (method !== 'paypal') {
-      setShow(!show);
+      setShow(!show)
     }
-  };
+  }
 
   const handleCollapseOut = () => {
-    setShow(false);
-  };
+    setShow(false)
+  }
 
   const handleChangeMethod = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (method === 'paypal') {
-      setShow(false);
+      setShow(false)
     }
-    setMethod((event.target as HTMLInputElement).value);
-  };
+    setMethod((event.target as HTMLInputElement).value)
+  }
 
   return (
     <RootStyle>
@@ -104,9 +105,9 @@ export default function CheckoutMethods({}) {
       <RadioGroup value={method} onChange={handleChangeMethod}>
         <Stack spacing={2.5}>
           {_paymentMethods.map((option) => {
-            const { value, label, icons } = option;
-            const hasChildren = value === 'credit_card';
-            const isSelected = method === value;
+            const { value, label, icons } = option
+            const hasChildren = value === 'credit_card'
+            const isSelected = method === value
 
             return (
               <OptionStyle key={label} hasChildren={hasChildren} selected={isSelected}>
@@ -160,10 +161,10 @@ export default function CheckoutMethods({}) {
                   </>
                 )}
               </OptionStyle>
-            );
+            )
           })}
         </Stack>
       </RadioGroup>
     </RootStyle>
-  );
+  )
 }

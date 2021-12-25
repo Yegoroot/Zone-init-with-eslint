@@ -1,15 +1,15 @@
-import { useRef, useState } from 'react';
+import { useRef, useState } from 'react'
 // icons
-import playIcon from '@iconify/icons-carbon/play';
+import playIcon from '@iconify/icons-carbon/play'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Container, Stack, Box, Card } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Container, Stack, Box, Card } from '@mui/material'
 // hooks
-import { useBoundingClientRect, useResponsive } from '../../../hooks';
+import { useBoundingClientRect, useResponsive } from '../../../hooks'
 // _data
-import _mock from '../../../../_data/mock';
+import _mock from '../../../../_data/mock'
 // components
-import { SvgIconStyle, Image, TextIconLabel, Iconify, PlayerWithButton } from '../../../components';
+import { SvgIconStyle, Image, TextIconLabel, Iconify, PlayerWithButton } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -29,34 +29,34 @@ const SUMMARY = [
     description: 'Nunc nonummy metus. Donec elit libero',
     icon: '/static/icons/ic_secure_payment.svg',
   },
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function TravelLandingIntroduce() {
-  const isDesktop = useResponsive('up', 'md');
+  const isDesktop = useResponsive('up', 'md')
 
-  const containerRef = useRef<HTMLDivElement>(null);
-  const container = useBoundingClientRect(containerRef);
+  const containerRef = useRef<HTMLDivElement>(null)
+  const container = useBoundingClientRect(containerRef)
 
-  const [openVideo, setOpenVideo] = useState(false);
+  const [openVideo, setOpenVideo] = useState(false)
 
   const handleOpenVideo = () => {
-    setOpenVideo(true);
-  };
+    setOpenVideo(true)
+  }
 
   const handleCloseVideo = () => {
-    setOpenVideo(false);
-  };
+    setOpenVideo(false)
+  }
 
-  const offsetLeft = container && container.left + 20;
+  const offsetLeft = container && container.left + 20
 
   return (
     <>
@@ -157,5 +157,5 @@ export default function TravelLandingIntroduce() {
 
       <PlayerWithButton open={openVideo} onClose={handleCloseVideo} videoPath={_mock.video} />
     </>
-  );
+  )
 }

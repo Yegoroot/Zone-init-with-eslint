@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 // icons
-import menuIcon from '@iconify/icons-carbon/menu';
-import chevronRight from '@iconify/icons-carbon/chevron-right';
-import chevronDown from '@iconify/icons-carbon/chevron-down';
+import menuIcon from '@iconify/icons-carbon/menu'
+import chevronRight from '@iconify/icons-carbon/chevron-right'
+import chevronDown from '@iconify/icons-carbon/chevron-down'
 // next
-import NextLink from 'next/link';
-import { useRouter } from 'next/router';
+import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 // @mui
-import { alpha, styled } from '@mui/material/styles';
+import { alpha, styled } from '@mui/material/styles'
 import {
   Box,
   List,
@@ -19,16 +19,16 @@ import {
   ListItemText,
   ListItemButton,
   ListItemButtonProps,
-} from '@mui/material';
+} from '@mui/material'
 // routes
-import Routes from '../../routes';
+import Routes from '../../routes'
 // config
-import { DRAWER_WIDTH } from '../../config';
+import { DRAWER_WIDTH } from '../../config'
 // @types
-import { NavProps, NavItemMobileProps } from '../../@types/layout';
+import { NavProps, NavItemMobileProps } from '../../@types/layout'
 // components
-import { Logo, Scrollbar, Iconify, NavSection } from '../../components';
-import { IconButtonAnimate } from '../../components/animate';
+import { Logo, Scrollbar, Iconify, NavSection } from '../../components'
+import { IconButtonAnimate } from '../../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -50,28 +50,28 @@ const RootLinkStyle = styled(ListItemButton, {
     fontWeight: theme.typography.fontWeightMedium,
     backgroundColor: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
   }),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function NavMobile({ navConfig, sx }: NavProps) {
-  const { pathname } = useRouter();
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const { pathname } = useRouter()
+  const [drawerOpen, setDrawerOpen] = useState(false)
 
   useEffect(() => {
     if (drawerOpen) {
-      handleDrawerClose();
+      handleDrawerClose()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname]);
+  }, [pathname])
 
   const handleDrawerOpen = () => {
-    setDrawerOpen(true);
-  };
+    setDrawerOpen(true)
+  }
 
   const handleDrawerClose = () => {
-    setDrawerOpen(false);
-  };
+    setDrawerOpen(false)
+  }
 
   return (
     <>
@@ -114,24 +114,24 @@ export default function NavMobile({ navConfig, sx }: NavProps) {
         </Scrollbar>
       </Drawer>
     </>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 function NavItemMobile({ item }: NavItemMobileProps) {
-  const { pathname } = useRouter();
+  const { pathname } = useRouter()
 
-  const { title, path, children } = item;
-  const rootPath = pathname.split('/')[1];
-  const isActiveRoot = pathname === path;
-  const isActiveRootWithChild = pathname.includes(`/${rootPath}/`);
+  const { title, path, children } = item
+  const rootPath = pathname.split('/')[1]
+  const isActiveRoot = pathname === path
+  const isActiveRootWithChild = pathname.includes(`/${rootPath}/`)
 
-  const [open, setOpen] = useState(isActiveRootWithChild);
+  const [open, setOpen] = useState(isActiveRootWithChild)
 
   const handleOpen = () => {
-    setOpen(!open);
-  };
+    setOpen(!open)
+  }
 
   if (children) {
     return (
@@ -194,7 +194,7 @@ function NavItemMobile({ item }: NavItemMobileProps) {
           </Box>
         </Collapse>
       </>
-    );
+    )
   }
 
   if (title === 'Documentation') {
@@ -204,7 +204,7 @@ function NavItemMobile({ item }: NavItemMobileProps) {
           <ListItemText disableTypography primary={title} />
         </RootLinkStyle>
       </Link>
-    );
+    )
   }
 
   return (
@@ -213,5 +213,5 @@ function NavItemMobile({ item }: NavItemMobileProps) {
         <ListItemText disableTypography primary={title} />
       </RootLinkStyle>
     </NextLink>
-  );
+  )
 }

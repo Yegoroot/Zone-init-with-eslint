@@ -1,8 +1,8 @@
 // @mui
-import { alpha, styled } from '@mui/material/styles';
-import { Grid, Button, Container, Typography, FilledInput, InputAdornment } from '@mui/material';
+import { alpha, styled } from '@mui/material/styles'
+import { Grid, Button, Container, Typography, FilledInput, InputAdornment } from '@mui/material'
 // components
-import { Image } from '../../components';
+import { Image } from '../../components'
 
 // ----------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     padding: theme.spacing(15, 0),
     backgroundColor: 'transparent',
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -45,13 +45,13 @@ export default function NewsletterElearning() {
 
                 <FilledInput
                   placeholder="Enter your email"
-                  endAdornment={
+                  endAdornment={(
                     <InputAdornment position="end">
                       <Button size="large" variant="contained">
                         Register
                       </Button>
                     </InputAdornment>
-                  }
+                  )}
                   sx={{
                     pr: 0.5,
                     width: 1,
@@ -82,5 +82,5 @@ export default function NewsletterElearning() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

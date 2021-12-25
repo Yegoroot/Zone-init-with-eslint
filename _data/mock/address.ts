@@ -41,7 +41,7 @@ export const fullAddress = [
   '831 Rolfson Expressway Apt. 878 - Norman, NY / 10239',
   '909 Nathaniel Lake Suite 769 - Sherman, NJ / 46523',
   '3690 Hans Ports Apt. 369 - Cary, KS / 48930',
-];
+]
 
 export const country = [
   'Kenya',
@@ -84,7 +84,7 @@ export const country = [
   'Turkey',
   'Samoa',
   'Vietnam',
-];
+]
 
 export const countries = [
   { code: 'AD', label: 'Andorra', phone: '376' },
@@ -509,4 +509,4 @@ export const countries = [
   { code: 'ZA', label: 'South Africa', phone: '27' },
   { code: 'ZM', label: 'Zambia', phone: '260' },
   { code: 'ZW', label: 'Zimbabwe', phone: '263' },
-];
+]

@@ -1,18 +1,18 @@
-import { m } from 'framer-motion';
+import { m } from 'framer-motion'
 // icons
-import locationIcon from '@iconify/icons-carbon/location';
-import mobileIcon from '@iconify/icons-carbon/mobile';
-import emailIcon from '@iconify/icons-carbon/email';
-import launchIcon from '@iconify/icons-carbon/launch';
+import locationIcon from '@iconify/icons-carbon/location'
+import mobileIcon from '@iconify/icons-carbon/mobile'
+import emailIcon from '@iconify/icons-carbon/email'
+import launchIcon from '@iconify/icons-carbon/launch'
 // @mui
-import { Box, Typography, Stack, Paper, Container, Link } from '@mui/material';
+import { Box, Typography, Stack, Paper, Container, Link } from '@mui/material'
 // _data
-import { _offices } from '../../../../_data/mock';
+import { _offices } from '../../../../_data/mock'
 // @types
-import { OfficeMapProps } from '../../../@types/map';
+import { OfficeMapProps } from '../../../@types/map'
 // components
-import { Image, Iconify, TextIconLabel } from '../../../components';
-import { varHover, varTranHover } from '../../../components/animate';
+import { Image, Iconify, TextIconLabel } from '../../../components'
+import { varHover, varTranHover } from '../../../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -28,11 +28,13 @@ export default function TravelContactInfo() {
           }}
         >
           <Typography variant="h2">
-            We Work <br />
+            We Work
+            {' '}
+            <br />
             Worldwide.
           </Typography>
           <Typography sx={{ color: 'text.secondary' }}>
-            {`We'd love to talk about how we can help you.`}
+            We'd love to talk about how we can help you.
           </Typography>
         </Stack>
       </Container>
@@ -62,7 +64,7 @@ export default function TravelContactInfo() {
         </Container>
       </Box>
     </>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -72,7 +74,7 @@ type OfficeCardProps = {
 };
 
 function OfficeCard({ office }: OfficeCardProps) {
-  const { country, address, photo, email, phoneNumber } = office;
+  const { country, address, photo, email, phoneNumber } = office
 
   return (
     <Paper
@@ -100,14 +102,14 @@ function OfficeCard({ office }: OfficeCardProps) {
         <Stack spacing={0.5}>
           <TextIconLabel
             icon={<Iconify icon={locationIcon} sx={{ mr: 1, width: 24, height: 24 }} />}
-            value={
+            value={(
               <>
                 Address
                 <Link sx={{ lineHeight: 0 }}>
                   <Iconify icon={launchIcon} sx={{ ml: 1, width: 18, height: 18 }} />
                 </Link>
               </>
-            }
+            )}
             sx={{ typography: 'subtitle2', mb: 0.5 }}
           />
           <Typography variant="body2">{address}</Typography>
@@ -132,5 +134,5 @@ function OfficeCard({ office }: OfficeCardProps) {
         </Stack>
       </Stack>
     </Paper>
-  );
+  )
 }

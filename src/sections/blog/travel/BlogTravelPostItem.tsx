@@ -1,16 +1,16 @@
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Stack, Avatar } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Stack, Avatar } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // utils
-import { fDate } from '../../../utils/formatTime';
+import { fDate } from '../../../utils/formatTime'
 // @types
-import { BlogPostProps } from '../../../@types/blog';
+import { BlogPostProps } from '../../../@types/blog'
 // components
-import { Image, TextMaxLine } from '../../../components';
+import { Image, TextMaxLine } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ const DotStyle = styled('span')(({ theme }) => ({
   borderRadius: '50%',
   backgroundColor: 'currentColor',
   margin: theme.spacing(0, 1),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -29,8 +29,8 @@ type Props = {
 };
 
 export default function BlogTravelPostItem({ post }: Props) {
-  const { slug, frontmatter } = post;
-  const { title, duration, coverImg, author, createdAt } = frontmatter;
+  const { slug, frontmatter } = post
+  const { title, duration, coverImg, author, createdAt } = frontmatter
 
   return (
     <Stack spacing={2.5}>
@@ -59,5 +59,5 @@ export default function BlogTravelPostItem({ post }: Props) {
         {author.name}
       </Stack>
     </Stack>
-  );
+  )
 }

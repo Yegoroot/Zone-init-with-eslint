@@ -1,14 +1,14 @@
 // icons
-import checkmarkIcon from '@iconify/icons-carbon/checkmark';
+import checkmarkIcon from '@iconify/icons-carbon/checkmark'
 // @mui
-import { alpha } from '@mui/material/styles';
-import { Stack, Typography, Chip, Box } from '@mui/material';
+import { alpha } from '@mui/material/styles'
+import { Stack, Typography, Chip, Box } from '@mui/material'
 // @types
-import { CourseProps } from '../../../@types/e-learning';
+import { CourseProps } from '../../../@types/e-learning'
 // components
-import { Iconify } from '../../../components';
+import { Iconify } from '../../../components'
 //
-import ElearningCourseDetailsLessons from './ElearningCourseDetailsLessons';
+import ElearningCourseDetailsLessons from './ElearningCourseDetailsLessons'
 
 // ----------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ type Props = {
 };
 
 export default function ElearningCourseDetails({ course }: Props) {
-  const { lessons, skills, learnList } = course;
+  const { lessons, skills, learnList } = course
 
   return (
     <Stack spacing={5}>
@@ -62,7 +62,7 @@ export default function ElearningCourseDetails({ course }: Props) {
         </Typography>
         <Stack direction="row" flexWrap="wrap">
           {skills?.map((skill) => (
-            <Chip key={skill} label={skill} sx={{ m: 0.5 }} onClick={() => {}} />
+            <Chip key={skill} label={skill} sx={{ m: 0.5 }} onClick={() => console.log('heeeeey')} />
           ))}
         </Stack>
       </section>
@@ -75,9 +75,10 @@ export default function ElearningCourseDetails({ course }: Props) {
         <Typography>
           Consentaneum aeternitate dignitati commoventur primisque cupit mea officia peccata parens
           egone dolorem minuis. Secundae neglegi sextilius conantur commodaita siti philosophi ioca
-          tenere lorem apparet assentior pudoris sint leves neglegebat unde reliquisti simile.{' '}
+          tenere lorem apparet assentior pudoris sint leves neglegebat unde reliquisti simile.
+          {' '}
         </Typography>
       </section>
     </Stack>
-  );
+  )
 }

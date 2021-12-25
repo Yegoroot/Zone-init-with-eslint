@@ -1,5 +1,5 @@
-import { AuthorProps } from '../author';
-import { SocialLinks } from '../socials';
+import { AuthorProps } from '../author'
+import { SocialLinks } from '../socials'
 
 // ----------------------------------------------------------------------
 

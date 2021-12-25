@@ -1,2 +1,2 @@
-export * from './career';
-export * from './e-learning';
+export * from './career'
+export * from './e-learning'

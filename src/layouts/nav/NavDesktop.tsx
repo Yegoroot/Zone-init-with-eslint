@@ -1,19 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 // icons
-import chevronDown from '@iconify/icons-carbon/chevron-down';
-import chevronUp from '@iconify/icons-carbon/chevron-up';
+import chevronDown from '@iconify/icons-carbon/chevron-down'
+import chevronUp from '@iconify/icons-carbon/chevron-up'
 // next
-import NextLink from 'next/link';
-import { useRouter } from 'next/router';
+import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Link, Stack, LinkProps } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Link, Stack, LinkProps } from '@mui/material'
 // @types
-import { NavProps, NavItemDesktopProps } from '../../@types/layout';
+import { NavProps, NavItemDesktopProps } from '../../@types/layout'
 // components
-import { Iconify } from '../../components';
+import { Iconify } from '../../components'
 //
-import NavDesktopMenu from './NavDesktopMenu';
+import NavDesktopMenu from './NavDesktopMenu'
 
 // ----------------------------------------------------------------------
 
@@ -25,8 +25,7 @@ interface RootLinkStyleProps extends LinkProps {
 }
 
 const RootLinkStyle = styled(Link, {
-  shouldForwardProp: (prop) =>
-    prop !== 'active' && prop !== 'scrolling' && prop !== 'transparent' && prop !== 'open',
+  shouldForwardProp: (prop) => prop !== 'active' && prop !== 'scrolling' && prop !== 'transparent' && prop !== 'open',
 })<RootLinkStyleProps>(({ active, scrolling, transparent, open, theme }) => {
   const dotActiveStyle = {
     '&:before': {
@@ -42,7 +41,7 @@ const RootLinkStyle = styled(Link, {
       position: 'absolute',
       backgroundColor: theme.palette.primary.main,
     },
-  };
+  }
   return {
     ...theme.typography.subtitle2,
     fontWeight: theme.typography.fontWeightMedium,
@@ -66,8 +65,8 @@ const RootLinkStyle = styled(Link, {
     ...(open && {
       color: theme.palette.primary.main,
     }),
-  };
-});
+  }
+})
 
 // ----------------------------------------------------------------------
 
@@ -77,7 +76,6 @@ export default function NavDesktop({ isScrolling, isTransparent, navConfig }: Na
       direction="row"
       spacing={6}
       sx={{
-        ml: 6,
         color: 'text.secondary',
         ...(isTransparent && {
           color: 'inherit',
@@ -96,34 +94,34 @@ export default function NavDesktop({ isScrolling, isTransparent, navConfig }: Na
         />
       ))}
     </Stack>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 function NavItemDesktop({ item, isScrolling, isTransparent }: NavItemDesktopProps) {
-  const { title, path, children } = item;
+  const { title, path, children } = item
 
-  const { pathname, asPath } = useRouter();
+  const { pathname, asPath } = useRouter()
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
-  const isActiveRoot = path === pathname || (path !== '/' && asPath.includes(path));
+  const isActiveRoot = path === pathname || (path !== '/' && asPath.includes(path))
 
   useEffect(() => {
     if (open) {
-      handleClose();
+      handleClose()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname]);
+  }, [pathname])
 
   const handleOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
   const handleClose = () => {
-    setOpen(false);
-  };
+    setOpen(false)
+  }
 
   if (children) {
     return (
@@ -152,7 +150,7 @@ function NavItemDesktop({ item, isScrolling, isTransparent }: NavItemDesktopProp
           isScrolling={isScrolling}
         />
       </>
-    );
+    )
   }
 
   if (title === 'Documentation') {
@@ -166,7 +164,7 @@ function NavItemDesktop({ item, isScrolling, isTransparent }: NavItemDesktopProp
       >
         {title}
       </RootLinkStyle>
-    );
+    )
   }
 
   return (
@@ -175,5 +173,5 @@ function NavItemDesktop({ item, isScrolling, isTransparent }: NavItemDesktopProp
         {title}
       </RootLinkStyle>
     </NextLink>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import { SocialLinks } from './socials';
+import { SocialLinks } from './socials'
 
 // ----------------------------------------------------------------------
 

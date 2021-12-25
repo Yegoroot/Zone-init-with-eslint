@@ -1,27 +1,26 @@
-import { useEffect } from 'react';
-import Lightbox, { ILightBoxProps } from 'react-image-lightbox';
+import { useEffect } from 'react'
+import Lightbox, { ILightBoxProps } from 'react-image-lightbox'
 // @mui
-import { useTheme } from '@mui/material/styles';
-import { Typography, GlobalStyles } from '@mui/material';
+import { useTheme } from '@mui/material/styles'
+import { Typography, GlobalStyles } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
 function LightboxModalStyles() {
-  const theme = useTheme();
-  const isRTL = theme.direction === 'rtl';
+  const theme = useTheme()
+  const isRTL = theme.direction === 'rtl'
 
-  const ICON_SIZE = 32;
-  const ICON_COLOR = theme.palette.primary.main.replace('#', '');
+  const ICON_SIZE = 32
+  const ICON_COLOR = theme.palette.primary.main.replace('#', '')
 
-  const getIcon = (icon: string) =>
-    `url(https://api.iconify.design/carbon/${icon}.svg?color=%23${ICON_COLOR}&width=${ICON_SIZE}&height=${ICON_SIZE})`;
+  const getIcon = (icon: string) => `url(https://api.iconify.design/carbon/${icon}.svg?color=%23${ICON_COLOR}&width=${ICON_SIZE}&height=${ICON_SIZE})`
 
   const Icon = (icon: string) => ({
     opacity: 1,
     alignItems: 'center',
     display: 'inline-flex',
     justifyContent: 'center',
-    backgroundImage: `unset`,
+    backgroundImage: 'unset',
     backgroundColor: 'transparent',
     transition: theme.transitions.create('opacity'),
     '&:before': {
@@ -33,7 +32,7 @@ function LightboxModalStyles() {
     '&:hover': {
       opacity: 0.72,
     },
-  });
+  })
 
   return (
     <GlobalStyles
@@ -96,7 +95,7 @@ function LightboxModalStyles() {
         },
       }}
     />
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -117,23 +116,23 @@ export default function LightboxModal({
 }: Props) {
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = 'unset'
     }
-  }, [isOpen]);
+  }, [isOpen])
 
   const showIndex = (
     <Typography variant="subtitle2">{`${photoIndex + 1} / ${images.length}`}</Typography>
-  );
+  )
 
-  const toolbarButtons = [showIndex];
+  const toolbarButtons = [showIndex]
 
   const customStyles = {
     overlay: {
       zIndex: 9999,
     },
-  };
+  }
 
   return (
     <>
@@ -152,5 +151,5 @@ export default function LightboxModal({
         />
       )}
     </>
-  );
+  )
 }

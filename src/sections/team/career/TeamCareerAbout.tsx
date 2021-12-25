@@ -1,10 +1,10 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Stack, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Stack, Box } from '@mui/material'
 // @types
-import { TeamMemberProps } from '../../../@types/team';
+import { TeamMemberProps } from '../../../@types/team'
 //
-import TeamCareerMember from './TeamCareerMember';
+import TeamCareerMember from './TeamCareerMember'
 
 // ----------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     paddingTop: theme.spacing(10),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -55,5 +55,5 @@ export default function TeamCareerAbout({ members }: Props) {
         ))}
       </Box>
     </RootStyle>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import { alpha, Theme } from '@mui/material/styles';
+import { alpha, Theme } from '@mui/material/styles'
 
 // ----------------------------------------------------------------------
 
@@ -13,5 +13,5 @@ export default function Popover(theme: Theme) {
         },
       },
     },
-  };
+  }
 }

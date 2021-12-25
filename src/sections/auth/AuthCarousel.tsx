@@ -1,9 +1,9 @@
-import Slider from 'react-slick';
+import Slider from 'react-slick'
 // @mui
-import { styled, useTheme } from '@mui/material/styles';
-import { Box, Typography } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles'
+import { Box, Typography } from '@mui/material'
 // components
-import { Image, BgOverlay, CarouselDots } from '../../components';
+import { Image, BgOverlay, CarouselDots } from '../../components'
 
 // ----------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     display: 'block',
     position: 'relative',
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -24,7 +24,7 @@ type AuthCarouselProps = {
 };
 
 export default function AuthCarousel({ title }: AuthCarouselProps) {
-  const theme = useTheme();
+  const theme = useTheme()
 
   const carouselSettings = {
     autoplaySpeed: 5000,
@@ -46,7 +46,7 @@ export default function AuthCarousel({ title }: AuthCarouselProps) {
         position: 'absolute',
       },
     }),
-  };
+  }
 
   return (
     <RootStyle>
@@ -77,5 +77,5 @@ export default function AuthCarousel({ title }: AuthCarouselProps) {
         ))}
       </Slider>
     </RootStyle>
-  );
+  )
 }

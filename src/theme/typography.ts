@@ -1,4 +1,4 @@
-import { pxToRem, responsiveFontSizes } from '../utils/getFontValue';
+import { pxToRem, responsiveFontSizes } from '../utils/getFontValue'
 
 // ----------------------------------------------------------------------
 
@@ -40,8 +40,8 @@ declare module '@mui/material/Typography' {
   }
 }
 
-const FONT_PRIMARY = 'Poppins, sans-serif';
-const FONT_SECONDARY = 'Barlow, sans-serif';
+const FONT_PRIMARY = 'Poppins, sans-serif'
+const FONT_SECONDARY = 'Barlow, sans-serif'
 
 const typography = {
   fontFamily: FONT_PRIMARY,
@@ -131,6 +131,6 @@ const typography = {
     fontSize: pxToRem(14),
     textTransform: 'capitalize',
   },
-} as const;
+} as const
 
-export default typography;
+export default typography

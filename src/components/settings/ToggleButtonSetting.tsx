@@ -1,19 +1,19 @@
 // icons
-import closeIcon from '@iconify/icons-carbon/close';
-import settingsAdjust from '@iconify/icons-carbon/settings-adjust';
+import closeIcon from '@iconify/icons-carbon/close'
+import settingsAdjust from '@iconify/icons-carbon/settings-adjust'
 // @mui
-import { alpha, styled } from '@mui/material/styles';
-import { Tooltip } from '@mui/material';
+import { alpha, styled } from '@mui/material/styles'
+import { Tooltip } from '@mui/material'
 //
-import Iconify from '../Iconify';
-import { IconButtonAnimate } from '../animate';
+import Iconify from '../Iconify'
+import { IconButtonAnimate } from '../animate'
 
 // ----------------------------------------------------------------------
 
-const zIndex = 1999;
+const zIndex = 1999
 
 const ToggleButtonStyle = styled('div')(({ theme }) => {
-  const isLight = theme.palette.mode === 'light';
+  const isLight = theme.palette.mode === 'light'
 
   return {
     right: 32,
@@ -27,8 +27,8 @@ const ToggleButtonStyle = styled('div')(({ theme }) => {
       isLight ? theme.palette.grey[500] : theme.palette.common.black,
       0.8
     )}`,
-  };
-});
+  }
+})
 
 const BadgeStyle = styled('div')(({ theme }) => ({
   top: 8,
@@ -38,14 +38,14 @@ const BadgeStyle = styled('div')(({ theme }) => ({
   borderRadius: '50%',
   position: 'absolute',
   backgroundColor: theme.palette.error.main,
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 type Props = {
   notDefault: boolean;
   isOpen: boolean;
-  onToggle: VoidFunction;
+  onToggle: ()=>void;
 };
 
 export default function ToggleButtonSetting({ isOpen, onToggle, notDefault }: Props) {
@@ -59,8 +59,7 @@ export default function ToggleButtonSetting({ isOpen, onToggle, notDefault }: Pr
           onClick={onToggle}
           sx={{
             ...(isOpen && {
-              bgcolor: (theme) =>
-                alpha(theme.palette.primary.main, theme.palette.action.hoverOpacity),
+              bgcolor: (theme) => alpha(theme.palette.primary.main, theme.palette.action.hoverOpacity),
             }),
           }}
         >
@@ -68,5 +67,5 @@ export default function ToggleButtonSetting({ isOpen, onToggle, notDefault }: Pr
         </IconButtonAnimate>
       </Tooltip>
     </ToggleButtonStyle>
-  );
+  )
 }

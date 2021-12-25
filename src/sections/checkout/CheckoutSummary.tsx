@@ -1,11 +1,11 @@
 // icons
-import securityIcon from '@iconify/icons-carbon/security';
+import securityIcon from '@iconify/icons-carbon/security'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Switch, Divider, Typography, Stack } from '@mui/material';
-import { LoadingButton } from '@mui/lab';
+import { styled } from '@mui/material/styles'
+import { Switch, Divider, Typography, Stack } from '@mui/material'
+import { LoadingButton } from '@mui/lab'
 // components
-import { Label, Iconify } from '../../components';
+import { Label, Iconify } from '../../components'
 
 // ----------------------------------------------------------------------
 
@@ -15,7 +15,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     padding: theme.spacing(5, 4),
     borderLeft: `dashed 1px ${theme.palette.divider}`,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -85,5 +85,5 @@ export default function CheckoutSummary() {
         </Typography>
       </Stack>
     </RootStyle>
-  );
+  )
 }

@@ -1,9 +1,9 @@
 // @mui
-import { Stack, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material'
 // @types
-import { Pricing02Props } from '../../../@types/pricing';
+import { Pricing02Props } from '../../../@types/pricing'
 // components
-import { Label, Image } from '../../../components';
+import { Label, Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -12,10 +12,10 @@ type Props = {
 };
 
 export default function PricingPlan02Header({ plan }: Props) {
-  const { license, caption, price, icon } = plan;
+  const { license, caption, price, icon } = plan
 
-  const startLicense = plan.license === 'Start';
-  const proLicense = plan.license === 'Pro';
+  const startLicense = plan.license === 'Start'
+  const proLicense = plan.license === 'Pro'
 
   return (
     <Stack
@@ -63,5 +63,5 @@ export default function PricingPlan02Header({ plan }: Props) {
         {caption}
       </Typography>
     </Stack>
-  );
+  )
 }

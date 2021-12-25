@@ -1,14 +1,14 @@
-import { sub } from 'date-fns';
+import { sub } from 'date-fns'
 //
-import { role } from './role';
-import { email } from './email';
-import { video } from './video';
-import { boolean } from './boolean';
-import { company } from './company';
-import { phoneNumber } from './phoneNumber';
-import { firstName, lastName, fullName } from './name';
-import { price, rating, age, percent } from './number';
-import { fullAddress, country, countries } from './address';
+import { role } from './role'
+import { email } from './email'
+import { video } from './video'
+import { boolean } from './boolean'
+import { company } from './company'
+import { phoneNumber } from './phoneNumber'
+import { firstName, lastName, fullName } from './name'
+import { price, rating, age, percent } from './number'
+import { fullAddress, country, countries } from './address'
 import {
   jobTitle,
   tourName,
@@ -18,7 +18,7 @@ import {
   courseTitle,
   description,
   jobCategories,
-} from './text';
+} from './text'
 
 // ----------------------------------------------------------------------
 
@@ -71,11 +71,11 @@ const _mock = {
   jobTitle,
   jobCategories,
   shareLinks: {
-    facebook: `facebook/user-name`,
-    instagram: `instagram/user-name`,
-    linkedin: `linkedin/user-name`,
-    twitter: `twitter/user-name`,
+    facebook: 'facebook/user-name',
+    instagram: 'instagram/user-name',
+    linkedin: 'linkedin/user-name',
+    twitter: 'twitter/user-name',
   },
-};
+}
 
-export default _mock;
+export default _mock

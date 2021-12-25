@@ -1,20 +1,20 @@
-import { m } from 'framer-motion';
-import Slider from 'react-slick';
-import { useRef } from 'react';
+import { m } from 'framer-motion'
+import Slider from 'react-slick'
+import { useRef } from 'react'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled, useTheme } from '@mui/material/styles';
-import { Box, Link, Stack, Avatar, Container, Typography } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles'
+import { Box, Link, Stack, Avatar, Container, Typography } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // utils
-import { fDate } from '../../../utils/formatTime';
+import { fDate } from '../../../utils/formatTime'
 // @types
-import { BlogPostProps } from '../../../@types/blog';
+import { BlogPostProps } from '../../../@types/blog'
 // components
-import { varHover, varTranHover } from '../../../components/animate';
-import { Image, BgOverlay, CarouselArrows, CarouselDots } from '../../../components';
+import { varHover, varTranHover } from '../../../components/animate'
+import { Image, BgOverlay, CarouselArrows, CarouselDots } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -24,7 +24,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 const DotStyle = styled('span')(({ theme }) => ({
   width: 4,
@@ -32,7 +32,7 @@ const DotStyle = styled('span')(({ theme }) => ({
   borderRadius: '50%',
   backgroundColor: 'currentColor',
   margin: theme.spacing(0, 1),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -41,8 +41,8 @@ type Props = {
 };
 
 export default function BlogMarketingLatestPosts({ posts }: Props) {
-  const theme = useTheme();
-  const carouselRef = useRef<Slider | null>(null);
+  const theme = useTheme()
+  const carouselRef = useRef<Slider | null>(null)
 
   const carouselSettings = {
     dots: true,
@@ -61,15 +61,15 @@ export default function BlogMarketingLatestPosts({ posts }: Props) {
         settings: { slidesToShow: 1 },
       },
     ],
-  };
+  }
 
   const handlePrevious = () => {
-    carouselRef.current?.slickPrev();
-  };
+    carouselRef.current?.slickPrev()
+  }
 
   const handleNext = () => {
-    carouselRef.current?.slickNext();
-  };
+    carouselRef.current?.slickNext()
+  }
 
   return (
     <RootStyle>
@@ -111,7 +111,7 @@ export default function BlogMarketingLatestPosts({ posts }: Props) {
         </Box>
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -121,8 +121,8 @@ type PostItemProps = {
 };
 
 function PostItem({ post }: PostItemProps) {
-  const { slug, frontmatter } = post;
-  const { title, duration, coverImg, author, createdAt } = frontmatter;
+  const { slug, frontmatter } = post
+  const { title, duration, coverImg, author, createdAt } = frontmatter
 
   return (
     <Stack
@@ -148,11 +148,10 @@ function PostItem({ post }: PostItemProps) {
           zIndex: 9,
           position: 'absolute',
           bgcolor: 'background.paper',
-          transition: (theme) =>
-            theme.transitions.create('background-color', {
-              easing: theme.transitions.easing.easeIn,
-              duration: theme.transitions.duration.enteringScreen,
-            }),
+          transition: (theme) => theme.transitions.create('background-color', {
+            easing: theme.transitions.easing.easeIn,
+            duration: theme.transitions.duration.enteringScreen,
+          }),
           '&:hover': {
             color: 'common.white',
             bgcolor: 'transparent',
@@ -197,5 +196,5 @@ function PostItem({ post }: PostItemProps) {
 
       <BgOverlay direction="top" />
     </Stack>
-  );
+  )
 }

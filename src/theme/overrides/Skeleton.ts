@@ -1,4 +1,4 @@
-import { Theme, alpha } from '@mui/material/styles';
+import { Theme, alpha } from '@mui/material/styles'
 
 // ----------------------------------------------------------------------
 
@@ -15,5 +15,5 @@ export default function Skeleton(theme: Theme) {
         },
       },
     },
-  };
+  }
 }

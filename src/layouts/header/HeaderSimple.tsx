@@ -1,18 +1,18 @@
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { Link, Stack, AppBar, Divider, Container } from '@mui/material';
+import { Link, Stack, AppBar, Divider, Container } from '@mui/material'
 // config
-import { HEADER_DESKTOP_HEIGHT } from '../../config';
+import { HEADER_DESKTOP_HEIGHT } from '../../config'
 // hooks
-import useOffSetTop from '../../hooks/useOffSetTop';
+import useOffSetTop from '../../hooks/useOffSetTop'
 // routes
-import Routes from '../../routes';
+import Routes from '../../routes'
 // components
-import { Logo } from '../../components';
+import { Logo } from '../../components'
 //
-import LanguagePopover from '../LanguagePopover';
-import { ToolbarStyle, ToolbarShadowStyle } from './HeaderToolbarStyle';
+import LanguagePopover from '../LanguagePopover'
+import { ToolbarStyle, ToolbarShadowStyle } from './HeaderToolbarStyle'
 
 // ----------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ type Props = {
 };
 
 export default function HeaderSimple({ transparent }: Props) {
-  const isScrolling = useOffSetTop(HEADER_DESKTOP_HEIGHT);
+  const isScrolling = useOffSetTop(HEADER_DESKTOP_HEIGHT)
 
   return (
     <AppBar sx={{ boxShadow: 0, bgcolor: 'transparent' }}>
@@ -66,5 +66,5 @@ export default function HeaderSimple({ transparent }: Props) {
 
       {isScrolling && <ToolbarShadowStyle />}
     </AppBar>
-  );
+  )
 }

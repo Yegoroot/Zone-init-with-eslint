@@ -1,21 +1,17 @@
-// next
-import NextLink from 'next/link';
 // @mui
-import { useTheme } from '@mui/material/styles';
-import { Box, Stack, Button, AppBar, Divider, Container } from '@mui/material';
+import { useTheme } from '@mui/material/styles'
+import { Box, Stack, Button, AppBar, Divider, Container } from '@mui/material'
 // hooks
-import { useOffSetTop, useResponsive } from '../../hooks';
+import { useOffSetTop, useResponsive } from '../../hooks'
 // routes
-import Routes from '../../routes';
+import Routes from '../../routes'
 // config
-import { HEADER_DESKTOP_HEIGHT } from '../../config';
-// components
-import { Logo, Label } from '../../components';
+import { HEADER_DESKTOP_HEIGHT } from '../../config'
 //
-import Searchbar from '../Searchbar';
-import LanguagePopover from '../LanguagePopover';
-import { NavMobile, NavDesktop, navConfig } from '../nav';
-import { ToolbarStyle, ToolbarShadowStyle } from './HeaderToolbarStyle';
+import Searchbar from '../Searchbar'
+import LanguagePopover from '../LanguagePopover'
+import { NavMobile, NavDesktop, navConfig } from '../nav'
+import { ToolbarStyle, ToolbarShadowStyle } from './HeaderToolbarStyle'
 
 // ----------------------------------------------------------------------
 
@@ -24,13 +20,13 @@ type Props = {
 };
 
 export default function Header({ transparent }: Props) {
-  const theme = useTheme();
+  const theme = useTheme()
 
-  const isDesktop = useResponsive('up', 'md');
+  const isDesktop = useResponsive('up', 'md')
 
-  const isLight = theme.palette.mode === 'light';
+  const isLight = theme.palette.mode === 'light'
 
-  const isScrolling = useOffSetTop(HEADER_DESKTOP_HEIGHT);
+  const isScrolling = useOffSetTop(HEADER_DESKTOP_HEIGHT)
 
   return (
     <AppBar sx={{ boxShadow: 0, bgcolor: 'transparent' }}>
@@ -42,24 +38,6 @@ export default function Header({ transparent }: Props) {
             justifyContent: 'flex-start',
           }}
         >
-          <Box sx={{ lineHeight: 0, position: 'relative' }}>
-            <Logo onDark={transparent && !isScrolling} />
-
-            <Label
-              color="info"
-              sx={{
-                ml: 0.5,
-                px: 0.5,
-                top: -14,
-                left: 64,
-                height: 20,
-                fontSize: 11,
-                position: 'absolute',
-              }}
-            >
-              v1.1
-            </Label>
-          </Box>
 
           {isDesktop && (
             <NavDesktop
@@ -88,23 +66,9 @@ export default function Header({ transparent }: Props) {
 
             {isDesktop && (
               <Stack direction="row" spacing={1}>
-                <NextLink href={Routes.registerIllustration} prefetch={false}>
-                  <Button
-                    color="inherit"
-                    variant="outlined"
-                    sx={{
-                      ...(transparent && {
-                        color: 'common.white',
-                      }),
-                      ...(isScrolling && isLight && { color: 'text.primary' }),
-                    }}
-                  >
-                    Join Us
-                  </Button>
-                </NextLink>
 
                 <Button variant="contained" href={Routes.buyNow} target="_blank" rel="noopener">
-                  Buy Now
+                  Сотрудничество
                 </Button>
               </Stack>
             )}
@@ -124,5 +88,5 @@ export default function Header({ transparent }: Props) {
 
       {isScrolling && <ToolbarShadowStyle />}
     </AppBar>
-  );
+  )
 }

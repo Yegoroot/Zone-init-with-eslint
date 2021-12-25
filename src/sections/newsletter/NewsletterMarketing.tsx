@@ -1,15 +1,15 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Container, Typography, Stack, FilledInput, InputAdornment, Button } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Container, Typography, Stack, FilledInput, InputAdornment, Button } from '@mui/material'
 //
-import { SvgIconStyle } from '../../components';
+import { SvgIconStyle } from '../../components'
 
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(Stack)(({ theme }) => ({
   padding: theme.spacing(8, 0),
   backgroundColor: theme.palette.background.neutral,
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -45,7 +45,7 @@ export default function NewsletterMarketing() {
 
           <FilledInput
             placeholder="Enter your email"
-            endAdornment={
+            endAdornment={(
               <InputAdornment position="end">
                 <Button
                   size="large"
@@ -59,7 +59,7 @@ export default function NewsletterMarketing() {
                   Sign Up
                 </Button>
               </InputAdornment>
-            }
+            )}
             sx={{
               p: 0,
               width: 1,
@@ -75,5 +75,5 @@ export default function NewsletterMarketing() {
         </Stack>
       </Container>
     </RootStyle>
-  );
+  )
 }

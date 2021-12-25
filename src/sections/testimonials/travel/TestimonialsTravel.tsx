@@ -1,14 +1,14 @@
-import Slider from 'react-slick';
-import { useRef } from 'react';
+import Slider from 'react-slick'
+import { useRef } from 'react'
 // icons
-import quotesIcon from '@iconify/icons-carbon/quotes';
+import quotesIcon from '@iconify/icons-carbon/quotes'
 // @mui
-import { styled, useTheme } from '@mui/material/styles';
-import { Typography, Grid, Container, Stack, Box } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles'
+import { Typography, Grid, Container, Stack, Box } from '@mui/material'
 // @types
-import { TestimonialProps } from '../../../@types/testimonial';
+import { TestimonialProps } from '../../../@types/testimonial'
 // components
-import { Image, Iconify, CarouselArrows } from '../../../components';
+import { Image, Iconify, CarouselArrows } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -26,23 +26,23 @@ type Props = {
 };
 
 export default function TestimonialsTravel({ testimonials }: Props) {
-  const theme = useTheme();
-  const carouselRef = useRef<Slider | null>(null);
+  const theme = useTheme()
+  const carouselRef = useRef<Slider | null>(null)
 
   const carouselSettings = {
     arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     rtl: Boolean(theme.direction === 'rtl'),
-  };
+  }
 
   const handlePrevious = () => {
-    carouselRef.current?.slickPrev();
-  };
+    carouselRef.current?.slickPrev()
+  }
 
   const handleNext = () => {
-    carouselRef.current?.slickNext();
-  };
+    carouselRef.current?.slickNext()
+  }
 
   return (
     <RootStyle>
@@ -92,7 +92,7 @@ export default function TestimonialsTravel({ testimonials }: Props) {
         />
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -102,7 +102,7 @@ type TestimonialItemProps = {
 };
 
 function TestimonialItem({ testimonial }: TestimonialItemProps) {
-  const { name, review } = testimonial;
+  const { name, review } = testimonial
 
   return (
     <Stack
@@ -129,5 +129,5 @@ function TestimonialItem({ testimonial }: TestimonialItemProps) {
         <Typography variant="h6">{name}</Typography>
       </Stack>
     </Stack>
-  );
+  )
 }

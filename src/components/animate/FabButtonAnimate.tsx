@@ -1,9 +1,10 @@
-import { m } from 'framer-motion';
-import { forwardRef, ReactNode } from 'react';
+/* eslint-disable react/prop-types */
+import { m } from 'framer-motion'
+import { forwardRef, ReactNode } from 'react'
 // @mui
-import { SxProps } from '@mui/system';
-import { useTheme } from '@mui/material/styles';
-import { Box, Fab, FabProps } from '@mui/material';
+import { SxProps } from '@mui/system'
+import { useTheme } from '@mui/material/styles'
+import { Box, Fab, FabProps } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -22,13 +23,13 @@ interface Props extends Omit<FabProps, 'color'> {
 
 const FabButtonAnimate = forwardRef<HTMLButtonElement, Props>(
   ({ color = 'primary', size = 'large', children, sx, sxWrap, ...other }, ref) => {
-    const theme = useTheme();
+    const theme = useTheme()
 
     if (
-      color === 'default' ||
-      color === 'inherit' ||
-      color === 'primary' ||
-      color === 'secondary'
+      color === 'default'
+      || color === 'inherit'
+      || color === 'primary'
+      || color === 'secondary'
     ) {
       return (
         <AnimateWrap size={size} sxWrap={sxWrap}>
@@ -36,7 +37,7 @@ const FabButtonAnimate = forwardRef<HTMLButtonElement, Props>(
             {children}
           </Fab>
         </AnimateWrap>
-      );
+      )
     }
 
     return (
@@ -58,11 +59,11 @@ const FabButtonAnimate = forwardRef<HTMLButtonElement, Props>(
           {children}
         </Fab>
       </AnimateWrap>
-    );
+    )
   }
-);
+)
 
-export default FabButtonAnimate;
+export default FabButtonAnimate
 
 // ----------------------------------------------------------------------
 
@@ -75,21 +76,21 @@ type AnimateWrapProp = {
 const varSmall = {
   hover: { scale: 1.07 },
   tap: { scale: 0.97 },
-};
+}
 
 const varMedium = {
   hover: { scale: 1.06 },
   tap: { scale: 0.98 },
-};
+}
 
 const varLarge = {
   hover: { scale: 1.05 },
   tap: { scale: 0.99 },
-};
+}
 
 function AnimateWrap({ size, children, sxWrap }: AnimateWrapProp) {
-  const isSmall = size === 'small';
-  const isLarge = size === 'large';
+  const isSmall = size === 'small'
+  const isLarge = size === 'large'
 
   return (
     <Box
@@ -104,5 +105,5 @@ function AnimateWrap({ size, children, sxWrap }: AnimateWrapProp) {
     >
       {children}
     </Box>
-  );
+  )
 }

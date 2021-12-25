@@ -1,4 +1,4 @@
-import { Skeleton, Stack, Card, Divider, CardProps } from '@mui/material';
+import { Skeleton, Stack, Card, Divider, CardProps } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -19,5 +19,5 @@ export default function TourItemSkeleton({ ...other }: CardProps) {
         <Skeleton variant="text" sx={{ height: 20, width: 50 }} />
       </Stack>
     </Card>
-  );
+  )
 }

@@ -1,16 +1,16 @@
 // icons
-import chevronLeft from '@iconify/icons-carbon/chevron-left';
-import chevronRight from '@iconify/icons-carbon/chevron-right';
+import chevronLeft from '@iconify/icons-carbon/chevron-left'
+import chevronRight from '@iconify/icons-carbon/chevron-right'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { Stack, Typography, Avatar, Grid, CardActionArea } from '@mui/material';
+import { Stack, Typography, Avatar, Grid, CardActionArea } from '@mui/material'
 // routes
-import Routes from '../../routes';
+import Routes from '../../routes'
 // @types
-import { BlogPostProps } from '../../@types/blog';
+import { BlogPostProps } from '../../@types/blog'
 // components
-import { Iconify } from '../../components';
+import { Iconify } from '../../components'
 
 // ----------------------------------------------------------------------
 
@@ -20,11 +20,11 @@ type Props = {
 };
 
 export default function BlogPrevAndNextPost({ prevPost, nextPost }: Props) {
-  const nextSlug = nextPost?.slug || '';
-  const prevSlug = prevPost?.slug || '';
+  const nextSlug = nextPost?.slug || ''
+  const prevSlug = prevPost?.slug || ''
 
-  const nextFrontmatter = nextPost?.frontmatter;
-  const prevFrontmatter = prevPost?.frontmatter;
+  const nextFrontmatter = nextPost?.frontmatter
+  const prevFrontmatter = prevPost?.frontmatter
 
   return (
     <Grid container spacing={5} sx={{ py: 8 }}>
@@ -34,12 +34,12 @@ export default function BlogPrevAndNextPost({ prevPost, nextPost }: Props) {
             href={Routes.eLearning.post(prevSlug)}
             title={prevFrontmatter?.title}
             coverImg={prevFrontmatter?.coverImg}
-            icon={
+            icon={(
               <Iconify
                 icon={chevronLeft}
                 sx={{ width: 24, height: 24, color: 'text.disabled', flexShrink: 0 }}
               />
-            }
+            )}
           />
         )}
       </Grid>
@@ -51,17 +51,17 @@ export default function BlogPrevAndNextPost({ prevPost, nextPost }: Props) {
             isNext
             title={nextFrontmatter?.title}
             coverImg={nextFrontmatter?.coverImg}
-            icon={
+            icon={(
               <Iconify
                 icon={chevronRight}
                 sx={{ width: 24, height: 24, color: 'text.disabled', flexShrink: 0 }}
               />
-            }
+            )}
           />
         )}
       </Grid>
     </Grid>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -108,5 +108,5 @@ function PostItem({ coverImg, title, icon, href, isNext }: PostItemProps) {
         </Stack>
       </NextLink>
     </CardActionArea>
-  );
+  )
 }

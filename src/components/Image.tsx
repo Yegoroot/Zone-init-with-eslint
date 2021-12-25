@@ -1,8 +1,8 @@
-import { LazyLoadImage, LazyLoadImageProps } from 'react-lazy-load-image-component';
+import { LazyLoadImage, LazyLoadImageProps } from 'react-lazy-load-image-component'
 // @mui
-import { SxProps } from '@mui/system';
-import { Box, BoxProps } from '@mui/material';
-import { Theme } from '@mui/material/styles';
+import { SxProps } from '@mui/system'
+import { Box, BoxProps } from '@mui/material'
+import { Theme } from '@mui/material/styles'
 
 // ----------------------------------------------------------------------
 
@@ -48,7 +48,7 @@ export default function Image({ ratio, sx, ...other }: Props) {
           {...other}
         />
       </Box>
-    );
+    )
   }
 
   return (
@@ -71,7 +71,7 @@ export default function Image({ ratio, sx, ...other }: Props) {
         {...other}
       />
     </Box>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -87,5 +87,5 @@ function getRatio(ratio = '1/1') {
     '21/9': 'calc(100% / 21 * 9)',
     '9/21': 'calc(100% / 9 * 21)',
     '1/1': '100%',
-  }[ratio];
+  }[ratio]
 }

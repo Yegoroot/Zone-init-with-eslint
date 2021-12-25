@@ -1,20 +1,20 @@
 // @mui
-import { MenuItem, Checkbox, FormControl, Typography } from '@mui/material';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { MenuItem, Checkbox, FormControl, Typography } from '@mui/material'
+import Select, { SelectChangeEvent } from '@mui/material/Select'
 
 // ----------------------------------------------------------------------
 
-const LEVELS = ['Beginner', 'Intermediate', 'Expert'];
+const LEVELS = ['Beginner', 'Intermediate', 'Expert']
 
 const inputStyle = {
   '& .MuiFilledInput-input': { py: 2 },
-};
+}
 
 const placeholder = (
   <Typography variant="body2" sx={{ color: 'text.disabled' }}>
     All levels
   </Typography>
-);
+)
 
 // ----------------------------------------------------------------------
 
@@ -33,13 +33,13 @@ export default function ElearningCourseLevelFilter({ filterLevel, onChangeLevel 
         onChange={onChangeLevel}
         renderValue={(selected) => {
           if (selected.length === 0) {
-            return placeholder;
+            return placeholder
           }
           return (
             <Typography variant="subtitle2" component="span">
               {selected.join(', ')}
             </Typography>
-          );
+          )
         }}
       >
         {LEVELS.map((type) => (
@@ -50,5 +50,5 @@ export default function ElearningCourseLevelFilter({ filterLevel, onChangeLevel 
         ))}
       </Select>
     </FormControl>
-  );
+  )
 }

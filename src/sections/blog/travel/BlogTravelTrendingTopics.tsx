@@ -1,16 +1,16 @@
-import { useRef } from 'react';
-import Slider from 'react-slick';
-import { m } from 'framer-motion';
+import { useRef } from 'react'
+import Slider from 'react-slick'
+import { m } from 'framer-motion'
 // netx
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled, useTheme } from '@mui/material/styles';
-import { Typography, Stack, Container, Box } from '@mui/material';
+import { styled, useTheme } from '@mui/material/styles'
+import { Typography, Stack, Container, Box } from '@mui/material'
 // _data
-import _mock from '../../../../_data/mock';
+import _mock from '../../../../_data/mock'
 // components
-import { Image, BgOverlay, CarouselArrows } from '../../../components';
-import { varHover, varTranHover } from '../../../components/animate';
+import { Image, BgOverlay, CarouselArrows } from '../../../components'
+import { varHover, varTranHover } from '../../../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -23,14 +23,14 @@ const CATEGORIES = [
   'Sports',
   'Travel',
   'Design',
-];
+]
 
 export const TOPICS = [...Array(8)].map((_, index) => ({
   id: _mock.id(index),
   cover: _mock.image.travel(index + 4),
   totalPost: index + 10,
   category: CATEGORIES[index],
-}));
+}))
 
 const RootStyle = styled(Stack)(({ theme }) => ({
   padding: theme.spacing(8, 0),
@@ -38,13 +38,13 @@ const RootStyle = styled(Stack)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(10, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function BlogTravelTrendingTopics() {
-  const theme = useTheme();
-  const carouselRef = useRef<Slider | null>(null);
+  const theme = useTheme()
+  const carouselRef = useRef<Slider | null>(null)
 
   const carouselSettings = {
     arrows: false,
@@ -61,15 +61,15 @@ export default function BlogTravelTrendingTopics() {
         settings: { slidesToShow: 1 },
       },
     ],
-  };
+  }
 
   const handlePrevious = () => {
-    carouselRef.current?.slickPrev();
-  };
+    carouselRef.current?.slickPrev()
+  }
 
   const handleNext = () => {
-    carouselRef.current?.slickNext();
-  };
+    carouselRef.current?.slickNext()
+  }
 
   return (
     <RootStyle>
@@ -102,7 +102,7 @@ export default function BlogTravelTrendingTopics() {
         />
       </Container>
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -116,7 +116,7 @@ type TopicItemProps = {
 };
 
 function TopicItem({ topic }: TopicItemProps) {
-  const { totalPost, cover, category } = topic;
+  const { totalPost, cover, category } = topic
 
   return (
     <NextLink href="#">
@@ -145,7 +145,9 @@ function TopicItem({ topic }: TopicItemProps) {
             </m.div>
 
             <Typography variant="body2" sx={{ opacity: 0.72 }}>
-              {totalPost} posts
+              {totalPost}
+              {' '}
+              posts
             </Typography>
           </Stack>
 
@@ -157,5 +159,5 @@ function TopicItem({ topic }: TopicItemProps) {
         </Box>
       </Box>
     </NextLink>
-  );
+  )
 }

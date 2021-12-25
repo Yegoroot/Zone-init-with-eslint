@@ -1,7 +1,7 @@
 // routes
-import Routes from '../../routes';
+import Routes from '../../routes'
 // _data
-import { _tours, _jobs, _courses } from '../../../_data/mock';
+import { _tours, _jobs, _courses } from '../../../_data/mock'
 
 // ----------------------------------------------------------------------
 
@@ -93,15 +93,15 @@ export const PageLinks = [
       { title: 'Item2', path: '' },
     ],
   },
-];
+]
 
 export const navConfig = [
-  { title: 'Home', path: '/' },
-  { title: 'Components', path: Routes.componentsUI },
+  { title: 'Алжир', path: '/' },
+  { title: 'Визы', path: Routes.componentsUI },
+  { title: 'Взаимоотношения', path: Routes.docs },
   {
-    title: 'Pages',
+    title: 'Подробно',
     path: Routes.pages,
     children: [PageLinks[0], PageLinks[4], PageLinks[1], PageLinks[3], PageLinks[2], PageLinks[5]],
   },
-  { title: 'Documentation', path: Routes.docs },
-];
+]

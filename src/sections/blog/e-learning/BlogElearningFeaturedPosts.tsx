@@ -1,16 +1,16 @@
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Container, Stack, Avatar, Link } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Container, Stack, Avatar, Link } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // utils
-import { fDate } from '../../../utils/formatTime';
+import { fDate } from '../../../utils/formatTime'
 // @types
-import { BlogPostProps } from '../../../@types/blog';
+import { BlogPostProps } from '../../../@types/blog'
 // components
-import { Image } from '../../../components';
+import { Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 const DotStyle = styled('span')(({ theme }) => ({
   width: 4,
@@ -28,7 +28,7 @@ const DotStyle = styled('span')(({ theme }) => ({
   borderRadius: '50%',
   backgroundColor: 'currentColor',
   margin: theme.spacing(0, 1),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -37,8 +37,8 @@ type Props = {
 };
 
 export default function BlogElearningFeaturedPosts({ post }: Props) {
-  const { slug, frontmatter } = post;
-  const { title, duration, coverImg, description, author, createdAt } = frontmatter;
+  const { slug, frontmatter } = post
+  const { title, duration, coverImg, description, author, createdAt } = frontmatter
 
   return (
     <RootStyle>
@@ -85,5 +85,5 @@ export default function BlogElearningFeaturedPosts({ post }: Props) {
         </Stack>
       </Container>
     </RootStyle>
-  );
+  )
 }

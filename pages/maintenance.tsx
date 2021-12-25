@@ -1,13 +1,13 @@
-import { ReactElement } from 'react';
+import { ReactElement } from 'react'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Button, Typography, Stack } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Button, Typography, Stack } from '@mui/material'
 // layouts
-import Layout from '../src/layouts';
+import Layout from '../src/layouts'
 // components
-import { Page, Image } from '../src/components';
+import { Page, Image } from '../src/components'
 
 // ----------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('sm')]: {
     height: '100vh',
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -51,7 +51,7 @@ export default function MaintenancePage() {
         </Stack>
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -61,5 +61,5 @@ MaintenancePage.getLayout = function getLayout(page: ReactElement) {
     <Layout simpleHeader disabledFooter>
       {page}
     </Layout>
-  );
-};
+  )
+}

@@ -1,7 +1,7 @@
-import { add } from 'date-fns';
+import { add } from 'date-fns'
 //
-import _mock from './_mock';
-import { jobContent } from './text';
+import _mock from './_mock'
+import { jobContent } from './text'
 
 // ----------------------------------------------------------------------
 
@@ -21,6 +21,7 @@ export const _jobs = [...Array(12)].map((_, index) => ({
   languages: ['Russian', 'Spanish', 'English'],
   isUrgent: index === 2 || false,
   views: 286,
+  // eslint-disable-next-line eqeqeq
   favorited: index === 2 || index == 4 || false,
   skills: ['Photography', 'Design', 'Art', 'History', 'Museums', 'Creativity', 'Art History'],
   locationMap: [
@@ -41,7 +42,7 @@ export const _jobs = [...Array(12)].map((_, index) => ({
   ],
   content: jobContent,
   shareLinks: _mock.shareLinks,
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -50,7 +51,7 @@ export const _jobsByCompanies = [...Array(12)].map((_, index) => ({
   companyName: _mock.company(index),
   companyLogo: _mock.image.company(index),
   totalJobs: 101 + index,
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -63,7 +64,7 @@ const NAMES = [
   'Customer Service',
   'Health and Care',
   'Banking',
-];
+]
 
 const ICONS = [
   '/static/icons/ic_money.svg',
@@ -74,14 +75,14 @@ const ICONS = [
   '/static/icons/ic_customer_service.svg',
   '/static/icons/ic_stethoscope.svg',
   '/static/icons/ic_banking.svg',
-];
+]
 
 export const _jobsByCategories = [...Array(8)].map((_, index) => ({
   id: _mock.id(index),
   name: NAMES[index],
   icon: ICONS[index],
   totalJobs: 101 + index,
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -90,4 +91,4 @@ export const _jobsByCountries = [...Array(12)].map((_, index) => ({
   location: _mock.address.country(index),
   totalJobs: 101 + index,
   coverImg: _mock.image.travel(index),
-}));
+}))

@@ -1,1 +1,1 @@
-export * from './case-studies';
+export * from './case-studies'

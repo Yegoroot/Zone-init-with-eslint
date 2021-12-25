@@ -1,7 +1,7 @@
-import Head from 'next/head';
-import { forwardRef, ReactNode } from 'react';
+import Head from 'next/head'
+import { forwardRef, ReactNode } from 'react'
 // @mui
-import { Box, BoxProps } from '@mui/material';
+import { Box, BoxProps } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
@@ -22,6 +22,6 @@ const Page = forwardRef<HTMLDivElement, Props>(({ children, meta, title, ...othe
       {children}
     </Box>
   </>
-));
+))
 
-export default Page;
+export default Page

@@ -1,14 +1,14 @@
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // icons
-import directionStraightRight from '@iconify/icons-carbon/direction-straight-right';
+import directionStraightRight from '@iconify/icons-carbon/direction-straight-right'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Grid, Box, Container, Typography, Button, Stack } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Grid, Box, Container, Typography, Button, Stack } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // components
-import { Iconify, Image } from '../../../components';
+import { Iconify, Image } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -17,14 +17,14 @@ const LISTS = [
   '5 Star Accommodations',
   'Inclusive Packages',
   'Latest Model Vehicles',
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(8, 0),
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -78,5 +78,5 @@ export default function MarketingServices() {
         </Grid>
       </Container>
     </RootStyle>
-  );
+  )
 }

@@ -1,16 +1,16 @@
-import { useState } from 'react';
+import { useState } from 'react'
 // icons
-import timeIcon from '@iconify/icons-carbon/time';
+import timeIcon from '@iconify/icons-carbon/time'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { Divider, Stack, Card, Typography, Box } from '@mui/material';
+import { Divider, Stack, Card, Typography, Box } from '@mui/material'
 // routes
-import Routes from '../../../routes';
+import Routes from '../../../routes'
 // utils
-import { fCurrency } from '../../../utils/formatNumber';
+import { fCurrency } from '../../../utils/formatNumber'
 // @types
-import { TourProps } from '../../../@types/travel';
+import { TourProps } from '../../../@types/travel'
 // components
 import {
   Image,
@@ -19,7 +19,7 @@ import {
   TextMaxLine,
   TextIconLabel,
   FavoriteButton,
-} from '../../../components';
+} from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -28,13 +28,13 @@ type Props = {
 };
 
 export default function TravelTourItem({ tour }: Props) {
-  const { id, slug, location, price, priceSale, favorited, duration, ratings, coverImg } = tour;
+  const { id, slug, location, price, priceSale, favorited, duration, ratings, coverImg } = tour
 
-  const [favorite, setFavorite] = useState(favorited);
+  const [favorite, setFavorite] = useState(favorited)
 
   const handleChangeFavorite = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFavorite(event.target.checked);
-  };
+    setFavorite(event.target.checked)
+  }
 
   return (
     <Card>
@@ -107,5 +107,5 @@ export default function TravelTourItem({ tour }: Props) {
         <RatingLabel ratings={ratings} />
       </Stack>
     </Card>
-  );
+  )
 }

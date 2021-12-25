@@ -1,8 +1,8 @@
 // @mui
-import { styled, alpha } from '@mui/material/styles';
-import { Stack, Button, Container, Typography, FilledInput, InputAdornment } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles'
+import { Stack, Button, Container, Typography, FilledInput, InputAdornment } from '@mui/material'
 // utils
-import cssStyles from '../../utils/cssStyles';
+import cssStyles from '../../utils/cssStyles'
 
 // ----------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     startColor: `${alpha(theme.palette.grey[900], 0.88)}`,
     endColor: `${alpha(theme.palette.grey[900], 0.88)}`,
   }),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -29,7 +29,7 @@ export default function NewsletterCareer() {
 
           <FilledInput
             placeholder="Enter your email"
-            endAdornment={
+            endAdornment={(
               <InputAdornment position="end">
                 <Button
                   size="large"
@@ -43,7 +43,7 @@ export default function NewsletterCareer() {
                   Subscribe
                 </Button>
               </InputAdornment>
-            }
+            )}
             sx={{
               p: 0,
               width: 1,
@@ -63,5 +63,5 @@ export default function NewsletterCareer() {
         </Stack>
       </Container>
     </RootStyle>
-  );
+  )
 }

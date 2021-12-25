@@ -1,7 +1,7 @@
 // @mui
-import { Skeleton, Stack, Card, CardProps } from '@mui/material';
+import { Skeleton, Stack, Card, CardProps } from '@mui/material'
 // hooks
-import { useResponsive } from '../../../src/hooks';
+import { useResponsive } from '../../hooks'
 
 // ----------------------------------------------------------------------
 
@@ -10,9 +10,9 @@ interface Props extends CardProps {
 }
 
 export default function CourseItemSkeleton({ vertical, ...other }: Props) {
-  const isDesktop = useResponsive('up', 'sm');
+  const isDesktop = useResponsive('up', 'sm')
 
-  const verticalStyle = vertical || !isDesktop;
+  const verticalStyle = vertical || !isDesktop
 
   return (
     <Card {...other}>
@@ -67,5 +67,5 @@ export default function CourseItemSkeleton({ vertical, ...other }: Props) {
         </Stack>
       </Stack>
     </Card>
-  );
+  )
 }

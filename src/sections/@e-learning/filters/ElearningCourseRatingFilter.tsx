@@ -1,9 +1,9 @@
 // @mui
-import { Radio, FormControlLabel, RadioGroup, Stack, Rating } from '@mui/material';
+import { Radio, FormControlLabel, RadioGroup, Stack, Rating } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
-const RATINGS = ['up_4_stars', 'up_3_stars', 'up_2_stars'];
+const RATINGS = ['up_4_stars', 'up_3_stars', 'up_2_stars']
 
 type Props = {
   filterRating: string | null;
@@ -19,7 +19,7 @@ export default function ElearningCourseRatingFilter({ filterRating, onChangeRati
             key={rating}
             value={rating}
             control={<Radio sx={{ display: 'none' }} />}
-            label={
+            label={(
               <Stack
                 direction="row"
                 alignItems="center"
@@ -38,10 +38,11 @@ export default function ElearningCourseRatingFilter({ filterRating, onChangeRati
                       opacity: 0.48,
                     }),
                   }}
-                />{' '}
+                />
+                {' '}
                 & Up
               </Stack>
-            }
+            )}
             sx={{
               m: 0,
               '&:hover': { opacity: 0.48 },
@@ -50,5 +51,5 @@ export default function ElearningCourseRatingFilter({ filterRating, onChangeRati
         ))}
       </Stack>
     </RadioGroup>
-  );
+  )
 }

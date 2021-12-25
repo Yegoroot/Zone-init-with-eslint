@@ -1,11 +1,11 @@
-import { m } from 'framer-motion';
+import { m } from 'framer-motion'
 // @mui
-import { Typography, Box } from '@mui/material';
+import { Typography, Box } from '@mui/material'
 // @types
-import { TeamMemberProps } from '../../../@types/team';
+import { TeamMemberProps } from '../../../@types/team'
 // components
-import { Image, SocialsButton, BgOverlay } from '../../../components';
-import { varHover, varTranHover } from '../../../components/animate';
+import { Image, SocialsButton, BgOverlay } from '../../../components'
+import { varHover, varTranHover } from '../../../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ type TeamMarketingMemberProps = {
 };
 
 export default function TeamMarketingMember({ member }: TeamMarketingMemberProps) {
-  const { name, role, photo, socialLinks } = member;
+  const { name, role, photo, socialLinks } = member
 
   return (
     <div>
@@ -28,11 +28,10 @@ export default function TeamMarketingMember({ member }: TeamMarketingMemberProps
         <BgOverlay
           sx={{
             opacity: 0,
-            transition: (theme) =>
-              theme.transitions.create('opacity', {
-                easing: theme.transitions.easing.sharp,
-                duration: theme.transitions.duration.short,
-              }),
+            transition: (theme) => theme.transitions.create('opacity', {
+              easing: theme.transitions.easing.sharp,
+              duration: theme.transitions.duration.short,
+            }),
             '&:hover': { opacity: 1 },
           }}
         >
@@ -62,5 +61,5 @@ export default function TeamMarketingMember({ member }: TeamMarketingMemberProps
         {role}
       </Typography>
     </div>
-  );
+  )
 }

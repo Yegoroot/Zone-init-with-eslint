@@ -1,15 +1,15 @@
-import { useState } from 'react';
-//icon
-import searchIcon from '@iconify/icons-carbon/search';
+import { useState } from 'react'
+// icon
+import searchIcon from '@iconify/icons-carbon/search'
 // @mui
-import { SxProps } from '@mui/system';
-import { styled, alpha } from '@mui/material/styles';
-import { Input, Slide, Button, InputAdornment, ClickAwayListener } from '@mui/material';
+import { SxProps } from '@mui/system'
+import { styled, alpha } from '@mui/material/styles'
+import { Input, Slide, Button, InputAdornment, ClickAwayListener } from '@mui/material'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../config'
 // components
-import { Iconify } from '../components';
-import { IconButtonAnimate } from '../components/animate';
+import { Iconify } from '../components'
+import { IconButtonAnimate } from '../components/animate'
 
 // ----------------------------------------------------------------------
 
@@ -31,7 +31,7 @@ const SearchbarStyle = styled('div')(({ theme }) => ({
     height: HEADER_DESKTOP_HEIGHT,
     padding: theme.spacing(0, 5),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -40,15 +40,15 @@ type SearchbarProps = {
 };
 
 export default function Searchbar({ sx }: SearchbarProps) {
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false)
 
   const handleOpen = () => {
-    setOpen((prev) => !prev);
-  };
+    setOpen((prev) => !prev)
+  }
 
   const handleClose = () => {
-    setOpen(false);
-  };
+    setOpen(false)
+  }
 
   return (
     <ClickAwayListener onClickAway={handleClose}>
@@ -64,14 +64,14 @@ export default function Searchbar({ sx }: SearchbarProps) {
               fullWidth
               disableUnderline
               placeholder="Search…"
-              startAdornment={
+              startAdornment={(
                 <InputAdornment position="start">
                   <Iconify
                     icon={searchIcon}
                     sx={{ color: 'text.disabled', width: 20, height: 20 }}
                   />
                 </InputAdornment>
-              }
+              )}
               sx={{ mr: 1, fontWeight: 'fontWeightBold' }}
             />
             <Button variant="contained" onClick={handleClose}>
@@ -81,5 +81,5 @@ export default function Searchbar({ sx }: SearchbarProps) {
         </Slide>
       </div>
     </ClickAwayListener>
-  );
+  )
 }

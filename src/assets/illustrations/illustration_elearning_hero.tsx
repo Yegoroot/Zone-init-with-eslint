@@ -1,40 +1,40 @@
-import { memo } from 'react';
-import { m } from 'framer-motion';
+import { memo } from 'react'
+import { m } from 'framer-motion'
 // @mui
-import { styled, alpha, useTheme } from '@mui/material/styles';
-import { Box, Typography, BoxProps } from '@mui/material';
+import { styled, alpha, useTheme } from '@mui/material/styles'
+import { Box, Typography, BoxProps } from '@mui/material'
 // components
-import { Image } from '../../components';
+import { Image } from '../../components'
 // pattern
-import { Icon, Label, Shape, Pattern01, Pattern02 } from '../pattern';
+import { Icon, Label, Shape, Pattern01, Pattern02 } from '../pattern'
 
 // ----------------------------------------------------------------------
 
 const varUp = {
   animate: { y: [-8, 8, -8], x: [-4, 4, -4] },
   transition: { duration: 8, repeat: Infinity },
-};
+}
 
 const varDown = {
   animate: { y: [8, -8, 8], x: [4, -4, 4] },
   transition: { duration: 8, repeat: Infinity },
-};
+}
 
 const varLeft = {
   animate: { x: [8, -8, 8], y: [4, -4, 4] },
   transition: { duration: 7, repeat: Infinity },
-};
+}
 
 const varRight = {
   animate: { x: [8, -8, 8], y: [4, -4, 4] },
   transition: { duration: 7, repeat: Infinity },
-};
+}
 
 const styleIconContent = {
   fontSize: 22,
   color: 'common.black',
   fontWeight: 'fontWeightBold',
-};
+}
 
 const RootStyle = styled(Box)(() => ({
   width: 670,
@@ -43,17 +43,17 @@ const RootStyle = styled(Box)(() => ({
   alignItems: 'center',
   justifyContent: 'center',
   position: 'relative',
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 function ElearningHeroIllustration({ ...other }: BoxProps) {
-  const theme = useTheme();
+  const theme = useTheme()
 
-  const GREEN = theme.palette.success.main;
-  const YELLOW = theme.palette.warning.main;
-  const BLUE = '#355EC9';
-  const PURPLE = '#9B3AB1';
+  const GREEN = theme.palette.success.main
+  const YELLOW = theme.palette.warning.main
+  const BLUE = '#355EC9'
+  const PURPLE = '#9B3AB1'
 
   return (
     <RootStyle {...other}>
@@ -88,13 +88,13 @@ function ElearningHeroIllustration({ ...other }: BoxProps) {
       >
         <Label
           text="Python"
-          icon={
+          icon={(
             <Image
               alt="python"
               src="/static/icons/platform/ic_platform_python.svg"
               sx={{ width: 56, height: 56 }}
             />
-          }
+          )}
           sx={{
             py: 1.75,
             typography: 'h3',
@@ -149,7 +149,7 @@ function ElearningHeroIllustration({ ...other }: BoxProps) {
       <Pattern02 sx={{ top: 0, left: 0, opacity: 0.24, transform: 'scale(1.2)' }} />
       <Shape sx={{ position: 'absolute', right: 32, bottom: 32 }} />
     </RootStyle>
-  );
+  )
 }
 
-export default memo(ElearningHeroIllustration);
+export default memo(ElearningHeroIllustration)

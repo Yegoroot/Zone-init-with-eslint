@@ -1,8 +1,8 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Container, Stack, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Container, Stack, Box } from '@mui/material'
 // components
-import { SvgIconStyle } from '../../../components';
+import { SvgIconStyle } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -37,7 +37,7 @@ const CORE_VALUES = [
     description: 'Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. ',
     icon: '/static/icons/ic_file.svg',
   },
-];
+]
 
 const RootStyle = styled('div')(({ theme }) => ({
   textAlign: 'center',
@@ -45,7 +45,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -89,11 +89,15 @@ export default function MarketingServicesInclude() {
               <Typography variant="h5" sx={{ mt: 5, mb: 2 }}>
                 {value.title}
               </Typography>
-              <Typography sx={{ color: 'text.secondary' }}> {value.description} </Typography>
+              <Typography sx={{ color: 'text.secondary' }}>
+                {' '}
+                {value.description}
+                {' '}
+              </Typography>
             </div>
           ))}
         </Box>
       </Container>
     </RootStyle>
-  );
+  )
 }

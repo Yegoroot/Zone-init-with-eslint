@@ -1,10 +1,10 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Stack, Container, Box } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Typography, Stack, Container, Box } from '@mui/material'
 // @types
-import { BrandProps } from '../../../@types/brand';
+import { BrandProps } from '../../../@types/brand'
 // components
-import { SvgIconStyle } from '../../../components';
+import { SvgIconStyle } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ const RootStyle = styled(Stack)(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -78,5 +78,5 @@ export default function OurClientsTravel({ brands }: Props) {
         </Box>
       </Container>
     </RootStyle>
-  );
+  )
 }

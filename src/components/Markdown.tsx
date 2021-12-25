@@ -1,13 +1,13 @@
-import { LazyLoadImageProps } from 'react-lazy-load-image-component';
-import okaidia from 'prism-react-renderer/themes/okaidia';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import Highlight, { defaultProps, Language } from 'prism-react-renderer';
+import { LazyLoadImageProps } from 'react-lazy-load-image-component'
+import okaidia from 'prism-react-renderer/themes/okaidia'
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
+import Highlight, { defaultProps, Language } from 'prism-react-renderer'
 // icons
-import quotesIcon from '@iconify/icons-carbon/quotes';
+import quotesIcon from '@iconify/icons-carbon/quotes'
 // next
-import NextLink, { LinkProps } from 'next/link';
+import NextLink, { LinkProps } from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 import {
   Link,
   Stack,
@@ -17,16 +17,16 @@ import {
   DividerProps,
   TypographyProps,
   LinkProps as MUILinkProps,
-} from '@mui/material';
+} from '@mui/material'
 // components
-import { Image, Iconify } from '../components';
+import { Image, Iconify } from '.'
 
 // ----------------------------------------------------------------------
 
 const MARGIN = {
   marginTop: 24,
   marginBottom: 16,
-};
+}
 
 type RootStyleProps = {
   firstLetter?: boolean;
@@ -77,7 +77,7 @@ export const RootStyle = styled('div', {
       },
     },
   }),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -91,7 +91,7 @@ export default function Markdown({ content, firstLetter = false }: Props) {
     <RootStyle firstLetter={firstLetter}>
       <MDXRemote {...content} components={components} />
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -103,7 +103,7 @@ export const components = {
   blockquote: BlockquoteMDX,
   img: ImageMDX,
   code: CodeMDX,
-};
+}
 
 // ----------------------------------------------------------------------
 
@@ -118,13 +118,13 @@ function LinkMDX(props: LinkMDXProps) {
     <Link {...props} href={props.href} target="_blank" rel="noopener">
       {props.children}
     </Link>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 function ImageMDX(props: LazyLoadImageProps & BoxProps) {
-  return <Image alt={props.alt} ratio="16/9" sx={{ borderRadius: 2, my: 5 }} {...props} />;
+  return <Image alt={props.alt} ratio="16/9" sx={{ borderRadius: 2, my: 5 }} {...props} />
 }
 
 // ----------------------------------------------------------------------
@@ -145,7 +145,7 @@ function BlockquoteMDX(props: TypographyProps) {
       />
       <Typography variant="h5">{props.children}</Typography>
     </Stack>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -156,8 +156,8 @@ type CodeMDXProps = {
 };
 
 function CodeMDX(props: CodeMDXProps) {
-  const { children, className } = props;
-  const language = className?.replace(/language-/, '') as Language;
+  const { children, className } = props
+  const language = className?.replace(/language-/, '') as Language
   return (
     <Highlight {...defaultProps} code={children} theme={okaidia} language={language}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
@@ -172,5 +172,5 @@ function CodeMDX(props: CodeMDXProps) {
         </pre>
       )}
     </Highlight>
-  );
+  )
 }

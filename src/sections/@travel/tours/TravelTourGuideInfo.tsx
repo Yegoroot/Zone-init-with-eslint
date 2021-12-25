@@ -1,11 +1,11 @@
 // icons
-import checkmarkFilled from '@iconify/icons-carbon/checkmark-filled';
+import checkmarkFilled from '@iconify/icons-carbon/checkmark-filled'
 // @mui
-import { Stack, Typography, Avatar, Button, Box, Paper } from '@mui/material';
+import { Stack, Typography, Avatar, Button, Box, Paper } from '@mui/material'
 // @types
-import { AuthorProps } from '../../../@types/author';
+import { AuthorProps } from '../../../@types/author'
 // components
-import { SocialsButton, RatingLabel, Iconify } from '../../../components';
+import { SocialsButton, RatingLabel, Iconify } from '../../../components'
 
 // ----------------------------------------------------------------------
 
@@ -14,7 +14,7 @@ type Props = {
 };
 
 export default function TravelTourGuideInfo({ tourGuide }: Props) {
-  const { name, about, quotes, reviews, ratings, verified, picture, socialLinks } = tourGuide;
+  const { name, about, quotes, reviews, ratings, verified, picture, socialLinks } = tourGuide
 
   return (
     <Paper variant="outlined" sx={{ borderRadius: 2 }}>
@@ -69,5 +69,5 @@ export default function TravelTourGuideInfo({ tourGuide }: Props) {
         </Button>
       </Stack>
     </Paper>
-  );
+  )
 }

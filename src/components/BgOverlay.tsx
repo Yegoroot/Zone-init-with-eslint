@@ -1,8 +1,8 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, NoSsr, BoxProps } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, NoSsr, BoxProps } from '@mui/material'
 // utils
-import cssStyles from '../utils/cssStyles';
+import cssStyles from '../utils/cssStyles'
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ const RootStyle = styled(Box, {
   height: '100%',
   position: 'absolute',
   ...cssStyles(theme).bgGradient({ direction, startColor, endColor }),
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -36,5 +36,5 @@ export default function BgOverlay({
     <NoSsr>
       <RootStyle direction={direction} startColor={startColor} endColor={endColor} {...other} />
     </NoSsr>
-  );
+  )
 }

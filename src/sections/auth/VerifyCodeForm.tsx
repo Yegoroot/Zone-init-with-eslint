@@ -1,15 +1,15 @@
-import * as Yup from 'yup';
-import { useForm, Controller } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
+import * as Yup from 'yup'
+import { useForm, Controller } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 // @mui
-import { LoadingButton } from '@mui/lab';
-import { Stack, FilledInput, FormHelperText } from '@mui/material';
+import { LoadingButton } from '@mui/lab'
+import { Stack, FilledInput, FormHelperText } from '@mui/material'
 
 // ----------------------------------------------------------------------
 
 const FormSchema = Yup.object().shape({
   code: Yup.array().of(Yup.string().required()),
-});
+})
 
 type FormValuesProps = {
   code: string[];
@@ -26,13 +26,13 @@ export default function VerifyCodeForm() {
     defaultValues: {
       code: ['', '', '', '', '', ''],
     },
-  });
+  })
 
   const onSubmit = async (data: FormValuesProps) => {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    alert(JSON.stringify(data.code.join(''), null, 2));
-    reset();
-  };
+    await new Promise((resolve) => setTimeout(resolve, 500))
+    alert(JSON.stringify(data.code.join(''), null, 2))
+    reset()
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -80,5 +80,5 @@ export default function VerifyCodeForm() {
         </LoadingButton>
       </Stack>
     </form>
-  );
+  )
 }

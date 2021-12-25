@@ -1,10 +1,10 @@
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Stack, Switch, Container, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Stack, Switch, Container, Typography } from '@mui/material'
 // @types
-import { PricingMarketingProps } from '../../../@types/pricing';
+import { PricingMarketingProps } from '../../../@types/pricing'
 // components
-import PricingMarketingCard from './PricingMarketingCard';
+import PricingMarketingCard from './PricingMarketingCard'
 
 // ----------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('md')]: {
     padding: theme.spacing(15, 0),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -47,7 +47,9 @@ export default function PricingMarketing({ plans }: Props) {
             </Typography>
             <Typography sx={{ color: 'text.secondary' }}>
               Choose the perfect plan for your needs.
-              <br /> Always flexible to grow
+              <br />
+              {' '}
+              Always flexible to grow
             </Typography>
           </Box>
 
@@ -75,5 +77,5 @@ export default function PricingMarketing({ plans }: Props) {
         </Box>
       </Container>
     </RootStyle>
-  );
+  )
 }

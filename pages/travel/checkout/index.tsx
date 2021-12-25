@@ -1,32 +1,32 @@
-import * as Yup from 'yup';
-import { useForm } from 'react-hook-form';
-import { useState, ReactElement } from 'react';
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
+import * as Yup from 'yup'
+import { useForm } from 'react-hook-form'
+import { useState, ReactElement } from 'react'
+import { yupResolver } from '@hookform/resolvers/yup/dist/yup'
 // next
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Grid, Stack, Divider, Container, Typography, TypographyProps } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Grid, Stack, Divider, Container, Typography, TypographyProps } from '@mui/material'
 // hooks
-import { useRequest } from '../../../src/hooks';
+import { useRequest } from '../../../src/hooks'
 // routes
-import Routes from '../../../src/routes';
+import Routes from '../../../src/routes'
 // config
-import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config';
+import { HEADER_MOBILE_HEIGHT, HEADER_DESKTOP_HEIGHT } from '../../../src/config'
 // @types
-import { TourProps, CheckoutFormValuesProps } from '../../../src/@types/travel';
+import { TourProps, CheckoutFormValuesProps } from '../../../src/@types/travel'
 // _data
-import { _tours } from '../../../_data/mock';
+import { _tours } from '../../../_data/mock'
 // layouts
-import Layout from '../../../src/layouts';
+import Layout from '../../../src/layouts'
 // components
-import { Page, ErrorScreen } from '../../../src/components';
+import { Page, ErrorScreen } from '../../../src/components'
 //
 import {
   TravelCheckOutSummary,
   TravelCheckOutPaymentForm,
   TravelCheckOutShippingForm,
-} from '../../../src/sections/@travel';
+} from '../../../src/sections/@travel'
 
 // ----------------------------------------------------------------------
 
@@ -62,14 +62,14 @@ const LabelStepStyle = styled((props: LabelStepStyleProps) => (
     </Box>
     {props.title}
   </Typography>
-))({});
+))({})
 
 const RootStyle = styled('div')(({ theme }) => ({
   paddingTop: HEADER_MOBILE_HEIGHT,
   [theme.breakpoints.up('md')]: {
     paddingTop: HEADER_DESKTOP_HEIGHT,
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
@@ -90,25 +90,25 @@ const FormSchema = Yup.object().shape({
       }),
     }),
   }),
-});
+})
 
 export default function TravelCheckoutPage() {
-  const router = useRouter();
+  const router = useRouter()
 
-  const [sameBilling, setSameBilling] = useState(false);
-  const [departureDay, setDepartureDay] = useState<Date | null>(new Date());
+  const [sameBilling, setSameBilling] = useState(false)
+  const [departureDay, setDepartureDay] = useState<Date | null>(new Date())
   const [guests, setGuests] = useState({
     adults: 2,
     children: 1,
-  });
+  })
 
   const handleChangeSameBilling = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSameBilling(event.target.checked);
-  };
+    setSameBilling(event.target.checked)
+  }
 
   const { data: tour, error } = useRequest<TourProps>({
     url: `/api/travel/tours/${_tours[0].id}`,
-  });
+  })
 
   const {
     reset,
@@ -141,21 +141,21 @@ export default function TravelCheckoutPage() {
         },
       },
     },
-  });
+  })
 
   const onSubmit = async (data: CheckoutFormValuesProps) => {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    alert(JSON.stringify(data, null, 2));
-    reset();
-    router.replace(Routes.travel.checkoutComplete);
-  };
+    await new Promise((resolve) => setTimeout(resolve, 500))
+    alert(JSON.stringify(data, null, 2))
+    reset()
+    router.replace(Routes.travel.checkoutComplete)
+  }
 
   if (error) {
-    return <ErrorScreen />;
+    return <ErrorScreen />
   }
 
   if (!tour) {
-    return null;
+    return null
   }
 
   return (
@@ -207,11 +207,11 @@ export default function TravelCheckoutPage() {
         </Container>
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 TravelCheckoutPage.getLayout = function getLayout(page: ReactElement) {
-  return <Layout>{page}</Layout>;
-};
+  return <Layout>{page}</Layout>
+}

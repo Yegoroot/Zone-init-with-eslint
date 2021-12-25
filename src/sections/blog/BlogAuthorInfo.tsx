@@ -1,9 +1,9 @@
 // @mui
-import { Stack, Typography, Avatar } from '@mui/material';
+import { Stack, Typography, Avatar } from '@mui/material'
 // @types
-import { AuthorProps } from '../../../src/@types/author';
+import { AuthorProps } from '../../@types/author'
 //
-import { SocialsButton } from '../../components';
+import { SocialsButton } from '../../components'
 
 // ----------------------------------------------------------------------
 
@@ -12,7 +12,7 @@ type Props = {
 };
 
 export default function BlogAuthorInfo({ author }: Props) {
-  const { name, role, about, quotes, picture, socialLinks } = author;
+  const { name, role, about, quotes, picture, socialLinks } = author
 
   return (
     <Stack direction="row" spacing={{ xs: 3, md: 4 }} sx={{ py: 8 }}>
@@ -42,5 +42,5 @@ export default function BlogAuthorInfo({ author }: Props) {
         </Typography>
       </Stack>
     </Stack>
-  );
+  )
 }

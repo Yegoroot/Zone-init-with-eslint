@@ -1,19 +1,19 @@
-import { m, MotionValue } from 'framer-motion';
+import { m, MotionValue } from 'framer-motion'
 // @mui
-import { styled, alpha } from '@mui/material/styles';
-import { Button, Stack, Typography, Box } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles'
+import { Button, Stack, Typography, Box } from '@mui/material'
 // hooks
-import { useHoverParallax } from '../../hooks';
+import { useHoverParallax } from '../../hooks'
 // routes
-import Routes from '../../routes';
+import Routes from '../../routes'
 // components
-import { Image } from '../../components';
+import { Image } from '../../components'
 
 // ----------------------------------------------------------------------
 
 const RootStyle = styled('div')(() => ({
   position: 'relative',
-}));
+}))
 
 const ContentStyle = styled(Stack)(({ theme }) => ({
   left: 0,
@@ -28,7 +28,7 @@ const ContentStyle = styled(Stack)(({ theme }) => ({
   justifyContent: 'center',
   padding: theme.spacing(2.5),
   color: theme.palette.common.white,
-}));
+}))
 
 const BackgroundStyle = styled('div')(({ theme }) => ({
   minHeight: 360,
@@ -42,12 +42,12 @@ const BackgroundStyle = styled('div')(({ theme }) => ({
     position: 'absolute',
     backgroundColor: alpha(theme.palette.grey[900], 0.8),
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function HomeAdvertisement() {
-  const { offsetX, offsetY, onMouseMoveHandler, onMouseLeaveHandler } = useHoverParallax();
+  const { offsetX, offsetY, onMouseMoveHandler, onMouseLeaveHandler } = useHoverParallax()
 
   return (
     <RootStyle onMouseMove={onMouseMoveHandler} onMouseLeave={onMouseLeaveHandler}>
@@ -57,7 +57,9 @@ export default function HomeAdvertisement() {
         </Typography>
         <Typography variant="h1" component="h2" sx={{ mt: 1, mb: 8 }}>
           Create Your
-          <br /> Website Today
+          <br />
+          {' '}
+          Website Today
         </Typography>
         <Button
           size="large"
@@ -71,7 +73,7 @@ export default function HomeAdvertisement() {
       </ContentStyle>
       <Background offsetX={offsetX} offsetY={offsetY} />
     </RootStyle>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -82,7 +84,7 @@ type BackgroundProps = {
 };
 
 function Background({ offsetX, offsetY }: BackgroundProps) {
-  const boxStyle = { position: 'absolute', top: 0, width: 1, height: 1 } as const;
+  const boxStyle = { position: 'absolute', top: 0, width: 1, height: 1 } as const
 
   return (
     <BackgroundStyle>
@@ -126,5 +128,5 @@ function Background({ offsetX, offsetY }: BackgroundProps) {
         </m.div>
       </Box>
     </BackgroundStyle>
-  );
+  )
 }

@@ -1,15 +1,15 @@
-import { useMemo, ReactNode } from 'react';
+import { useMemo, ReactNode } from 'react'
 // @mui
-import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeOptions, ThemeProvider as MUIThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline'
+import { createTheme, ThemeOptions, ThemeProvider as MUIThemeProvider } from '@mui/material/styles'
 // hooks
-import { useSettings } from '../hooks';
+import { useSettings } from '../hooks'
 //
-import shape from './shape';
-import palette from './palette';
-import typography from './typography';
-import componentsOverride from './overrides';
-import shadows, { customShadows } from './shadows';
+import shape from './shape'
+import palette from './palette'
+import typography from './typography'
+import componentsOverride from './overrides'
+import shadows, { customShadows } from './shadows'
 
 // ----------------------------------------------------------------------
 
@@ -18,8 +18,8 @@ type ThemeProviderProps = {
 };
 
 export default function ThemeProvider({ children }: ThemeProviderProps) {
-  const { themeMode, themeDirection } = useSettings();
-  const isLight = themeMode === 'light';
+  const { themeMode, themeDirection } = useSettings()
+  const isLight = themeMode === 'light'
 
   const themeOptions: ThemeOptions = useMemo(
     () => ({
@@ -31,15 +31,15 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
       customShadows: isLight ? customShadows.light : customShadows.dark,
     }),
     [isLight, themeDirection]
-  );
+  )
 
-  const theme = createTheme(themeOptions);
-  theme.components = componentsOverride(theme);
+  const theme = createTheme(themeOptions)
+  theme.components = componentsOverride(theme)
 
   return (
     <MUIThemeProvider theme={theme}>
       <CssBaseline />
       {children}
     </MUIThemeProvider>
-  );
+  )
 }

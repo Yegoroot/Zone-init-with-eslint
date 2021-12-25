@@ -1,16 +1,16 @@
-import { useState, ReactElement } from 'react';
+import { useState, ReactElement } from 'react'
 // next
-import NextLink from 'next/link';
+import NextLink from 'next/link'
 // @mui
-import { styled } from '@mui/material/styles';
-import { Box, Button, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles'
+import { Box, Button, Typography } from '@mui/material'
 // routes
-import Routes from '../../src/routes';
+import Routes from '../../src/routes'
 // layouts
-import Layout from '../../src/layouts';
+import Layout from '../../src/layouts'
 // components
-import { Page, Image } from '../../src/components';
-import { ResetPasswordForm } from '../../src/sections/auth';
+import { Page, Image } from '../../src/components'
+import { ResetPasswordForm } from '../../src/sections/auth'
 
 // ----------------------------------------------------------------------
 
@@ -23,13 +23,13 @@ const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('sm')]: {
     height: '100vh',
   },
-}));
+}))
 
 // ----------------------------------------------------------------------
 
 export default function ResetPasswordPage() {
-  const [email, setEmail] = useState('');
-  const [sent, setSent] = useState(false);
+  const [email, setEmail] = useState('')
+  const [sent, setSent] = useState(false)
 
   return (
     <Page title="Reset Password">
@@ -73,7 +73,9 @@ export default function ResetPasswordPage() {
                 Request Sent Successfully
               </Typography>
               <Typography>
-                We have sent a confirmation email to {''}
+                We have sent a confirmation email to
+                {' '}
+
                 <strong>{email}</strong>
                 <br />
                 Please check your email.
@@ -89,7 +91,7 @@ export default function ResetPasswordPage() {
         </Box>
       </RootStyle>
     </Page>
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
@@ -99,5 +101,5 @@ ResetPasswordPage.getLayout = function getLayout(page: ReactElement) {
     <Layout simpleHeader disabledFooter>
       {page}
     </Layout>
-  );
-};
+  )
+}
