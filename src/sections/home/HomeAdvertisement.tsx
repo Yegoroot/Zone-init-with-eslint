@@ -34,6 +34,7 @@ const BackgroundStyle = styled('div')(({ theme }) => ({
   minHeight: 360,
   overflow: 'hidden',
   position: 'relative',
+  background: 'red',
   '&:before': {
     zIndex: 8,
     content: '""',
@@ -89,42 +90,42 @@ function Background({ offsetX, offsetY }: BackgroundProps) {
   return (
     <BackgroundStyle>
       <m.div style={{ x: offsetX(16), y: offsetY(16) }}>
-        <Image alt="screen-07" src="/static/images/home/advertisement_screen07.png" />
+        <Image alt="screen-07" src="/static/images/home/home_hero.png" />
       </m.div>
 
       <Box sx={{ ...boxStyle }}>
         <m.div style={{ x: offsetX(24), y: offsetY(24) }}>
-          <Image alt="screen-06" src="/static/images/home/advertisement_screen06.png" />
+          <Image alt="screen-06" src="/static/images/home/screen06.png" />
         </m.div>
       </Box>
 
       <Box sx={{ ...boxStyle }}>
         <m.div style={{ y: offsetY(20) }}>
-          <Image alt="screen-05" src="/static/images/home/advertisement_screen05.png" />
+          <Image alt="screen-05" src="/static/images/home/screen05.png" />
         </m.div>
       </Box>
 
       <Box sx={{ ...boxStyle }}>
         <m.div style={{ x: offsetX(-20), y: offsetY(-20) }}>
-          <Image alt="screen-04" src="/static/images/home/advertisement_screen04.png" />
+          <Image alt="screen-04" src="/static/images/home/screen04.png" />
         </m.div>
       </Box>
 
       <Box sx={{ ...boxStyle }}>
         <m.div style={{ y: offsetY(20) }}>
-          <Image alt="screen-03" src="/static/images/home/advertisement_screen03.png" />
+          <Image alt="screen-03" src="/static/images/home/screen03.png" />
         </m.div>
       </Box>
 
       <Box sx={{ ...boxStyle }}>
         <m.div style={{ x: offsetX(-48), y: offsetY(8) }}>
-          <Image alt="screen-02" src="/static/images/home/advertisement_screen02.png" />
+          <Image alt="screen-02" src="/static/images/home/screen02.png" />
         </m.div>
       </Box>
 
       <Box sx={{ ...boxStyle }}>
         <m.div style={{ x: offsetX(20), y: offsetY(20) }}>
-          <Image alt="screen-01" src="/static/images/home/advertisement_screen01.png" />
+          <Image alt="screen-01" src="/static/images/home/screen01.png" />
         </m.div>
       </Box>
     </BackgroundStyle>
