@@ -12,13 +12,13 @@ interface Props extends BoxProps {
 function Character({ front = false, ...other }: Props) {
   const theme = useTheme()
 
-  const PRIMARY_MAIN = theme.palette.primary.main
-  const PRIMARY_DARK = theme.palette.primary.dark
-  const PRIMARY_DARKER = theme.palette.primary.darker
+  const PRIMARY_MAIN = theme.palette.grey[300] // основная штанина
+  const PRIMARY_DARK = theme.palette.grey[400] // вторая штанина
+  const PRIMARY_DARKER = theme.palette.grey[100] // кросы
 
-  const SECONDARY_MAIN = theme.palette.secondary.main
-  const SECONDARY_DARK = theme.palette.secondary.dark
-  const SECONDARY_DARKER = theme.palette.secondary.darker
+  const SECONDARY_MAIN = theme.palette.grey[100] // qamis
+  const SECONDARY_DARK = theme.palette.grey[600] // рукав
+  const SECONDARY_DARKER = theme.palette.grey[800] // head
 
   return (
     <Box {...other}>

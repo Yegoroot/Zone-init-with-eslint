@@ -47,7 +47,6 @@ function CareerHeroIllustration({ ...other }: BoxProps) {
     >
       <>
         <Character front sx={{ position: 'absolute', bottom: 16, zIndex: 10, width: 300 }} />
-        {/* Accounting */}
         <Box
           sx={{
             top: 170,
@@ -58,11 +57,11 @@ function CareerHeroIllustration({ ...other }: BoxProps) {
         >
           <m.div style={{ y: offsetY(-50) }}>
             <Label
-              text="Accounting"
+              text="الرسالة"
               icon={(
                 <Image
-                  alt="accounting"
-                  src="/static/icons/ic_accounting.svg"
+                  alt="الرسالة"
+                  src="/static/icons/ic_email_inbox.svg"
                   sx={{ width: 48, height: 48 }}
                 />
               )}
@@ -76,11 +75,11 @@ function CareerHeroIllustration({ ...other }: BoxProps) {
       <Box sx={{ position: 'absolute', transform: 'translate(175px, 90px) rotate(15deg)' }}>
         <m.div style={{ x: offsetX(80), y: offsetY(80) }}>
           <Label
-            text="Banking"
+            text="الكتابة"
             icon={(
               <Image
-                alt="banking"
-                src="/static/icons/ic_banking_currency.svg"
+                alt="الكتابة"
+                src="/static/icons/ic_newsletter.svg"
                 sx={{ width: 48, height: 48 }}
               />
             )}
@@ -92,10 +91,10 @@ function CareerHeroIllustration({ ...other }: BoxProps) {
       <Box sx={{ position: 'absolute', transform: 'translate(170px, -110px) rotate(15deg)' }}>
         <m.div style={{ y: offsetY(80) }}>
           <Label
-            text="Health Care"
+            text="القلب"
             icon={(
               <Image
-                alt="health care"
+                alt="القلب"
                 src="/static/icons/ic_health_care.svg"
                 sx={{ width: 48, height: 48 }}
               />
@@ -115,10 +114,10 @@ function CareerHeroIllustration({ ...other }: BoxProps) {
       >
         <m.div style={{ y: offsetY(-60) }}>
           <Label
-            text="Software"
+            text="التطور"
             icon={(
               <Image
-                alt="software development"
+                alt="التطور"
                 src="/static/icons/ic_software_development.svg"
                 sx={{ width: 48, height: 48 }}
               />
