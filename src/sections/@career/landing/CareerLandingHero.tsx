@@ -4,6 +4,7 @@ import { Typography, Stack, Container, Box, Grid, Button } from '@mui/material'
 import cssStyles from '../../../utils/cssStyles'
 import { CareerHeroIllustration } from '../../../assets'
 import { useLocales } from '../../../hooks'
+import Routes from '../../../routes'
 
 // ----------------------------------------------------------------------
 
@@ -57,8 +58,8 @@ export default function CareerLandingHero() {
                   alignItems: { xs: 'initial', md: 'end' },
                   gap: 2 }}
               >
-                <Button variant="outlined">{trans?.menu.grammar}</Button>
-                <Button variant="outlined">{trans?.menu.practice}</Button>
+                <Button variant="outlined" target="_blank" href={Routes.grammar}>{trans?.menu.grammar}</Button>
+                <Button variant="outlined" target="_blank" href={Routes.practice}>{trans?.menu.practice}</Button>
               </Stack>
             </Stack>
           </Grid>
