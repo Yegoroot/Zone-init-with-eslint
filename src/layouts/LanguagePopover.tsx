@@ -34,12 +34,6 @@ export default function LanguagePopover({ sx }: LanguagePopoverProps) {
   const onHandleLang = (value: 'ar' | 'ru' | 'en') => {
     handleClose()
     onChangeLanguage(value)
-    // if (value === 'ar' && themeDirection === 'ltr') {
-    //   onToggleDirection()
-    // }
-    // if (value !== 'ar' && themeDirection === 'rtl') {
-    //   onToggleDirection()
-    // }
   }
 
   return (
@@ -61,6 +55,7 @@ export default function LanguagePopover({ sx }: LanguagePopoverProps) {
               key={option.value}
               selected={option.value === currentLang}
               onClick={() => {
+                handleClose()
                 onHandleLang(option.value)
               }}
             >
@@ -69,7 +64,7 @@ export default function LanguagePopover({ sx }: LanguagePopoverProps) {
                   component="img"
                   alt={option.label}
                   src={option.icon}
-                  sx={{ borderRadius: '50%', width: 28, height: 28, objectFit: 'cover' }}
+                  sx={{ width: 28, height: 28, objectFit: 'cover' }}
                 />
               </ListItemIcon>
 

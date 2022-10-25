@@ -9,25 +9,25 @@ import { ar, ru, en } from '../locales/index'
 
 const LANGS = [
   {
-    label: 'Arabic',
+    label: 'العربية',
     value: 'ar',
     systemValue: arEG,
     manualValue: ar,
-    icon: '/static/icons/flags/ic_flag_en.svg',
-  },
-  {
-    label: 'Russian',
-    value: 'ru',
-    systemValue: ruRU,
-    manualValue: ru,
-    icon: '/static/icons/flags/ic_flag_de.svg',
+    icon: '/static/icons/flags/ic_flag_ar2.svg',
   },
   {
     label: 'English',
     value: 'en',
     systemValue: enUS,
     manualValue: en,
-    icon: '/static/icons/flags/ic_flag_fr.svg',
+    icon: '/static/icons/flags/ic_flag_en.svg',
+  },
+  {
+    label: 'Русский',
+    value: 'ru',
+    systemValue: ruRU,
+    manualValue: ru,
+    icon: '/static/icons/flags/ic_flag_ru.svg',
   },
 ] as const
 
