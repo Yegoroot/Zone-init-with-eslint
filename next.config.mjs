@@ -9,9 +9,9 @@ const nextConfig = {
   // },
   i18n: {
     localeDetection: false,
-    defaultLocale: 'ru',
-    // locales: ['default', ['en', 'de', 'fr']],
-    locales: ['en', 'ru', 'ar'],
+    defaultLocale: 'default',
+    locales: ['default', 'en', 'ar', 'ru'],
+    // locales: ['en', 'ru', 'ar'],
   },
   env: {
     DEV_API: 'http://localhost:8080',
