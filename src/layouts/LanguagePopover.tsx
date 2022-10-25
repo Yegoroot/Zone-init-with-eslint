@@ -19,7 +19,7 @@ type LanguagePopoverProps = {
 export default function LanguagePopover({ sx }: LanguagePopoverProps) {
   const anchorRef = useRef(null)
   const [open, setOpen] = useState(false)
-  // const { onChangeLanguage } = useLocales();
+  const { onChangeLanguage } = useLocales()
   const { allLang, currentLang } = useLocales()
 
   const handleOpen = () => {
@@ -50,7 +50,7 @@ export default function LanguagePopover({ sx }: LanguagePopoverProps) {
               selected={option.value === currentLang}
               onClick={() => {
                 handleClose()
-                // onChangeLanguage(option.value);
+                onChangeLanguage(option.value)
               }}
             >
               <ListItemIcon>

@@ -48,7 +48,7 @@ export default function HeaderSimple({ transparent }: Props) {
               }}
             />
 
-            <NextLink href={Routes.support} passHref>
+            {/* <NextLink href={Routes.support} passHref>
               <Link
                 color="inherit"
                 variant="body2"
@@ -59,7 +59,7 @@ export default function HeaderSimple({ transparent }: Props) {
               >
                 Support
               </Link>
-            </NextLink>
+            </NextLink> */}
           </Stack>
         </Container>
       </ToolbarStyle>

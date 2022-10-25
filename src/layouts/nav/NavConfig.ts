@@ -96,7 +96,7 @@ export const PageLinks = [
 ]
 
 export const navConfig = [
-  { title: 'Алжир', path: '/' },
+  { title: '', path: '/' },
   { title: 'Визы', path: Routes.componentsUI },
   { title: 'Взаимоотношения', path: Routes.docs },
   {

@@ -91,50 +91,28 @@ export default function CareerLandingHero() {
             >
               <Stack spacing={3}>
                 <Typography variant="h1" sx={{ color: 'common.white' }}>
-                  Get The
+                  Learn and
                   {' '}
                   <Box component="span" sx={{ color: 'primary.main' }}>
-                    Career
+                    Practice
                   </Box>
                   {' '}
-                  You Deserve
+                  Arabic language
                 </Typography>
                 <Typography sx={{ color: 'grey.500' }}>
-                  Etiam sollicitudin, ipsum eu pulvinar rutrum, tellus ipsum laoreet sapien, quis
-                  venenatis ante odio sit amet eros.
+                  Грамматика арабского языка с примерами и схемами. Практика с аудио и субтитрами
                 </Typography>
               </Stack>
 
-              <BarStyle spacing={{ xs: 1, md: 0 }}>
-                <CareerJobKeywordFilter
-                  filterKeyword={filters.filterKeyword}
-                  onChangeKeyword={handleChangeKeyword}
-                />
-                <Divider
-                  orientation="vertical"
-                  sx={{
-                    height: 24,
-                    display: { xs: 'none', md: 'block' },
-                  }}
-                />
-                <CareerJobLocationsFilter
-                  filterLocation={filters.filterLocation}
-                  onChangeLocation={handleChangeLocation}
-                />
-                <Button
-                  size="large"
-                  variant="contained"
-                  sx={{
-                    px: 0,
-                    minWidth: { xs: 1, md: 48 },
-                  }}
-                >
-                  <Iconify icon={searchIcon} sx={{ width: 24, height: 24 }} />
-                </Button>
-              </BarStyle>
-
-              <BrandsSection />
-              <SummarySection />
+              <Stack
+                spacing={2} sx={{ flexDirection: { xs: 'column', md: 'row' },
+                  justifyContent: 'start',
+                  alignItems: { xs: 'initial', md: 'end' },
+                  gap: 2 }}
+              >
+                <Button variant="outlined">Grammar</Button>
+                <Button variant="outlined">Practice</Button>
+              </Stack>
             </Stack>
           </Grid>
 
