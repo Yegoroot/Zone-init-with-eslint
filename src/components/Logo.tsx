@@ -25,7 +25,9 @@ function Logo({ onDark = false, isSimple = false, sx }: LogoProps) {
     <NextLink href="/">
       <Box
         sx={{
-          width: isSimple ? 64 : 75,
+
+          width: isSimple ? 125 : 125,
+          // justifyContent: 'center',
           lineHeight: 0,
           cursor: 'pointer',
           display: 'inline-flex',
@@ -34,14 +36,14 @@ function Logo({ onDark = false, isSimple = false, sx }: LogoProps) {
       >
         {isSimple ? (
           (
-            <Box sx={{ color: onDark ? 'initial' : 'black', width: 300, display: 'flex', gap: 0.2, fontSize: 20 }}>
+            <Box sx={{ color: onDark ? 'initial' : 'black', display: 'flex', gap: 0.2, fontSize: 20 }}>
               Arabic
               <span style={{ background: PRIMARY_MAIN, width: 10, height: 10, borderRadius: '50%' }} />
               best
             </Box>
           )
         ) : (
-          <Box sx={{ color: isLight && !onDark ? DARK_COLOR : LIGHT_COLOR, width: 300, display: 'flex', gap: 0.2, fontSize: 20 }}>
+          <Box sx={{ color: isLight && !onDark ? DARK_COLOR : LIGHT_COLOR, display: 'flex', gap: 0.2, fontSize: 20 }}>
             Arabic
             <span style={{ background: PRIMARY_MAIN, width: 10, height: 10, borderRadius: '50%' }} />
             best

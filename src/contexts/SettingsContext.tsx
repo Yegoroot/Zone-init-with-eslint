@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { ReactNode, createContext } from 'react'
+import { ReactNode, createContext, useEffect } from 'react'
 // hooks
-import { useLocalStorage } from '../hooks'
+import { useLocales, useLocalStorage } from '../hooks'
 // utils
 import getColorPresets, { colorPresets } from '../utils/getColorPresets'
 // config
@@ -28,9 +28,26 @@ type Props = {
 };
 
 function SettingsProvider({ children }: Props) {
+  const { currentLang } = useLocales()
   const [settings, setSettings] = useLocalStorage('settings', {
     ...defaultSettings,
   })
+
+  useEffect(() => {
+    if (currentLang === 'ar') {
+      setSettings({
+        ...settings,
+        themeDirection: 'rtl',
+      })
+    } else {
+      setSettings({
+        ...settings,
+        themeDirection: 'ltr',
+      })
+    }
+  }, [currentLang])
+
+  console.log(currentLang, settings)
 
   const onToggleMode = () => {
     setSettings({
@@ -46,6 +63,7 @@ function SettingsProvider({ children }: Props) {
     })
   }
 
+  // FIXME SAVE IN ANOTHER LOCAL STORAGE
   const onChangeColorPresets = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSettings({
       ...settings,

@@ -5,7 +5,7 @@ import contentDeliveryNetwork from '@iconify/icons-carbon/content-delivery-netwo
 import { SxProps } from '@mui/system'
 import { Box, List, ListItemIcon, MenuItem, ListItemText } from '@mui/material'
 // hooks
-import { useLocales } from '../hooks'
+import { useLocales, useSettings } from '../hooks'
 // components
 import { Popover, Iconify } from '../components'
 import { IconButtonAnimate } from '../components/animate'
@@ -21,6 +21,7 @@ export default function LanguagePopover({ sx }: LanguagePopoverProps) {
   const [open, setOpen] = useState(false)
   const { onChangeLanguage } = useLocales()
   const { allLang, currentLang } = useLocales()
+  const { themeDirection, onToggleDirection } = useSettings()
 
   const handleOpen = () => {
     setOpen(true)
@@ -28,6 +29,17 @@ export default function LanguagePopover({ sx }: LanguagePopoverProps) {
 
   const handleClose = () => {
     setOpen(false)
+  }
+
+  const onHandleLang = (value: 'ar' | 'ru' | 'en') => {
+    handleClose()
+    onChangeLanguage(value)
+    // if (value === 'ar' && themeDirection === 'ltr') {
+    //   onToggleDirection()
+    // }
+    // if (value !== 'ar' && themeDirection === 'rtl') {
+    //   onToggleDirection()
+    // }
   }
 
   return (
@@ -49,8 +61,7 @@ export default function LanguagePopover({ sx }: LanguagePopoverProps) {
               key={option.value}
               selected={option.value === currentLang}
               onClick={() => {
-                handleClose()
-                onChangeLanguage(option.value)
+                onHandleLang(option.value)
               }}
             >
               <ListItemIcon>

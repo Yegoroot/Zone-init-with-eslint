@@ -1,0 +1,13 @@
+{
+  "errors": {
+    "not_found": {
+      "materials": "No content found for the selected language",
+      "page_title": "404 Page Not Found",
+      "page": "Page Not Found!"
+    },
+    "server_error": {
+      "page_title_500": "500 Internal Server Error",
+      "page_info_500": "There was an error, please try again later."
+    }
+  }
+}

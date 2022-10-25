@@ -1,32 +1,32 @@
 // next
 import { useRouter } from 'next/router'
 // @mui
-import { enUS, deDE, frFR } from '@mui/material/locale'
+import { enUS, ruRU, arEG } from '@mui/material/locale'
 //
-import { EN, FR, DE } from '../locales'
+import { ar, ru, en } from '../locales/index'
 
 // ----------------------------------------------------------------------
 
 const LANGS = [
   {
-    label: 'English',
-    value: 'en',
-    systemValue: enUS,
-    manualValue: EN,
+    label: 'Arabic',
+    value: 'ar',
+    systemValue: arEG,
+    manualValue: ar,
     icon: '/static/icons/flags/ic_flag_en.svg',
   },
   {
-    label: 'German',
-    value: 'de',
-    systemValue: deDE,
-    manualValue: DE,
+    label: 'Russian',
+    value: 'ru',
+    systemValue: ruRU,
+    manualValue: ru,
     icon: '/static/icons/flags/ic_flag_de.svg',
   },
   {
-    label: 'French',
-    value: 'fr',
-    systemValue: frFR,
-    manualValue: FR,
+    label: 'English',
+    value: 'en',
+    systemValue: enUS,
+    manualValue: en,
     icon: '/static/icons/flags/ic_flag_fr.svg',
   },
 ] as const
@@ -34,7 +34,7 @@ const LANGS = [
 export default function useLocales() {
   const { pathname, asPath, locale, push } = useRouter()
 
-  const onChangeLanguage = (lang: 'en' | 'de' | 'fr') => {
+  const onChangeLanguage = (lang: 'ru' | 'ar' | 'en') => {
     push(pathname, asPath, { locale: lang, scroll: false })
   }
 

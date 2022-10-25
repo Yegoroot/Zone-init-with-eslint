@@ -1,0 +1,24 @@
+{
+  "general": {
+    "name": "Learn Arabic",
+    "practice": "Practice",
+    "helpProject": "Help the project",
+    "copyright": "All rights reserved, copying is prohibited. Who wants to use materials, contact us",
+    "blogDesc": "Articles about Arabic"
+  },
+  "menu": {
+    "loading_menu": "Loading Menu...",
+    "blog": "Blog",
+    "home": "🏠",
+    "grammar": "Grammar",
+    "practice": "Practice",
+    "callback": "Callback",
+    "alphabet": "Alphabet"
+  },
+  "buttons": {
+    "prev": "Previous",
+    "next": "Next",
+    "go_home": "Go to Home",
+    "show_more": "Show more"
+  }
+}

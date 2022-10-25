@@ -1,3 +1,4 @@
-export { default as EN } from './en'
-export { default as DE } from './de'
-export { default as FR } from './fr'
+// export { default as RU } from './ru'
+export { locale as ar } from './ar'
+export { locale as en } from './en'
+export { locale as ru } from './ru'
